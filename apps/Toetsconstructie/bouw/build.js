@@ -245,6 +245,9 @@ function matrijsSectie() {
   const tot = kol.map((c) => ""); tot[1] = "Totaal"; tot[kol.length - 3] = String(R.reduce((a, r) => a + r.punten, 0)); tot[kol.length - 2] = "100,0%"; tot[kol.length - 1] = String(M.minuten);
   rows.push(tot);
   k.push(tabel(kol.map((c) => c[0]), rows, kol.map((c) => c[1]), kol.map((c) => c[2]), { size: 14 }));
+  // Vaste leerdoelcodes: de Toetsevaluatie leest deze regel bij het nakijken en hoeft dan niet te raden welk leerdoel een vraag toetst.
+  const codes = R.filter((r) => r.leerdoel_code).map((r) => `${r.nr}=${r.leerdoel_code}`);
+  if (codes.length) k.push(para([run("LEERDOELCODES: " + codes.join(", "), { size: 14, color: "666666" })], { spacing: { before: 80 } }));
   k.push(para([run("")]));
   const som = (f) => R.filter(f).reduce((a, r) => a + r.punten, 0), pct = (n) => (n / M.punten * 100).toFixed(0) + "%", gv = (o, n) => (o && o[n] != null ? o[n] + "%" : "–");
   const onderdelen = [...new Set(R.map((r) => r.onderdeel).filter(Boolean))];

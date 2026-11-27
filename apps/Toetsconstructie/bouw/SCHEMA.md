@@ -9,7 +9,7 @@ Per toets staan in `toetsen/<id>/` twee soorten JSON: `matrijs.json` (ter goedke
   "meta": { "vak": "Economie", "niveau": "Vwo", "klas": "6 vwo", "at": "AT6.11", "onderwerp": "...", "datum": "22 oktober 2026",
             "weging": "15%", "minuten": 100, "tweefasen": false, "versies": ["A", "B"] },
   "rijen": [
-    { "nr": 1, "onderdeel": "Markten (opgave 1 en 2)", "opgave": 1, "leerdoel": "...", "eindterm": "D2.2",
+    { "nr": 1, "onderdeel": "Markten (opgave 1 en 2)", "opgave": 1, "leerdoel": "...", "leerdoel_code": "ECO-MARKT-02", "eindterm": "D2.2",
       "werkwoord": "Bereken", "bloom": "Toepassen", "koppeling": "Safetybell (2025-II vr. 2)",
       "thema": "Skigebied Hochtal", "bron": "–", "punten": 3, "label": "HV", "vraagmodel": "VM2", "p_verwacht": 0.55 }
   ],
@@ -22,6 +22,7 @@ Per toets staan in `toetsen/<id>/` twee soorten JSON: `matrijs.json` (ter goedke
 
 - `bloom` is één van: Onthouden, Begrijpen, Toepassen, Analyseren, Evalueren, Creëren.
 - `label` alleen bij tweefasen-vwo: "HV" (telt in havo- en vwo-cijfer) of "V" (alleen vwo).
+- `leerdoel_code` is de vaste code uit het leerdoelenregister (`python3 bouw/leerdoelen.py --vak <vak> --niveau <niveau>`). Kies de code waarvan de omschrijving precies dit leerdoel dekt, ook als de context anders is. Past geen code, of is er nog geen register, laat het veld dan weg: de evaluatie koppelt later. Verzin nooit een code. De codes komen in het correctievoorschrift (regel LEERDOELCODES) en worden bij het nakijken overgenomen.
 - `koppeling` is de nagezochte ankervraag uit een eindexamen (jaar, tijdvak, vraagnummer), of een streepje.
 - `vraagmodel` is het VM-nummer uit kopje 8 van de toetsopdracht (leeg als de vraag niet bij een vast onderdeel hoort).
 - `p_verwacht` is de verwachte p-waarde (0 tot 1): het aandeel van de punten dat de klas naar verwachting haalt, bijgesteld met `kennisbank/kalibratie.json`. Na de afname vergelijkt de app dit met de werkelijke p.

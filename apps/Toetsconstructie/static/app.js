@@ -140,15 +140,27 @@ function tekenVerdeling() {
     <div class="kaart"><h3>Onderdelen <span class="sub" style="float:right;text-transform:none">nu · gevraagd</span></h3>${v.ond.map(balk).join("") || `<span class="sub">geen onderdelen</span>`}</div>
     <div class="kaart"><h3>Bloom <span class="sub" style="float:right;text-transform:none">nu · gevraagd</span></h3>${v.bloom.map(balk).join("")}</div>`;
 }
+function laadRegister(p) {
+  const sleutel = p.vak + "|" + p.niveau; if (S.regSleutel === sleutel) return; S.regSleutel = sleutel; S.reg = [];
+  api("/api/leerdoelenregister?vak=" + encodeURIComponent(p.vak || "") + "&niveau=" + encodeURIComponent(p.niveau || ""))
+    .then((j) => { S.reg = j.leerdoelen || []; if (S.reg.length && S.data && S.data.project === p) tekenMatrijs(); }).catch(() => {});
+}
+function codeCel(i, r, vast) {
+  const reg = S.reg || [], cur = r.leerdoel_code || "", hier = reg.find((x) => x.code === cur);
+  const opties = (cur && !hier ? [{ code: cur, omschrijving: "niet in het register" }] : []).concat(reg);
+  return `<td><select class="code" ${vast ? "disabled" : ""} title="${esc(hier ? hier.omschrijving : "Vaste leerdoelcode uit het register: bij het nakijken wordt deze overgenomen")}" onchange="S.data.matrijs.rijen[${i}].leerdoel_code=this.value||undefined;matrijsGewijzigd()"><option value="">–</option>${opties.map((x) => `<option value="${esc(x.code)}" ${x.code === cur ? "selected" : ""}>${esc(x.code)} · ${esc((x.omschrijving || "").slice(0, 70))}</option>`).join("")}</select></td>`;
+}
 function tekenMatrijs() {
   const m = S.data.matrijs, el = $("tab-matrijs"), p = S.data.project;
+  laadRegister(p);
   if (!m) { el.innerHTML = `<div class="leeg">Er is nog geen toetsmatrijs. Vertel in het gesprek wat u wilt toetsen en beantwoord de intakevragen. Claude zet de matrijs daarna hier neer.</div>`; return; }
   const twee = m.meta && m.meta.tweefasen, vast = p.status === "goedgekeurd" || p.status === "gebouwd", ed = vast ? "" : 'contenteditable="true"';
   const td = (i, k, v, kl = "") => `<td class="${kl}" ${ed} onblur="cel(${i},'${k}',this)">${esc(v)}</td>`;
+  const metCode = (S.reg && S.reg.length) || m.rijen.some((r) => r.leerdoel_code);
   const lijst = (t, a) => (a && a.length ? `<div class="kaart"><h3>${t}</h3><ul class="lijstje">${a.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : "");
   el.innerHTML = `<div id="mAfwijking"></div><div class="kaarten" id="mVerdeling"></div>
-    <table class="matrijs"><tr><th>Nr</th><th>Opg.</th><th>Onderdeel</th><th>Leerdoel</th><th>Eindterm</th>${twee ? "<th>Label</th>" : ""}<th>Werkwoord</th><th>Bloom</th><th>Ankervraag (eindexamen)</th><th>Model</th><th class="n" title="Verwachte p-waarde: aandeel van de punten dat de klas naar verwachting haalt">p verw.</th><th>Thema</th><th class="n">P</th><th></th></tr>
-    ${m.rijen.map((r, i) => `<tr><td>${r.nr}</td>${td(i, "opgave", r.opgave)}${td(i, "onderdeel", r.onderdeel)}${td(i, "leerdoel", r.leerdoel)}${td(i, "eindterm", r.eindterm)}
+    <table class="matrijs"><tr><th>Nr</th><th>Opg.</th><th>Onderdeel</th><th>Leerdoel</th>${metCode ? `<th title="Vaste leerdoelcode uit het register">Code</th>` : ""}<th>Eindterm</th>${twee ? "<th>Label</th>" : ""}<th>Werkwoord</th><th>Bloom</th><th>Ankervraag (eindexamen)</th><th>Model</th><th class="n" title="Verwachte p-waarde: aandeel van de punten dat de klas naar verwachting haalt">p verw.</th><th>Thema</th><th class="n">P</th><th></th></tr>
+    ${m.rijen.map((r, i) => `<tr><td>${r.nr}</td>${td(i, "opgave", r.opgave)}${td(i, "onderdeel", r.onderdeel)}${td(i, "leerdoel", r.leerdoel)}${metCode ? codeCel(i, r, vast) : ""}${td(i, "eindterm", r.eindterm)}
       ${twee ? `<td><select ${vast ? "disabled" : ""} onchange="S.data.matrijs.rijen[${i}].label=this.value;matrijsGewijzigd()"><option value="HV" ${r.label !== "V" ? "selected" : ""}>H+V</option><option value="V" ${r.label === "V" ? "selected" : ""}>V</option></select></td>` : ""}
       ${td(i, "werkwoord", r.werkwoord)}<td><select ${vast ? "disabled" : ""} onchange="S.data.matrijs.rijen[${i}].bloom=this.value;matrijsGewijzigd()">${BLOOM.map((b) => `<option ${r.bloom === b ? "selected" : ""}>${b}</option>`).join("")}</select></td>
       ${td(i, "koppeling", r.koppeling)}${td(i, "vraagmodel", r.vraagmodel || "")}${td(i, "p_verwacht", r.p_verwacht == null ? "" : String(r.p_verwacht).replace(".", ","), "n")}${td(i, "thema", r.thema)}${td(i, "punten", r.punten, "n")}<td>${vast ? "" : `<span class="link" title="Rij verwijderen" onclick="rijWeg(${i})">×</span>`}</td></tr>`).join("")}</table>

@@ -120,3 +120,5 @@ tr.signaal td { background: #fdf6e9; }
 .knoppenrij { white-space: nowrap; } .knoppenrij button { margin: 0 2px; padding: 3px 8px; font-size: 12px; }
 .filter button.actief { background: var(--accent); color: #fff; }
 input.zoek { width: 100%; max-width: 420px; padding: 6px 10px; border: 1px solid var(--lijn); border-radius: 6px; margin-bottom: 8px; }
+
+table.matrijs select.code{max-width:150px;font-size:12px}
