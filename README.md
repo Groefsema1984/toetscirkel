@@ -18,7 +18,17 @@ Dubbelklik `scripts/Start ToetsCirkel.command`. De browser opent op http://127.0
 
 De losse startbestanden van de drie apps werken nog, maar zijn niet meer nodig.
 
-## Stand: fase 2a (één database, één itembank)
+## Stand: fase 2b (leerdoelcodes bij constructie)
+
+- In het matrijsscherm van Construeren staat een kolom **Code** met de vaste leerdoelcodes uit het register
+  (havo en vwo delen één register, mavo heeft een eigen). Claude vult die codes zelf in als er een precies past
+  (`bouw/leerdoelen.py`); verzinnen mag niet.
+- De codes komen in het correctievoorschrift (regel `LEERDOELCODES:` onder de toetsmatrijs). De Toetsevaluatie
+  las die regel al voor oefentoetsen; nu werkt het ook voor gebouwde toetsen. Codes die niet in het register staan,
+  worden genegeerd; die vragen koppelt de evaluatie zoals vroeger.
+- De vragenbank bewaart de code per vraag, dus de itembank kent hem ook vóór de afname.
+
+## Fase 2a (één database, één itembank)
 
 - **Eén database.** Bij de eerste start zet ToetsCirkel de tabellen van de Oefentool over naar de centrale database
   (`~/Documents/Toetsevaluatie/toetsevaluatie.db`, naam en plek ongewijzigd). Eerst komt er een back-up, daarna wordt
@@ -63,6 +73,7 @@ tests/
   test_fase0.py       tests met verzonnen gegevens
   test_fase1.py       de drie apps samen op één adres
   test_fase2.py       één database, itembank, gouden toets blijft gelijk
+  test_fase2b.py      leerdoelcode van register via matrijs en correctievoorschrift naar de evaluatie
 docs/
   AFSPRAKEN.md        wat wel/niet in Git, privacy, toetscode, werkwijze
 ```

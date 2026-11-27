@@ -84,7 +84,7 @@ class Fase1(unittest.TestCase):
                 if a.startswith("/") and not a.startswith("//") and a not in ("/", "/itembank"):
                     self.assertTrue(a.startswith(toegestaan), f"{pad}: adres zonder voorvoegsel: {a}")
                 self.assertNotIn("127.0.0.1:505", a, f"{pad}: link naar een oude losse app: {a}")
-        self.assertIn("/construeren/static/app.js?v=5", p["/construeren/"]["attrs"])
+        self.assertIn("/construeren/static/app.js?v=6", p["/construeren/"]["attrs"])
 
     def test_vangnet_stuurt_door_naar_de_juiste_app(self):
         u = self.draai()

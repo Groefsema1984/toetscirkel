@@ -18,7 +18,7 @@ def schone_env():
     return e
 for d in (BRONNEN, KENNIS, TOETSEN, CACHE): d.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(ROOT / "bouw"))
-import itemanalyse, kwaliteit, vragenbank as vbank  # rekenmodules in de map bouw
+import itemanalyse, kwaliteit, leerdoelen, vragenbank as vbank  # rekenmodules in de map bouw
 LEERREGELS = KENNIS / "leerregels.json"
 app = Flask(__name__, static_folder="static", template_folder="templates")
 app.config["MAX_CONTENT_LENGTH"] = 400 * 1024 * 1024
@@ -436,6 +436,12 @@ def stop(pid):
     return jsonify({"ok": True})
 
 # ---------------------------------------------------------------- routes: evaluatie, leerregels, vragenbank
+@app.get("/api/leerdoelenregister")
+def leerdoelenregister():
+    """Vaste leerdoelcodes uit de centrale database, voor de kolom Code in de matrijs."""
+    try: return jsonify({"leerdoelen": leerdoelen.register(request.args.get("vak"), request.args.get("niveau"), pad=Path(instellingen()["toetsevaluatie_db"]).expanduser())})
+    except Exception as e: return jsonify({"leerdoelen": [], "fout": str(e)})
+
 @app.get("/api/evaluatie/toetsen")
 def evaluatie_toetsen():
     db = Path(instellingen()["toetsevaluatie_db"]).expanduser()

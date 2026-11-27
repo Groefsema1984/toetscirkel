@@ -58,7 +58,7 @@ def toevoegen(projectmap):
             v = index.get(vid) or {"id": vid, "afnames": [], "toegevoegd": datetime.now().strftime("%Y-%m-%d")}
             v.update({"project": pr.get("id", d.name), "naam": pr.get("naam"), "vak": pr.get("vak"), "niveau": pr.get("niveau"), "klas": pr.get("klas"),
                       "at": pr.get("at"), "versie": versie, "nr": q.get("nr"), "punten": q.get("p"), "opgave": titel, "context": context,
-                      "thema": r.get("thema") or titel, "onderdeel": r.get("onderdeel"), "leerdoel": r.get("leerdoel"), "eindterm": r.get("eindterm"),
+                      "thema": r.get("thema") or titel, "onderdeel": r.get("onderdeel"), "leerdoel": r.get("leerdoel"), "leerdoel_code": r.get("leerdoel_code"), "eindterm": r.get("eindterm"),
                       "bloom": r.get("bloom"), "werkwoord": r.get("werkwoord"), "label": r.get("label"), "koppeling": r.get("koppeling"),
                       "vraagmodel": r.get("vraagmodel"), "p_verwacht": r.get("p_verwacht"), "vraag": q.get("text")})
             if vid not in index:
