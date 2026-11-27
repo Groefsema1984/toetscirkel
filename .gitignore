@@ -1,0 +1,50 @@
+# ToetsCirkel: alleen code en kennisbank in Git.
+# Leerlingdata, scans, databases, klassenlijsten en gegenereerde toetsen NOOIT committen.
+
+# Python / Node / macOS
+__pycache__/
+*.pyc
+.venv/
+.node/
+node_modules/
+.DS_Store
+
+# Databases en logboeken
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqbpro
+*.log
+
+# Scans en exports
+*.pdf
+*.zip
+*.tgz
+*.xlsx
+
+# Toetsconstructie: lokale gegevens
+apps/Toetsconstructie/instellingen.json
+apps/Toetsconstructie/bronnen/
+apps/Toetsconstructie/toetsen/
+apps/Toetsconstructie/_weg/
+apps/Toetsconstructie/Claude outputs/
+
+# Toetsevaluatie: leerlingdata
+apps/Toetsevaluatie/App_data/
+apps/Toetsevaluatie/Exports/
+apps/Toetsevaluatie/Gemaakte werk/
+apps/Toetsevaluatie/Klassenlijsten/
+apps/Toetsevaluatie/Schoolexamens_Inbox/
+apps/Toetsevaluatie/docent_leerregels.json
+
+# Oefentool: opdrachten per leerling en tijdelijke bestanden
+apps/Oefentool/Opdrachten/
+apps/Oefentool/Bronnen/
+apps/Oefentool/Figuren/
+apps/Oefentool/_tmp/
+apps/Oefentool/batches.json
+
+# Lokale data en back-ups van ToetsCirkel
+data/
+backups/
