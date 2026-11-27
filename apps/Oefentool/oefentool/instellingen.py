@@ -22,7 +22,27 @@ TOETSEVALUATIE = Path(os.environ.get("TOETSEVALUATIE_MAP") or HOME / "Documents"
 TOETSCONSTRUCTIE = Path(os.environ.get("TOETSCONSTRUCTIE_MAP")
                         or HOME / "Documents" / "Toetsconstructie").expanduser()
 
-DB = BASIS / "oefentool.db"
+
+
+def _kies_db() -> Path:
+    """Sinds ToetsCirkel fase 2 staan de tabellen van de oefentool in de centrale database (toetsevaluatie.db).
+    Zolang die omzetting nog niet is gebeurd, blijft oefentool.db in gebruik."""
+    centraal = TOETSEVALUATIE / "toetsevaluatie.db"
+    try:
+        import sqlite3
+        con = sqlite3.connect(f"file:{centraal}?mode=ro", uri=True, timeout=30)
+        try:
+            if con.execute("SELECT 1 FROM sqlite_master WHERE name = 'toetscirkel_meta'").fetchone() and \
+                    con.execute("SELECT 1 FROM toetscirkel_meta WHERE sleutel = 'fase2_oefentool_samengevoegd'").fetchone():
+                return centraal
+        finally:
+            con.close()
+    except Exception:  # noqa: BLE001  (geen centrale database: gewoon de eigen database)
+        pass
+    return BASIS / "oefentool.db"
+
+
+DB = _kies_db()
 OPDRACHTEN = BASIS / "Opdrachten"            # per opdracht: plan, sets, uitvoer (met leerlingnummers)
 EIGEN_BRONNEN = BASIS / "Bronnen"            # bestanden die je in de app sleept (Cumulus, PowerPoints)
 KWALITEITSREGELS = BASIS / "kwaliteitsregels.json"

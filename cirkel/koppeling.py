@@ -50,6 +50,7 @@ def menubalk(actief: str = "") -> str:
     for pad, naam, uitleg in ONDERDELEN:
         klasse = ' class="tc-hier"' if pad == actief else ""
         links.append(f'<a href="{pad}/"{klasse} title="{uitleg}">{naam}</a>')
+    links.append(f'<a href="/itembank"{' class="tc-hier"' if actief == "/itembank" else ""} title="Alle vragen op één plek">Itembank</a>')
     return _MENU_STIJL + '<nav id="toetscirkel-menu" data-toetscirkel="1">' + "".join(links) + "</nav>"
 
 

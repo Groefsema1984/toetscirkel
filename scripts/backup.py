@@ -3,7 +3,7 @@
 """Back-up van de databases en het geheugen van de drie apps.
 
 - Databases worden met de back-upfunctie van SQLite gekopieerd: veilig, ook als een app draait.
-- De kennisbank, leerregels en kwaliteitsregels gaan mee.
+- De kennisbank (alleen json, txt en md), leerregels en kwaliteitsregels gaan mee.
 - Scans, klassenlijsten en de map toetsen/ gaan NIET mee (groot; ze staan al in OneDrive of zijn opnieuw te maken).
 - Elke back-up komt in een eigen map met datum en tijd. De nieuwste BEWAAR (standaard 30) blijven staan.
 
@@ -59,7 +59,9 @@ def maak_backup(basis: Path) -> Path:
         uit = doel / naam
         uit.parent.mkdir(parents=True, exist_ok=True)
         if pad.is_dir():
-            shutil.copytree(pad, uit)
+            # Alleen wat het systeem zelf leert (json, txt, md); grote examen-pdf's staan al elders en zouden
+            # met 30 back-ups gigabytes kosten.
+            shutil.copytree(pad, uit, ignore=shutil.ignore_patterns("*.pdf", "*.html", "*.docx", "*.pptx", "*.png", "*.jpg"))
         else:
             shutil.copy2(pad, uit)
         verslag.append(f"kopie     {naam}")
