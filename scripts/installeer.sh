@@ -23,4 +23,13 @@ for APP in Toetsconstructie Toetsevaluatie Oefentool; do
   done
   echo "$APP bijgewerkt (vorige code bewaard in $OUD)."
 done
-echo "Klaar. Start de apps opnieuw om de nieuwe code te gebruiken."
+# ToetsCirkel zelf (de gezamenlijke app en de hulpscripts) naar ~/Documents/ToetsCirkel
+DOEL="$HOME/Documents/ToetsCirkel"
+if [ "$(cd "$DOEL" 2>/dev/null && pwd -P)" != "$(pwd -P)" ]; then
+  git ls-files -z cirkel scripts tests docs README.md | while IFS= read -r -d '' F; do
+    mkdir -p "$DOEL/$(dirname "$F")"
+    cp -p "$F" "$DOEL/$F"
+  done
+  echo "ToetsCirkel bijgewerkt in $DOEL."
+fi
+echo "Klaar. Start ToetsCirkel opnieuw (Start ToetsCirkel.command) om de nieuwe code te gebruiken."
