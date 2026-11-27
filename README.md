@@ -18,7 +18,21 @@ Dubbelklik `scripts/Start ToetsCirkel.command`. De browser opent op http://127.0
 
 De losse startbestanden van de drie apps werken nog, maar zijn niet meer nodig.
 
-## Stand: fase 1 (één app)
+## Stand: fase 2a (één database, één itembank)
+
+- **Eén database.** Bij de eerste start zet ToetsCirkel de tabellen van de Oefentool over naar de centrale database
+  (`~/Documents/Toetsevaluatie/toetsevaluatie.db`, naam en plek ongewijzigd). Eerst komt er een back-up, daarna wordt
+  per tabel gecontroleerd of alle rijen zijn overgekomen. Het oude bestand blijft bewaard als `oefentool.voor_fase2.db`.
+  Gaat er iets mis, dan blijft alles zoals het was en meldt de startpagina dat.
+- **Eén itembank** (`/itembank`): alle vragen uit de vragenbank van Toetsconstructie, de toetsmatrijzen van afgenomen
+  toetsen (met de echte p-waarde) en de oefenopgaven. Een gebouwde toets wordt gekoppeld aan zijn evaluatie
+  (via de itemanalyse, of anders via AT-nummer, vak, niveau en soort), zodat een gebouwde vraag de leerdoelcode en
+  p-waarde van na de afname krijgt.
+- Code: `cirkel/kern/database.py` en `cirkel/kern/itembank.py`. In de apps is alleen `Oefentool/oefentool/instellingen.py`
+  aangepast (welke database).
+- De back-up neemt van de kennisbank alleen json, txt en md mee; de examen-pdf's kostten per back-up zo'n 60 MB.
+
+## Fase 1 (één app)
 
 `cirkel/` laadt de drie bestaande apps in één programma en zet ze elk onder hun eigen adres. De code van de apps is
 niet gewijzigd: `cirkel/koppeling.py` houdt hun vaste adressen (zoals `/api/status`) binnen de juiste app en zet de
@@ -33,7 +47,8 @@ vanaf nu de plek waar de code wordt bijgehouden.
 cirkel/
   server.py           start de drie apps samen op poort 5050
   koppeling.py        adressen binnen elke app houden, menubalk
-  portaal.py          startpagina en doorverwijzen
+  portaal.py          startpagina, itembank-pagina en doorverwijzen
+  kern/               gedeelde database en itembank
 apps/
   Toetsconstructie/   lokale Flask-app (poort 5057), Claude Code via abonnement, Word-bouwmotor, kennisbank
   Toetsevaluatie/     lokale Flask-app (poort 5055), scans nakijken, analyse, leerprofielen
@@ -47,6 +62,7 @@ tests/
   gouden_toets.py     momentopname van een afgeronde toets maken en vergelijken
   test_fase0.py       tests met verzonnen gegevens
   test_fase1.py       de drie apps samen op één adres
+  test_fase2.py       één database, itembank, gouden toets blijft gelijk
 docs/
   AFSPRAKEN.md        wat wel/niet in Git, privacy, toetscode, werkwijze
 ```

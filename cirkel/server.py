@@ -85,6 +85,28 @@ def laad_oefenen():
     return mod.app
 
 
+def _werk_itembank_bij() -> dict:
+    from .kern import itembank
+    try:
+        return {"itembank": itembank.werk_bij(), "itembank_fout": ""}
+    except Exception as fout:  # noqa: BLE001  (de apps moeten ook zonder itembank starten)
+        log.error("Itembank bijwerken mislukt: %s", fout)
+        return {"itembank": {}, "itembank_fout": str(fout)}
+
+
+def bereid_kern_voor() -> dict:
+    """Fase 2: Oefentool-tabellen eenmalig naar de centrale database (met back-up vooraf). Moet vóór het laden van de
+    Oefentool gebeuren, want die kiest bij het laden welke database hij gebruikt."""
+    from .kern import database
+    try:
+        melding = database.voeg_oefentool_samen()
+        log.info("%s", melding)
+        return {"database": melding, "database_fout": "", "itembank": None}
+    except Exception as fout:  # noqa: BLE001
+        log.error("Samenvoegen van de databases mislukt (alles blijft zoals het was): %s", fout)
+        return {"database": "", "database_fout": str(fout), "itembank": None}
+
+
 def maak_app():
     """Bouw de gecombineerde WSGI-app. Geeft (wsgi_app, status) terug."""
     # Alle apps dezelfde mappen laten gebruiken (ze lezen deze variabelen al).
@@ -93,6 +115,7 @@ def maak_app():
     os.environ["OEFENTOOL_MAP"] = str(paden.OEFENTOOL)
     status: dict = {}
     apps = {}
+    kern = bereid_kern_voor()
     # Volgorde: oefenen leest modules van evalueren, dus evalueren eerst.
     for basis, laad, cookie in (("/construeren", laad_construeren, "tc_construeren"),
                                 ("/evalueren", laad_evalueren, "tc_evalueren"),
@@ -101,7 +124,9 @@ def maak_app():
         if app is not None:
             koppel(app, basis, cookie)
             apps[basis] = app
-    portaal = maak_portaal(status)
+    if kern.get("itembank") is None:                # pas na het laden van evalueren bestaan alle kolommen
+        kern.update(_werk_itembank_bij())
+    portaal = maak_portaal(status, kern)
     return DispatcherMiddleware(portaal, apps), status
 
 
