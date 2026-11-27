@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block titel %}Leerregels - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<h1>Wat Claude van jou heeft geleerd</h1>
+<p class="intro">Elke keer dat je bij een verschil je eigen score houdt en opschrijft waarom, komt
+  dat hier te staan. Bij een volgende toets van hetzelfde vak krijgt Claude de laatste {{ maximum }}
+  redenen mee. Het bestand heet <b>{{ bestand }}</b> en staat in je map Toetsevaluatie.</p>
+{% if not regels %}
+<p>Er zijn nog geen leerregels. Ze ontstaan vanzelf bij het valideren.</p>
+{% else %}
+<div class="tabelvak">
+<table>
+  <thead><tr><th>Datum</th><th>Toets</th><th>Vraag</th><th class="r">Claude</th><th class="r">Jij</th><th>Jouw reden</th><th></th></tr></thead>
+  <tbody>
+  {% for r in regels %}
+  <tr>
+    <td>{{ r.datum }}</td>
+    <td>{{ r.toets_id }}<div class="bij">{{ r.vak }} {{ r.niveau }}</div></td>
+    <td>{{ r.vraag }}<div class="bij">{{ r.domein }}</div></td>
+    <td class="r">{{ r.ai_score | getal }} van {{ r.max_score }}</td>
+    <td class="r">{{ r.docent_score | getal }}</td>
+    <td>{{ r.reden }}<div class="bij">Leerling schreef: {{ r.antwoord }}</div></td>
+    <td><form method="post" action="{{ url_for('leerregel_verwijder') }}">
+      <input type="hidden" name="id" value="{{ r.id }}">
+      <button class="knop klein" type="submit">Verwijderen</button></form></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock %}

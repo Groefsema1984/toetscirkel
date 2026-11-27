@@ -1,0 +1,30 @@
+CHANGELOG
+26 oktober 2026, eerste versie (na toets T2 economie 4 havo, versie A en B)
+* Nieuw bestand. De AI heeft de opgaventeksten van de havo-examens 2018-II, 2019-I, 2021-I en 2021-II op de trefwoorden betalingsbereidheid, consumentensurplus en prijs- en inkomenselasticiteit doorzocht en de bijbehorende vragen gelezen. De correctievoorschriften en figuren zijn niet gelezen.
+
+BRONBESTAND: 02_EXAMENCONTEXT_HAVO_ECO_EXAMENANALYSE_DOMEIN_D_CONSUMENTENGEDRAG
+FUNCTIE: havo-examenvragen over consumentengedrag als stijlanker voor toetsen over domein D hoofdstuk 2.
+ZOEKTERMEN: betalingsbereidheid, consumentensurplus, prijselasticiteit, inkomenselasticiteit, substitutie, complementair, inferieur, vraaglijn verschuift.
+
+[DEEL 1: GELEZEN VRAGEN]
+examen, vraag | punten | wat er gevraagd wordt
+2018-II, invulvraag | niet genoteerd | Maak een economisch juiste tekst: (1) betalingsbereidheid / inkomenselasticiteit, (2) complementair / inferieur / substitutie, (3) twee vraagvergelijkingen met een getal, (4) consumenten- / producenten- / totale surplus.
+2019-I, vraag 5 | 2 | Geef met letters de toename van het consumentensurplus aan in een figuur.
+2021-I, vraag 15 | 2 | Invulvraag: (1) externe effecten / verzonken kosten, (2) en (3) betalingsbereidheid / marktprijs / kostprijs bij de berekening van het consumentensurplus.
+2021-I, vraag 19 | 3 | Invulvraag over de effecten van een accijnsverhoging, afhankelijk van prijs- en inkomenselasticiteiten uit een bron.
+2021-II, vraag 27 | 1 | Invulvraag: prijselasticiteit 0,3 / −0,3 / 3,3 / −3,3 en elastisch / inelastisch.
+2021-II, vraag 28 | 1 | Geef met een letter of combinatie van letters de toename van het consumentensurplus aan in een figuur.
+
+[DEEL 2: WAT OPVALT]
+1. Invulvragen hebben drie of vier open plekken, vaak met drie keuzes, en combineren begrippen met getallen of een keuze uit een bron.
+2. Het consumentensurplus wordt op havo vooral grafisch gevraagd (oppervlakte aanwijzen met letters). De docent van T2 laat het ook rekenen.
+3. Bij de prijselasticiteit moet de leerling het teken en de grootte kiezen en daarna elastisch of inelastisch benoemen.
+4. Het examen schrijft "betalingsbereidheid", "complementair", "inferieur" en "substitutie".
+
+[DEEL 3: TOETS T2 ECONOMIE 4 HAVO]
+1. De lesstof (hoofdstuk 2) was leidend. De matrijs verwijst naar de paragrafen van de lesstof en naar de havo-eindtermen D6.1 tot en met D6.6, niet naar vraagnummers van examens.
+2. Casussen van T2 (niet opnieuw gebruiken): Cinéa, Trapvast, De Gouden Korst, Aurora, Rolwerk, Gelato Noord. Zie 03_REKENREGELS_HAVO_DOMEIN_D_CONSUMENTENGEDRAG, DEEL 5.
+
+[DEEL 4: OPEN PUNTEN]
+1. De correctievoorschriften en de figuren van deze vragen zijn niet gelezen. Lees ze voor een volgende toets.
+2. De punten van de invulvraag uit 2018-II zijn niet genoteerd.

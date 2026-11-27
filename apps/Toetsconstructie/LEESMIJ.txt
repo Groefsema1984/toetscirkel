@@ -1,0 +1,52 @@
+TOETSCONSTRUCTIE
+Lokale app om toetsen en schoolexamens te maken met Claude, binnen uw eigen abonnement.
+
+STARTEN
+1. Dubbelklik op "Start Toetsconstructie.command".
+   Weigert macOS het bestand de eerste keer? Klik er met de rechtermuisknop op, kies Open en daarna nog eens Open.
+2. De eerste keer installeert het bestand wat nodig is (een paar minuten):
+   - een eigen Python-omgeving in deze map;
+   - Node.js, alleen als dat nog niet op de Mac staat (komt in deze map, geen beheerdersrechten nodig);
+   - Claude Code, het officiële programma van Anthropic waarmee de app Claude laat werken. U krijgt eerst de vraag of dat mag.
+3. Daarna opent een browservenster om in te loggen. Log in met het account van uw Claude-abonnement (Pro).
+4. De app opent in de browser op http://127.0.0.1:5057. Laat het Terminal-venster open zolang u werkt.
+   Vraagt macOS of Terminal bij Documenten of Google Drive mag? Kies Sta toe, anders kan de app uw examenmappen niet lezen.
+
+KOSTEN
+De app gebruikt geen API-sleutel en geen los tegoed. Al het werk telt mee in de gebruikslimiet van uw abonnement,
+net als uw gewone gesprekken met Claude. Rechtsboven ziet u hoeveel van het venster van 5 uur is verbruikt.
+
+WERKWIJZE
+1. Bibliotheek: sleep eindtermen, methodeparagrafen, examens en mindmaps in het vak "Sleep bestanden hierheen".
+   De app zet ze in mappen per vak en niveau. Klik op een bestand om het te lezen.
+2. Nieuwe toets: klik op "+ Nieuwe toets" en vul vak, niveau en soort in.
+3. Bronnen kiezen: vink aan wat Claude voor deze toets mag lezen. Houd de selectie klein; dat scheelt verbruik.
+4. Gesprek: vertel rechts wat u wilt toetsen. Claude stelt in één ronde zijn vragen en zet daarna de toetsmatrijs
+   in het tabblad Toetsmatrijs. U kunt cellen daar zelf aanpassen of Claude om wijzigingen vragen.
+   Inspreken: klik op "Inspreken" onder het tekstvak en spreek uw bericht in. De tekst verschijnt in het vak;
+   u kunt hem nog verbeteren en verstuurt zelf. De eerste keer vraagt de browser toestemming voor de microfoon.
+   Werkt in Chrome en Safari. De spraak wordt door de browser omgezet (Chrome via Google, Safari via Apple).
+5. Goedkeuren: klik op "Matrijs goedkeuren en toets bouwen". Claude schrijft de toets, rekent alles na en maakt de Word-bestanden.
+6. Toetsbestanden: download de bestanden los of als zip. Een B-versie vraagt u in het gesprek.
+7. Afronden: de knop "Afronden: kennisbank bijwerken" laat Claude de kennisbank en de leerregels bijwerken.
+   Dit deel is nog niet getest; dat is de volgende stap.
+
+MAPPEN
+bronnen/       uw ingeladen bestanden, per vak en niveau
+kennisbank/    richtlijnen, PTA-overzichten, rekenregels en examenanalyses; hieruit leert de app
+voorbeelden/   drie goedgekeurde schoolexamens als voorbeeld voor stijl en opbouw
+toetsen/       per toets een map met gesprek, matrijs, toets en de Word-bestanden (in de submap uit)
+bouw/          het programma dat de Word-bestanden maakt
+CLAUDE.md      de vaste werkinstructie voor Claude; aanpassen mag
+
+EXAMENMAPPEN IN GOOGLE DRIVE
+Onder Instellingen staan uw vier mappen met complete eindexamens al gekoppeld. De app leest ze, maar verandert er niets in.
+Een vinkje achter de map betekent dat de app hem kan vinden.
+
+ALS IETS NIET WERKT
+- "Claude Code ontbreekt" of "niet ingelogd" rechtsboven: sluit de app (Ctrl+C in het Terminal-venster) en start opnieuw.
+- Claude Code handmatig installeren: open Terminal en plak
+      curl -fsSL https://claude.ai/install.sh | bash
+  Inloggen daarna met: claude auth login
+- Limiet bereikt: de app meldt dat in het gesprek. Het werk blijft bewaard; ga verder zodra de limiet is hersteld.
+- Stoppen: Ctrl+C in het Terminal-venster.

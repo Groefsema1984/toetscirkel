@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "_item.html" import opgave %}
+{% set deel = 'itembank' %}
+{% block titel %}Itembank · Oefentool{% endblock %}
+{% block inhoud %}
+<h1>Itembank</h1>
+<p class="intro">Alle opgaven die de oefentool heeft gemaakt, met de zelfkritiek, jouw oordeel en (na een
+  gescande oefentoets) de P-waarde en Rit bij leerlingen. Goedgekeurde opgaven met goede resultaten worden in
+  volgende opdrachten als voorbeeld meegegeven en hergebruikt.</p>
+<form method="get" class="rij" style="margin-bottom: 1rem">
+  <div><label for="code">Leerdoel</label><select id="code" name="code"><option value="">Alle</option>
+    {% for c in codes %}<option value="{{ c }}" {{ 'selected' if c == code }}>{{ c }} {{ reg.get(c, {}).get('omschrijving', '')[:60] }}</option>{% endfor %}</select></div>
+  <div><label for="status">Status</label><select id="status" name="status">
+    {% for s, n in [('goedgekeurd', 'Goedgekeurd'), ('concept', 'Nog niet beoordeeld'), ('afgekeurd', 'Afgekeurd'), ('vervangen', 'Eerdere versies'), ('', 'Alles')] %}
+    <option value="{{ s }}" {{ 'selected' if s == st }}>{{ n }}</option>{% endfor %}</select></div>
+  <label class="vink"><input type="checkbox" name="zwak" value="1" {{ 'checked' if request.args.get('zwak') }}> Alleen zwak bij leerlingen (P &lt; 0,30 of Rit &lt; 0,15)</label>
+  <div style="flex: 0 0 auto"><button class="knop" type="submit">Tonen</button></div>
+</form>
+<p class="bij">{{ items | length }} opgaven{{ ' (eerste 400)' if items | length == 400 }}.</p>
+{% for it in items %}
+  {{ opgave(it, reg, None, knoppen=False) }}
+  {% if it.status in ('goedgekeurd', 'afgekeurd') %}
+  <p style="margin: .3rem 0 0"><button class="knop klein" type="button" data-zet="{{ it.uid }}" data-naar="{{ 'afgekeurd' if it.status == 'goedgekeurd' else 'goedgekeurd' }}">
+    {{ 'Niet meer gebruiken' if it.status == 'goedgekeurd' else 'Toch goedkeuren' }}</button>
+    <span class="bij">{{ it.leerdoel_code }} · {{ it.niveau }} · {{ it.gebruikt }}× gebruikt{% if it.rit is not none %} · Rit {{ '%.2f' | format(it.rit) }} (n = {{ it.n_resultaten }}){% endif %}</span></p>
+  {% endif %}
+{% endfor %}
+{% endblock %}
+{% block onder %}
+<script>
+for (const k of document.querySelectorAll('[data-zet]')) {
+  k.addEventListener('click', async () => {
+    const r = await fetch(`/api/item/${k.dataset.zet}/status`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: k.dataset.naar }) });
+    if ((await r.json()).ok) location.reload();
+  });
+}
+</script>
+{% endblock %}

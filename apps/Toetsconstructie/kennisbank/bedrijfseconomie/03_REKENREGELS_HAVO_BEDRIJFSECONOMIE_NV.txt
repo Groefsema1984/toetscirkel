@@ -1,0 +1,39 @@
+CHANGELOG
+10 november 2026, eerste versie (na schoolexamen AT5.22 bedrijfseconomie havo 5, versie A en B). Status: CONCEPT. Alles is gekozen bij het bouwen van AT5.22; de docent stelde alleen vast: gebruik de methode (Cumulus 5.1 t/m 5.3) voor begrippen en de tarieven van 2026 met bron.
+
+BRONBESTAND: 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_NV
+FUNCTIE: vaste schrijfwijze en redeneringen voor het thema De naamloze vennootschap (emissie, resultaatverdeling, balans, kengetallen), bedrijfseconomie havo 5.
+INTEGRATIE: gebruik samen met 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_BV (DEEL 1 geldt ook hier).
+
+[DEEL 1: ALGEMENE SCHRIJFWIJZE]
+1. Bedragen in hele euro's; dividend per aandeel op hele centen; kengetallen op twee decimalen; REV in procenten op één decimaal. De vraag zegt altijd hoe er wordt afgerond.
+2. Pas afronden in het eindantwoord.
+3. Bij 'toon aan' eindigt het antwoord met een conclusie waarin twee getallen worden vergeleken (uitkomst en eis). Geen conclusie, geen punt.
+4. Een balans in een informatiebron staat in euro's of in duizenden euro's. Zet de eenheid in de kop van de bron en in de kop van de uitwerkbijlage.
+5. Formules kent de leerling uit het hoofd. Bij solvabiliteit staat de formule in de vraag: 'solvabiliteit (EV/VV)'.
+
+[DEEL 2: FORMULES EN VASTE VORMEN]
+A. Opbrengst emissie = aantal nieuwe aandelen × emissiekoers. Zonder emissiekosten, tenzij de vraag ze noemt. De hele opbrengst is aandelenkapitaal (geen agio; agio vervalt in de syllabus van 2027).
+B. Vennootschapsbelasting 2026 = 19% × 200.000 + 25,8% × (resultaat − 200.000). Dividendbelasting 15%. Bron in de informatiebron: KVK, Belastingtarieven 2026, https://www.kvk.nl/geldzaken/belastingtarieven-2026/, geraadpleegd op 10 november 2026. NB: Cumulus rekent in de voorbeelden met 15% en 25%; de docent koos voor de tarieven van 2026.
+C. Resultaat na belasting = resultaat voor belasting − vennootschapsbelasting. Dividend = percentage van het resultaat na belasting; reserve = rest.
+D. Dividend per aandeel = brutodividend : aantal geplaatste aandelen, afgerond op hele centen. Nettodividend = 85% van het brutodividend.
+E. Eigen vermogen per aandeel = eigen vermogen : aantal geplaatste aandelen.
+F. Een vastgesteld, nog niet uitbetaald dividend en een nog niet betaalde vennootschapsbelasting zijn kort vreemd vermogen. Na vaststelling daalt het eigen vermogen met het dividend en stijgt het kort vreemd vermogen met hetzelfde bedrag.
+G. Current ratio = vlottende activa : kort vreemd vermogen. Solvabiliteit = EV/VV. REV = resultaat na belasting : gemiddeld eigen vermogen × 100%. Gemiddeld eigen vermogen = (begin + eind) : 2. Zegt de vraag niets anders, dan is het eigen vermogen aan het eind dat van vóór de resultaatverdeling.
+
+[DEEL 3: VASTE REDENERINGEN]
+1. Rechtsvorm voor beursgang of openbare emissie: nv, omdat aandelen van een nv vrij verhandelbaar zijn (bv niet).
+2. Emissie: eigen vermogen stijgt; vreemd vermogen blijft gelijk, dus solvabiliteit stijgt; liquide middelen stijgen, kort vreemd vermogen gelijk, dus current ratio stijgt. Gaat de opbrengst direct naar aflossing van lang vreemd vermogen, dan daalt het vreemd vermogen en blijft de liquiditeit gelijk.
+3. Beurskoers: bedrijfsnieuws (verwachte winst en dividend), marktrente (hogere rente maakt obligaties aantrekkelijker, aandelen minder), beursklimaat, economische en politieke ontwikkelingen.
+4. Redenen om te reserveren: investering zelf financieren (geen rente en aflossing); buffer voor verliezen en betere solvabiliteit.
+5. Aandeel tegenover obligatie: aandeelhouder staat bij faillissement achteraan en heeft geen vaste opbrengst; obligatiehouder heeft voorrang en vaste rente. Bij lage solvabiliteit is er weinig eigen vermogen als buffer, dus meer kans dat rente en aflossing niet worden betaald.
+6. Organen: AvA keurt de resultaatverdeling goed en stelt de jaarrekening vast; raad van commissarissen controleert het beleid van de raad van bestuur; AFM controleert de prospectus; ACM geeft toestemming bij fusie of overname.
+7. Verschil tussen resultaat en liquide middelen: investeren en aflossen zijn uitgaven zonder kosten; afschrijving en nog niet betaalde rekeningen zijn kosten zonder uitgave; stijging van voorraden en debiteuren houdt geld vast.
+
+[DEEL 4: VALKUILEN]
+1. Het dividend niet als kort vreemd vermogen boeken. 2. 25,8% over het hele resultaat rekenen. 3. Dividend per aandeel niet op hele centen afronden. 4. Het nettodividend als 15% van het brutodividend nemen. 5. REV met alleen het eindvermogen of met het eigen vermogen na de resultaatverdeling. 6. Geen conclusie bij 'toon aan'. 7. Bij een emissie met directe aflossing zeggen dat de liquiditeit verbetert.
+
+[DEEL 5: CASUSSEN UIT AT5.22] (verzonnen; niet opnieuw gebruiken) zie 02_EXAMENCONTEXT_HAVO_BECO_EXAMENANALYSE_NV.
+
+[DEEL 6: OPEN PUNTEN]
+1. De docent stelt dit bestand vast. 2. Hoe de leerlingen in de les met 15%/25% of 19%/25,8% hebben geoefend is niet nagevraagd. 3. Quick ratio, RTV, IVV en going concern zijn in AT5.22 niet getoetst.

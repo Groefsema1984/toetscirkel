@@ -1,0 +1,220 @@
+CHANGELOG
+11 november 2026, elfde versie
+* AT6.22 voor 6 vwo toegevoegd (schoolexamen januari 2027: conjunctuur en beleid, economische groei), versie A en B. Open punt 8 toegevoegd (datum).
+10 november 2026, tiende versie
+* AT5.21 voor 5 havo toegevoegd (schoolexamen januari 2027: conjunctuur en beleid, vraag en aanbod met markt en overheid, gedragseconomie), versie A en B. Open punt 7 toegevoegd (datum).
+26 oktober 2026, negende versie
+* Tweede opzet van T2 voor 4 vwo (tweefasen, 4 november 2026) toegevoegd, versie A en B.
+26 oktober 2026, achtste versie
+* T2 voor 4 havo toegevoegd (toets consumentengedrag, versie A en B).
+26 oktober 2026, zevende versie
+* AT4.21 voor 4 mavo toegevoegd (schoolexamen overheid en belasting), zoals het in het PTA van mavo cohort 2025-2027 staat.
+11 oktober 2026, vijfde versie
+* T2 voor 4 vwo (tweefasen) toegevoegd: toets in de toetsweek, geen schoolexamen.
+8 oktober 2026, vierde versie
+* AT6.11 voor 6 vwo toegevoegd.
+8 oktober 2026, derde versie
+* AT5.11 5 havo: kringloopopgave toegevoegd, versie B gemaakt, bestandsnamen aangepast.
+8 oktober 2026, tweede versie
+* AT5.11 voor 5 vwo (tweefasen) toegevoegd. Uitleg van het tweefasen-vwo toegevoegd bij de vaste gegevens.
+8 oktober 2026, eerste versie (na schoolexamen AT5.11)
+* Nieuw bestand. Alleen AT5.11 is ingevuld. De overige regels vult de docent aan uit het PTA.
+
+BRONBESTAND: 00_PTA_OVERZICHT_ECONOMIE
+FUNCTIE: de administratieve gegevens per toets, zodat de AI het voorblad en de voettekst kan invullen zonder navraag.
+INTEGRATIE: wordt gelezen in Fase 0 (bronnencheck) van 00_toetsconstructie_richtlijnen. Wat hier staat, wordt in de intake alleen bevestigd.
+BRON VAN DE INHOUD: het PTA van de school. Bij verschil is het officiële PTA leidend.
+
+[DEEL 1: VASTE GEGEVENS]
+School: Vellesan College
+Vak: economie
+Maker (docentafkorting): GRA
+Logo: het logobestand van de school, rechtsboven op elke pagina.
+Klasindeling: 5 havo en 5 vwo zitten samen in één klas. 5 vwo volgt het tweefasen-vwo en krijgt op een schoolexamen een havo-cijfer en een vwo-cijfer.
+
+[DEEL 2: TOETSEN PER KLAS]
+Vul per toets één blok in. Laat een veld leeg als het nog niet bekend is.
+
+AT-nummer: AT5.11
+Klas en niveau: 5 havo
+Onderwerp in het PTA: Module economische groei, module risico en verzekeren, keuzemodule actualiteit
+Type: schoolexamen
+Weging: 20%
+Tijdsduur: 100 minuten
+Datum van afname (schooljaar 2026-2027): 22 oktober 2026
+Verdeling: 60% welvaart, 30% risico en verzekeren, 10% actualiteit
+Omvang: 40 punten, 21 vragen, 5 opgaven
+Vaste onderdelen: kringloopmodel met ontbrekende waarden en een afbeelding, box 1, Lorenzcurve aflezen, averechtse selectie en moral hazard
+Versies: A en B, op dezelfde toetsmatrijs
+Thema's versie A: Noordland (kringloop, groei, luchthaven), Sanne en Mila (box 1), wintersport, EU en China
+Thema's versie B: Oostland (kringloop, groei, distributiecentrum), Daan en Ruben (box 1), surfen, EU en China
+Herkansing mogelijk:
+Bestanden: AT5.11_SE_havo5_economie_versie_A (en _B) _opgaven, _bijlage, _correctievoorschrift
+
+AT-nummer: AT5.11 (leerjaar 5, periode 3)
+Klas en niveau: 5 vwo (tweefasen)
+Onderwerp in het PTA: Modules economische groei, keuzemodule actualiteit, module risico en verzekeren
+Type: schoolexamen
+Weging: 10% voor het vwo-cijfer, 20% voor het havo-cijfer
+Tijdsduur: 100 minuten
+Datum van afname (schooljaar 2026-2027): 22 oktober 2026 (aanname: gelijk aan 5 havo)
+Verdeling: 65% welvaart en groei (waarvan 10% actualiteit), 35% risico
+Labels: 26 punten H+V, 14 punten alleen vwo
+Bloom: 10% onthouden, 20% begrijpen, 30% toepassen, 40% analyseren
+Omvang: 40 punten, 18 vragen
+Versies: A en B (B is de herkansing), op dezelfde toetsmatrijs
+Thema's versie A: Lumeria (kringloop, groei, verdeling), EU en China, autoverzekering, fietsfabrikant Velora
+Thema's versie B: Tavonië, EU en China, inboedelverzekering, supermarktketen Versmarkt
+Bestanden: AT5.11_SE_vwo5_economie_versie_A (en _B) _opgaven, _bijlage, _correctievoorschrift
+
+AT-nummer: AT6.11
+Klas en niveau: 6 vwo (geen tweefasen meer: één cijfer)
+Onderwerp in het PTA: Vraag en aanbod, markt en overheid, speltheorie
+Type: schoolexamen
+Weging: 15%
+Tijdsduur: 100 minuten
+Datum van afname (schooljaar 2026-2027): 22 oktober 2026
+Verdeling: 65% markten (domein D), 35% samenwerken en onderhandelen (domein F)
+Bloom: 10% onthouden, 20% begrijpen, 30% toepassen, 40% analyseren
+Omvang: 34 punten, 15 vragen, 4 opgaven
+Vaste onderdelen: monopolie met MO en MK afleiden en een kostenstijging, twee voorwaarden voor prijsdiscriminatie, volledige mededinging met accijns en doorberekening, prijselasticiteit, surplus en welvaartsverlies (arceren), pay-offmatrix, gevangenendilemma, dominante strategie, spelboom, berovingsprobleem, zelfbinding
+Vorm: figuren en tabellen in de opgave zelf, losse uitwerkbijlage, formules uit het hoofd, gewone rekenmachine
+Versies: A en B, op dezelfde toetsmatrijs, thema's doorgeschoven
+Thema's versie A: skigebied (monopolie), bier langs de Ronde van Vlaanderen (accijns), Hyrox (pay-offmatrix), WK judo (spelboom)
+Thema's versie B: WK judo (monopolie), glühwein in een skidorp (accijns), fietsverhuur Ronde van Vlaanderen (pay-offmatrix), Hyrox (spelboom)
+Lesmateriaal: uitleg in klas 5, in 6 vwo twee uur per week oefenen met de examenbundel
+Bestanden: AT6.11_SE_vwo6_economie_versie_A (en _B) _opgaven, _uitwerkbijlage, _correctievoorschrift
+
+AT-nummer: T2
+Klas en niveau: 4 vwo (tweefasen: vwo-cijfer en havo-cijfer)
+Onderwerp in het PTA: Markt, domein D hoofdstuk 2 Consumentengedrag (betalingsbereidheid, consumentensurplus, verschuiven en bewegen op de vraaglijn, prijs-, kruislingse en inkomenselasticiteit)
+Type: toets in de toetsweek (geen schoolexamen)
+Weging: de toets telt 3 keer mee (zo geformuleerd door de docent, geen percentage)
+Tijdsduur: 50 minuten
+Datum van afname: 12 oktober 2026
+Verdeling: een derde betalingsbereidheid en consumentensurplus, een derde verschuiven en bewegen op de vraaglijn, een derde elasticiteiten
+Labels: 16 punten H+V, 2 punten alleen vwo (alleen kruislingse elasticiteit is vwo; inkomenselasticiteit is ook havo, docent 11 oktober 2026)
+Bloom: 2 punten onthouden, 4 begrijpen, 6 toepassen, 6 analyseren
+Omvang: 18 punten, 9 vragen van elk 2 punten, 3 opgaven van 6 punten (tempo 2,7 minuut per punt)
+Vaste onderdelen: consumentensurplus berekenen, betalingsbereidheid, verschuiven van en langs de vraaglijn, prijselasticiteit, kruislingse elasticiteit en inkomenselasticiteit
+Vorm: bronnen in een aparte bijlage, geen uitwerkbijlage, formules uit het hoofd, gewone rekenmachine
+Versies: A en B, op dezelfde toetsmatrijs (B is de herkansing)
+Thema's versie A: streamingdienst Streamo, Padelpark Zuiderveld, Koffiehuis De Bonnet
+Thema's versie B: muziekdienst Tonika, Klimhal Rotsvast, Broodjeszaak De Kruimel
+Lesmateriaal: 01_KADER_VWO_DOMEIN_D_ECONOMIE_INTERGRAAL_H2_CONSUMENTEN_GEDRAG (paragraaf 2.1 tot en met 2.4)
+Bestanden: T2_toets_vwo4_economie_versie_A (en _B) _opgaven, _bijlage, _correctievoorschrift
+
+AT-nummer: T2 (4 vwo, tweede opzet, 26 oktober 2026; de eerste opzet van 12 oktober staat hierboven)
+Klas en niveau: 4 vwo (tweefasen: vwo-cijfer en havo-cijfer)
+Onderwerp in het PTA: Markt, domein D hoofdstuk 2 Consumentengedrag (betalingsbereidheid, consumentensurplus, verschuiven en bewegen op de vraaglijn, prijselasticiteit, kruislingse elasticiteit en inkomenselasticiteit)
+Type: toets in de toetsweek (geen schoolexamen)
+Weging: Deze toets telt 2 keer mee. (voor beide cijfers, zoals bij 4 havo)
+Tijdsduur: 50 minuten
+Datum van afname: 4 november 2026
+Verdeling: 4 punten betalingsbereidheid en consumentensurplus, 4 punten verschuiven en bewegen op de vraaglijn, 10 punten elasticiteiten (55,6%)
+Labels: 14 punten H+V, 4 punten alleen vwo (vraag 7 en 8, kruislingse elasticiteit)
+Cijfers: vwo-cijfer = 9 × alle punten : 18 + 1,0; havo-cijfer = 9 × punten op H+V-vragen : 14 + 1,0
+Bloom: 2 punten onthouden, 2 begrijpen, 6 toepassen, 8 analyseren
+Omvang: 18 punten, 9 vragen van elk 2 punten, 3 opgaven van 4, 4 en 10 punten (tempo 2,7 minuut per punt)
+Vaste onderdelen: invulvraag met surplusberekening, consumentensurplus berekenen, verschuiving door substituut of complement, beweging langs de vraaglijn met effect op surplus en welvaart, prijselasticiteit en omzet, kruislingse elasticiteit berekenen en afleiden, inkomenselasticiteit en soort product
+Niet getoetst: collectieve vraaglijn optellen, wet van Engel en drempelinkomen (behandeld, volgens docent minder belangrijk)
+Vorm: bronnen in een aparte bijlage (zes bronnen), geen uitwerkbijlage, formules uit het hoofd, gewone rekenmachine
+Versies: A en B, op dezelfde toetsmatrijs (B is de herkansing)
+Thema's versie A: sportschool Pulsar, padel- en tennishal Netpunt, supermarkt Versmarkt
+Thema's versie B: zwembad Aquarius, klimpark Boomtop, bakkerij Korenbloem
+Lesmateriaal: 01_KADER_VWO_DOMEIN_D_ECONOMIE_INTERGRAAL_H2_CONSUMENTEN_GEDRAG (paragraaf 2.1 tot en met 2.4)
+Bestanden: T2_toets_vwo4_economie_versie_A (en _B) _opgaven, _bijlage, _correctievoorschrift
+
+AT-nummer: AT4.21 (PTA mavo cohort 2025-2027: Overheid en Belasting)
+Klas en niveau: 4 mavo
+Onderwerp in het PTA: Hoofdstuk 5 Hoe werkt de overheid, hoofdstuk 6 Iedereen betaalt belasting, hoofdstuk 7 Wie heeft het voor het zeggen (3e klas boek)
+Type: schoolexamen
+Weging: 22,5% (Deze toets telt mee voor 22,5%.)
+Tijdsduur: 100 minuten
+Datum van afname: nog niet bekend (docent: vanaf januari 2027)
+Verdeling: 45% hoofdstuk 5, 45% hoofdstuk 6, 10% hoofdstuk 7 (3e klas boek, veel overlap met hoofdstuk 5). 65% theorie, 35% rekenen.
+Bloom: 9 punten onthouden, 12 begrijpen, 15 toepassen, 4 analyseren (inzicht, 10%)
+Omvang: 40 punten, 30 vragen, 5 opgaven (7, 9, 7, 12 en 5 punten), tempo 2,5 minuut per punt
+Vaste onderdelen: collectieve en particuliere sector, marktwerking, economische stelsels, adviesorganen, bbp en recessie, sociaal stelsel, rijksbegroting, directe en indirecte belasting, gemeentelijke belastingen met cirkeldiagram, belastbaar inkomen box 1, schijventarief, box 3, heffingskorting, progressief, proportioneel en degressief, actieven en vergrijzing, nivelleren, draagkracht en profijt, motorrijtuigenbelasting
+Vorm: meerkeuze, invulvragen, open vragen; bronnen in een apart bronnenboekje, geen uitwerkbijlage, gewone rekenmachine
+Eindtermen: EC/K/6, EC/V/1 (verrijkingsstof) en lesstof docent
+Versies: A en B, op dezelfde toetsmatrijs
+Thema's versie A: gemeente Egmond aan Zee (strandrace), skidorp Dalstein in Hoogland (recessie), Lotte (Hyrox, sociale zekerheid), Jan en Femke (inkomstenbelasting), Jans auto
+Thema's versie B: gemeente Bergvoort (Duinloop), skidorp Sonnental in Zuidermark, Mila (Hyrox), Daan en Sanne, Daans auto
+Bestanden: AT4.21_SE_mavo4_economie_versie_A (en _B) _opgaven, _bijlage, _correctievoorschrift
+
+AT-nummer: T2 (4 havo)
+Klas en niveau: 4 havo
+Onderwerp in het PTA: Markt, domein D hoofdstuk 2 Consumentengedrag (betalingsbereidheid, consumentensurplus, verschuiven en bewegen op de vraaglijn, prijselasticiteit en inkomenselasticiteit)
+Type: toets in de toetsweek (geen schoolexamen)
+Weging: Deze toets telt 2 keer mee.
+Tijdsduur: 50 minuten
+Datum van afname: 4 november 2026
+Verdeling: 5 punten betalingsbereidheid en consumentensurplus, 5 punten verschuiven en bewegen op de vraaglijn, 8 punten elasticiteiten
+Bloom: 2 onthouden, 5 begrijpen, 7 toepassen, 4 analyseren
+Omvang: 18 punten, 8 vragen, 3 opgaven van 5, 5 en 8 punten (tempo 2,7)
+Vaste onderdelen: invulvraag met surplusberekening, consumentensurplus berekenen, verschuiving van de vraaglijn door substituut of complement, effect van prijsverandering op consumentensurplus en welvaart, prijselasticiteit en omzet, inkomenselasticiteit en soort product
+Vorm: bronnen in een aparte bijlage, geen uitwerkbijlage, formules uit het hoofd, gewone rekenmachine
+Versies: A en B op dezelfde matrijs (B voor leerlingen die inhalen)
+Thema's versie A: bioscoop Cinéa, fietsenzaak Trapvast, bakkerij De Gouden Korst
+Thema's versie B: theater Aurora, skateshop Rolwerk, ijssalon Gelato Noord
+Lesmateriaal: 01_kader_havo_Domein_D_Markten_economie_integraal_hoofdstuk2_consumentengedrag (paragraaf 2.1 tot en met 2.4)
+Bestanden: T2_toets_havo4_economie_versie_A (en _B) _opgaven, _bijlage, _correctievoorschrift
+
+AT-nummer: AT5.21
+Klas en niveau: 5 havo
+Onderwerp in het PTA: Conjunctuur en beleid (11 lessen), Vraag en aanbod met markt en overheid (8 lessen), keuzemodule gedragseconomie (3 lessen)
+Type: schoolexamen
+Weging: 20% (Deze toets telt mee voor 20%.)
+Tijdsduur: 100 minuten
+Datum van afname: januari 2027, exacte datum nog niet bekend (plaatshouder op het voorblad)
+Verdeling: 60% conjunctuur en beleid (19 punten), 30% vraag en aanbod met markt en overheid (10 punten, waarvan 6 markt en 4 overheidsingrijpen), 10% gedragseconomie (3 punten)
+Bloom: 2 punten onthouden, 11 begrijpen, 13 toepassen, 6 analyseren
+Omvang: 32 punten, 17 vragen, 4 opgaven (10, 9, 10 en 3 punten), tempo 3,1 minuut per punt
+Vaste onderdelen: reële rente berekenen, deflatie met werkloosheid, ECB-rente als keten ("Doe het als volgt"), inflatie en concurrentiepositie, staatsschuldquote tegenover de 60%-norm, anticyclisch begrotingsbeleid, automatische stabilisatoren, gemiddeld belastingtarief in twee schijven, vermogensmarkt schetsen, invulredenering marktvorm en soort goed, prijselasticiteit uit de omzet, monopolie met MO = MK aflezen, negatief extern effect met heffing (A) of maximumprijs (B), verzonken kosten, standaardoptie
+Vorm: bronnen in een aparte bijlage (acht bronnen), uitwerkbijlage met twee figuren (vermogensmarkt en monopoliefiguur), geen meerkeuze, formules uit het hoofd, gewone rekenmachine
+Versies: A en B, op dezelfde matrijs, elk met een eigen correctievoorschrift. B draait de richting om.
+Thema's versie A: Marenia (inflatie, ECB, begroting), veerdienst Veer Maren naar het eiland Zandplaat (monopolie), Stichting Kustloop (verzonken kosten, standaardoptie)
+Thema's versie B: Dalmark (lage inflatie, ECB verlaagt), Vaarland (overschot, hoogconjunctuur), Kruinbergliften in skidorp Kruinberg (monopolie, maximumprijs), sportschool Fitwerk (verzonken kosten, automatische verlenging)
+Herkansing mogelijk: niet opgegeven (versie B ligt klaar)
+Bestanden: AT5.21_SE_havo5_economie_versie_A (en _B) _opgaven, _bijlage, _uitwerkbijlage, _correctievoorschrift
+
+AT-nummer: AT6.22
+Klas en niveau: 6 vwo (één cijfer)
+Onderwerp in het PTA: Conjunctuur en beleid (Keynesiaans kruis, IS-MB-GA, geld, monetair beleid en wisselkoersen), economische groei
+Type: schoolexamen
+Weging: 15% (voorblad: Deze toets telt mee voor 15% van het schoolexamencijfer.)
+Tijdsduur: 100 minuten
+Datum van afname: januari 2027, exacte datum nog niet bekend (plaatshouder op het voorblad)
+Verdeling: 25 punten conjunctuur en beleid (5 Keynesiaans kruis, 10 IS-MB-GA, 10 geld en wisselkoersen) en 8 punten economische groei (4 productiefunctie, 4 kringloop en arbeidsinkomensquote)
+Bloom: 3 onthouden, 12 begrijpen, 10 toepassen, 8 analyseren
+Omvang: 33 punten, 17 vragen, 4 opgaven (5, 10, 10 en 8 punten), tempo 3,0 minuut per punt; uitleg 22p, rekenen 8p, tekenen 3p
+Vaste onderdelen: multiplier uit EV = a + bY, ligging en helling van de bestedingslijn, vermogensmarkt, dalende IS, MB en inflatiedoelstelling, GA en cao-looptijd, tekenvraag IS-MB-GA met tabel r, π, Y (3p, Doe het als volgt), klassiek econoom, winst van een bank bij krap of ruim beleid, ondergrens rente, wisselkoers terugrekenen, keten rente naar lopende rekening, procyclische ECB-rente, afnemende meeropbrengsten, factorproductiviteit A, kringloop met pijlrichting, arbeidsinkomensquote in procentpunten
+Vorm: figuren en tabellen in de opgave zelf, losse uitwerkbijlage (IS-MB-GA met tabel en kringloop), formules uit het hoofd, gewone rekenmachine, leeslast als CE vwo
+Versies: A en B, op dezelfde matrijs; B draait de richting om (positieve schok, ruim beleid, appreciatie, overschot)
+Thema's versie A: Zeldrien (Keynesiaans kruis), Belmora (IS-MB-GA), Karvia en Lorenia (geld, wisselkoers, ECB), Orvania (groei, kringloop)
+Thema's versie B: Tessaly, Murnia, Valdora en Dravia, Hesmark
+Herkansing mogelijk: niet opgegeven (versie B ligt klaar)
+Bestanden: AT6.22_SE_vwo6_economie_versie_A (en _B) _opgaven, _uitwerkbijlage, _correctievoorschrift
+
+AT-nummer:
+Klas en niveau:
+Onderwerp in het PTA:
+Type:
+Weging:
+Tijdsduur:
+Datum van afname:
+Verdeling:
+Omvang:
+Herkansing mogelijk:
+Bestanden:
+
+[DEEL 3: OPEN PUNTEN]
+8. AT6.22: de datum van afname (januari 2027) is nog niet bekend; vul aan zodra de planning vaststaat en pas de plaatshouder in het voorblad aan.
+6. T2 4 havo: de weging is als zin opgegeven (2 keer); geen percentage bekend. De datum 4 november 2026 is door de docent gegeven.
+5. AT4.21: de datum van afname is nog niet bekend; vul aan zodra de planning vaststaat.
+3. T2: de havo-syllabus domein D staat niet in de kennisbank. De labels van T2 zijn door de docent bepaald, niet aan de havo-syllabus getoetst.
+4. T2: bevestig bij de volgende toets of de weging als percentage moet worden opgegeven.
+1. De formulering van de weging op het voorblad: "Deze toets telt mee voor 20%." Vul aan als er "van het schoolexamencijfer" of iets anders bij moet.
+2. Of AT5.11 herkansbaar is. Voor 5 havo en 5 vwo ligt een B-versie klaar.
+7. AT5.21: de datum van afname (januari 2027) is nog niet bekend; vul aan zodra de planning vaststaat en pas de plaatshouder in het voorblad aan.

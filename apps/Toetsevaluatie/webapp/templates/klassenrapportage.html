@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+{% set stap = 5 %}
+{% block titel %}Klassenrapportage {{ toets_id }} - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<form method="get" class="rij niet-print" style="max-width: 34rem; margin-bottom: 1.2rem">
+  <div><label for="toets">Toets</label>
+    <select id="toets" name="toets" onchange="this.form.submit()">
+      {% for t in toetsen %}<option value="{{ t.toets_id }}" {{ 'selected' if t.toets_id == toets_id }}>{{ t.toets_id }} ({{ t.aantal }} leerlingen)</option>{% endfor %}
+    </select></div>
+</form>
+<h1>{{ toets_id | replace('_', ' ') }}</h1>
+<p class="intro">Afgenomen op {{ toets.datum }}, {{ stat.n }} leerlingen, {{ stat.tijd.punten }} punten.
+  <a href="{{ url_for('feedback_alle', toets=toets_id) }}">Feedbackstroken afdrukken</a></p>
+{% if melding %}<p class="melding">{{ melding }}</p>{% endif %}
+{% with ts=sessie_s, terug=request.full_path %}{% include "_toestemming.html" %}{% endwith %}
+{% if stat.klein %}<p class="melding">Deze groep heeft {{ stat.n }} leerlingen. P- en Rit-waarden zeggen
+  bij zo'n kleine groep weinig{% if stat.n < 5 %}; de Rit-waarde is daarom niet berekend{% endif %}.</p>{% endif %}
+
+<div class="kerncijfers">
+  <div class="kern"><b>{{ stat.gem_cijfer | getal(1) }}</b>Gemiddeld cijfer{% if stat.n_term != 1 %} (N = {{ stat.n_term | getal(1) }}){% endif %}</div>
+  <div class="kern"><b>{{ stat.sd_cijfer | getal(1) }}</b>Standaarddeviatie</div>
+  <div class="kern"><b>{{ stat.onvoldoende }}</b>Onvoldoendes (onder 5,5)</div>
+  <div class="kern"><b>{{ stat.laagste | getal(1) }} tot {{ stat.hoogste | getal(1) }}</b>Laagste en hoogste</div>
+  {% if stat.tweefasen and stat.tweefasen.gem_havo_cijfer is not none %}
+  <div class="kern"><b>{{ stat.tweefasen.gem_havo_cijfer | getal(1) }}</b>Gemiddeld havo-cijfer</div>
+  {% endif %}
+</div>
+<section class="normering" id="normering">
+  <h3>Normering</h3>
+  <p class="bij">Cijfer = 9 x score / maximum + N, met de grensregels van het centraal examen: 0 punten blijft een 1,0
+    en de volle score een 10,0. Met N = 1,0 is dat de gewone omrekening.{% if stat.tweefasen %} Het havo-cijfer telt
+    alleen de H+V-vragen; het cijfer hierboven is het vwo-cijfer.{% endif %}</p>
+  <div class="rij" style="margin-top: .7rem">
+    <div style="flex: 0 1 11rem"><label for="n-term">N-term{{ ' vwo-cijfer' if stat.tweefasen }}</label>
+      <input type="number" id="n-term" step="0.1" min="0" max="3" value="{{ '%.1f' | format(stat.n_term) }}"></div>
+    {% if stat.tweefasen %}
+    <div style="flex: 0 1 11rem"><label for="n-havo">N-term havo-cijfer</label>
+      <input type="number" id="n-havo" step="0.1" min="0" max="3" value="{{ '%.1f' | format(stat.n_havo if stat.n_havo is not none else stat.n_term) }}"></div>
+    {% endif %}
+    <div style="flex: 0 0 auto" class="rij">
+      <button class="knop hoofd" type="button" id="n-opslaan" disabled>N-term opslaan</button>
+      <button class="knop" type="button" id="n-reset">Terug naar 1,0</button>
+    </div>
+  </div>
+  <p id="n-voorbeeld" aria-live="polite" style="margin-top: .8rem">Een 5,5 vanaf {{ cesuur }} van de {{ stat.tijd.punten }} punten.</p>
+  <p class="melding fout" id="n-fout" hidden></p>
+</section>
+
+<p id="geen-grafiek" class="melding" hidden>De grafieken kunnen niet getekend worden: Chart.js wordt van
+  internet geladen en dat lukte niet. Controleer je verbinding en ververs de pagina; de tabellen hieronder kloppen wel.</p>
+
+<h2>Trend en cijfers</h2>
+<div class="grafieken">
+  <div class="grafiek"><h3>Cijferverdeling</h3><div class="bij">Aantal leerlingen per cijfer.</div>
+    <div class="doek"><canvas id="g-verdeling"></canvas></div></div>
+  <div class="grafiek"><h3>Vergelijking met eerdere schoolexamens</h3>
+    <div class="bij">Klassengemiddelde per toets, {{ stat.vak }} {{ stat.niveau }}.</div>
+    {% if trend | length < 2 %}<p style="margin-top: 1.5rem">Dit is de eerste toets van {{ stat.vak }} {{ stat.niveau }} in de database.
+      Na de volgende toets staat hier de vergelijking.</p>
+    {% else %}<div class="doek"><canvas id="g-trend"></canvas></div>{% endif %}</div>
+  <div class="grafiek"><h3>Beheersing per domein</h3><div class="bij">Percentage behaalde punten.</div>
+    <div class="doek"><canvas id="g-domein"></canvas></div></div>
+  {% if stat.tweefasen %}
+  <div class="grafiek"><h3>Tweefasen: havo-stof tegenover vwo-stof</h3>
+    <div class="bij">Percentage behaalde punten op H+V-vragen en op vragen die alleen voor vwo tellen.</div>
+    <div class="doek" style="height: 9rem"><canvas id="g-tweefasen"></canvas></div>
+    {% set hv, v = stat.tweefasen.hv, stat.tweefasen.v %}
+    {% if hv and v %}<p>{% if hv.pct - v.pct >= 10 %}De vwo-stof wordt duidelijk minder beheerst dan de havo-stof ({{ (hv.pct - v.pct) | getal(0) }} procentpunt verschil).
+      {% elif v.pct - hv.pct >= 10 %}De vwo-stof wordt beter gemaakt dan de havo-stof; kijk of de V-vragen wel op vwo-niveau liggen.
+      {% else %}Het verschil tussen havo- en vwo-stof is klein.{% endif %}</p>{% endif %}
+  </div>
+  {% endif %}
+</div>
+
+<h2>Waar valt de klas uit?</h2>
+<div class="grafieken">
+  <div class="grafiek"><h3>Uitval per Bloom-niveau</h3><div class="bij">Percentage gemiste punten.</div>
+    <div class="doek"><canvas id="g-bloom"></canvas></div></div>
+  <div class="grafiek"><h3>Verloren punten per leergat</h3><div class="bij">Alle leerlingen samen.</div>
+    <div class="doek"><canvas id="g-leergaten"></canvas></div></div>
+</div>
+
+<h2>Toetskwaliteit</h2>
+{% if mist_leerdoelen %}
+<p class="melding niet-print">Bij deze toets zijn de leerdoelen en onderwerpen nog niet uit het correctievoorschrift gehaald.
+  Daarna staan ze in de tabel hieronder en op de feedbackstroken.
+  <button class="knop klein" type="button" id="leerdoelen-knop">Leerdoelen ophalen</button></p>
+<p class="melding fout" id="leerdoelen-fout" hidden></p>
+{% endif %}
+<div class="grafieken">
+  <div class="grafiek breed"><h3>P-waarde per vraag</h3>
+    <div class="bij">Gemiddeld behaald deel van de punten. <span style="color: var(--kritiek)">&#9632;</span> rood: vraag met een signaal (zie de tabel), <span style="color: var(--grafiek)">&#9632;</span> blauw: geen signaal.</div>
+    <div class="doek"><canvas id="g-vragen"></canvas></div></div>
+</div>
+<div class="tabelvak" style="margin-top: 1rem">
+<table>
+  <thead><tr><th>Vraag</th><th>Eindterm</th><th>Leerdoel en onderwerp</th><th>Bloom</th>{% if stat.tweefasen %}<th>Label</th>{% endif %}<th class="r">Max</th><th class="r">Gemiddeld</th><th class="r">P-waarde</th><th class="r">Rit</th><th class="r">Rir</th><th class="r">Niet gemaakt</th><th>Signaal</th></tr></thead>
+  <tbody>
+  {% for v in stat.vragen %}
+  <tr><td>{{ v.nr }}</td><td>{{ v.domein }}</td><td>{{ v.leerdoel or '-' }}{% if v.onderwerp %}<div class="bij">{{ v.onderwerp }}</div>{% endif %}</td><td>{{ v.bloom }}</td>{% if stat.tweefasen %}<td>{{ v.label or '' }}</td>{% endif %}
+    <td class="r">{{ v.max }}</td><td class="r">{{ v.gem | getal(2) }}</td><td class="r">{{ v.p | getal(2) }}</td>
+    <td class="r">{{ v.rit | getal(2) }}</td><td class="r">{{ v.rir | getal(2) }}</td>
+    <td class="r">{{ '-' if v.niet_gemaakt is none else (v.niet_gemaakt | getal(0)) ~ '%' }}</td>
+    <td>{% for sig in v.signalen %}<span class="vlag">Let op</span> {{ sig }}{{ '. ' if not loop.last }}{% endfor %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<p class="bij">P-waarde: gemiddelde score gedeeld door de maximumscore. Rit: samenhang tussen de score op de vraag en de totaalscore.
+  Rir: hetzelfde, maar zonder de vraag zelf in het totaal; die is strenger bij een toets met weinig vragen.</p>
+
+{% set t = stat.tijd %}
+<h3 style="margin-top: 1.6rem">Toetslengte en tijdnood</h3>
+{% if t.min_per_punt is none %}<p>Er is geen toetsduur bekend, dus de minuten per punt zijn niet te berekenen.</p>
+{% else %}
+<p>{{ t.punten }} punten in {{ t.duur }} minuten is <b>{{ t.min_per_punt | getal(2) }} minuten per punt</b>.
+  {% if t.norm %}De norm voor {{ stat.niveau }} is {{ t.norm | getal(1) }}.
+    {% if t.te_krap %}<span class="vlag">Krapper dan de norm</span> Leerlingen hebben minder tijd per punt dan de norm; de leeslast of het tempo is waarschijnlijk te hoog.
+    {% else %}De toets past binnen de norm.{% endif %}
+  {% else %}Voor {{ stat.niveau }} is geen norm ingesteld.{% endif %}</p>
+{% endif %}
+{% if t.eind_vragen %}
+<p>De laatste {{ t.eind_vragen | length }} vragen (vraag {{ t.eind_vragen[0] }} tot en met {{ t.eind_vragen[-1] }}):
+  {% if t.eind_ng is not none %}gemiddeld {{ t.eind_ng | getal(0) }}% niet gemaakt, tegen {{ t.rest_ng | getal(0) }}% bij de rest van de toets;{% endif %}
+  P-waarde {{ t.eind_p | getal(2) }} tegen {{ t.rest_p | getal(2) }}.
+  {% if t.signaal %}<span class="vlag">Tijdnood waarschijnlijk</span> Aan het einde blijven opvallend veel vragen leeg.
+    {% if t.te_krap %}Samen met de krappe minuten per punt wijst dit op structurele tijdnood: schrap punten of verkort de bronnen.{% endif %}
+  {% elif t.te_krap %}Aan het einde blijven niet opvallend meer vragen leeg, dus de krappe norm leidde hier niet zichtbaar tot tijdnood.
+  {% else %}Geen aanwijzing voor tijdnood.{% endif %}</p>
+{% endif %}
+
+<h2>Kennisbank en lesplan</h2>
+{% if advies %}
+<p>{{ advies.samenvatting }}</p>
+<p class="bij">Door Claude geschreven op {{ advies.gemaakt }}, op basis van de definitieve scores.
+  <button class="knop klein niet-print" data-advies>Opnieuw maken</button></p>
+
+<h3 style="margin-top: 1.4rem">Toevoegen aan je kennisbank (Versie 9.5)</h3>
+{% if advies.kennisbank %}
+<div class="tabelvak" style="margin-top: .6rem">
+<table>
+  <thead><tr><th>Soort</th><th>Wat</th><th>Waarom</th><th>Vragen</th></tr></thead>
+  <tbody>{% for k in advies.kennisbank %}
+  <tr><td>{{ k.soort | capitalize }}</td><td><b>{{ k.titel }}</b></td><td>{{ k.waarom }}</td><td>{{ k.vragen }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}<p>Claude ziet in de fouten geen aanleiding om iets toe te voegen.</p>{% endif %}
+
+<h3 style="margin-top: 1.6rem">Groepsplan voor de nabespreking</h3>
+<div class="advies">
+  {% for g in advies.groepen %}
+  <div class="blok"><h3>{{ g.naam }}</h3><div class="bij">{{ g.focus }}</div>
+    <div class="namen">{% for lid in g.leerling_ids %}<span>{{ namen.get(lid, lid) }}</span>{% endfor %}</div>
+    <p>{{ g.aanpak }}</p></div>
+  {% endfor %}
+</div>
+
+<h3 style="margin-top: 1.6rem">Focuspunten voor de klassikale nabespreking</h3>
+<div class="tabelvak" style="margin-top: .6rem">
+<table>
+  <thead><tr><th>Onderwerp</th><th>Vragen</th><th>Aanpak</th></tr></thead>
+  <tbody>{% for n in advies.nabespreking %}
+  <tr><td><b>{{ n.onderwerp }}</b></td><td>{{ n.vragen }}</td><td>{{ n.aanpak }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+{% elif bezig %}
+<p>Claude schrijft het klassenadvies nog. Ververs deze pagina over een minuut.</p>
+{% elif heeft_sessie %}
+<p>Er is nog geen advies over de kennisbank en het groepsplan.
+  <button class="knop niet-print" data-advies>Laat Claude het advies schrijven</button></p>
+{% else %}
+<p>Deze toets is niet via deze app nagekeken, dus er is geen AI-advies beschikbaar. De analyse hierboven komt uit de database.</p>
+{% endif %}
+<p class="melding fout" id="adviesfout" hidden></p>
+
+<h2>Leerlingen</h2>
+<div class="tabelvak" style="margin-top: .8rem">
+<table>
+  <thead><tr><th>Leerling</th><th>Klas</th><th class="r">Punten</th><th class="r">%</th><th class="r">Cijfer</th>{% if stat.tweefasen %}<th class="r">Havo-cijfer</th>{% endif %}<th>Meeste punten verloren door</th><th></th></tr></thead>
+  <tbody>
+  {% for l in stat.leerlingen | sort(attribute='score', reverse=true) %}
+  <tr><td>{{ l.naam or l.leerling_id }}</td><td>{{ l.klas }}</td>
+    <td class="r">{{ l.score | getal }} van {{ l.max | getal }}</td><td class="r">{{ l.pct | getal(0) }}</td>
+    <td class="r"><b>{{ l.cijfer | getal(1) }}</b></td>{% if stat.tweefasen %}<td class="r">{{ l.havo_cijfer | getal(1) }}</td>{% endif %}
+    <td>{% for code, punten in (l.verlies.items() | sort(attribute='1', reverse=true))[:2] %}<span class="code">{{ code }}</span> {{ punten | getal }} {% endfor %}</td>
+    <td><a href="{{ url_for('feedback', leerling_id=l.leerling_id, toets=toets_id) }}">Strook</a></td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+{% block onder %}
+<script type="application/json" id="grafiekdata">{{ grafieken | tojson }}</script>
+<script>window.TOETS = {{ toets_id | tojson }};</script>
+<script src="{{ chart_bron }}"></script>
+<script src="{{ url_for('static', filename='js/rapport.js') }}"></script>
+{% endblock %}

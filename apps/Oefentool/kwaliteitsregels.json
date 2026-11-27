@@ -1,0 +1,722 @@
+[
+ {
+  "id": "KR-001",
+  "datum": "2026-10-31",
+  "vak": "Bedrijfseconomie",
+  "niveau": "vwo",
+  "regel": "Gebruik de CE-vraagvormen van bedrijfseconomie ('Bereken', 'Leg uit', 'Toon aan', 'Kies bij (a) uit'); geen meerkeuze en geen economie-invulvorm.",
+  "aanleiding": "Zelfkritiek in opdracht 20261031_074140_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-002",
+  "datum": "2026-10-31",
+  "vak": "Bedrijfseconomie",
+  "niveau": "vwo",
+  "regel": "Zet de zin over wat buiten beschouwing blijft als eerste regel van elke opgave.",
+  "aanleiding": "Zelfkritiek in opdracht 20261031_074140_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-003",
+  "datum": "2026-10-31",
+  "vak": "Bedrijfseconomie",
+  "niveau": "vwo",
+  "regel": "Laat het voorbeeldantwoord en het CV exact overeenkomen en noem 'voordelig' of 'nadelig' bij elk resultaat.",
+  "aanleiding": "Zelfkritiek in opdracht 20261031_074140_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-004",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Controleer bij elke vraag of het Bloom-label past bij het werkwoord uit de werkwoordentabel: 'Leg uit (of)' is Begrijpen, en 'Beargumenteer' staat niet in de tabel. Gebruik hetzelfde werkwoord niet met twee verschillende labels.",
+  "aanleiding": "Zelfkritiek in opdracht 20261031_144908_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-005",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Laat de casus het antwoord niet voorzeggen. Beschrijf controlemiddelen (naam, foto, poort, scan) niet zo uitgebreid dat de conclusie vanzelf volgt; laat ruis en een afweging in de casus.",
+  "aanleiding": "Zelfkritiek in opdracht 20261031_144908_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-006",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Een deelscore bevat één denkstap. Splits scheiding en betalingsbereidheid of leg vast wat een half antwoord oplevert.",
+  "aanleiding": "Zelfkritiek in opdracht 20261031_144908_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-007",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Gebruik voor 6 vwo Economie geen meerkeuzevragen als oefenopgave; kies alleen vraagtypen die in het eindexamen daadwerkelijk voorkomen.",
+  "aanleiding": "Docent: 6v eigenlijk nooit meerkeuze in het eindexamen. Dus heeft ook weinig zin om dit te oefenen.",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-008",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Formuleer de vraag op minimaal niveau 4.5 en noem het economische begrip expliciet in de vraagtekst, zodat duidelijk is waar leerlingen naartoe moeten werken.",
+  "aanleiding": "Docent: Zorg dat de vraag minimaal 4.5 is. We moeten de kwaliteit hoog houden. Noem het begrip in de tekst, dan is het duidelijk waar de leerlingen naar toe moet werken",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-009",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Zorg dat vakbegrippen die in de vraag staan ook in de opgavetekst voorkomen, en gebruik ze consequent, zodat vraag en antwoord gericht blijven.",
+  "aanleiding": "Docent: geen begrippen in de tekst ook niet in de vraag, de vraag gaat hierdoor alle kant op en de antwoorden ook. Begrippen laten terugkomen.",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-010",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Zorg dat elke oefenvraag een waardering hoger dan 4,5 krijgt: formuleer de vraag helder en concreet, sluit aan op het leerdoel en het CV, en laat het voorbeeldantwoord controleerbaar stap voor stap zien.",
+  "aanleiding": "Docent: Zorg er voor dat de vraag een hogere waardering heeft dan 4.5",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-011",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Formuleer elke vraag op een hoger niveau dan 4.5: vraag om verklaren, analyseren of beoordelen van oorzaak, gevolg en afweging, niet alleen om begrippen of herhaling van de opgavetekst.",
+  "aanleiding": "Docent: Vraag moet hoger dan 4.5..",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-012",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Gebruik bij vwo-oefenopgaven geen invulvragen met open plekken, omdat die niet in het eindexamen voorkomen. Stel de vraag open of als meerkeuze, zoals in het examen.",
+  "aanleiding": "Docent: Op vwo geen vragen met invullen in het eindexamen. voor 5v nog prima om op weg te helpen, voor 6v niet. Dan moet de vraag anders gesteld worden.",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-013",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Gebruik voor oefenopgaven alleen vraagtypen die in het eindexamen van dit vak en niveau voorkomen; vermijd invulopgaven, want die komen op vwo bijna nooit voor.",
+  "aanleiding": "Docent: vwo heeft bijna nooit invul oefeningen in het eindexamen",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-014",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Formuleer opgaven zo dat leerlingen zelf de redenering opzetten. Vermijd invulvragen waarbij alleen losse begrippen of formules ingevuld hoeven te worden.",
+  "aanleiding": "Docent: Inhoudelijk goed, maar zorg ervoor dat het geen invul vraag is, maar dat de leerlingen zelf de redenatie moet opzetten.",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-015",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Zorg bij vwo-opgaven voor een hoger denkniveau dan begrijpen, bijvoorbeeld toepassen of analyseren, en geef een duidelijk antwoordmodel bij open vragen.",
+  "aanleiding": "Docent: te makkelijk voor vwo... Laat ze het gewoon uitleggen met een open vraag",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-016",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Formuleer vragen die een redenering, verklaring of keuze vragen als open vraag, niet als meerkeuze. Gebruik meerkeuze alleen voor feiten en begrippen.",
+  "aanleiding": "Docent: Maak er een open vraag van",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-017",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Stel oefenopgaven samen die aansluiten bij het eindexamen: koppel ze aan een leerdoel en examenonderdeel, gebruik examenbegrippen en kies een score die past bij de verlangde diepgang van het antwoord.",
+  "aanleiding": "Docent: score te laag, te weinig relatie met eindexamen",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-018",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Stel bij Analyseren-vragen een opdracht die een redenering in meerdere stappen vraagt (oorzaak, mechanisme, gevolg) met vakbegrippen, en geen losse uitleg of reproductie.",
+  "aanleiding": "Docent: Niveau mag omhoog, in de kwaliteit van de vraag",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-019",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Kop van een bedrijfseconomie-opgave: alleen 'Opgave N'. Het thema hoort in de eerste alinea, niet in de kop.",
+  "aanleiding": "Zelfkritiek in opdracht 20261102_075818_5Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-020",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Begin elke bedrijfseconomie-opgave met één zin over wat buiten beschouwing blijft.",
+  "aanleiding": "Zelfkritiek in opdracht 20261102_075818_5Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-021",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Zet nooit het juiste antwoord in de opgavetekst, ook niet tussen haakjes bij een meerkeuzevraag.",
+  "aanleiding": "Zelfkritiek in opdracht 20261102_075818_5Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-022",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Maak opgaven op examenniveau: vraag niet alleen definities of herhaling, maar vereis analyse, toepassing en onderbouwing in meerdere stappen.",
+  "aanleiding": "Docent: Voor examenniveau wel te makkelijk",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-023",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Verhoog het niveau van vragen: vraag naar analyseren, verklaren of beoordelen, niet alleen naar begrijpen of reproduceren van een figuur of definitie.",
+  "aanleiding": "Docent: Hoger niveau van vraag maken",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-024",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Zorg bij examenniveau voor een hoger niveau van de exameninhoud, minimaal 4. Toets de kern van het examenonderwerp en niet alleen de basisbegrippen.",
+  "aanleiding": "Docent: Zorg voor een hoger niveau op exameninhoud als dit voor een examenniveau is. minimaal 4",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-025",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Maak oefenopgaven op examenniveau: vraag naar analyse en toepassing in een concrete situatie, met meerdere samenhangende elementen, en toets vóór gebruik of het niveau overeenkomt met examenopgaven.",
+  "aanleiding": "Docent: Zorg voor een hoger niveau als dit examenwerk is op examen",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-026",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Stel opgaven op examenniveau: gebruik een realistische bedrijfscontext, vraag om toepassing van de theorie in meerdere stappen en formuleer een duidelijke vraag met bijbehorende uitwerking en puntenverdeling.",
+  "aanleiding": "Docent: Zorg voor een hogere score op examenniveau",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-027",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Stel 2 tot 7 deelvragen; zet in de eerste regel wat buiten beschouwing blijft, maak expliciet wat in een bedrag zit (zoals rente), en noem in het correctievoorschrift de veelgemaakte fout.",
+  "aanleiding": "Docent: Kop is een titel ('Escaperoom Sleutelkamer'); geen eerste regel over wat buiten beschouwing blijft.; Onduidelijk of de rente op de lening in de kosten van € 262.000 zit; een leerling kan dit anders lezen.; Opgave bestaat uit één vraag; richtlijn is 2 tot 7.; CV noemt geen veelgemaakte fout (",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-028",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Zet elke definitie of voorwaarde die het juiste antwoord bepaalt letterlijk in de opgavetekst, en werk bij samenhangende keuzes het verband uit in het correctievoorschrift.",
+  "aanleiding": "Docent: De zin 'De directie telt niet mee' staat niet in de opgave, terwijl het antwoord bij (2) 'niet' en bij (3) '2' daarvan afhangt. Volgens de docentregel moet dit letterlijk in de toetsvraag staan.; Het CV geeft niet aan dat 'wel' met '3' ook fout is volgens de docentdefinitie. De keuzes (2) en",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-029",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Zet geen interne metadata in de opgavekop, vermijd dubbele zinnen, en neem in het correctievoorschrift de veelgemaakte fout, het Bloom-niveau en alternatieve formuleringen op.",
+  "aanleiding": "Docent: De kop bevat interne metadata ('stap 2, open, 2p, Toepassen').; De directie-zin staat twee keer: in de inleiding en in de vraag. Dat is overbodig.; Het CV mist de veelgemaakte fout (directie meetellen, dus 4 niveaus) en het Bloom-niveau. Alternatieve formuleringen van de langste lijn zijn ni",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-030",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Controleer koppen en nummering; toets elk voordeel op alle relevante contractvormen; definieer gebruikte begrippen; kies niet-overlappende categorieën en geef in het CV de toegestane lijst met alternatieven.",
+  "aanleiding": "Docent: Kop 'Opgave 3' staat bij de tweede opgave; de nummering klopt niet.; Voordeel 1 (geen ontslagprocedure) geldt ook bij een arbeidsovereenkomst voor bepaalde tijd, en het contracttype ontbreekt in de context.; 'Onderwerp' en 'categorie' zijn niet gedefinieerd; ziekte en vakantiegeld kunnen als",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-031",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Gebruik de kop 'Opgave N', zet informatiebronnen in de aparte bijlage, en noem in het correctievoorschrift alle alternatieve juiste antwoorden en of een antwoord zonder toelichting punten oplevert.",
+  "aanleiding": "Docent: Kop is een themategel ('Dakwerk Veluwe zoekt een extra dakdekker') in plaats van alleen 'Opgave 1' zoals bij bedrijfseconomie.; Informatiebron 1 staat als tabel in de opgavetekst; hoort in de aparte bijlage.; Correctievoorschrift noemt geen alternatieve juiste voordelen (bv. geen pensioenpre",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-032",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Houd alle items van een opgave in het perspectief van de casus en het leerdoel; vraag bijvoorbeeld niet naar een voordeel voor de ene partij als casus en leerdoel over de andere gaan.",
+  "aanleiding": "Docent: Kop bevat een titel ('Bakkerij Zonnebloem huurt hulp in'). BECO-stijl is alleen 'Opgave 1', met het thema in de eerste alinea.; Item (3) vraagt om een voordeel voor de zzp'er, terwijl de casus en het leerdoel over voordelen voor de opdrachtgever gaan. Dat is een ander perspectief dan de rest",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-033",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "",
+  "regel": "Zet het juiste antwoord nooit in de opgavetekst; geef bij een keuzevraag alleen de letter als voorbeeldantwoord; begin de opgave met de afbakening, zonder titel in de kop; voeg in het CV altijd een veelgemaakte fout toe.",
+  "aanleiding": "Docent: Het juiste antwoord staat in de opgavetekst: '(juist: C)'. Daarmee is de vraag onbruikbaar.; De kop bevat een titel, en de eerste regel over wat buiten beschouwing blijft ontbreekt.; Het voorbeeldantwoord geeft een uitleg, terwijl de vraag alleen om een keuze vraagt. Dat is onduidelijk voor ",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-034",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Controleer elke opgave op: een afbakeningszin als eerste regel, 2 tot 7 vragen zonder subvragen, één werkwoord per vraag, context in de vraagtekst zelf, ondubbelzinnige formuleringen en alternatieve juiste antwoorden in het CV.",
+  "aanleiding": "Docent: Eerste regel ontbreekt. BECO-stijl vraagt om een zin over wat buiten beschouwing blijft, bijvoorbeeld de btw.; Er is maar één vraag. Een opgave moet 2 tot 7 vragen hebben zonder subvragen.; De vraag bevat meerdere werkwoorden en deelvragen: beredeneer, aangeven per besluit en wat de directie",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-035",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Formuleer opgaven eenduidig: noem alle voorwaarden van elk besluit, verifieer feiten zoals wettelijke termijnen in de bron, en geef per vraag een correctievoorschrift met alternatieve antwoorden en een veelgemaakte fout.",
+  "aanleiding": "Docent: Besluit 2 is niet eenduidig: de kennisbank zegt dat instemmingsrecht geldt bij werktijden en opleiding, maar niet bij de hoogte van het loon. Een vaste toeslag per uur kan als loon gelden, dus de opgave laat meerdere redeneringen toe.; Besluit 1 mist de voorwaarde dat de directie pas mag uit",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-036",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "",
+  "regel": "Controleer elke berekening in het antwoordvoorbeeld en het correctiemodel na: reken de eindsom na met de afgeronde tussenstappen die erin staan, en corrigeer afwijkingen.",
+  "aanleiding": "Docent: In het CV staat 103.483 + 25.915 − 120.000 = 9.399. Dat is rekenkundig 9.398. Het eindantwoord 9.399 klopt alleen met ongeafgeronde tussenstappen.; Het voorbeeldantwoord neemt dezelfde rekenfout over.; De rekencontrole van de app heeft dit niet gevonden.; De kop bevat een titel en de eerste ",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-037",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Zet gegevenstabellen niet in de opgavetekst, maar in een informatiebron in de bijlage, en verwijs ernaar met '(zie informatiebron n)'.",
+  "aanleiding": "Docent: De tabel staat in de opgave zelf. In BECO-stijl hoort die in een aparte informatiebron in de bijlage, met verwijzing '(zie informatiebron 1)'.; In het CV en het voorbeeldantwoord is 590.428 + 42.779 − 480.000 = 153.207, niet 153.208. Het afrondingsverschil wordt niet vermeld.; De kop bevat e",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-038",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "",
+  "regel": "Controleer elke opgave voordat je die aanbiedt: zet alle benodigde gegevens in de opgave of een bijlage, laat afgeronde termen optellen tot het totaal, neem een afrondingstolerantie op in het CV en zorg voor een complete kop met titel en eerste regel.",
+  "aanleiding": "Docent: De tabel met cashflows staat in de opgave zelf. Er is geen bijlage en geen verwijzing naar een informatiebron.; De afgeronde termen in het CV (74.074 + 81.447 + 87.322 + 88.204 + 14.701) tellen op tot 345.748, niet 345.747. Het resultaat is dan 45.748.; Het CV geeft geen afrondingstolerantie",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-039",
+  "datum": "2026-11-02",
+  "vak": "",
+  "niveau": "",
+  "regel": "Stel één werkwoord per vraag en kies het niveaulabel dat bij dat werkwoord past. Geef drempels ondubbelzinnig aan (grens mee- of uitgerekend). Geef geen tussenstappen weg. Noem alle bedragen die de formule vereist.",
+  "aanleiding": "Docent: Twee werkwoorden in één vraag: 'Leg uit' en 'Geef ... met een berekening'. Het label Begrijpen past niet bij het rekenwerk, dat Toepassen is.; 'Minstens 900' is dubbelzinnig. Bij 900 mokken verandert het resultaat niet. Het CV noemt 900 als grens, maar zegt niet of het antwoord 900 of 901 is",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-040",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Kalibreer de beoordeling zo dat een volledig juiste uitwerking het maximale aantal punten krijgt, en controleer dit per deelstap vóór aanbieding.",
+  "aanleiding": "Docent: beoordeling te laag",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-041",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Verdeel het maximumscore over de rekenstappen en ken een volledig correcte uitwerking het volle aantal punten toe, ook bij andere afronding of volgorde.",
+  "aanleiding": "Docent: beoordeling te laag",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-042",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Ken punten toe volgens het correctievoorschrift: een inhoudelijk juist antwoord dat aan het CV voldoet krijgt de volle punten, zonder onnodige aftrek.",
+  "aanleiding": "Docent: beoordeling te laag",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-043",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Controleer bij elke opgave: vraagvorm en kop volgen de BECO-vorm, het Bloomniveau past bij de gevraagde handeling, keuzes zijn niet te raden, rekenstappen worden getoond, het correctievoorschrift noemt veelgemaakte fouten en de eerste regel benoemt wat buiten beschouwing blijft.",
+  "aanleiding": "Docent: Vraagvorm 'Maak van onderstaande tekst een economisch juiste tekst' is de economievorm. BECO-vorm: 'Geef aan wat er bij (n) moet komen te staan. Kies uit:'.; Bloom staat op Onthouden, maar keuze (4) vraagt een berekening (Toepassen).; Keuze (4) is een kans van 1 op 2 te raden; er wordt geen ",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-044",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Vermeld in de opgave of een restwaarde meetelt, rond tussenresultaten niet af als de opgave dat niet vraagt en controleer alle berekeningen in het voorbeeldantwoord.",
+  "aanleiding": "Docent: Voorbeeldantwoord: 0,74 × 12 = 8,87 klopt niet (het is 8,88). Het tussenresultaat is afgerond, terwijl de opgave zegt dat tussenantwoorden niet worden afgerond.; Restwaarde van 30.000 wordt genoemd zonder te zeggen of die meetelt. Volgens de kennisbank telt die niet mee tenzij de opgave ande",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-045",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Formuleer de opgave volledig: vermeld eerst wat buiten beschouwing blijft en of gegevens zoals restwaarde meetellen; zet tabellen in een aparte informatiebron met verwijzing; maak het correctievoorschrift per deelscore compleet met veelgemaakte fouten.",
+  "aanleiding": "Docent: De cashflowtabel staat in de vraag. BECO-stijl: aparte bijlage als 'informatiebron 1' met verwijzing '(zie informatiebron 1)'.; Eerste regel over wat buiten beschouwing blijft ontbreekt.; Restwaarde van 60.000 wordt genoemd zonder uitsluiting; onduidelijk of die meetelt.; Correctievoorschrif",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-046",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "",
+  "regel": "Reken met onafgeronde tussenuitkomsten, controleer het voorbeeldantwoord op rekenfouten en neem veelgemaakte fouten op in het correctievoorschrift.",
+  "aanleiding": "Docent: Voorbeeldantwoord: 0,09 × 12 = 1,09 klopt niet (het is 1,08). De uitkomst wordt berekend met een afgeronde 4,09 in plaats van 4,0909.; Correctievoorschrift mist de veelgemaakte fout: afschrijving zonder restwaarde, 540.000 : 6 = 90.000 per jaar.; Het woord 'resultaat' kan verward worden met ",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-047",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Benoem elke bron als 'informatiebron N', verwijs in de vraag naar die bron, en geef in het correctievoorschrift per scorepunt één afzonderlijk, controleerbaar onderdeel.",
+  "aanleiding": "Docent: Examenstijl: de bron heet 'deze bron' en is niet benoemd als 'informatiebron 1'. Er is geen verwijzing '(zie informatiebron 1)' aan het eind van de vraag, en de tabel staat in de opgavetekst.; Geen eerste regel over wat buiten beschouwing blijft.; Kop is een titel ('Ontslag bij ...') in plaa",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-048",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "",
+  "regel": "Controleer het correctiemodel tegen de vakregels: pas puntenaftrek alleen toe zoals de vakregels die toestaan, gebruik dezelfde vakbegrippen als de opgave en de bron, en vermeld bij berekeningen steeds wat buiten beschouwing blijft.",
+  "aanleiding": "Docent: CV: 'Per gemaakte fout 1 scorepunt in mindering brengen' spreekt de vakregel tegen. Rekenfouten krijgen geen aftrek, alleen bij niet-geschat-zijn 1 punt, met maximaal 2 per opgave. Daarnaast ontbreekt een doorwerkregel.; Taal: de tabel spreekt van 'bruto maandloon' en de bron van 'bruto maan",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-049",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Gebruik alleen ontslagcriteria die in de kennisbank staan en juridisch houdbaar zijn; verifieer juridische claims. Noem elke bron als informatiebron en zet een eerste regel over wat buiten beschouwing blijft. Gebruik als kop alleen 'Opgave N'.",
+  "aanleiding": "Docent: Selectie op de laagste transitievergoeding als ontslagcriterium staat niet in de kennisbank en is juridisch waarschijnlijk niet houdbaar [TE VERIFIËREN]. Dit geeft leerlingen een verkeerd beeld van ontslagselectie.; De bron (tabel) is niet benoemd als informatiebron 1. Er is geen verwijzing ",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-050",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "",
+  "regel": "Plaats gegevenstabellen in een aparte bijlage als informatiebron (verwijs met '(zie informatiebron 1)') en vermijd samengestelde kolomkoppen en schuine strepen in tabellen.",
+  "aanleiding": "Docent: De kostentabel staat inline in de opgave. Bedrijfseconomie vraagt een aparte bijlage als informatiebron 1, met verwijzing '(zie informatiebron 1)'.; Kolomkop 'Gegevens / Zeilboten' en de schuine strepen tussen de posten zijn verwarrend.; Deelscore 1 bundelt afschrijving, huur en rente in één",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-051",
+  "datum": "2026-11-02",
+  "vak": "Bedrijfseconomie",
+  "niveau": "havo",
+  "regel": "Formuleer opgaven ondubbelzinnig en volgens de rekenregels; gebruik eenduidige termen, zet geen metadata in de kop, vul het label-veld in en noem per deelscore veelgemaakte fouten.",
+  "aanleiding": "Docent: 'Rond af op hele burgers' is niet eenduidig. Break-evenafzet moet naar boven worden afgerond, zoals in de rekenregels staat.; 'Burgers' is dubbelzinnig (kan ook 'inwoners' betekenen). Gebruik 'hamburgers'.; Kop bevat metadata; geen eerste regel over btw.; Correctievoorschrift bundelt afschri",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-052",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Leg het label per vraag (H+V of V) vast in het labelbestand en de matrijs. De lege haakjes in de aanlevering zijn nog niet ingevuld en horen niet in de opgave.",
+  "aanleiding": "Zelfkritiek in opdracht 20261102_121722_havo_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-053",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Bij 'Leg uit' op stap 2 of hoger geef je geen schakels of eerste zin mee. Geef alleen de context, zodat de leerling de redeneerketen zelf opbouwt.",
+  "aanleiding": "Zelfkritiek in opdracht 20261102_121722_havo_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-054",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Definieer in de vraag of de context welk welvaartsbegrip bedoeld is: eng (bbp) of breed (ook leefomgeving en gezondheid). Gebruik dit consequent.",
+  "aanleiding": "Zelfkritiek in opdracht 20261102_121722_havo_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-055",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Controleer of elke vraag logisch klopt met de opgavetekst en het voorbeeldantwoord; formuleer geen vragen die tegenstrijdig of onlogisch zijn.",
+  "aanleiding": "Docent: Vraag klopt niet.. is gek.",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-056",
+  "datum": "2026-11-02",
+  "vak": "",
+  "niveau": "",
+  "regel": "Pas bij elke wijziging in de vraag ook het CV, het voorbeeldantwoord en de overige onderdelen van de opgave aan, zodat alles bij de nieuwe vraag past.",
+  "aanleiding": "Docent: Pas de rest nu aan, ik heb de vraag aangepast.",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-057",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Bij vragen over nivelleren: bereken de verhouding tussen de huishoudens, zowel primair als besteedbaar, en toon met een berekening aan of die verhouding kleiner wordt.",
+  "aanleiding": "Docent: Als het over nivelleren gaat altijd verhouding. Dus laat met een berekening zien dat de verhouding tussen deze twee huishoudens verkleint. Pas dit aan",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-058",
+  "datum": "2026-11-02",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Vul elke open schakel van de redeneerketen aan met de precieze vakterm en de gegevens uit de casus. Herhaal gegeven schakels niet en controleer dat elke open schakel is ingevuld.",
+  "aanleiding": "Docent: Schakel 1 (gegeven): Het circuit zorgt voor extra productie, dus het bbp stijgt.\nSchakel 2: Vul aan met het begrip extern effect en geef aan wie de schade heeft.\nSchakel 3: Vul aan waarom deze schade niet in de prijs en niet in het bbp zit, en wat dit betekent voor de welvaart. (alle antwoor",
+  "bron": "docent",
+  "status": "actief"
+ },
+ {
+  "id": "KR-059",
+  "datum": "2026-11-03",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Noem in elk correctievoorschrift per vraag de veelgemaakte fout en het Bloom-niveau; die ontbreken nu bij alle vijf opgaven.",
+  "aanleiding": "Zelfkritiek in opdracht 20261103_112156_vwo_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-060",
+  "datum": "2026-11-03",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Reken elke uitkomst zelf na en vergelijk CV met voorbeeldantwoord; de rekencontrole van de app miste bij opgave 4 een afwijking van 0,1 procentpunt.",
+  "aanleiding": "Zelfkritiek in opdracht 20261103_112156_vwo_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-061",
+  "datum": "2026-11-03",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Geef het gevraagde eindantwoord een eigen deelscore, en bij meerdere vraagdelen per vraagdeel een punt (opgave 1 en 5).",
+  "aanleiding": "Zelfkritiek in opdracht 20261103_112156_vwo_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-062",
+  "datum": "2026-11-06",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Vul bij elke vraag in het CV de alternatieve goede antwoorden en de veelgemaakte fout in (Deel A-format). Zonder die vermelding is het CV niet eenduidig na te kijken.",
+  "aanleiding": "Zelfkritiek in opdracht 20261106_150424_4Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-063",
+  "datum": "2026-11-06",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Een deelscore is één denkstap. Combineer nooit twee punten in één deelscore.",
+  "aanleiding": "Zelfkritiek in opdracht 20261106_150424_4Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-064",
+  "datum": "2026-11-06",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Gebruik dezelfde productnaam in vraag, bron, CV en voorbeeldantwoord (houtskoolbarbecues versus barbecues, melk-koekjes versus melk).",
+  "aanleiding": "Zelfkritiek in opdracht 20261106_150424_4Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-065",
+  "datum": "2026-11-06",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Splits samengestelde CV-punten in één deelscore per denkstap (afzetverandering, procentuele vergelijking, elasticiteit, conclusie); dit speelt bij 1, 3 en 4.",
+  "aanleiding": "Zelfkritiek in opdracht 20261106_152700_4Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-066",
+  "datum": "2026-11-06",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Gebruik voor vwo-redeneringen Beredeneer of Leid af op Analyseren, en laat de elasticiteit uit gegevens afleiden in plaats van voorzeggen; dit speelt bij 1, 2 en 4.",
+  "aanleiding": "Zelfkritiek in opdracht 20261106_152700_4Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-067",
+  "datum": "2026-11-06",
+  "vak": "Economie",
+  "niveau": "vwo",
+  "regel": "Gebruik geen invulzinnen met open plekken en zet de conclusie of elasticiteit niet al in de stem; dit speelt bij 2.",
+  "aanleiding": "Zelfkritiek in opdracht 20261106_152700_4Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-068",
+  "datum": "2026-11-17",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Geef per vraag in het CV de veelgemaakte fout en het Bloom-niveau op, conform deel A van de CE-format. Bij alle drie opgaven ontbreekt dit.",
+  "aanleiding": "Zelfkritiek in opdracht 20261117_084910_5Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-069",
+  "datum": "2026-11-17",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Bij 5 havo altijd een aparte bijlage met bron 1, bron 2 enzovoort en de verwijzing 'Gebruik bron 1.'. Nooit een tabel of figuur inline in de opgave.",
+  "aanleiding": "Zelfkritiek in opdracht 20261117_084910_5Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-070",
+  "datum": "2026-11-17",
+  "vak": "Economie",
+  "niveau": "havo",
+  "regel": "Geef in de opgavetekst geen herschik- of berekeningsstappen weg. Laat de leerling de formule zelf omzetten.",
+  "aanleiding": "Zelfkritiek in opdracht 20261117_084910_5Ha_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-071",
+  "datum": "2026-11-20",
+  "vak": "Bedrijfseconomie",
+  "niveau": "vwo",
+  "regel": "Neem in elk CV altijd een veelgemaakte fout op, met de oorzaak erbij.",
+  "aanleiding": "Zelfkritiek in opdracht 20261120_120631_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ },
+ {
+  "id": "KR-072",
+  "datum": "2026-11-20",
+  "vak": "Bedrijfseconomie",
+  "niveau": "vwo",
+  "regel": "Noem in elk CV de alternatieve goede formuleringen, zoals 'kosten dalen' gelijk aan 'resultaat stijgt'.",
+  "aanleiding": "Zelfkritiek in opdracht 20261120_120631_6Va_leerl",
+  "bron": "zelfkritiek",
+  "status": "voorstel"
+ }
+]

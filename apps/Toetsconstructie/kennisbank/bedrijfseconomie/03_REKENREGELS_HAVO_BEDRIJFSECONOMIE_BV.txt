@@ -1,0 +1,116 @@
+CHANGELOG
+8 oktober 2026, eerste versie (na de constructie van schoolexamen AT5.11 bedrijfseconomie, versie A en B)
+* Nieuw bestand. Status: CONCEPT. Door de docent vastgesteld op 8 oktober 2026: DEEL 1, regel 2 tot en met 5 (schrijfwijze van terugverdientijd, netto contante waarde en break-evenafzet), DEEL 2, onderdeel D, regel 3 (spandiepte zonder directie) en DEEL 1, regel 7 en 8 (formules uit het hoofd, niets tekenen). De overige keuzes zijn gemaakt door de AI bij het bouwen van het schoolexamen en zijn nog niet vastgesteld.
+
+BRONBESTAND: 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_BV
+FUNCTIE: de vaste schrijfwijze voor berekeningen, stappenplannen en redeneringen bij het thema De besloten vennootschap (investeringsselectie, organisatie, personeel, break-evenanalyse), bedrijfseconomie havo 5.
+INTEGRATIE: gebruik samen met het kader van de methode (Cumulus § 4.1 tot en met 4.4), 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_NV (DEEL 1 geldt ook hier), 02_EXAMENCONTEXT_HAVO_BECO_EXAMENANALYSE_BV_AANVULLING, 01_KADER_DEFINITIES_DOCENT_HAVO_BECO_BV en 01_KADER_WETGEVING_PERSONEEL_2026.
+BRON VAN DE INHOUD: Cumulus hoofdstuk 4; de dia's van de docent bij § 4.1 tot en met 4.4; syllabus bedrijfseconomie havo (eindterm 15, 16, 17 en 25); de centrale examens havo 2023 tot en met 2026.
+
+[DEEL 1: ALGEMENE SCHRIJFWIJZE]
+1. DEEL 1 van 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_NV geldt volledig: drie regels per berekening, bedragen in hele euro's, pas afronden in het eindantwoord, deelteken ( : ) en maalteken ( × ).
+2. Terugverdientijd: in jaren en maanden, naar boven afgerond op hele maanden (3,69 jaar wordt 3 jaar en 9 maanden). (Vastgesteld door de docent.)
+3. Netto contante waarde: in hele euro's. De macht schrijf je als 1,06 tot de macht −5. (Vastgesteld door de docent.)
+4. Break-evenafzet: altijd naar boven afronden op hele stuks, deelnemers of uren (1.085,7 wordt 1.086). (Vastgesteld door de docent.)
+5. Loonkosten en transitievergoeding: hele euro's.
+6. Bij "toon aan" en "leg met een berekening uit" eindigt het antwoord met een conclusie waarin twee uitkomsten worden vergeleken.
+7. Formules kent de leerling uit het hoofd. Wettelijke regels die kunnen veranderen, zoals de transitievergoeding, staan in een informatiebron. (Vastgesteld door de docent.)
+8. Bij een toets van 100 minuten wordt niets getekend. Een organogram of grafiek staat in een informatiebron en wordt afgelezen en uitgelegd. (Vastgesteld door de docent.)
+
+[DEEL 2: FORMULES EN VASTE VORMEN]
+A. Cashflow (§ 4.1)
+   Directe methode: cashflow = ontvangsten − uitgaven.
+   Indirecte methode: cashflow = resultaat + afschrijvingen.
+   Afschrijving lineair per jaar = (aanschafprijs − restwaarde) : levensduur.
+   Afschrijven is een kostenpost, geen uitgave.
+B. Terugverdientijd (§ 4.1)
+   De periode waarin de investering is terugverdiend met de cashflows.
+   Gelijke cashflows: investering : cashflow per jaar. Ongelijke cashflows: optellen per jaar, het laatste jaar naar rato in maanden.
+   De cashflows komen gelijkmatig over het jaar binnen. De restwaarde telt niet mee, tenzij de opgave anders zegt.
+C. Netto contante waarde (§ 4.1)
+   Contante waarde van een cashflow = cashflow × (1 + i) tot de macht −n, met n het jaar van ontvangst.
+   NCW = contante waarde van alle toekomstige cashflows (inclusief de restwaarde) − investering.
+   De cashflows en de restwaarde komen aan het einde van het jaar binnen. De investering wordt nu betaald en wordt niet contant gemaakt.
+   NCW groter dan 0: aanvaardbaar. NCW kleiner dan 0: niet doen.
+   De disconteringsvoet is een maatstaf voor risico: hoe groter het risico, hoe hoger de voet, hoe lager de NCW.
+D. Organisatie (§ 4.2)
+   1. Omspanningsvermogen = het aantal mensen aan wie een leidinggevende leiding KAN geven.
+   2. Spanwijdte = het aantal mensen aan wie een leidinggevende DAADWERKELIJK leidinggeeft.
+   3. Spandiepte = het aantal niveaus waaraan leiding wordt gegeven. De directie telt niet mee. (Vastgesteld door de docent; Cumulus zegt "vaak inclusief de directie".) Een stafafdeling is geen eigen niveau. Je telt langs de langste lijn.
+   4. Omspanningsvermogen kleiner dan spanwijdte: de leidinggevende verliest de controle. Oplossing: de afdeling splitsen of een laag toevoegen.
+   5. Omspanningsvermogen groter dan spanwijdte: gevaar van micromanagement. Oplossing: afdelingen samenvoegen of een laag schrappen.
+E. Loonkosten (§ 4.3)
+   Loonkosten = brutoloon + werkgeversdeel sociale lasten (premies werknemersverzekeringen + werkgeversdeel pensioenpremie).
+   Vaste vorm: 12 × bruto maandloon × (1 + vakantiegeld + eindejaarsuitkering) × (1 + sociale lasten).
+   Vakantiegeld en eindejaarsuitkering zijn beide een percentage van het brutoloon en worden opgeteld (8% + 5% = × 1,13), niet na elkaar vermenigvuldigd.
+   Is de eindejaarsuitkering een vast bedrag, dan tel je dat bedrag erbij vóór de sociale lasten (examen 2025-I, vraag 4).
+   Nettoloon = brutoloon − loonheffing − werknemersdeel pensioenpremie.
+F. Transitievergoeding (§ 4.3)
+   Hele dienstjaren: aantal hele jaren × 1/3 × bruto maandsalaris.
+   Resterende deel: (brutosalaris over het resterende deel : bruto maandsalaris) × (1/3 bruto maandsalaris : 12).
+   Bij hele maanden komt dit neer op: aantal maanden × (1/3 bruto maandsalaris : 12).
+   De regel staat altijd in de informatiebron. Zie 01_KADER_WETGEVING_PERSONEEL_2026.
+G. Break-evenanalyse (§ 4.4)
+   TO = verkoopprijs × q. TK = variabele kosten per eenheid × q + TCK.
+   Dekkingsbijdrage per eenheid = verkoopprijs − variabele kosten per eenheid (bij een handelsonderneming: inkoopprijs + overige variabele kosten).
+   Break-evenafzet = TCK : dekkingsbijdrage per eenheid.
+   Break-evenomzet = break-evenafzet × verkoopprijs, of TCK : dekkingsbijdrage als perunage van de omzet.
+   Resultaat = q × dekkingsbijdrage per eenheid − TCK.
+   Bij een dienst of een evenement is de afzet het aantal uren of het aantal deelnemers.
+   In de grafiek: de break-evenafzet ligt bij het snijpunt van TO en TK. Links daarvan verlies, rechts winst. TK begint op de hoogte van de constante kosten.
+
+[DEEL 3: STAPPENPLANNEN] (voorstel van de AI, nog vast te stellen)
+A. Cashflow, indirecte methode: 1 afschrijving per jaar · 2 resultaat · 3 resultaat + afschrijving.
+B. Terugverdientijd: 1 investering : cashflow (of optellen per jaar) · 2 het deel van het laatste jaar × 12 · 3 naar boven afronden op hele maanden.
+C. Netto contante waarde: 1 elke cashflow contant maken met de macht van zijn jaar · 2 de restwaarde contant maken · 3 optellen en de investering eraf · 4 vergelijken met nul.
+D. Loonkosten: 1 brutoloon per jaar · 2 vakantiegeld en eindejaarsuitkering erbij · 3 sociale lasten erbij.
+E. Transitievergoeding: 1 diensttijd splitsen in hele jaren en de rest · 2 hele jaren × 1/3 maandsalaris · 3 de rest met de formule · 4 optellen.
+F. Break-evenafzet: 1 dekkingsbijdrage per eenheid · 2 totale constante kosten optellen · 3 delen · 4 naar boven afronden.
+G. Prijswijziging: 1 resultaat oud · 2 nieuwe dekkingsbijdrage en resultaat nieuw · 3 conclusie.
+
+[DEEL 4: VASTE REDENERINGEN]
+1. Hoger risico en NCW: meer onzekerheid; hogere rendementseis en dus een hogere disconteringsvoet; de contante waarde van de cashflows daalt; de NCW daalt.
+2. Voordelen van de NCW boven de terugverdientijd: houdt rekening met alle cashflows, ook na de terugverdientijd; houdt rekening met de tijdswaarde van geld. Nadeel: de juiste disconteringsvoet is moeilijk te bepalen.
+3. Zzp'er, voordelen voor de onderneming: flexibel (geen ontslagrecht), geen premies werknemersverzekeringen, geen loon bij ziekte, geen vakantiegeld en pensioen. Nadelen: minder binding, minder investering in kennis en relaties, minder beschikbaar.
+4. Ontslagroutes: met wederzijds goedvinden (geen transitievergoeding, wel WW); op staande voet (dringende reden, geen transitievergoeding, geen WW); via het UWV (bedrijfseconomische reden of twee jaar arbeidsongeschikt); via de kantonrechter (arbeidsconflict of onvoldoende functioneren).
+5. Ondernemingsraad: verplicht bij 50 of meer werknemers. Adviesrecht bij besluiten met grote gevolgen (reorganisatie, fusie, sluiting). Instemmingsrecht bij regelingen over arbeidsvoorwaarden (werktijden, opleiding), niet bij de hoogte van het loon. Daarnaast initiatiefrecht en recht op informatie.
+6. Constante en variabele kosten: constant verandert niet met de afzet (huur, afschrijving); variabel neemt toe met de afzet (inkoop, kosten per deelnemer). Loonkosten kunnen beide zijn (examen 2025-I, vraag 28).
+7. Prijsverlaging: lagere dekkingsbijdrage per eenheid, hogere afzet; alleen de berekening van beide resultaten beslist.
+
+[DEEL 5: VALKUILEN VOOR DE SABOTEUR]
+1. De afschrijving niet bij het resultaat optellen bij de indirecte methode.
+2. De restwaarde vergeten bij de afschrijving, of meetellen bij de terugverdientijd.
+3. 3,69 jaar lezen als 3 jaar en 7 maanden.
+4. Alle cashflows met dezelfde macht contant maken.
+5. De restwaarde niet contant maken, of de investering vergeten af te trekken.
+6. Omspanningsvermogen en spanwijdte verwisselen.
+7. De directie meetellen bij de spandiepte.
+8. Vakantiegeld en eindejaarsuitkering na elkaar vermenigvuldigen (× 1,08 × 1,05).
+9. De sociale lasten alleen over het kale brutoloon berekenen.
+10. Bij de transitievergoeding de factor 1/3 vergeten, of het resterende deel weglaten.
+11. De ontslaggrond noemen waar de ontslagroute wordt gevraagd.
+12. Voordelen voor de zzp'er noemen waar voordelen voor de onderneming worden gevraagd.
+13. Adviesrecht en instemmingsrecht verwisselen.
+14. Delen door de verkoopprijs in plaats van door de dekkingsbijdrage.
+15. De break-evenafzet naar beneden afronden.
+16. Alleen de omzet vergelijken bij een prijswijziging.
+17. Geen conclusie bij "toon aan".
+
+[DEEL 6: CASUSSEN UIT AT5.11] (verzonnen; niet opnieuw gebruiken)
+Versie A
+A. Sneeuwtop bv, stoeltjeslift: investering € 2.400.000, restwaarde € 400.000, 5 jaar, omzet € 1.000.000, kosten € 750.000. Cashflow € 650.000. Terugverdientijd 3 jaar en 9 maanden. NCW bij 6%: € 636.940.
+B. Visafslag De Pier bv: spanwijdte Hoofd Logistiek 9, spandiepte 3, omspanningsvermogen 6. Theorie Y, stijl instrueren.
+C. FitKust bv (64 werknemers): loonkosten 12 × 3.400 × 1,13 × 1,28 = € 59.013. Samira: 7 jaar en 4 maanden, € 2.700 per maand, transitievergoeding € 6.600.
+D. Kustkracht Events bv, Hyrox-wedstrijd: prijs € 95, variabel € 25, TCK € 76.000, break-evenafzet 1.086. Bij € 85 en 1.700 deelnemers stijgt het resultaat van € 22.000 naar € 26.000. Grafiek: break-evenafzet 1.500.
+Versie B
+E. Boomtop bv, klimparcours: investering € 360.000, restwaarde € 40.000, 4 jaar, omzet € 210.000, kosten € 150.000. Cashflow € 140.000. Terugverdientijd 2 jaar en 7 maanden. NCW bij 5%: € 169.341.
+F. Bloemenveiling Kennemerland bv: spanwijdte Hoofd Veiling 12, spandiepte 4, omspanningsvermogen 10 bij spanwijdte 4. Theorie X, stijl overleggen.
+G. PadelPoint bv (58 werknemers): loonkosten 12 × 2.900 × 1,14 × 1,30 = € 51.574. Bram: 5 jaar en 6 maanden, € 3.000 per maand, transitievergoeding € 5.500.
+H. StrandStorm Events bv, obstakelrun: prijs € 45, variabel € 12, TCK € 44.700, break-evenafzet 1.355. Bij € 50 en 1.400 deelnemers stijgt het resultaat van € 8.100 naar € 8.500. Grafiek: break-evenafzet 1.200.
+
+[DEEL 7: OPEN PUNTEN]
+1. De docent stelt de stappenplannen in DEEL 3 vast of past ze aan.
+2. Telt de restwaarde mee bij de terugverdientijd? In AT5.11 niet, en dat staat in de opgave. Cumulus zegt er niets over.
+3. De break-evenomzet via de dekkingsbijdrage in procenten van de omzet staat op de dia's, maar is in AT5.11 niet gevraagd.
+4. Het begrote en het gerealiseerde resultaat (leerdoel § 4.4) is in AT5.11 niet gevraagd.
+5. De horizontale taakverdeling en het verschil tussen lijn- en lijn-staforganisatie zijn in AT5.11 niet gevraagd.

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ titel }}</title>
+<style>
+  :root {
+    color-scheme: light;
+    --papier: #f3f6fa; --vel: #fff; --inkt: #16233b; --inkt-2: #55627a; --lijn: #d3dbe6; --lijn-zacht: #e6ebf2;
+    --kantlijn: #e2606f; --balpen: #1f4fbf; --goed: #177245; --fout: #c5162e; --marker: #ffe37a; --marker-tekst: #5c4700;
+    --tekst: "Avenir Next", "Avenir", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --kop: "Avenir Next Condensed", "Avenir Next", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    --pen: "Bradley Hand", "Noteworthy", "Segoe Print", "Comic Sans MS", cursive;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark; --papier: #0f151e; --vel: #18212d; --inkt: #e9eef5; --inkt-2: #a3b0c4; --lijn: #2e3a4c;
+      --lijn-zacht: #232d3c; --kantlijn: #a8404d; --balpen: #7da6ff; --goed: #4fc790; --fout: #ff7285;
+      --marker: #5c4a05; --marker-tekst: #ffe9a3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--papier); color: var(--inkt); font: 17px/1.55 var(--tekst); -webkit-font-smoothing: antialiased; }
+  header.boven { background: var(--vel); border-bottom: 1px solid var(--lijn); padding: 1rem 16px; }
+  header.boven .binnen, main { max-width: 760px; margin: 0 auto; }
+  h1 { font: 600 1.6rem/1.15 var(--kop); margin: 0; }
+  .sub { color: var(--inkt-2); font-size: .92rem; }
+  main { padding: 1.2rem 16px 5rem; }
+  .voortgang { height: 8px; background: var(--lijn-zacht); border-radius: 4px; overflow: hidden; margin-top: .8rem; }
+  .voortgang span { display: block; height: 100%; background: var(--goed); width: 0; transition: width .3s; }
+  .nummers { display: flex; flex-wrap: wrap; gap: .35rem; margin: 1rem 0; }
+  .nummers button { font: 600 .9rem var(--tekst); width: 2.3rem; height: 2.3rem; border-radius: 50%; border: 1.5px solid var(--lijn);
+    background: var(--vel); color: var(--inkt); cursor: pointer; }
+  .nummers button.nu { border-color: var(--inkt); background: var(--inkt); color: var(--vel); }
+  .nummers button.klaar { border-color: var(--goed); color: var(--goed); }
+  .nummers button.klaar.nu { background: var(--goed); color: #fff; }
+  html { background: var(--papier); }
+  .kaart { background: var(--vel); border: 1px solid var(--lijn); border-radius: 12px; padding: 1.2rem 1.3rem 1.2rem 2.6rem; position: relative; }
+  .kaart::before { content: ""; position: absolute; left: 1.6rem; top: 0; bottom: 0; width: 1.5px; background: var(--kantlijn); opacity: .45; }
+  .kaart > * { position: relative; }
+  .doel { font-size: .85rem; color: var(--inkt-2); margin: 0 0 .4rem; }
+  .stap { display: inline-block; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    border: 1.5px solid currentColor; border-radius: 4px; padding: 0 .35rem; margin-right: .4rem; color: var(--balpen); }
+  h2 { font: 600 1.3rem/1.2 var(--kop); margin: .2rem 0 .7rem; }
+  .context p { margin: .45rem 0; }
+  table { border-collapse: collapse; margin: .7rem 0; font-size: .92rem; max-width: 100%; display: block; overflow-x: auto; }
+  caption { text-align: left; font-weight: 600; padding-bottom: .3rem; }
+  th, td { border: 1px solid var(--lijn); padding: .3rem .55rem; text-align: left; }
+  th { background: var(--lijn-zacht); }
+  .fig { margin: .8rem 0; } .fig figcaption { font-weight: 600; margin-bottom: .3rem; }
+  .fig img { max-width: 100%; height: auto; background: #fff; border: 1px solid var(--lijn); border-radius: 6px; }
+  .vraag { margin: 1rem 0 .4rem; padding-left: .8rem; border-left: 3px solid var(--inkt); font-weight: 600; }
+  .vraag .p { color: var(--inkt-2); font-weight: 500; }
+  .extra { margin: .2rem 0 .2rem .9rem; }
+  textarea, input[type=text] { font: inherit; color: var(--inkt); background: var(--vel); border: 1.5px solid var(--lijn);
+    border-radius: 8px; padding: .6rem .7rem; width: 100%; }
+  textarea { min-height: 7rem; resize: vertical; margin-top: .6rem; }
+  .optie { display: flex; gap: .6rem; align-items: flex-start; border: 1.5px solid var(--lijn); border-radius: 8px; padding: .55rem .7rem; margin: .4rem 0; cursor: pointer; }
+  .optie input { margin-top: .35rem; }
+  .optie.juist { border-color: var(--goed); } .optie.fout { border-color: var(--fout); }
+  .gaten { display: grid; gap: .4rem; margin-top: .6rem; }
+  .gaten label { display: grid; grid-template-columns: 3rem 1fr; align-items: center; gap: .5rem; }
+  .knoppen { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
+  button.k { font: 600 .95rem var(--tekst); padding: .6rem 1rem; border-radius: 8px; cursor: pointer; border: 1.5px solid var(--lijn); background: var(--vel); color: var(--inkt); }
+  button.k.hoofd { background: var(--balpen); border-color: var(--balpen); color: #fff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) button.k.hoofd { color: #0f151e; } }
+  button.k[disabled] { opacity: .45; cursor: default; }
+  .hint { background: var(--marker); color: var(--marker-tekst); border-radius: 8px; padding: .55rem .8rem; margin-top: .6rem; }
+  .oordeel { margin-top: 1rem; padding: .8rem 1rem; border-radius: 10px; border: 1.5px solid var(--lijn); }
+  .oordeel.goed { border-color: var(--goed); } .oordeel.fout { border-color: var(--fout); }
+  .oordeel h3 { margin: 0 0 .4rem; font: 600 1.1rem var(--kop); }
+  .oordeel .goed-t { color: var(--goed); } .oordeel .fout-t { color: var(--fout); }
+  .regels { list-style: none; padding: 0; margin: .5rem 0; }
+  .regels li label { display: flex; gap: .6rem; align-items: flex-start; padding: .35rem 0; border-bottom: 1px dotted var(--lijn); cursor: pointer; }
+  .regels li label span.pt { margin-left: auto; font-family: var(--pen); font-size: 1.2rem; color: var(--goed); }
+  .score { font-family: var(--pen); font-size: 1.6rem; color: var(--goed); }
+  .klein { font-size: .88rem; color: var(--inkt-2); }
+  .code { max-width: 26rem; margin: 2rem auto; text-align: center; }
+  .code input { text-align: center; font: 700 1.6rem/1 "Courier New", monospace; letter-spacing: .25em; text-transform: uppercase; margin: 1rem 0; }
+  .eind table { display: table; width: 100%; }
+  .terug { margin-top: 1.4rem; border-top: 1.5px solid var(--lijn); padding-top: 1rem; }
+  .terug h3 { font: 600 1.15rem var(--kop); margin: 0 0 .3rem; }
+  .rcode { font: 600 .82rem/1.4 "Courier New", monospace; word-break: break-all; background: var(--lijn-zacht);
+    border: 1.5px dashed var(--lijn); border-radius: 8px; padding: .7rem .8rem; margin: .6rem 0; user-select: all; -webkit-user-select: all; }
+  .nummer { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .5rem 0; }
+  .nummer input { width: 9rem; }
+  .gekopieerd { color: var(--goed); font-weight: 600; }
+  .balkje { display: inline-block; height: .6rem; border-radius: 3px; background: var(--goed); vertical-align: middle; }
+  :focus-visible { outline: 3px solid var(--balpen); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+  @media print { .nummers, .knoppen, .voortgang { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<header class="boven"><div class="binnen">
+  <h1 id="kop">{{ titel }}</h1>
+  <div class="sub">{{ vak }} · {{ klas }} · <span id="setnaam"></span></div>
+  <div class="voortgang" aria-hidden="true"><span id="balk"></span></div>
+</div></header>
+<main>
+  <section class="code" id="codevak" hidden>
+    <h2>Vul je persoonlijke code in</h2>
+    <p class="klein">Je docent heeft je een code van vijf tekens gegeven. Daarmee open je jouw eigen oefenset.</p>
+    <form id="codeform"><input type="text" id="code" maxlength="5" autocomplete="off" aria-label="Persoonlijke code">
+      <button class="k hoofd" type="submit">Open mijn oefenset</button></form>
+    <p class="klein" id="codefout" hidden>Deze code ken ik niet. Controleer de code of vraag het je docent.</p>
+  </section>
+  <div id="werk" hidden>
+    <nav class="nummers" id="nummers" aria-label="Opgaven"></nav>
+    <article class="kaart" id="kaart"></article>
+  </div>
+  <section class="kaart eind" id="eind" hidden></section>
+</main>
+<script type="application/json" id="data">{{ data | safe }}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const STAP = { 1: 'Basis', 2: 'Oefenen', 3: 'Examenniveau', 4: 'Toets' };
+  let set = null, sleutel = '', nu = 0, staat = {}, setcode = '';
+  const $ = (id) => document.getElementById(id);
+  const esc = (t) => String(t == null ? '' : t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  function laad() { try { return JSON.parse(localStorage.getItem(sleutel) || '{}'); } catch (e) { return {}; } }
+  function bewaar() { try { localStorage.setItem(sleutel, JSON.stringify(staat)); } catch (e) { /* geen opslag: werkt toch */ } }
+
+  function start(code) {
+    set = D.sets[code]; setcode = D.modus === 'code' ? code : set.naam;
+    sleutel = 'oefen:' + document.title + ':' + code;
+    staat = laad();
+    $('setnaam').textContent = set.naam;
+    $('codevak').hidden = true; $('werk').hidden = false;
+    nummers(); toon(staat._nu || 0);
+  }
+  function getal(t) {
+    t = String(t).replace(/[€%\s]/g, '').replace(/[^0-9,.\-]/g, '');
+    if (/\d\.\d{3}(,|$)/.test(t)) t = t.replace(/\./g, '');
+    return parseFloat(t.replace(',', '.'));
+  }
+  function nummers() {
+    const n = $('nummers'); n.innerHTML = '';
+    set.items.forEach((uid, i) => {
+      const b = document.createElement('button');
+      b.textContent = i + 1; b.type = 'button';
+      b.className = (i === nu ? 'nu ' : '') + (staat[uid] && staat[uid].klaar ? 'klaar' : '');
+      b.setAttribute('aria-label', `Opgave ${i + 1}`);
+      b.onclick = () => toon(i);
+      n.appendChild(b);
+    });
+    const af = set.items.filter((u) => staat[u] && staat[u].klaar).length;
+    $('balk').style.width = `${Math.round(100 * af / set.items.length)}%`;
+  }
+  function toon(i) {
+    nu = Math.max(0, Math.min(i, set.items.length - 1)); staat._nu = nu; bewaar();
+    $('eind').hidden = true; $('werk').hidden = false;
+    const it = D.items[set.items[nu]], s = staat[it.uid] || {};
+    let h = `<p class="doel"><span class="stap">${STAP[it.stap] || ''}</span>${esc(it.zin)}</p><h2>Opgave ${nu + 1}  ${esc(it.titel)}</h2><div class="context">`;
+    h += it.context.map((p) => `<p>${esc(p)}</p>`).join('');
+    if (it.tabel && it.tabel.rijen && it.tabel.rijen.length) {
+      h += `<table>${it.tabel.titel ? `<caption>${esc(it.tabel.titel)}</caption>` : ''}`;
+      if (it.tabel.kop && it.tabel.kop.length) h += `<thead><tr>${it.tabel.kop.map((k) => `<th>${esc(k)}</th>`).join('')}</tr></thead>`;
+      h += `<tbody>${it.tabel.rijen.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    }
+    if (it.figuur) h += `<figure class="fig"><figcaption>${esc(it.figuurtitel || 'Figuur')}</figcaption><img src="${it.figuur}" alt="${esc(it.figuurtitel || 'Figuur bij de opgave')}"></figure>`;
+    h += `</div><p class="vraag"><span class="p">${it.punten}p</span> ${esc(it.vraag)}</p>`;
+    h += it.extra.map((e) => `<p class="extra">${esc(e)}</p>`).join('');
+    const gaten = it.soort === 'invul' && it.antwoord ? it.antwoord.split('|').length : 0;
+    if (it.soort === 'meerkeuze' && it.opties.length) {
+      h += it.opties.map((o, j) => `<label class="optie" data-j="${j}"><input type="radio" name="mk" value="${j}" ${s.keuze == j ? 'checked' : ''}><span><b>${'ABCDE'[j]}</b>  ${esc(o)}</span></label>`).join('');
+    } else if (gaten > 1) {
+      h += `<div class="gaten">${Array.from({ length: gaten }, (_, j) => `<label>(${j + 1})<input type="text" data-gat="${j}" value="${esc((s.gaten || [])[j] || '')}"></label>`).join('')}</div>`;
+    } else {
+      h += `<textarea id="antwoord" placeholder="${it.soort === 'berekening' ? 'Schrijf je hele berekening op, met je antwoord op de laatste regel.' : 'Schrijf je antwoord op.'}">${esc(s.antwoord || '')}</textarea>`;
+    }
+    h += `<div id="hints">${(s.hints || 0) >= 1 ? `<p class="hint">Hint 1: ${esc(it.hints[0] || '')}</p>` : ''}${(s.hints || 0) >= 2 ? `<p class="hint">Hint 2: ${esc(it.hints[1] || '')}</p>` : ''}</div>`;
+    h += `<div class="knoppen"><button class="k" type="button" id="hint" ${(s.hints || 0) >= Math.min(2, it.hints.length) ? 'disabled' : ''}>Geef een hint</button>
+      <button class="k hoofd" type="button" id="kijk">${s.nagekeken ? 'Opnieuw nakijken' : 'Nakijken'}</button>
+      <span style="flex:1"></span>
+      <button class="k" type="button" id="vorige" ${nu === 0 ? 'disabled' : ''}>Vorige</button>
+      <button class="k" type="button" id="volgende">${nu === set.items.length - 1 ? 'Klaar: overzicht' : 'Volgende'}</button></div>
+      <div id="oordeel"></div>`;
+    $('kaart').innerHTML = h;
+    const opslaan = () => {
+      const st = staat[it.uid] = staat[it.uid] || {};
+      const a = $('antwoord'); if (a) st.antwoord = a.value;
+      const k = document.querySelector('input[name=mk]:checked'); if (k) st.keuze = +k.value;
+      const g = [...document.querySelectorAll('[data-gat]')]; if (g.length) st.gaten = g.map((x) => x.value);
+      bewaar();
+    };
+    $('kaart').oninput = opslaan; $('kaart').onchange = opslaan;
+    $('hint').onclick = () => { const st = staat[it.uid] = staat[it.uid] || {}; st.hints = (st.hints || 0) + 1; bewaar(); toon(nu); };
+    $('vorige').onclick = () => toon(nu - 1);
+    $('volgende').onclick = () => (nu === set.items.length - 1 ? eind() : toon(nu + 1));
+    $('kijk').onclick = () => { opslaan(); nakijken(it); };
+    if (s.nagekeken) nakijken(it, true);
+    nummers();
+  }
+  function nakijken(it, stil) {
+    const st = staat[it.uid] = staat[it.uid] || {};
+    let auto = null;
+    if (it.soort === 'meerkeuze' && it.opties.length) {
+      auto = st.keuze === it.juist;
+      document.querySelectorAll('.optie').forEach((o) => {
+        const j = +o.dataset.j; if (j === it.juist) o.classList.add('juist'); else if (j === st.keuze) o.classList.add('fout');
+      });
+    } else if (it.soort === 'invul' && it.antwoord) {
+      const goed = it.antwoord.split('|').map((x) => x.trim().toLowerCase());
+      const gegeven = st.gaten || [(st.antwoord || '').trim()];
+      auto = goed.every((g, j) => (gegeven[j] || '').trim().toLowerCase() === g);
+    } else if (it.soort === 'berekening' && it.antwoord) {
+      const regels = (st.antwoord || '').trim().split('\n').filter(Boolean);
+      const laatste = regels.length ? regels[regels.length - 1] : '';
+      const getallen = (laatste.match(/-?[\d.,]+/g) || []).map(getal).filter((x) => !isNaN(x));
+      const doel = getal(it.antwoord), tol = Math.max(it.tolerantie || 0, Math.abs(doel) * 0.005, 0.01);
+      auto = getallen.some((g) => Math.abs(g - doel) <= tol);
+    }
+    st.punten = st.punten || [];
+    const totaal = it.punten;
+    let h = `<div class="oordeel ${auto === null ? '' : (auto ? 'goed' : 'fout')}">`;
+    if (auto !== null) h += `<h3 class="${auto ? 'goed-t' : 'fout-t'}">${auto ? 'Goed!' : 'Nog niet goed'}</h3>`;
+    if (it.soort === 'meerkeuze' && it.opties.length) {
+      st.score = auto ? totaal : 0;
+      h += `<p>Het juiste antwoord is <b>${'ABCDE'[it.juist]}</b>.</p>`;
+    } else {
+      h += `<p class="klein">Kijk je antwoord na: vink aan wat jij goed hebt. ${it.cv.intro ? esc(it.cv.intro) : ''}</p><ul class="regels">`;
+      (it.cv.regels || []).forEach((r, j) => {
+        const aan = st.punten[j] != null ? st.punten[j] : (auto === true);
+        h += `<li><label><input type="checkbox" data-r="${j}" ${aan ? 'checked' : ''}><span>${esc(r.tekst)}</span><span class="pt">${r.punten}</span></label></li>`;
+      });
+      h += `</ul>`;
+    }
+    if (it.cv.fout) h += `<p class="klein"><b>Let op, veelgemaakte fout:</b> ${esc(it.cv.fout)}</p>`;
+    h += `<p><b>Voorbeeldantwoord:</b> ${esc(it.voorbeeld)}</p><p class="klein"><b>Waarom:</b> ${esc(it.uitleg)}</p>`;
+    h += `<p>Jouw score: <span class="score" id="score"></span> van ${totaal}</p></div>`;
+    $('oordeel').innerHTML = h;
+    const tel = () => {
+      if (!(it.soort === 'meerkeuze' && it.opties.length)) {
+        const vinkjes = [...document.querySelectorAll('[data-r]')];
+        st.punten = vinkjes.map((v) => v.checked);
+        const regels = it.cv.regels || [];
+        const perFout = regels.length === 1 && /per gemaakte fout/i.test(regels[0].tekst);
+        const indien = regels.length && regels.every((r) => /^indien/i.test(r.tekst));
+        let som = 0;
+        if (perFout) som = vinkjes[0] && vinkjes[0].checked ? totaal : 0;
+        else if (indien) som = Math.max(0, ...regels.map((r, j) => (vinkjes[j].checked ? r.punten : 0)));
+        else som = regels.reduce((a, r, j) => a + (vinkjes[j].checked ? r.punten : 0), 0);
+        st.score = Math.min(totaal, som);
+      }
+      $('score').textContent = st.score;
+      st.nagekeken = true; st.klaar = true; bewaar(); nummers();
+    };
+    document.querySelectorAll('[data-r]').forEach((v) => v.addEventListener('change', tel));
+    tel();
+  }
+  function eind() {
+    const per = {};
+    for (const uid of set.items) {
+      const it = D.items[uid], st = staat[uid] || {};
+      const p = per[it.code] = per[it.code] || { zin: it.zin, max: 0, score: 0, open: 0, aantal: 0 };
+      p.max += it.punten; p.score += st.score || 0; p.aantal++; if (!st.klaar) p.open++;
+    }
+    let h = `<h2>Overzicht</h2><p class="klein">Zo staat het per leerdoel. Vanaf 80% beheers je het leerdoel.</p><table><thead><tr><th>Leerdoel</th><th>Score</th><th></th></tr></thead><tbody>`;
+    for (const p of Object.values(per)) {
+      const pct = p.max ? Math.round(100 * p.score / p.max) : 0;
+      h += `<tr><td>${esc(p.zin)}${p.open ? `<br><span class="klein">${p.open} opgave(n) nog niet nagekeken</span>` : ''}</td><td><span class="balkje" style="width:${pct / 2}px"></span> ${pct}%</td><td>${pct >= 80 ? 'beheerst' : (pct >= 50 ? 'bijna' : 'oefen nog eens')}</td></tr>`;
+    }
+    h += `</tbody></table>`;
+    if (D.opdracht) {
+      h += `<div class="terug"><h3>Laat je docent zien hoe het ging</h3>
+        <p class="klein">Kopieer de resultaatcode en stuur hem via Teams naar je docent. Er staat geen naam in, alleen je scores per leerdoel.</p>
+        ${D.modus === 'code' ? '' : `<div class="nummer"><label for="llnr" class="klein">Je leerlingnummer</label><input type="text" id="llnr" inputmode="numeric" maxlength="8" value="${esc(staat._llnr || '')}"></div>`}
+        <div class="rcode" id="rcode"></div>
+        <button class="k hoofd" type="button" id="kopieer">Kopieer resultaatcode</button> <span id="kopie-ok" class="gekopieerd" hidden>Gekopieerd!</span></div>`;
+    }
+    h += `<div class="knoppen"><button class="k" type="button" id="terug">Terug naar de opgaven</button><button class="k" type="button" onclick="window.print()">Afdrukken</button></div>`;
+    $('eind').innerHTML = h; $('eind').hidden = false; $('werk').hidden = true;
+    $('terug').onclick = () => toon(0);
+    if (!D.opdracht) return;
+    const maak = () => {
+      const llnr = $('llnr') ? $('llnr').value.replace(/\D/g, '') : '';
+      if ($('llnr')) { staat._llnr = llnr; bewaar(); }
+      $('rcode').textContent = resultaatcode(per, llnr);
+    };
+    if ($('llnr')) $('llnr').oninput = maak;
+    maak();
+    $('kopieer').onclick = async () => {
+      const tekst = $('rcode').textContent;
+      if ($('llnr') && !$('llnr').value.trim()) { $('llnr').focus(); alert('Vul eerst je leerlingnummer in.'); return; }
+      let gelukt = false;
+      try { await navigator.clipboard.writeText(tekst); gelukt = true; } catch (e) {
+        const r = document.createRange(); r.selectNodeContents($('rcode'));
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { gelukt = document.execCommand('copy'); } catch (e2) { gelukt = false; }
+      }
+      $('kopie-ok').textContent = gelukt ? 'Gekopieerd!' : 'Selecteer de code en kopieer hem zelf.';
+      $('kopie-ok').hidden = false;
+    };
+  }
+  function controlegetal(t) { let s = 0; for (let i = 0; i < t.length; i++) s = (s * 31 + t.charCodeAt(i)) % 9973; return String(s).padStart(4, '0'); }
+  function resultaatcode(per, llnr) {
+    let hints = 0, gemaakt = 0;
+    for (const uid of set.items) { const st = staat[uid] || {}; hints += st.hints || 0; if (st.klaar) gemaakt++; }
+    const r = Object.entries(per).map(([code, p]) => [code, p.score, p.max, p.aantal - p.open, p.aantal]);
+    const nu = new Date();
+    const d = `${nu.getFullYear()}-${String(nu.getMonth() + 1).padStart(2, '0')}-${String(nu.getDate()).padStart(2, '0')}`;
+    const json = JSON.stringify({ v: 1, o: D.opdracht, s: setcode, n: llnr, d, h: hints, g: gemaakt, t: set.items.length, r });
+    const b64 = btoa(unescape(encodeURIComponent(json))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    return `OEF-${b64}-${controlegetal(b64)}`;
+  }
+  if (D.modus === 'code') {
+    $('codevak').hidden = false;
+    $('codeform').onsubmit = (e) => {
+      e.preventDefault();
+      const c = $('code').value.trim().toUpperCase();
+      if (D.sets[c]) start(c); else $('codefout').hidden = false;
+    };
+  } else start(Object.keys(D.sets)[0]);
+})();
+</script>
+</body>
+</html>

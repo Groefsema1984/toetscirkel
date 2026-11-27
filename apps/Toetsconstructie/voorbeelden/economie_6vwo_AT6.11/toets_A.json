@@ -1,0 +1,843 @@
+{
+ "meta": {
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "klas": "6 vwo",
+  "titel": "Schoolexamen economie vwo",
+  "onderwerp": "Vraag en aanbod, markt en overheid, speltheorie",
+  "kort": "Markt en overheid, Speltheorie",
+  "at": "AT6.11",
+  "datum": "22 oktober 2026",
+  "maker": "GRA",
+  "weging": "15%",
+  "minuten": 100,
+  "versie": "A",
+  "bestandsbasis": "AT6.11_SE_vwo6_economie_versie_A",
+  "afronding": "geldbedragen afronden op twee decimalen, percentages op één decimaal en elasticiteiten op twee decimalen, tenzij de vraag anders aangeeft."
+ },
+ "opgaven": [
+  {
+   "titel": "Opgave 1  Skigebied",
+   "items": [
+    {
+     "t": "p",
+     "text": "Skigebied Hochtal is het enige skigebied in een afgelegen dal en heeft daardoor een monopoliepositie. Hochtal verkoopt dagpassen en streeft naar maximale totale winst. Een marktonderzoek levert de gegevens in tabel 1 op."
+    },
+    {
+     "t": "tab",
+     "titel": "Tabel 1  Gegevens van Hochtal",
+     "widths": [
+      3000,
+      5504
+     ],
+     "align": [
+      "l",
+      "l"
+     ],
+     "rows": [
+      [
+       "Qv = −2P + 160",
+       "Qv = de vraag naar dagpassen in duizenden per seizoen\nP = de prijs van een dagpas in euro’s"
+      ],
+      [
+       "TK = 0,25Q² + 20Q + 600",
+       "TK = de totale kosten in duizenden euro’s per seizoen\nQ = het aantal dagpassen in duizenden"
+      ]
+     ]
+    },
+    {
+     "t": "q",
+     "nr": 1,
+     "p": 3,
+     "text": "Bereken de maximale totale winst van Hochtal per seizoen. Leid daarvoor eerst de MO-functie en de MK-functie af."
+    },
+    {
+     "t": "p",
+     "text": "Door een hogere energieprijs stijgen de variabele kosten van Hochtal met € 6 per dagpas. De overige gegevens blijven gelijk."
+    },
+    {
+     "t": "q",
+     "nr": 2,
+     "p": 4,
+     "text": "Bereken hoeveel procent van de stijging van de variabele kosten Hochtal doorberekent in de prijs van een dagpas."
+    },
+    {
+     "t": "p",
+     "text": "De directeur van Hochtal wil prijsdiscriminatie toepassen. Inwoners van het dal hebben een lagere betalingsbereidheid dan toeristen. Het plan is als volgt: inwoners vullen bij de online bestelling hun postcode in en betalen dan € 45 per dagpas. De dagpas staat niet op naam en bij de lift wordt niet gecontroleerd wie de dagpas gebruikt."
+    },
+    {
+     "t": "q",
+     "nr": 3,
+     "p": 2,
+     "text": "Beargumenteer of dit plan voldoet aan de twee voorwaarden voor prijsdiscriminatie."
+    },
+    {
+     "t": "p",
+     "text": "Hochtal overweegt daarnaast om in de schoolvakanties een hogere prijs te vragen dan in de rest van het seizoen. In de schoolvakanties komen vooral gezinnen met een hoge betalingsbereidheid."
+    },
+    {
+     "t": "q",
+     "nr": 4,
+     "p": 2,
+     "text": "Leg uit dat Hochtal met deze vorm van prijsdiscriminatie een deel van het consumentensurplus afroomt."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 2  Ronde van Vlaanderen",
+   "items": [
+    {
+     "t": "p",
+     "text": "Op de dag van de Ronde van Vlaanderen staan langs het parcours ruim tweehonderd kramen die bier verkopen. Alle kramen schenken hetzelfde pils in dezelfde bekers. Iedereen die langs het parcours woont, mag zonder vergunning een kraam neerzetten. Een econoom beschrijft deze markt als een markt van volledige mededinging."
+    },
+    {
+     "t": "q",
+     "nr": 5,
+     "p": 2,
+     "text": "Noem twee kenmerken uit de tekst waaruit blijkt dat er sprake is van volledige mededinging."
+    },
+    {
+     "t": "p",
+     "text": "De overheid wil het alcoholgebruik langs het parcours beperken. Zij voert op de dag van de wedstrijd een extra accijns in van € 1,00 per glas bier. De kramen dragen de accijns af aan de overheid. De econoom gebruikt het model in tabel 2 en figuur 1."
+    },
+    {
+     "t": "tab",
+     "titel": "Tabel 2  Model van de biermarkt langs het parcours",
+     "widths": [
+      3000,
+      5504
+     ],
+     "align": [
+      "l",
+      "l"
+     ],
+     "rows": [
+      [
+       "Qv = −20P + 200",
+       "Qv = de gevraagde hoeveelheid bier in duizenden glazen"
+      ],
+      [
+       "Qa = 30P",
+       "Qa = de aangeboden hoeveelheid bier zonder accijns in duizenden glazen\nP = de prijs van een glas bier in euro’s"
+      ]
+     ]
+    },
+    {
+     "t": "fig",
+     "titel": "Figuur 1  De biermarkt met en zonder accijns (schets)",
+     "file": "markt_A.png",
+     "w": 430,
+     "h": 322
+    },
+    {
+     "t": "q",
+     "nr": 6,
+     "p": 3,
+     "text": "Bereken hoeveel procent van de accijns wordt doorberekend in de prijs die de consument betaalt."
+    },
+    {
+     "t": "q",
+     "nr": 7,
+     "p": 2,
+     "text": "Bereken de prijselasticiteit van de vraag naar bier bij deze prijsstijging en leg uit of de vraag prijselastisch of prijsinelastisch is."
+    },
+    {
+     "t": "q",
+     "nr": 8,
+     "p": 2,
+     "text": "Arceer in de figuur in de uitwerkbijlage:",
+     "extra": [
+      "−  de accijnsopbrengst voor de overheid;",
+      "−  het welvaartsverlies (de Harberger-driehoek) als gevolg van de accijns.",
+      "Vul de legenda in, zodat duidelijk is welk vlak bij welk begrip hoort."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "De econoom stelt: “De accijns heeft twee effecten op het surplus op deze markt: een effect op de omvang van het totale surplus en een effect op de verdeling van het surplus.”"
+    },
+    {
+     "t": "q",
+     "nr": 9,
+     "p": 2,
+     "text": "Leg beide effecten uit."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 3  Hyrox",
+   "doorlopend": true,
+   "items": [
+    {
+     "t": "p",
+     "text": "De evenementenbureaus FitRace en IronHall organiseren in hetzelfde weekend allebei een Hyrox-wedstrijd in dezelfde regio. Sporters zien beide wedstrijden als gelijkwaardig. Beide bureaus maken op dezelfde dag hun inschrijfprijs bekend, zonder de prijs van de ander te kennen. Zij kiezen tussen de prijs handhaven (€ 100) of de prijs verlagen (€ 80). Voor beide bureaus gelden de gegevens in tabel 3. Matrix 1 toont de winsten."
+    },
+    {
+     "t": "tab",
+     "titel": "Tabel 3  Deelnemers en kosten per bureau",
+     "widths": [
+      4252,
+      4252
+     ],
+     "align": [
+      "l",
+      "l"
+     ],
+     "rows": [
+      [
+       "Beide bureaus vragen € 100",
+       "elk 2.000 deelnemers"
+      ],
+      [
+       "Beide bureaus vragen € 80",
+       "elk 2.200 deelnemers"
+      ],
+      [
+       "Eén bureau vraagt € 80, het andere € 100",
+       "3.000 deelnemers bij € 80\n1.100 deelnemers bij € 100"
+      ],
+      [
+       "Variabele kosten",
+       "€ 30 per deelnemer"
+      ],
+      [
+       "Totale constante kosten",
+       "€ 80.000 per bureau"
+      ]
+     ]
+    },
+    {
+     "t": "tab",
+     "titel": "Matrix 1  Winsten van FitRace en IronHall (× € 1.000)",
+     "widths": [
+      3104,
+      2700,
+      2700
+     ],
+     "align": [
+      "l",
+      "c",
+      "c"
+     ],
+     "kopkolom": true,
+     "head": [
+      "",
+      "IronHall handhaaft de prijs",
+      "IronHall verlaagt de prijs"
+     ],
+     "rows": [
+      [
+       "FitRace handhaaft de prijs",
+       "60 ; 60",
+       "−3 ; 70"
+      ],
+      [
+       "FitRace verlaagt de prijs",
+       "70 ; −3",
+       "30 ; 30"
+      ]
+     ],
+     "legenda": [
+      "Het eerste getal in elke cel is de winst van FitRace, het tweede getal de winst van IronHall."
+     ]
+    },
+    {
+     "t": "q",
+     "nr": 10,
+     "p": 2,
+     "text": "Toon met een berekening aan dat de winst van FitRace € 70.000 is als FitRace de prijs verlaagt en IronHall de prijs handhaaft."
+    },
+    {
+     "t": "q",
+     "nr": 11,
+     "p": 1,
+     "text": "Is het spel in matrix 1 een simultaan of een sequentieel spel? Motiveer je keuze met behulp van de tekst."
+    },
+    {
+     "t": "q",
+     "nr": 12,
+     "p": 3,
+     "text": "Leg met behulp van getallen uit matrix 1 uit dat FitRace en IronHall in een gevangenendilemma zitten. Ga in je antwoord in op de dominante strategie van beide bureaus en op het Nash-evenwicht."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 4  WK judo",
+   "items": [
+    {
+     "t": "p",
+     "text": "De Wereld Judo Bond (WJB) zoekt een stad voor het WK judo. De stad Maasdam wil het WK organiseren. Daarvoor moet Maasdam eerst voor € 6 miljoen een sporthal ombouwen tot judohal. Deze verbouwing is alleen bruikbaar voor het WK. Maasdam en de WJB spreken af dat de stad een bijdrage van € 2 miljoen aan de WJB betaalt. Nadat Maasdam heeft verbouwd, kan de WJB de afspraak nakomen of alsnog een bijdrage van € 7 miljoen eisen. Spelboom 1 toont de keuzes en de uitkomsten."
+    },
+    {
+     "t": "fig",
+     "titel": "Spelboom 1  Netto-opbrengsten van Maasdam en de WJB (in miljoenen euro’s)",
+     "file": "boom_A.png",
+     "w": 560,
+     "h": 287,
+     "legenda": [
+      "Het eerste getal is de netto-opbrengst van Maasdam, het tweede getal de netto-opbrengst van de WJB."
+     ]
+    },
+    {
+     "t": "q",
+     "nr": 13,
+     "p": 2,
+     "text": "Leg uit welke uitkomst in spelboom 1 tot stand komt. Noem daarbij getallen uit de spelboom."
+    },
+    {
+     "t": "q",
+     "nr": 14,
+     "p": 2,
+     "text": "Leg uit dat Maasdam te maken heeft met een berovingsprobleem. Ga in je antwoord in op verzonken kosten."
+    },
+    {
+     "t": "p",
+     "text": "De WJB wil dat het WK toch in Maasdam plaatsvindt. De WJB biedt daarom aan om vooraf een contract te tekenen. Daarin staat dat de WJB een boete van € 6 miljoen aan Maasdam betaalt als de WJB na de verbouwing een hogere bijdrage eist."
+    },
+    {
+     "t": "q",
+     "nr": 15,
+     "p": 2,
+     "text": "Leg uit dat de WJB door deze zelfbinding een hogere opbrengst behaalt dan zonder het contract. Noem daarbij getallen uit de spelboom."
+    }
+   ]
+  }
+ ],
+ "uitwerkbijlage": [
+  {
+   "vraag": 8,
+   "titel": "Figuur 1  De biermarkt met en zonder accijns (schets)",
+   "file": "markt_A.png",
+   "w": 520,
+   "h": 390,
+   "legenda": [
+    "= accijnsopbrengst",
+    "= welvaartsverlies"
+   ]
+  }
+ ],
+ "cv": [
+  {
+   "opgave": "Opgave 1  Skigebied"
+  },
+  {
+   "nr": 1,
+   "max": 3,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "P = −0,5Q + 80 → TO = −0,5Q² + 80Q → MO = −Q + 80 en MK = TK’ = 0,5Q + 20",
+     1
+    ],
+    [
+     "MO = MK → −Q + 80 = 0,5Q + 20 → Q = 40 (× 1.000) en P = −0,5 × 40 + 80 = € 60",
+     1
+    ],
+    [
+     "TO = 60 × 40 = 2.400 en TK = 0,25 × 40² + 20 × 40 + 600 = 1.800, dus TW = 600 (× € 1.000) = € 600.000",
+     1
+    ]
+   ],
+   "fout": "De vraagfunctie niet omschrijven naar P = … voordat TO wordt opgesteld. De constante kosten vergeten bij de winst. De eenheden (duizenden) vergeten in het eindantwoord.",
+   "voorbeeld": "Qv = −2P + 160 geeft P = −0,5Q + 80. TO = P × Q = −0,5Q² + 80Q, dus MO = −Q + 80. MK is de afgeleide van TK: 0,5Q + 20. MO = MK geeft Q = 40 en P = € 60. TO = 2.400 en TK = 400 + 800 + 600 = 1.800. De winst is 600 × € 1.000 = € 600.000.",
+   "uitleg": "Een monopolist maximaliseert de winst waar MO = MK. Je hebt de prijsafzetfunctie nodig (P uitgedrukt in Q) om TO en MO te kunnen opstellen. De prijs lees je daarna af op de prijsafzetlijn, niet op de MO-lijn."
+  },
+  {
+   "nr": 2,
+   "max": 4,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "TK nieuw = 0,25Q² + 20Q + 6Q + 600 = 0,25Q² + 26Q + 600 → MK = 0,5Q + 26",
+     1
+    ],
+    [
+     "MO = MK → −Q + 80 = 0,5Q + 26 → Q = 36 (× 1.000)",
+     1
+    ],
+    [
+     "P nieuw = −0,5 × 36 + 80 = € 62",
+     1
+    ],
+    [
+     "doorberekend: (62 − 60) : 6 × 100% = 33,3%",
+     1
+    ]
+   ],
+   "fout": "De € 6 bij de constante kosten optellen (dan verandert MK niet). De hele € 6 bij de prijs optellen. De prijsstijging delen door de oude prijs in plaats van door de kostenstijging.",
+   "voorbeeld": "De variabele kosten stijgen met 6Q, dus TK = 0,25Q² + 26Q + 600 en MK = 0,5Q + 26. MO = MK: −Q + 80 = 0,5Q + 26, dus Q = 36 en P = € 62. De prijs stijgt met € 2. Dat is 2 : 6 × 100% = 33,3% van de kostenstijging.",
+   "uitleg": "Een kostenstijging per stuk verschuift de MK-lijn omhoog. De monopolist kiest een nieuw punt MO = MK met een lagere afzet en een hogere prijs. Omdat de vraag bij een hogere prijs daalt, kan hij maar een deel van de kostenstijging doorberekenen."
+  },
+  {
+   "nr": 3,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Voorwaarde 1: de markt moet kunnen worden opgedeeld in deelmarkten met een verschillende betalingsbereidheid. Hieraan is voldaan, want inwoners en toeristen worden gescheiden via de postcode.",
+     1
+    ],
+    [
+     "Voorwaarde 2: doorverkoop tussen de deelmarkten moet onmogelijk zijn. Hieraan is niet voldaan, want de dagpas staat niet op naam en wordt niet gecontroleerd, zodat inwoners dagpassen kunnen doorverkopen aan toeristen. Het plan voldoet dus niet aan beide voorwaarden.",
+     1
+    ]
+   ],
+   "opm": "Een antwoord waarin bij voorwaarde 1 wordt opgemerkt dat een toerist een postcode uit het dal kan invullen en dat de deelmarkten dus niet goed te scheiden zijn, ook goed rekenen.",
+   "fout": "Maar één voorwaarde noemen, of de voorwaarden noemen zonder ze op het plan toe te passen.",
+   "voorbeeld": "De markt is te splitsen: inwoners (lage betalingsbereidheid) zijn te herkennen aan hun postcode. Maar doorverkoop is niet uitgesloten: de pas staat niet op naam en niemand controleert, dus een inwoner kan een pas van € 45 doorverkopen aan een toerist. Het plan voldoet alleen aan de eerste voorwaarde.",
+   "uitleg": "Prijsdiscriminatie werkt alleen als de aanbieder groepen kan scheiden én als de groep met de lage prijs niet kan doorverkopen aan de groep met de hoge prijs. Anders koopt iedereen via de goedkope groep."
+  },
+  {
+   "nr": 4,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De gezinnen in de schoolvakanties hebben een betalingsbereidheid die hoger is dan de prijs van een dagpas. Het verschil is hun consumentensurplus.",
+     1
+    ],
+    [
+     "Door deze groep een hogere prijs te vragen, wordt dit verschil kleiner. Dat deel van het consumentensurplus gaat als extra opbrengst (winst) naar Hochtal.",
+     1
+    ]
+   ],
+   "fout": "Alleen zeggen dat Hochtal meer verdient, zonder het consumentensurplus te omschrijven als het verschil tussen betalingsbereidheid en prijs.",
+   "voorbeeld": "Gezinnen in de vakantie willen meer betalen dan de gewone prijs. Dat verschil is hun consumentensurplus. Als Hochtal hun een hogere prijs vraagt, blijft er minder verschil over. Dat stuk surplus komt nu als extra opbrengst bij Hochtal terecht.",
+   "uitleg": "Consumentensurplus = betalingsbereidheid − prijs. Met één prijs houdt de groep met de hoogste betalingsbereidheid het meeste surplus over. Met een hogere prijs voor juist die groep haalt de monopolist een deel daarvan naar zich toe."
+  },
+  {
+   "opgave": "Opgave 2  Ronde van Vlaanderen"
+  },
+  {
+   "nr": 5,
+   "max": 2,
+   "bloom": "Onthouden",
+   "intro": "Uit het antwoord moeten twee van de volgende kenmerken blijken:",
+   "list": [
+    "er zijn veel aanbieders (ruim tweehonderd kramen)",
+    "het goed is homogeen (alle kramen schenken hetzelfde pils in dezelfde bekers)",
+    "er is vrije toetreding (iedereen mag zonder vergunning een kraam neerzetten)"
+   ],
+   "bullets": [
+    [
+     "eerste juiste kenmerk met het bijbehorende gegeven uit de tekst",
+     1
+    ],
+    [
+     "tweede juiste kenmerk met het bijbehorende gegeven uit de tekst",
+     1
+    ]
+   ],
+   "opm": "Een kenmerk zonder het gegeven uit de tekst: geen scorepunt toekennen.",
+   "fout": "Kenmerken noemen die niet in de tekst staan, zoals volledige informatie.",
+   "voorbeeld": "Er zijn veel aanbieders: ruim tweehonderd kramen. Het product is homogeen: alle kramen schenken hetzelfde pils in dezelfde bekers.",
+   "uitleg": "Volledige mededinging heeft drie kenmerken: veel aanbieders, een homogeen goed en vrije toetreding. Daardoor heeft geen enkele aanbieder invloed op de prijs."
+  },
+  {
+   "nr": 6,
+   "max": 3,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "aanbod met accijns: Qa = 30(P − 1) = 30P − 30",
+     1
+    ],
+    [
+     "zonder accijns: −20P + 200 = 30P → P = € 4,00; met accijns: −20P + 200 = 30P − 30 → P = € 4,60",
+     1
+    ],
+    [
+     "doorberekend: (4,60 − 4,00) : 1,00 × 100% = 60%",
+     1
+    ]
+   ],
+   "fout": "De accijns bij de vraagfunctie verwerken. Qa = 30P − 1 schrijven in plaats van 30(P − 1). Aannemen dat de hele accijns wordt doorberekend.",
+   "voorbeeld": "De kramen houden per glas P − 1 over, dus Qa = 30(P − 1) = 30P − 30. Oud evenwicht: −20P + 200 = 30P, P = € 4,00. Nieuw evenwicht: −20P + 200 = 30P − 30, P = € 4,60. De consument betaalt € 0,60 van de € 1,00 accijns: 60%.",
+   "uitleg": "Een accijns verschuift de aanbodlijn omhoog met het bedrag van de accijns. De prijs stijgt minder dan de accijns, omdat de vraag bij een hogere prijs daalt. De rest van de accijns (hier 40%) drukt op de aanbieders."
+  },
+  {
+   "nr": 7,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Q daalt van −20 × 4 + 200 = 120 naar −20 × 4,60 + 200 = 108: −10%. P stijgt van 4,00 naar 4,60: +15%. Ev = −10% : 15% = −0,67",
+     1
+    ],
+    [
+     "De vraag is prijsinelastisch, want de gevraagde hoeveelheid verandert procentueel minder dan de prijs (Ev ligt tussen 0 en −1).",
+     1
+    ]
+   ],
+   "fout": "De breuk omdraaien (15 : −10). De nieuwe waarden als basis nemen. ‘Inelastisch’ concluderen zonder de vergelijking tussen de twee procentuele veranderingen.",
+   "voorbeeld": "De afzet daalt van 120 naar 108, dat is −10%. De prijs stijgt van € 4,00 naar € 4,60, dat is +15%. Ev = −10 : 15 = −0,67. De hoeveelheid reageert minder sterk dan de prijs verandert, dus de vraag is prijsinelastisch.",
+   "uitleg": "Prijselasticiteit van de vraag = procentuele verandering van de gevraagde hoeveelheid : procentuele verandering van de prijs. Ligt de uitkomst tussen 0 en −1, dan is de vraag prijsinelastisch."
+  },
+  {
+   "nr": 8,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste arcering is:",
+   "fig": {
+    "file": "markt_A_antwoord.png",
+    "w": 400,
+    "h": 300
+   },
+   "bullets": [
+    [
+     "de accijnsopbrengst: de rechthoek tussen de prijs die de consument betaalt en de prijs die de aanbieder overhoudt, tot aan de nieuwe evenwichtshoeveelheid",
+     1
+    ],
+    [
+     "het welvaartsverlies: de driehoek tussen de vraaglijn en de oorspronkelijke aanbodlijn, tussen de nieuwe en de oude evenwichtshoeveelheid",
+     1
+    ]
+   ],
+   "fout": "De rechthoek laten doorlopen tot de oude hoeveelheid. De driehoek tekenen tussen de twee aanbodlijnen in plaats van tussen de vraaglijn en de oude aanbodlijn.",
+   "voorbeeld": "Zie de figuur in het correctievoorschrift: een rechthoek met hoogte € 1,00 en breedte 108 (duizend glazen) en rechts daarvan een driehoek die eindigt in het oude evenwicht.",
+   "uitleg": "De overheid ontvangt de accijns over elke eenheid die nog wordt verhandeld. De transacties tussen de nieuwe en de oude hoeveelheid vinden niet meer plaats. Het surplus dat zij opleverden, is voor iedereen verloren: dat is de Harberger-driehoek."
+  },
+  {
+   "nr": 9,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Omvang: door de accijns daalt de verhandelde hoeveelheid. Transacties die surplus opleverden, vinden niet meer plaats, zodat het totale surplus (inclusief de accijnsopbrengst) kleiner wordt / er welvaartsverlies ontstaat.",
+     1
+    ],
+    [
+     "Verdeling: het consumentensurplus daalt (hogere prijs) en het producentensurplus daalt (lagere opbrengst per glas na aftrek van de accijns). Een deel hiervan gaat als accijnsopbrengst naar de overheid.",
+     1
+    ]
+   ],
+   "fout": "Alleen het welvaartsverlies noemen en de verschuiving van surplus naar de overheid vergeten.",
+   "voorbeeld": "Er worden minder glazen verkocht. Het surplus van die verdwenen transacties is weg, dus het totale surplus krimpt. Daarnaast verschuift er surplus: consumenten betalen meer en kramen houden minder over. Een deel van wat zij verliezen, ontvangt de overheid als accijns.",
+   "uitleg": "De omvang van het totale surplus is de maatstaf voor doelmatigheid. Een accijns maakt de markt minder doelmatig (de taart wordt kleiner) en verdeelt de taart anders: van consumenten en producenten naar de overheid."
+  },
+  {
+   "opgave": "Opgave 3  Hyrox"
+  },
+  {
+   "nr": 10,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "TO = 3.000 × € 80 = € 240.000",
+     1
+    ],
+    [
+     "TK = 3.000 × € 30 + € 80.000 = € 170.000, dus TW = 240.000 − 170.000 = € 70.000",
+     1
+    ]
+   ],
+   "opm": "Een berekening via de dekkingsbijdrage (3.000 × (80 − 30) − 80.000 = 70.000) ook goed rekenen.",
+   "fout": "Het aantal deelnemers van de andere situatie gebruiken (2.200) of de constante kosten vergeten.",
+   "voorbeeld": "FitRace vraagt € 80 en krijgt 3.000 deelnemers. TO = 3.000 × 80 = € 240.000. TK = 3.000 × 30 + 80.000 = € 170.000. Winst = € 70.000.",
+   "uitleg": "Elke cel van een pay-offmatrix is het resultaat van één combinatie van keuzes. Je rekent de cel na met TW = TO − TK voor die combinatie."
+  },
+  {
+   "nr": 11,
+   "max": 1,
+   "bloom": "Onthouden",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Een simultaan spel, want beide bureaus maken op dezelfde dag hun prijs bekend zonder de keuze van de ander te kennen.",
+     1
+    ]
+   ],
+   "opm": "Alleen de keuze zonder juiste motivering: geen scorepunt toekennen.",
+   "voorbeeld": "Simultaan, want ze kiezen tegelijk en weten niet wat de ander kiest.",
+   "uitleg": "Bij een simultaan spel kiezen de spelers tegelijk (pay-offmatrix). Bij een sequentieel spel kiest de een na de ander en kent de tweede speler de keuze van de eerste (spelboom)."
+  },
+  {
+   "nr": 12,
+   "max": 3,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Voor FitRace is verlagen de dominante strategie: als IronHall handhaaft, geldt 70 > 60 en als IronHall verlaagt, geldt 30 > −3.",
+     1
+    ],
+    [
+     "Voor IronHall is verlagen ook de dominante strategie: als FitRace handhaaft, geldt 70 > 60 en als FitRace verlaagt, geldt 30 > −3.",
+     1
+    ],
+    [
+     "Het Nash-evenwicht is dat beide verlagen (30 ; 30). Dit is voor beide slechter dan beide handhaven (60 ; 60): een suboptimale uitkomst en dus een gevangenendilemma.",
+     1
+    ]
+   ],
+   "fout": "De dominante strategie maar voor één speler laten zien. Het Nash-evenwicht noemen zonder het te vergelijken met de uitkomst (60 ; 60).",
+   "voorbeeld": "FitRace: bij handhaven van IronHall is 70 meer dan 60, bij verlagen van IronHall is 30 meer dan −3. Verlagen is dus altijd beter: dominant. Voor IronHall geldt hetzelfde. Beide verlagen en krijgen 30. Hadden ze allebei gehandhaafd, dan kregen ze 60. Ze eindigen dus allebei slechter: een gevangenendilemma.",
+   "uitleg": "Een gevangenendilemma heeft twee onderdelen: elke speler heeft een dominante strategie, en het Nash-evenwicht dat daaruit volgt is voor beide slechter dan een andere uitkomst. Je moet beide onderdelen met getallen laten zien."
+  },
+  {
+   "opgave": "Opgave 4  WK judo"
+  },
+  {
+   "nr": 13,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Als de WJB een hogere bijdrage eist, accepteert Maasdam (−1 is beter dan −6). De WJB kiest daarom na de verbouwing voor eisen (8 > 3).",
+     1
+    ],
+    [
+     "Maasdam voorziet dit: verbouwen levert dan −1 op en niet verbouwen 0. Maasdam verbouwt dus niet en de uitkomst is (0 ; 1).",
+     1
+    ]
+   ],
+   "fout": "Van voren naar achteren redeneren en uitkomen op (4 ; 3). Je moet achteraan in de boom beginnen.",
+   "voorbeeld": "Ik begin achteraan. Na een eis kiest Maasdam accepteren, want −1 is beter dan −6. De WJB weet dat en eist, want 8 is meer dan 3. Maasdam weet dat ook: verbouwen eindigt op −1, niet verbouwen op 0. Maasdam verbouwt niet. Uitkomst: (0 ; 1).",
+   "uitleg": "Een sequentieel spel los je op door terug te redeneren vanaf de laatste keuze. Elke speler houdt rekening met wat de volgende speler zal doen."
+  },
+  {
+   "nr": 14,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De € 6 miljoen voor de verbouwing is alleen bruikbaar voor het WK en kan na de verbouwing niet worden terugverdiend op een andere manier: het zijn verzonken kosten.",
+     1
+    ],
+    [
+     "Daardoor is Maasdam na de verbouwing afhankelijk van de WJB. De WJB kan die afhankelijkheid gebruiken om een hogere bijdrage (een groter deel van de opbrengst) te eisen.",
+     1
+    ]
+   ],
+   "fout": "Het berovingsprobleem omschrijven als ‘de WJB is oneerlijk’, zonder de specifieke investering en de verzonken kosten te noemen.",
+   "voorbeeld": "De judohal is alleen iets waard als het WK doorgaat. Het geld is na de verbouwing uitgegeven en komt niet terug: verzonken kosten. Maasdam kan dan niet meer terug en moet bijna alles accepteren. De WJB kan daarvan misbruik maken door meer geld te eisen.",
+   "uitleg": "Een berovingsprobleem ontstaat bij een specifieke investering. Wie heeft geïnvesteerd, staat daarna zwakker in de onderhandeling. Wie dat vooraf ziet aankomen, investeert niet, ook al zou de samenwerking voor beide voordelig zijn."
+  },
+  {
+   "nr": 15,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Met het contract levert eisen de WJB 8 − 6 = 2 op. Dat is minder dan 3 bij nakomen, zodat de WJB de afspraak nakomt. De belofte van de WJB is daardoor geloofwaardig.",
+     1
+    ],
+    [
+     "Maasdam verbouwt nu wel (4 > 0). De uitkomst wordt (4 ; 3), zodat de WJB 3 behaalt in plaats van 1 zonder het contract.",
+     1
+    ]
+   ],
+   "fout": "Alleen zeggen dat de boete ‘afschrikt’, zonder te laten zien dat 2 lager is dan 3 en dat de uitkomst voor de WJB van 1 naar 3 gaat.",
+   "voorbeeld": "Door de boete houdt de WJB bij eisen maar 8 − 6 = 2 over. Nakomen levert 3 op, dus de WJB komt de afspraak na. Maasdam kan daarop vertrouwen en verbouwt, want 4 is meer dan 0. De WJB krijgt nu 3 in plaats van 1.",
+   "uitleg": "Zelfbinding betekent dat een speler een eigen keuze bewust onaantrekkelijk maakt. De opbrengst van die keuze wordt lager, maar daardoor wordt zijn belofte geloofwaardig en verandert het gedrag van de andere speler in zijn voordeel."
+  }
+ ],
+ "matrijs": {
+  "rijen": [
+   {
+    "nr": 1,
+    "leerdoel": "MO afleiden uit de vraagfunctie, MK uit de kwadratische TK-functie, maximale winst berekenen",
+    "eindterm": "D1.21, D2.2",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Safetybell (2025-II vr. 2)",
+    "thema": "Skigebied Hochtal",
+    "bron": "–",
+    "punten": 3,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 2,
+    "leerdoel": "Stijging variabele kosten: nieuwe TK en MK, nieuwe prijs, percentage doorberekend",
+    "eindterm": "D1.17, D2.2",
+    "werkwoord": "Bereken",
+    "bloom": "Analyseren",
+    "koppeling": "IJssalon (2025-I vr. 14)",
+    "thema": "Skigebied Hochtal",
+    "bron": "–",
+    "punten": 4,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 3,
+    "leerdoel": "Plan toetsen aan de twee voorwaarden voor prijsdiscriminatie",
+    "eindterm": "D2.3",
+    "werkwoord": "Beargumenteer",
+    "bloom": "Analyseren",
+    "koppeling": "Duopolis (2024-II vr. 4)",
+    "thema": "Skigebied Hochtal",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 4,
+    "leerdoel": "Consumentensurplus afromen via prijsdiscriminatie",
+    "eindterm": "D3.1, D3.8",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Strijd om startups (2022-II vr. 21)",
+    "thema": "Skigebied Hochtal",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 5,
+    "leerdoel": "Volledige mededinging herkennen aan twee kenmerken",
+    "eindterm": "D2.1",
+    "werkwoord": "Noem",
+    "bloom": "Onthouden",
+    "koppeling": "Kappen met kappen (2026-I vr. 16)",
+    "thema": "Bier langs het parcours",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 6,
+    "leerdoel": "Accijns: nieuwe aanbodfunctie, nieuw evenwicht, percentage doorberekend",
+    "eindterm": "D1.13, D1.24, D3.9",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Duurzaamheid stimuleren (2024-I vr. 2)",
+    "thema": "Bier langs het parcours",
+    "bron": "–",
+    "punten": 3,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 7,
+    "leerdoel": "Prijselasticiteit van de vraag berekenen en typeren",
+    "eindterm": "D1.5, D1.6",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Sociaal gamen (2022-I vr. 5)",
+    "thema": "Bier langs het parcours",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 8,
+    "leerdoel": "Accijnsopbrengst en welvaartsverlies arceren",
+    "eindterm": "D3.6, D3.9",
+    "werkwoord": "Arceer",
+    "bloom": "Begrijpen",
+    "koppeling": "Duurzaamheid stimuleren (2024-I vr. 4)",
+    "thema": "Bier langs het parcours",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 9,
+    "leerdoel": "Effect van de accijns op de omvang en de verdeling van het surplus",
+    "eindterm": "D3.4, D3.9",
+    "werkwoord": "Leg uit",
+    "bloom": "Analyseren",
+    "koppeling": "Content (2023-I vr. 5)",
+    "thema": "Bier langs het parcours",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Markten (opgave 1 en 2)"
+   },
+   {
+    "nr": 10,
+    "leerdoel": "Een cel van de pay-offmatrix narekenen",
+    "eindterm": "F1.2, D1.19",
+    "werkwoord": "Toon aan",
+    "bloom": "Toepassen",
+    "koppeling": "Duopolis (2024-II vr. 2)",
+    "thema": "Hyrox: FitRace en IronHall",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Samenwerken en onderhandelen (opgave 3 en 4)"
+   },
+   {
+    "nr": 11,
+    "leerdoel": "Simultaan en sequentieel spel onderscheiden",
+    "eindterm": "F1.3",
+    "werkwoord": "Kies en motiveer",
+    "bloom": "Onthouden",
+    "koppeling": "Prijsbeleid in de verf gezet (2021-I vr. 17)",
+    "thema": "Hyrox: FitRace en IronHall",
+    "bron": "–",
+    "punten": 1,
+    "onderdeel": "Samenwerken en onderhandelen (opgave 3 en 4)"
+   },
+   {
+    "nr": 12,
+    "leerdoel": "Gevangenendilemma: dominante strategieën en suboptimaal Nash-evenwicht",
+    "eindterm": "F1.4, F1.5",
+    "werkwoord": "Leg uit",
+    "bloom": "Analyseren",
+    "koppeling": "Vissen naar winst (2024-I vr. 24)",
+    "thema": "Hyrox: FitRace en IronHall",
+    "bron": "–",
+    "punten": 3,
+    "onderdeel": "Samenwerken en onderhandelen (opgave 3 en 4)"
+   },
+   {
+    "nr": 13,
+    "leerdoel": "Uitkomst van een spelboom beredeneren",
+    "eindterm": "F1.2, F1.3",
+    "werkwoord": "Leg uit",
+    "bloom": "Analyseren",
+    "koppeling": "Duopolis (2024-II vr. 5)",
+    "thema": "WK judo: Maasdam en WJB",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Samenwerken en onderhandelen (opgave 3 en 4)"
+   },
+   {
+    "nr": 14,
+    "leerdoel": "Berovingsprobleem en verzonken kosten",
+    "eindterm": "F2.1",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Soepeler (2025-II vr. 23)",
+    "thema": "WK judo: Maasdam en WJB",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Samenwerken en onderhandelen (opgave 3 en 4)"
+   },
+   {
+    "nr": 15,
+    "leerdoel": "Geloofwaardige zelfbinding verandert de uitkomst",
+    "eindterm": "F1.7, F1.11",
+    "werkwoord": "Leg uit",
+    "bloom": "Analyseren",
+    "koppeling": "IJssalon (2025-I vr. 16)",
+    "thema": "WK judo: Maasdam en WJB",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Samenwerken en onderhandelen (opgave 3 en 4)"
+   }
+  ],
+  "gevraagd": {
+   "onderdelen": {
+    "Markten (opgave 1 en 2)": 65,
+    "Samenwerken en onderhandelen (opgave 3 en 4)": 35
+   },
+   "bloom": {
+    "Onthouden": 10,
+    "Begrijpen": 20,
+    "Toepassen": 30,
+    "Analyseren": 40
+   }
+  }
+ }
+}

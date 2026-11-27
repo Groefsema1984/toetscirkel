@@ -1,0 +1,1225 @@
+{
+ "meta": {
+  "vak": "Bedrijfseconomie",
+  "niveau": "Vwo",
+  "klas": "6 vwo",
+  "titel": "Schoolexamen bedrijfseconomie vwo",
+  "onderwerp": "De naamloze vennootschap: kosten en winst, verslaggeving",
+  "kort": "De naamloze vennootschap",
+  "at": "AT6.11",
+  "datum": "26 oktober 2026",
+  "maker": "GRA",
+  "weging": "15%",
+  "minuten": 100,
+  "versie": "A",
+  "bestandsbasis": "AT6.11_SE_vwo6_bedrijfseconomie_versie_A",
+  "formuletekst": "achter in de bijlage staat een formuleblad met de formules van de verschillenanalyse. De overige formules moet je uit je hoofd kennen."
+ },
+ "opgaven": [
+  {
+   "titel": "Opgave 1",
+   "items": [
+    {
+     "t": "p",
+     "text": "In deze opgave blijven de btw en de winstbelasting buiten beschouwing."
+    },
+    {
+     "t": "p",
+     "text": "Ippon nv is een keten van judoscholen. De financieel directeur stelt voor het vierde kwartaal van 2026 de resultatenbegroting (exploitatiebegroting) en de liquiditeitsbegroting op. De gegevens staan in informatiebron 1."
+    },
+    {
+     "t": "q",
+     "nr": 1,
+     "p": 2,
+     "text": "Op 1 oktober 2026 koopt Ippon nv nieuwe judomatten. Leg aan de hand van deze aankoop het verschil uit tussen uitgaven en kosten (zie informatiebron 1)."
+    },
+    {
+     "t": "q",
+     "nr": 2,
+     "p": 2,
+     "text": "Bereken het bedrag van de vooruitbetaalde huur op de balans van Ippon nv per 31 december 2026 (zie informatiebron 1)."
+    },
+    {
+     "t": "q",
+     "nr": 3,
+     "p": 2,
+     "text": "Bereken het bedrag van de nog te betalen interest op de balans van Ippon nv per 31 december 2026 (zie informatiebron 1)."
+    },
+    {
+     "t": "p",
+     "text": "De contributie die Ippon nv op 1 oktober 2026 ontvangt, leidt op 31 december 2026 tot de balanspost ‘vooruitontvangen contributie’."
+    },
+    {
+     "t": "q",
+     "nr": 4,
+     "p": 1,
+     "text": "Staat deze post aan de debetzijde of aan de creditzijde van de balans? Motiveer het antwoord."
+    },
+    {
+     "t": "q",
+     "nr": 5,
+     "p": 3,
+     "text": "Bepaal voor de vijf posten in de uitwerkbijlage het bedrag op de resultatenbegroting en het bedrag op de liquiditeitsbegroting van het vierde kwartaal van 2026 (zie informatiebron 1).",
+     "extra": [
+      "Vul hiervoor de uitwerkbijlage bij deze vraag in."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 2",
+   "doorlopend": true,
+   "items": [
+    {
+     "t": "p",
+     "text": "In deze opgave blijft de btw buiten beschouwing."
+    },
+    {
+     "t": "p",
+     "text": "Sonnberg Skiliften nv exploiteert een skigebied. Op 1 april 2023 heeft Sonnberg Skiliften nv een pistenwals gekocht voor € 420.000. Sonnberg Skiliften nv schrijft de pistenwals af met gelijke bedragen per maand. Bij de aankoop schatte de directie de levensduur op 8 jaar en de restwaarde op € 60.000. Op 1 juli 2027 verkoopt Sonnberg Skiliften nv de pistenwals voor € 240.000."
+    },
+    {
+     "t": "q",
+     "nr": 6,
+     "p": 2,
+     "text": "Bereken het boekresultaat op de verkoop van de pistenwals. Geef aan of er sprake is van een boekwinst of een boekverlies."
+    },
+    {
+     "t": "p",
+     "text": "Bij de aankoop twijfelde de directie tussen een levensduur van 8 jaar en een levensduur van 10 jaar."
+    },
+    {
+     "t": "q",
+     "nr": 7,
+     "p": 2,
+     "text": "Leg uit welk gevolg een levensduur van 10 jaar zou hebben gehad voor het jaarlijkse resultaat en voor de liquide middelen van Sonnberg Skiliften in de jaren waarin de pistenwals wordt gebruikt."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 3",
+   "items": [
+    {
+     "t": "p",
+     "text": "In deze opgave blijft de btw buiten beschouwing."
+    },
+    {
+     "t": "p",
+     "text": "Velo Kwaremont nv produceert carbon racefietsen en verkoopt deze aan fietsenwinkels. Velo Kwaremont nv maakt één type. De productie is steeds gelijk aan de afzet. De directie maakt elk jaar een voorcalculatie en een nacalculatie (zie informatiebronnen 2 en 3)."
+    },
+    {
+     "t": "q",
+     "nr": 8,
+     "p": 2,
+     "text": "Bereken de kostprijs van één racefiets (zie informatiebron 2)."
+    },
+    {
+     "t": "q",
+     "nr": 9,
+     "p": 2,
+     "text": "Bereken het verwachte bedrijfsresultaat over 2026 met behulp van het verwachte verkoopresultaat en het verwachte bezettingsresultaat. Geef telkens aan of het een voordelig of een nadelig resultaat betreft (zie informatiebron 2 en het formuleblad)."
+    },
+    {
+     "t": "p",
+     "text": "Begin 2027 zijn de gerealiseerde cijfers over 2026 bekend (zie informatiebron 3)."
+    },
+    {
+     "t": "q",
+     "nr": 10,
+     "p": 4,
+     "text": "Maak de verschillenanalyse over 2026 af door de uitwerkbijlage bij deze vraag volledig in te vullen (zie informatiebronnen 2 en 3 en het formuleblad)."
+    },
+    {
+     "t": "q",
+     "nr": 11,
+     "p": 2,
+     "text": "Leg zonder berekening uit waardoor het gerealiseerde bezettingsresultaat over 2026 voordelig is."
+    },
+    {
+     "t": "p",
+     "text": "De inkoopmanager van Velo Kwaremont heeft in 2026 carbon ingekocht bij een nieuwe, goedkopere leverancier. De productiemanager klaagt dat er door de lagere kwaliteit meer carbon verloren gaat bij het snijden."
+    },
+    {
+     "t": "q",
+     "nr": 12,
+     "p": 2,
+     "text": "Beoordeel met behulp van twee resultaten uit de verschillenanalyse of de keuze van de inkoopmanager per saldo voordelig is geweest voor Velo Kwaremont nv."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 4",
+   "items": [
+    {
+     "t": "p",
+     "text": "In deze opgave blijft de btw buiten beschouwing."
+    },
+    {
+     "t": "p",
+     "text": "RoxWear nv verkoopt via een webshop sportkleding voor Hyrox-wedstrijden. De verwachtingen voor 2027 staan in informatiebron 4."
+    },
+    {
+     "t": "q",
+     "nr": 13,
+     "p": 2,
+     "text": "Bereken de break-evenomzet van RoxWear nv voor 2027. Stel hiervoor eerst de variabele kosten als percentage van de omzet vast (zie informatiebron 4)."
+    },
+    {
+     "t": "p",
+     "text": "In informatiebron 5 staat een schets van de break-evengrafiek van RoxWear nv."
+    },
+    {
+     "t": "q",
+     "nr": 14,
+     "p": 2,
+     "text": "Geef van elke lijn in de grafiek (A, B en C) aan wat deze lijn weergeeft. Kies uit: totale constante kosten, totale kosten, totale opbrengst, totale variabele kosten (zie informatiebron 5)."
+    },
+    {
+     "t": "q",
+     "nr": 15,
+     "p": 1,
+     "text": "Leg uit wat het snijpunt van lijn A en lijn B betekent voor het resultaat van RoxWear nv."
+    },
+    {
+     "t": "p",
+     "text": "De directie wil het resultaat over 2027 verbeteren en overweegt twee maatregelen:"
+    },
+    {
+     "t": "li",
+     "text": "−  maatregel 1: een reclamecampagne van € 30.000, waardoor de omzet met 10% stijgt. De kosten van de campagne zijn constante kosten;"
+    },
+    {
+     "t": "li",
+     "text": "−  maatregel 2: een andere leverancier, waardoor de inkoopwaarde van de omzet daalt naar 52% van de omzet. De omzet blijft dan gelijk aan de verwachte omzet."
+    },
+    {
+     "t": "q",
+     "nr": 16,
+     "p": 3,
+     "text": "Toon met een berekening aan welke maatregel het hoogste verwachte resultaat over 2027 oplevert (zie informatiebron 4)."
+    }
+   ]
+  }
+ ],
+ "bijlage": {
+  "intro": "Deze bijlage bevat de informatiebronnen 1 tot en met 5. Alle ondernemingen, personen en bedragen zijn fictief. Op de laatste pagina staat het formuleblad.",
+  "bronnen": [
+   {
+    "nr": 1,
+    "titel": "Gegevens van Ippon nv voor het vierde kwartaal van 2026",
+    "type": "box",
+    "lines": [
+     [
+      "b",
+      "Contributie"
+     ],
+     [
+      "p",
+      "Ippon nv heeft 1.500 leden. Elk lid betaalt op 1 oktober 2026 een contributie van € 480 vooruit voor de periode van 1 oktober 2026 tot en met 30 september 2027."
+     ],
+     [
+      "b",
+      "Huur"
+     ],
+     [
+      "p",
+      "De huur van de judozalen is € 108.000 per jaar. Ippon nv betaalt de huur per halfjaar vooruit: op 1 december voor de maanden december tot en met mei en op 1 juni voor de maanden juni tot en met november."
+     ],
+     [
+      "b",
+      "Lening"
+     ],
+     [
+      "p",
+      "Ippon nv heeft een 6% lening. Op 1 oktober 2026 is de schuld € 400.000. De interest wordt per halfjaar achteraf betaald, op 1 november en op 1 mei. Op 1 november van elk jaar lost Ippon nv € 40.000 af."
+     ],
+     [
+      "b",
+      "Judomatten"
+     ],
+     [
+      "p",
+      "Op 1 oktober 2026 koopt en betaalt Ippon nv nieuwe judomatten voor € 96.000. De judomatten worden in 8 jaar met gelijke bedragen per maand afgeschreven tot een restwaarde van € 0."
+     ],
+     [
+      "b",
+      "Lonen"
+     ],
+     [
+      "p",
+      "De loonkosten zijn € 90.000 per kwartaal. De lonen worden in hetzelfde kwartaal betaald."
+     ]
+    ]
+   },
+   {
+    "nr": 2,
+    "titel": "Voorcalculatie van Velo Kwaremont nv voor 2026",
+    "type": "table",
+    "nieuwePagina": true,
+    "head": [
+     "Gegeven",
+     "Waarde"
+    ],
+    "align": [
+     "l",
+     "r"
+    ],
+    "widths": [
+     6238,
+     3400
+    ],
+    "rows": [
+     [
+      "Normale productie en afzet",
+      "4.000 racefietsen"
+     ],
+     [
+      "Verwachte productie en afzet",
+      "3.800 racefietsen"
+     ],
+     [
+      "Standaardverbruik carbon per racefiets",
+      "3 kg"
+     ],
+     [
+      "Standaardprijs carbon",
+      "€ 120 per kg"
+     ],
+     [
+      "Standaardarbeidstijd per racefiets",
+      "5 uur"
+     ],
+     [
+      "Standaardloontarief",
+      "€ 40 per uur"
+     ],
+     [
+      "Totale constante kosten",
+      "€ 960.000"
+     ],
+     [
+      "Verkoopprijs per racefiets",
+      "€ 1.000"
+     ],
+     [
+      "Aantal werknemers in de productie",
+      "14"
+     ]
+    ]
+   },
+   {
+    "nr": 3,
+    "titel": "Nacalculatie van Velo Kwaremont nv over 2026",
+    "type": "table",
+    "head": [
+     "Gegeven",
+     "Waarde"
+    ],
+    "align": [
+     "l",
+     "r"
+    ],
+    "widths": [
+     6238,
+     3400
+    ],
+    "rows": [
+     [
+      "Werkelijke productie en afzet",
+      "4.200 racefietsen"
+     ],
+     [
+      "Werkelijk verbruik carbon",
+      "13.020 kg"
+     ],
+     [
+      "Werkelijke inkoopprijs carbon",
+      "€ 115 per kg"
+     ],
+     [
+      "Werkelijke arbeidstijd",
+      "20.580 uur"
+     ],
+     [
+      "Werkelijk loontarief",
+      "€ 42 per uur"
+     ],
+     [
+      "Werkelijke constante kosten",
+      "€ 990.000"
+     ],
+     [
+      "Werkelijke verkoopprijs per racefiets",
+      "€ 1.000"
+     ]
+    ]
+   },
+   {
+    "nr": 4,
+    "titel": "Verwachtingen van RoxWear nv voor 2027",
+    "type": "table",
+    "nieuwePagina": true,
+    "head": [
+     "Gegeven",
+     "Waarde"
+    ],
+    "align": [
+     "l",
+     "r"
+    ],
+    "widths": [
+     6238,
+     3400
+    ],
+    "rows": [
+     [
+      "Verwachte omzet",
+      "€ 1.500.000"
+     ],
+     [
+      "Verwacht aantal bestellingen",
+      "30.000"
+     ],
+     [
+      "Inkoopwaarde van de omzet",
+      "55% van de omzet"
+     ],
+     [
+      "Overige variabele kosten (verzending en betaalkosten)",
+      "10% van de omzet"
+     ],
+     [
+      "Totale constante kosten",
+      "€ 420.000"
+     ]
+    ]
+   },
+   {
+    "nr": 5,
+    "titel": "Break-evengrafiek van RoxWear nv (schets)",
+    "type": "figure",
+    "file": "beg.png",
+    "w": 420,
+    "h": 289
+   }
+  ],
+  "formules": [
+   [
+    "b",
+    "Resultaat"
+   ],
+   [
+    "p",
+    "verkoopresultaat = afzet × (verkoopprijs − kostprijs)"
+   ],
+   [
+    "p",
+    "budgetresultaat = gerealiseerde afzet × kostprijs − werkelijke kosten"
+   ],
+   [
+    "b",
+    "Verschillenanalyse"
+   ],
+   [
+    "p",
+    "efficiencyresultaat = (sh − wh) × sp"
+   ],
+   [
+    "p",
+    "prijsresultaat = (sp − wp) × wh"
+   ],
+   [
+    "k",
+    "sh = standaardhoeveelheid"
+   ],
+   [
+    "k",
+    "wh = werkelijke hoeveelheid"
+   ],
+   [
+    "k",
+    "sp = standaardprijs"
+   ],
+   [
+    "k",
+    "wp = werkelijke prijs"
+   ],
+   [
+    "p",
+    ""
+   ],
+   [
+    "p",
+    "begroot bezettingsresultaat = (B − N) × C/N"
+   ],
+   [
+    "p",
+    "gerealiseerd bezettingsresultaat = (W − N) × C/N"
+   ],
+   [
+    "k",
+    "B = begrote bezetting"
+   ],
+   [
+    "k",
+    "W = werkelijke bezetting"
+   ],
+   [
+    "k",
+    "N = normale bezetting"
+   ],
+   [
+    "k",
+    "C = totale constante kosten"
+   ]
+  ]
+ },
+ "uitwerkbijlage": [
+  {
+   "vraag": 5,
+   "titel": "Resultatenbegroting en liquiditeitsbegroting vierde kwartaal 2026",
+   "head": [
+    "Post",
+    "Bedrag op de resultatenbegroting (opbrengst of kosten)",
+    "Bedrag op de liquiditeitsbegroting (ontvangst of uitgave)"
+   ],
+   "widths": [
+    2838,
+    3400,
+    3400
+   ],
+   "hoogte": 1250,
+   "rows": [
+    [
+     "Contributie",
+     "€",
+     "€"
+    ],
+    [
+     "Huur",
+     "€",
+     "€"
+    ],
+    [
+     "Interest",
+     "€",
+     "€"
+    ],
+    [
+     "Aflossing van de lening",
+     "€",
+     "€"
+    ],
+    [
+     "Judomatten",
+     "€",
+     "€"
+    ]
+   ],
+   "noot": "Hoort een post niet op een begroting? Vul dan € 0 in."
+  },
+  {
+   "vraag": 10,
+   "titel": "Verschillenanalyse over 2026",
+   "head": [
+    "Resultaat",
+    "Berekening",
+    "Bedrag",
+    "Voordelig of nadelig"
+   ],
+   "widths": [
+    2700,
+    3838,
+    1500,
+    1600
+   ],
+   "hoogte": 1300,
+   "rows": [
+    [
+     "Efficiencyresultaat carbon",
+     "",
+     "€",
+     ""
+    ],
+    [
+     "Prijsresultaat carbon",
+     "",
+     "€",
+     ""
+    ],
+    [
+     "Efficiencyresultaat arbeid",
+     "",
+     "€",
+     ""
+    ],
+    [
+     "Prijsresultaat arbeid",
+     "",
+     "€",
+     ""
+    ],
+    [
+     "Bezettingsresultaat",
+     "",
+     "€",
+     ""
+    ],
+    [
+     "Prijsresultaat constante kosten",
+     "",
+     "€",
+     ""
+    ],
+    [
+     "Budgetresultaat",
+     "",
+     "€",
+     ""
+    ]
+   ]
+  }
+ ],
+ "cv": [
+  {
+   "opgave": "Opgave 1"
+  },
+  {
+   "nr": 1,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De uitgave is het bedrag dat Ippon nv betaalt: € 96.000 in één keer op 1 oktober 2026.",
+     1
+    ],
+    [
+     "De kosten zijn de waardedaling door het gebruik (de afschrijving). Deze worden verdeeld over de jaren waarin de judomatten worden gebruikt: € 12.000 per jaar.",
+     1
+    ]
+   ],
+   "opm": "Een uitleg zonder bedragen, waarin het moment van betalen tegenover de toerekening aan de gebruiksperiode wordt gezet, ook goed rekenen.",
+   "fout": "Zeggen dat een uitgave ‘groot’ is en kosten ‘klein’, zonder het verschil tussen betalen en toerekenen aan een periode te noemen.",
+   "voorbeeld": "De uitgave is het geld dat de bank verlaat: € 96.000 op 1 oktober 2026. De kosten zijn de afschrijving: Ippon nv gebruikt de judomatten 8 jaar, dus elk jaar is € 12.000 kosten.",
+   "uitleg": "Een uitgave hoort bij het moment van betalen en staat op de liquiditeitsbegroting. Kosten horen bij de periode waarin iets wordt verbruikt en staan op de resultatenbegroting."
+  },
+  {
+   "nr": 2,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "De laatste betaling van € 54.000 is voor zes maanden. Op 31 december 2026 is daarvan één maand verstreken.",
+     1
+    ],
+    [
+     "vooruitbetaalde huur = 5/6 × 54.000 = € 45.000",
+     1
+    ]
+   ],
+   "fout": "De verstreken maanden nemen in plaats van de maanden die nog komen (€ 9.000).",
+   "voorbeeld": "Op 1 december is € 54.000 betaald voor zes maanden, dat is € 9.000 per maand. Op 31 december zijn er nog 5 maanden over: 5 × 9.000 = € 45.000.",
+   "uitleg": "Vooruitbetaalde bedragen zijn al betaald, maar zijn nog geen kosten. Het deel dat bij de volgende periode hoort, staat als vordering aan de debetzijde van de balans."
+  },
+  {
+   "nr": 3,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "schuld na de aflossing op 1 november = 400.000 − 40.000 = € 360.000",
+     1
+    ],
+    [
+     "nog te betalen interest = 360.000 × 0,06 × 2/12 = € 3.600",
+     1
+    ]
+   ],
+   "fout": "Rekenen met de schuld vóór de aflossing, of de interest van het hele kwartaal nemen.",
+   "voorbeeld": "Op 1 november is de interest tot die datum betaald en is € 40.000 afgelost. De schuld is dan € 360.000. Tot 31 december zijn er 2 maanden verstreken: 360.000 × 0,06 × 2/12 = € 3.600.",
+   "uitleg": "Interest die achteraf wordt betaald, is op de balansdatum al wel kosten maar nog niet betaald. Dat bedrag staat als schuld aan de creditzijde van de balans."
+  },
+  {
+   "nr": 4,
+   "max": 1,
+   "bloom": "Onthouden",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Aan de creditzijde, want Ippon nv heeft het geld al ontvangen maar moet de prestatie nog leveren. Het is een schuld (kort vreemd vermogen).",
+     1
+    ]
+   ],
+   "opm": "Alleen de keuze zonder juiste motivering: geen scorepunt toekennen.",
+   "voorbeeld": "Credit, want Ippon nv is de leden nog 9 maanden lessen schuldig. Het is een schuld.",
+   "uitleg": "Vooruitontvangen bedragen zijn ontvangsten die nog geen opbrengst zijn. De onderneming moet nog leveren, dus het is een schuld op korte termijn."
+  },
+  {
+   "nr": 5,
+   "max": 3,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist ingevulde uitwerkbijlage is:",
+   "tabel": {
+    "head": [
+     "Post",
+     "Resultatenbegroting",
+     "Liquiditeitsbegroting"
+    ],
+    "rows": [
+     [
+      "Contributie",
+      "720.000 × 3/12 = € 180.000",
+      "1.500 × 480 = € 720.000"
+     ],
+     [
+      "Huur",
+      "108.000 × 3/12 = € 27.000",
+      "€ 54.000"
+     ],
+     [
+      "Interest",
+      "2.000 + 3.600 = € 5.600",
+      "400.000 × 0,06 × 6/12 = € 12.000"
+     ],
+     [
+      "Aflossing van de lening",
+      "€ 0",
+      "€ 40.000"
+     ],
+     [
+      "Judomatten",
+      "12.000 × 3/12 = € 3.000",
+      "€ 96.000"
+     ]
+    ],
+    "widths": [
+     2600,
+     2900,
+     2900
+    ],
+    "align": [
+     "l",
+     "r",
+     "r"
+    ]
+   },
+   "bullets": [
+    [
+     "indien vijf rijen juist",
+     3
+    ],
+    [
+     "indien vier of drie rijen juist",
+     2
+    ],
+    [
+     "indien twee rijen juist",
+     1
+    ],
+    [
+     "indien één of geen rij juist",
+     0
+    ]
+   ],
+   "opm": "Een rij is juist als beide bedragen juist zijn. Interestkosten: 400.000 × 0,06 × 1/12 = 2.000 en 360.000 × 0,06 × 2/12 = 3.600.",
+   "fout": "De aflossing als kosten opnemen. De hele ontvangst als opbrengst opnemen. De aanschafprijs als kosten opnemen.",
+   "voorbeeld": "Contributie: opbrengst € 180.000, ontvangst € 720.000. Huur: kosten € 27.000, uitgave € 54.000. Interest: kosten € 5.600, uitgave € 12.000. Aflossing: kosten € 0, uitgave € 40.000. Judomatten: kosten € 3.000, uitgave € 96.000.",
+   "uitleg": "De resultatenbegroting bevat wat bij het kwartaal hoort (opbrengsten en kosten). De liquiditeitsbegroting bevat wat in het kwartaal wordt ontvangen en betaald. Aflossen is terugbetalen van een schuld en is nooit kosten."
+  },
+  {
+   "opgave": "Opgave 2"
+  },
+  {
+   "nr": 6,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "afschrijving per maand = (420.000 − 60.000) : (8 × 12) = € 3.750; boekwaarde op 1 juli 2027 = 420.000 − 51 × 3.750 = € 228.750",
+     1
+    ],
+    [
+     "boekresultaat = 240.000 − 228.750 = € 11.250 boekwinst",
+     1
+    ]
+   ],
+   "fout": "De restwaarde niet aftrekken bij de afschrijving. Het aantal maanden verkeerd tellen. De verkoopprijs vergelijken met de aanschafprijs.",
+   "voorbeeld": "Per maand: (420.000 − 60.000) : 96 = € 3.750. Van 1 april 2023 tot 1 juli 2027 is 51 maanden: € 191.250 afgeschreven. Boekwaarde € 228.750. Verkocht voor € 240.000: boekwinst € 11.250.",
+   "uitleg": "Het boekresultaat is de verkoopprijs min de boekwaarde op het moment van verkoop. Is de verkoopprijs hoger, dan is er een boekwinst. Is hij lager, dan is er een boekverlies."
+  },
+  {
+   "nr": 7,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Bij een langere levensduur zijn de afschrijvingskosten per jaar lager, waardoor het jaarlijkse resultaat hoger is.",
+     1
+    ],
+    [
+     "De liquide middelen veranderen niet, want afschrijven is geen uitgave: de uitgave is gedaan bij de aankoop.",
+     1
+    ]
+   ],
+   "fout": "Zeggen dat lagere afschrijvingskosten geld opleveren. Afschrijven is geen uitgave.",
+   "voorbeeld": "Bij 10 jaar wordt hetzelfde bedrag over meer jaren verdeeld. De afschrijvingskosten per jaar zijn dan lager en het resultaat hoger. Aan het geld op de bank verandert niets, want voor afschrijven wordt niets betaald.",
+   "uitleg": "Afschrijvingskosten zijn kosten maar geen uitgaven. Een andere schatting van de levensduur of de restwaarde verandert het resultaat, maar niet de hoeveelheid geld op de bank."
+  },
+  {
+   "opgave": "Opgave 3"
+  },
+  {
+   "nr": 8,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "variabele kosten = 3 × 120 + 5 × 40 = € 560",
+     1
+    ],
+    [
+     "constante kosten per racefiets = 960.000 : 4.000 = € 240, dus kostprijs = 560 + 240 = € 800",
+     1
+    ]
+   ],
+   "fout": "De constante kosten delen door de verwachte productie (3.800) in plaats van door de normale productie.",
+   "voorbeeld": "Carbon: 3 × 120 = € 360. Arbeid: 5 × 40 = € 200. Constante kosten: 960.000 : 4.000 = € 240. Kostprijs = € 800.",
+   "uitleg": "De kostprijs is V/W + C/N. De constante kosten deel je door de normale productie, omdat de kostprijs anders elk jaar meebeweegt met de drukte."
+  },
+  {
+   "nr": 9,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "verwacht verkoopresultaat = 3.800 × (1.000 − 800) = € 760.000 voordelig",
+     1
+    ],
+    [
+     "verwacht bezettingsresultaat = (3.800 − 4.000) × 240 = € 48.000 nadelig, dus het verwachte bedrijfsresultaat = 760.000 − 48.000 = € 712.000 voordelig",
+     1
+    ]
+   ],
+   "opm": "Voor een juiste uitkomst via verwachte omzet min verwachte kosten zonder de twee deelresultaten: maximaal 1 scorepunt toekennen.",
+   "fout": "Het bezettingsresultaat berekenen met de werkelijke productie. Het teken van het bezettingsresultaat omdraaien.",
+   "voorbeeld": "Verkoopresultaat: 3.800 × 200 = € 760.000 voordelig. Bezettingsresultaat: (3.800 − 4.000) × 240 = € 48.000 nadelig. Samen € 712.000.",
+   "uitleg": "Het verkoopresultaat is de winst per product keer de afzet. Het bezettingsresultaat laat zien of er meer of minder constante kosten in de kostprijs zijn doorberekend dan er werkelijk zijn."
+  },
+  {
+   "nr": 10,
+   "max": 4,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juist ingevulde uitwerkbijlage is:",
+   "tabel": {
+    "head": [
+     "Resultaat",
+     "Berekening",
+     "Bedrag",
+     ""
+    ],
+    "rows": [
+     [
+      "Efficiencyresultaat carbon",
+      "(12.600 − 13.020) × 120",
+      "€ 50.400",
+      "nadelig"
+     ],
+     [
+      "Prijsresultaat carbon",
+      "(120 − 115) × 13.020",
+      "€ 65.100",
+      "voordelig"
+     ],
+     [
+      "Efficiencyresultaat arbeid",
+      "(21.000 − 20.580) × 40",
+      "€ 16.800",
+      "voordelig"
+     ],
+     [
+      "Prijsresultaat arbeid",
+      "(40 − 42) × 20.580",
+      "€ 41.160",
+      "nadelig"
+     ],
+     [
+      "Bezettingsresultaat",
+      "(4.200 − 4.000) × 240",
+      "€ 48.000",
+      "voordelig"
+     ],
+     [
+      "Prijsresultaat constante kosten",
+      "960.000 − 990.000",
+      "€ 30.000",
+      "nadelig"
+     ],
+     [
+      "Budgetresultaat",
+      "som van de zes resultaten",
+      "€ 8.340",
+      "voordelig"
+     ]
+    ],
+    "widths": [
+     2500,
+     3700,
+     1100,
+     1100
+    ]
+   },
+   "bullets": [
+    [
+     "Per gemaakte fout 1 scorepunt in mindering brengen.",
+     4
+    ]
+   ],
+   "opm": "De standaardhoeveelheden horen bij de werkelijke productie: 4.200 × 3 = 12.600 kg en 4.200 × 5 = 21.000 uur. Controle: 4.200 × 800 − 3.351.660 = € 8.340 voordelig. Een bedrag zonder ‘voordelig’ of ‘nadelig’ telt als fout.",
+   "fout": "De standaardhoeveelheid berekenen met de normale of de verwachte productie. Bij het prijsresultaat vermenigvuldigen met de standaardhoeveelheid in plaats van de werkelijke hoeveelheid.",
+   "voorbeeld": "Toegestaan bij 4.200 racefietsen: 12.600 kg en 21.000 uur. Carbon: efficiency € 50.400 nadelig, prijs € 65.100 voordelig. Arbeid: efficiency € 16.800 voordelig, prijs € 41.160 nadelig. Bezetting € 48.000 voordelig. Prijs constante kosten € 30.000 nadelig. Budgetresultaat € 8.340 voordelig.",
+   "uitleg": "Het budgetresultaat vergelijkt wat de werkelijke productie had mogen kosten met wat zij werkelijk kostte. Elk deelresultaat laat één oorzaak zien: te veel of te weinig verbruikt (efficiency), te duur of te goedkoop ingekocht (prijs), meer of minder geproduceerd dan normaal (bezetting)."
+  },
+  {
+   "nr": 11,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De werkelijke productie (4.200) is hoger dan de normale productie (4.000).",
+     1
+    ],
+    [
+     "In de kostprijs zit een vast bedrag aan constante kosten per racefiets. Daardoor zijn er meer constante kosten doorberekend (gedekt) dan er in de kostprijsberekening zijn begroot, wat een voordelig resultaat geeft.",
+     1
+    ]
+   ],
+   "fout": "Het bezettingsresultaat verklaren met de hoogte van de werkelijke constante kosten. Dat is het prijsresultaat op de constante kosten.",
+   "voorbeeld": "Velo Kwaremont nv heeft meer gemaakt dan normaal. Elk product dekt een vast bedrag aan constante kosten. Bij meer producten wordt er dus meer gedekt dan de constante kosten waarmee is gerekend. Dat is een voordeel.",
+   "uitleg": "De constante kosten veranderen niet door de productie, maar de dekking wel. Het bezettingsresultaat is het verschil tussen de doorberekende constante kosten (W × C/N) en de begrote constante kosten (C)."
+  },
+  {
+   "nr": 12,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Het prijsresultaat op carbon is € 65.100 voordelig (goedkoper ingekocht) en het efficiencyresultaat op carbon is € 50.400 nadelig (meer verbruikt dan toegestaan).",
+     1
+    ],
+    [
+     "Per saldo is dit 65.100 − 50.400 = € 14.700 voordelig. De keuze is per saldo wel voordelig geweest.",
+     1
+    ]
+   ],
+   "opm": "Een juiste conclusie zonder de twee resultaten: geen scorepunten toekennen. De doorwerkregel geldt voor de uitkomsten van vraag 10.",
+   "fout": "Alleen naar het prijsresultaat kijken. De inkoopmanager is verantwoordelijk voor de prijs, maar zijn keuze heeft ook gevolgen voor het verbruik.",
+   "voorbeeld": "Goedkoper inkopen gaf een prijsresultaat van € 65.100 voordelig. Het verbruik gaf een efficiencyresultaat van € 50.400 nadelig. Samen is dat € 14.700 voordelig. De keuze was dus per saldo goed voor Velo Kwaremont nv.",
+   "uitleg": "Een deelresultaat zegt wie je waarop kunt aanspreken: de inkoper op de prijs, de productie op het verbruik. Maar de resultaten hangen samen. Een andere kwaliteit grondstof verandert de prijs én het verbruik, dus je beoordeelt ze samen."
+  },
+  {
+   "opgave": "Opgave 4"
+  },
+  {
+   "nr": 13,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "variabele kosten = 55% + 10% = 65% van de omzet",
+     1
+    ],
+    [
+     "break-evenomzet: omzet = 0,65 × omzet + 420.000, dus omzet = 420.000 : 0,35 = € 1.200.000",
+     1
+    ]
+   ],
+   "fout": "De constante kosten delen door het percentage variabele kosten in plaats van door het percentage dekkingsbijdrage.",
+   "voorbeeld": "Variabele kosten: 55% + 10% = 65% van de omzet. Van elke euro omzet blijft 35 cent over voor de constante kosten. 420.000 : 0,35 = € 1.200.000.",
+   "uitleg": "Bij de break-evenomzet is de omzet gelijk aan de totale kosten. Zijn de variabele kosten een percentage van de omzet, dan deel je de constante kosten door de dekkingsbijdrage als deel van de omzet."
+  },
+  {
+   "nr": 14,
+   "max": 2,
+   "bloom": "Onthouden",
+   "plain": [
+    "A = totale opbrengst",
+    "B = totale kosten",
+    "C = totale constante kosten"
+   ],
+   "bullets": [
+    [
+     "indien drie lijnen juist",
+     2
+    ],
+    [
+     "indien twee lijnen juist",
+     1
+    ],
+    [
+     "indien één of geen lijn juist",
+     0
+    ]
+   ],
+   "voorbeeld": "A is de totale opbrengst (begint in de oorsprong). B is de totale kosten (begint op de hoogte van de constante kosten). C is de totale constante kosten (horizontaal).",
+   "uitleg": "De opbrengstlijn begint bij nul, want zonder verkopen is er geen opbrengst. De lijn van de totale kosten begint bij de constante kosten. De constante kosten zijn bij elke omzet gelijk."
+  },
+  {
+   "nr": 15,
+   "max": 1,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "In het snijpunt is de totale opbrengst gelijk aan de totale kosten. Het resultaat van RoxWear nv is daar nul (break-evenpunt); bij een hogere omzet is er winst, bij een lagere omzet verlies.",
+     1
+    ]
+   ],
+   "voorbeeld": "Daar zijn opbrengst en kosten gelijk, dus het resultaat is nul. Rechts ervan maakt de onderneming winst, links ervan verlies.",
+   "uitleg": "Het snijpunt van de opbrengstlijn en de lijn van de totale kosten is het break-evenpunt."
+  },
+  {
+   "nr": 16,
+   "max": 3,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "maatregel 1: omzet = 1.500.000 × 1,10 = € 1.650.000; resultaat = 0,35 × 1.650.000 − (420.000 + 30.000) = € 127.500",
+     1
+    ],
+    [
+     "maatregel 2: dekkingsbijdrage = 100% − 52% − 10% = 38%; resultaat = 0,38 × 1.500.000 − 420.000 = € 150.000",
+     1
+    ],
+    [
+     "Maatregel 2 levert het hoogste resultaat op (€ 150.000 tegenover € 127.500).",
+     1
+    ]
+   ],
+   "opm": "Zonder maatregelen is het verwachte resultaat 0,35 × 1.500.000 − 420.000 = € 105.000. Een vergelijking van de twee stijgingen ten opzichte van dit bedrag ook goed rekenen.",
+   "fout": "Bij maatregel 1 de kosten van de campagne vergeten. Bij maatregel 2 de overige variabele kosten vergeten.",
+   "voorbeeld": "Maatregel 1: omzet € 1.650.000, dekkingsbijdrage 35% is € 577.500, min constante kosten € 450.000 geeft € 127.500. Maatregel 2: dekkingsbijdrage 38% van € 1.500.000 is € 570.000, min € 420.000 geeft € 150.000. Maatregel 2 is het best.",
+   "uitleg": "Resultaat = dekkingsbijdrage − constante kosten. Een maatregel kan de omzet, het percentage dekkingsbijdrage of de constante kosten veranderen. Reken per maatregel alle drie opnieuw na."
+  }
+ ],
+ "matrijs": {
+  "rijen": [
+   {
+    "nr": 1,
+    "leerdoel": "Verschil tussen uitgaven en kosten uitleggen bij een investering",
+    "eindterm": "23.2, 23.3",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "2025-II opg. 2 (uitgaven en afschrijving)",
+    "thema": "Ippon nv (judo)",
+    "bron": "IB 1",
+    "punten": 2,
+    "onderdeel": "Financiële overzichten en overlopende posten (opgave 1)"
+   },
+   {
+    "nr": 2,
+    "leerdoel": "Vooruitbetaalde bedragen op de balans berekenen",
+    "eindterm": "23.1, 23.2",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "2024-I vr. 15 (vooruitbetaalde bedragen)",
+    "thema": "Ippon nv (judo)",
+    "bron": "IB 1",
+    "punten": 2,
+    "onderdeel": "Financiële overzichten en overlopende posten (opgave 1)"
+   },
+   {
+    "nr": 3,
+    "leerdoel": "Nog te betalen interest op de balans berekenen (lening met aflossing)",
+    "eindterm": "23.1, 23.2",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "2025-II vr. 9 (interest en aflossing)",
+    "thema": "Ippon nv (judo)",
+    "bron": "IB 1",
+    "punten": 2,
+    "onderdeel": "Financiële overzichten en overlopende posten (opgave 1)"
+   },
+   {
+    "nr": 4,
+    "leerdoel": "Vooruitontvangen bedragen plaatsen op de balans",
+    "eindterm": "23.1",
+    "werkwoord": "Kies en motiveer",
+    "bloom": "Onthouden",
+    "koppeling": "2024-I vr. 15 (balans opstellen)",
+    "thema": "Ippon nv (judo)",
+    "bron": "–",
+    "punten": 1,
+    "onderdeel": "Financiële overzichten en overlopende posten (opgave 1)"
+   },
+   {
+    "nr": 5,
+    "leerdoel": "Opbrengsten en kosten onderscheiden van ontvangsten en uitgaven (resultaten- en liquiditeitsbegroting)",
+    "eindterm": "23.2, 23.4",
+    "werkwoord": "Bepaal",
+    "bloom": "Analyseren",
+    "koppeling": "2025-II vr. 6 (liquiditeitsbegroting)",
+    "thema": "Ippon nv (judo)",
+    "bron": "IB 1, UB",
+    "punten": 3,
+    "onderdeel": "Financiële overzichten en overlopende posten (opgave 1)"
+   },
+   {
+    "nr": 6,
+    "leerdoel": "Afschrijving, boekwaarde en boekresultaat berekenen",
+    "eindterm": "23.1, 25.6",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "2025-II vr. 7 (verkoop van een actief)",
+    "thema": "Sonnberg Skiliften nv",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Afschrijvingen (opgave 2)"
+   },
+   {
+    "nr": 7,
+    "leerdoel": "Gevolg van een andere schatting voor resultaat en liquiditeit",
+    "eindterm": "23.2, 23.5",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "2024-II vr. 13 (liquiditeit)",
+    "thema": "Sonnberg Skiliften nv",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Afschrijvingen (opgave 2)"
+   },
+   {
+    "nr": 8,
+    "leerdoel": "Integrale kostprijs berekenen (V/W + C/N)",
+    "eindterm": "25.2, 25.5",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "2024-II vr. 7 (kostprijs)",
+    "thema": "Velo Kwaremont nv",
+    "bron": "IB 2",
+    "punten": 2,
+    "onderdeel": "Kostprijs en verschillenanalyse (opgave 3)"
+   },
+   {
+    "nr": 9,
+    "leerdoel": "Verwacht bedrijfsresultaat uit verkoop- en bezettingsresultaat",
+    "eindterm": "25.5",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "2025-I vr. 27, 2024-I vr. 26",
+    "thema": "Velo Kwaremont nv",
+    "bron": "IB 2",
+    "punten": 2,
+    "onderdeel": "Kostprijs en verschillenanalyse (opgave 3)"
+   },
+   {
+    "nr": 10,
+    "leerdoel": "Verschillenanalyse: prijs-, efficiency- en bezettingsresultaat en budgetresultaat",
+    "eindterm": "25.6, 25.7",
+    "werkwoord": "Maak af",
+    "bloom": "Toepassen",
+    "koppeling": "2024-I vr. 27, 2024-II vr. 9–12",
+    "thema": "Velo Kwaremont nv",
+    "bron": "IB 2, 3, UB",
+    "punten": 4,
+    "onderdeel": "Kostprijs en verschillenanalyse (opgave 3)"
+   },
+   {
+    "nr": 11,
+    "leerdoel": "Bezettingsresultaat verklaren zonder berekening",
+    "eindterm": "25.7",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "2024-II vr. 14, 2023-II vr. 28",
+    "thema": "Velo Kwaremont nv",
+    "bron": "IB 2, 3",
+    "punten": 2,
+    "onderdeel": "Kostprijs en verschillenanalyse (opgave 3)"
+   },
+   {
+    "nr": 12,
+    "leerdoel": "Deelresultaten interpreteren: verantwoordelijkheid van de inkoopmanager",
+    "eindterm": "25.7",
+    "werkwoord": "Beoordeel",
+    "bloom": "Analyseren",
+    "koppeling": "2024-II vr. 11–12 (prijs en efficiency)",
+    "thema": "Velo Kwaremont nv",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Kostprijs en verschillenanalyse (opgave 3)"
+   },
+   {
+    "nr": 13,
+    "leerdoel": "Break-evenomzet berekenen met variabele kosten als percentage van de omzet",
+    "eindterm": "25.3",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "2026-II vr. 18, 2025-II vr. 22–23",
+    "thema": "RoxWear nv (Hyrox)",
+    "bron": "IB 4",
+    "punten": 2,
+    "onderdeel": "Dekkingsbijdrage en break-evenanalyse (opgave 4)"
+   },
+   {
+    "nr": 14,
+    "leerdoel": "Lijnen in de break-evengrafiek herkennen",
+    "eindterm": "25.3",
+    "werkwoord": "Geef aan",
+    "bloom": "Onthouden",
+    "koppeling": "2026-II vr. 6 (lijnen benoemen)",
+    "thema": "RoxWear nv (Hyrox)",
+    "bron": "IB 5",
+    "punten": 2,
+    "onderdeel": "Dekkingsbijdrage en break-evenanalyse (opgave 4)"
+   },
+   {
+    "nr": 15,
+    "leerdoel": "Betekenis van het break-evenpunt uitleggen",
+    "eindterm": "25.3",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "2025-II vr. 23",
+    "thema": "RoxWear nv (Hyrox)",
+    "bron": "IB 5",
+    "punten": 1,
+    "onderdeel": "Dekkingsbijdrage en break-evenanalyse (opgave 4)"
+   },
+   {
+    "nr": 16,
+    "leerdoel": "Twee maatregelen vergelijken met de dekkingsbijdrage",
+    "eindterm": "25.5, 25.7",
+    "werkwoord": "Toon aan",
+    "bloom": "Analyseren",
+    "koppeling": "2025-II vr. 27, 2024-I vr. 22",
+    "thema": "RoxWear nv (Hyrox)",
+    "bron": "IB 4",
+    "punten": 3,
+    "onderdeel": "Dekkingsbijdrage en break-evenanalyse (opgave 4)"
+   }
+  ],
+  "gevraagd": {
+   "onderdelen": {
+    "Financiële overzichten en overlopende posten (opgave 1)": 29,
+    "Afschrijvingen (opgave 2)": 12,
+    "Kostprijs en verschillenanalyse (opgave 3)": 35,
+    "Dekkingsbijdrage en break-evenanalyse (opgave 4)": 24
+   },
+   "bloom": {
+    "Onthouden": 10,
+    "Begrijpen": 25,
+    "Toepassen": 45,
+    "Analyseren": 20
+   }
+  }
+ }
+}

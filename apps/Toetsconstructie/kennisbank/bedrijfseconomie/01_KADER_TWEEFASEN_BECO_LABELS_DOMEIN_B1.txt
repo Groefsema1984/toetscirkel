@@ -1,0 +1,39 @@
+CHANGELOG
+13 november 2026, eerste versie. Opgesteld uit de syllabi CE 2027 (versie 2) bedrijfseconomie havo en vwo, domein B, subdomein B1. Het label per eindterm is een VOORSTEL afgeleid uit de syllabi; de docent beslist (zie richtlijnen: "het label per vraag volgt de docent").
+
+BRONBESTAND: 01_KADER_TWEEFASEN_BECO_LABELS_DOMEIN_B1
+FUNCTIE: labels H+V en V voor een tweefasen-toets bedrijfseconomie (4 en 5 vwo) over persoonlijke financiën: verzekeren, studeren, lenen, sparen, beleggen en interest (In Balans H3 t/m H5).
+REGEL: H+V = de stof staat in de havo- en de vwo-syllabus en telt mee in beide cijfers. V = alleen in de vwo-syllabus, of alleen op vwo-niveau gevraagd; telt alleen mee in het vwo-cijfer. Lesstof die in geen van beide syllabi staat, heet "lesstof docent"; het label daarvan vraag je na (voorstel H+V).
+
+[DEEL 1: EINDTERMEN NAAST ELKAAR]
+Nummers volgen de vwo-syllabus. Havo en vwo hebben dezelfde nummers tot en met 11.2.8.
+
+11.1     Opleiding als investeringsvraagstuk; belang voor individu en samenleving uitleggen. Havo en vwo. Voorstel: H+V.
+11.2.1   Voor- en nadelen van wel of niet verzekeren uitleggen. Havo en vwo. Voorstel: H+V.
+11.2.2   Verschillen levensverzekering en schadeverzekering noemen. Havo en vwo. Voorstel: H+V.
+11.2.3   Verschillen consumptief en hypothecair krediet noemen. Havo en vwo. Voorstel: H+V.
+11.2.4   Financiële gevolgen van krediet voor de kredietnemer noemen. Havo en vwo. Voorstel: H+V.
+11.2.5   Periodieke interest, aflossing en schuldrest bij consumptief en hypothecair krediet berekenen. Havo en vwo. Voorstel: H+V.
+11.2.6   Verschil enkelvoudige en samengestelde interest uitleggen. Havo en vwo. Voorstel: H+V.
+11.2.7   Interest op basis van enkelvoudige interest berekenen. Havo en vwo. Voorstel: H+V.
+11.2.8   Contante waarde en eindwaarde van één kapitaal berekenen (samengestelde interest). Havo en vwo. Voorstel: H+V.
+11.2.9   Contante waarde en eindwaarde van een REEKS GELIJKE BEDRAGEN berekenen. Alleen vwo. Voorstel: V.
+11.2.10  Voor- en nadelen van vrijwillig en verplicht sparen uitleggen; bedrijfspensioen als verplicht sparen noemen. Alleen vwo. Voorstel: V.
+11.2.10  Spaarvormen vrij opneembaar en niet vrij opneembaar: havo NOEMEN (H+V); vwo voor- en nadelen UITLEGGEN (V).
+11.2.11  Vermogenstitels (aandelen, obligaties, beleggingsfondsen) noemen. Havo en vwo. Voorstel: H+V.
+11.2.12  Verschillen in risico en rendement tussen aandelen, obligaties en beleggingsfondsen uitleggen. Havo en vwo. Voorstel: H+V. Een vergelijking of advies op analyseniveau ("Adviseren over / Analyseren van", 11.2 vwo) is vwo-niveau: voorstel V.
+
+[DEEL 2: BEGRIPPEN DIE ALLEEN IN DE VWO-SYLLABUS STAAN]
+* Call-opties en put-opties. Voorstel: V.
+* Bureau Krediet Registratie (BKR). Voorstel: V.
+* Credit card (havo noemt "doorlopend krediet"). Voorstel: H+V voor doorlopend krediet, V voor de credit card als aparte vorm.
+* Bedrijfspensioen als vorm van verplicht sparen. Voorstel: V.
+Alleen in de havo-syllabus genoemd, maar ook vwo-stof: koersverloop. Voorstel: H+V.
+
+[DEEL 3: LESSTOF UIT DE KADERS ZONDER EINDTERM]
+Staat in de kaders van In Balans H3 t/m H5, maar niet als eindterm: premieberekening met rente- en administratiekosten, indexclausule, bonus-malustabel, kredietverzekering, compagnonsverzekering, huurkoop met slottermijn, ordertypes, nominale en effectieve interest.
+Eindterm in de matrijs: "lesstof docent" (of de dichtstbijzijnde eindterm met de toevoeging "lesstof docent"). Label: navragen in de intake; voorstel H+V.
+
+[DEEL 4: AANDACHTSPUNTEN]
+* Een eindwaarde of contante waarde van meerdere VERSCHILLENDE bedragen is havo-stof (elk bedrag apart, 11.2.8). Van een reeks GELIJKE bedragen (rente of annuïteit) is het vwo-stof (11.2.9). Kies bewust en zet het label daarnaar.
+* Annuïteit als aflossingsvorm valt onder 11.3 (huren of kopen), niet onder H3 t/m H5.

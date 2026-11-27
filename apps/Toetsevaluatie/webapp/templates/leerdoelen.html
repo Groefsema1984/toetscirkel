@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block titel %}Leerdoelen - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<form method="get" class="rij" style="max-width: 30rem; margin-bottom: 1rem">
+  <div><label for="scope">Register</label>
+    <select id="scope" onchange="const [v, s] = this.value.split('|'); location.href = '?vak=' + encodeURIComponent(v) + '&sector=' + s">
+      {% for v, s, n in scopes %}<option value="{{ v }}|{{ s }}" {{ 'selected' if v == vak and s == sector }}>{{ n }}</option>{% endfor %}
+    </select></div>
+</form>
+<h1>Leerdoelen {{ naam }}</h1>
+<p class="intro">Elk leerdoel heeft een vaste code. Zo ziet de app over toetsen heen of een leerling een
+  leerdoel beheerst, en kan je oefentool er gericht materiaal bij zoeken. Na elke toets die je definitief maakt,
+  koppelt Claude de vragen vanzelf; jij kijkt alleen naar wat hieronder ter controle staat.</p>
+
+<div class="telbalk">
+  <div class="tel"><b>{{ overzicht | length }}</b>Leerdoelen in het register</div>
+  <div class="tel"><b>{{ aantal_vragen - zonder_code }}</b>van {{ aantal_vragen }} vragen gekoppeld</div>
+  <div class="tel {{ 'nul' if not controleren }}"><b>{{ controleren | length }}</b>Te controleren</div>
+</div>
+<p style="margin-top: 1rem">
+  {% if register_leeg %}
+  <button class="knop hoofd" data-bijwerken>Register opbouwen met Claude</button>
+  <span class="bij">Claude groepeert alle vragen uit je toetsen tot leerdoelen. Duurt ongeveer een minuut.</span>
+  {% elif zonder_code %}
+  <button class="knop hoofd" data-bijwerken>{{ zonder_code }} vragen koppelen met Claude</button>
+  {% else %}
+  <button class="knop" data-bijwerken>Opnieuw controleren op nieuwe vragen</button>
+  {% endif %}
+</p>
+{% if zonder_tekst %}<p class="bij">Bij {{ zonder_tekst | join(', ') }} ontbreken de leerdoelen nog; Claude haalt ze eerst uit het correctievoorschrift.</p>{% endif %}
+<p class="melding fout" id="fout" hidden></p>
+
+{% if controleren %}
+<h2>Te controleren</h2>
+<p class="bij">Claude twijfelde, of vond een leerdoel dat nog niet in het register stond. Kies het juiste leerdoel en bevestig.</p>
+<div class="tabelvak" style="margin-top: .6rem">
+<table>
+  <thead><tr><th>Toets en vraag</th><th>Leerdoel volgens de toetsmatrijs</th><th>Koppelen aan</th><th></th></tr></thead>
+  <tbody>
+  {% for it in controleren %}
+  <tr data-item="{{ it.item_id }}">
+    <td>{{ it.toets_id }}<div class="bij">vraag {{ it.vraagnummer }}, eindterm {{ it.domein_eindterm or '-' }}</div></td>
+    <td>{{ it.leerdoel or '-' }}{% if it.koppel_toelichting %}<div class="bij">Claude: {{ it.koppel_toelichting }}</div>{% endif %}</td>
+    <td style="min-width: 22rem"><select aria-label="Leerdoel">
+      <option value="">Kies een leerdoel</option>
+      {% for r in overzicht %}<option value="{{ r.code }}" {{ 'selected' if r.code == it.leerdoel_code }}>{{ r.code }}: {{ r.omschrijving }}{{ ' (nieuw)' if r.status == 'nieuw' }}</option>{% endfor %}
+      <option value="__nieuw__">Nieuw leerdoel van deze vraag</option>
+    </select></td>
+    <td><button class="knop klein claude" data-bevestig>Bevestig</button></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+<h2>Register</h2>
+{% if not overzicht %}<p>Het register is nog leeg.</p>{% else %}
+<div class="tabelvak" style="margin-top: .6rem">
+<table>
+  <thead><tr><th>Code</th><th>Leerdoel</th><th>Getoetst in</th><th></th></tr></thead>
+  <tbody>
+  {% for r in overzicht %}
+  <tr data-code="{{ r.code }}">
+    <td><b>{{ r.code }}</b><div class="bij">{{ r.thema }}</div>
+      {% if r.status == 'nieuw' %}<span class="vlag">Nieuw</span>{% endif %}</td>
+    <td><div class="toon">{{ r.omschrijving }}<div class="bij">{{ r.leerling_zin }}</div></div>
+      <div class="bewerk" hidden>
+        <label>Thema<input type="text" name="thema" value="{{ r.thema }}"></label>
+        <label>Leerdoel (docent)<input type="text" name="omschrijving" value="{{ r.omschrijving }}"></label>
+        <label>"Ik kan"-zin (leerling)<input type="text" name="leerling_zin" value="{{ r.leerling_zin }}"></label>
+        <button class="knop klein hoofd" data-opslaan>Opslaan</button></div></td>
+    <td style="white-space: nowrap">{% for it in r.vragen %}<div class="bij">{{ it.toets_id.split('_SE_')[0] }} {{ it.toets_id.split('_SE_')[1].split('_')[0] if '_SE_' in it.toets_id }} vraag {{ it.vraagnummer }}</div>{% else %}<span class="bij">nog geen vragen</span>{% endfor %}</td>
+    <td class="acties-ld">
+      <button class="knop klein" data-wijzig>{{ 'Goedkeuren of wijzigen' if r.status == 'nieuw' else 'Wijzigen' }}</button>
+      <div class="samen"><select aria-label="Samenvoegen met">
+        <option value="">Samenvoegen met</option>
+        {% for a in overzicht if a.code != r.code %}<option value="{{ a.code }}">{{ a.code }}: {{ a.omschrijving[:45] }}</option>{% endfor %}
+      </select> <button class="knop klein" data-samenvoegen>Samenvoegen</button></div></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock %}
+{% block onder %}
+<script>
+(function () {
+  const fout = document.getElementById('fout');
+  async function stuur(pad, d) {
+    const r = await fetch(pad, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
+    let j = {}; try { j = await r.json(); } catch (e) { j = { ok: false, fout: 'De app reageert niet.' }; }
+    if (j.herladen) { location.reload(); return new Promise(() => {}); }
+    return j;
+  }
+  const toon = (t) => { fout.textContent = t; fout.hidden = false; };
+  document.addEventListener('click', async (ev) => {
+    const k = ev.target.closest('button'); if (!k) return;
+    if (k.hasAttribute('data-bijwerken')) {
+      k.disabled = true; k.textContent = 'Claude is bezig (ongeveer een minuut)';
+      const d = await stuur('/api/register/bijwerken', { vak: {{ vak | tojson }}, sector: {{ sector | tojson }} });
+      if (!d.ok) { toon(d.fout); k.disabled = false; k.textContent = 'Opnieuw proberen'; }
+    } else if (k.hasAttribute('data-bevestig')) {
+      const tr = k.closest('tr'), code = tr.querySelector('select').value;
+      if (!code) return toon('Kies eerst een leerdoel.');
+      const d = await stuur('/api/register/bevestig', { item_id: Number(tr.dataset.item), code });
+      if (d.ok) { if (code === '__nieuw__') location.reload(); else { tr.style.opacity = .45; k.replaceWith('Bevestigd'); } } else toon(d.fout);
+    } else if (k.hasAttribute('data-wijzig')) {
+      const tr = k.closest('tr'); tr.querySelector('.toon').hidden = true; tr.querySelector('.bewerk').hidden = false;
+    } else if (k.hasAttribute('data-opslaan')) {
+      const tr = k.closest('tr'), v = (n) => tr.querySelector(`[name=${n}]`).value;
+      const d = await stuur('/api/register/wijzig', { code: tr.dataset.code, thema: v('thema'), omschrijving: v('omschrijving'), leerling_zin: v('leerling_zin') });
+      if (!d.ok) toon(d.fout);
+    } else if (k.hasAttribute('data-samenvoegen')) {
+      const tr = k.closest('tr'), naar = k.previousElementSibling.value;
+      if (!naar) return toon('Kies het leerdoel waarmee je wilt samenvoegen.');
+      const d = await stuur('/api/register/samenvoegen', { van: tr.dataset.code, naar });
+      if (!d.ok) toon(d.fout);
+    }
+  });
+})();
+</script>
+{% endblock %}

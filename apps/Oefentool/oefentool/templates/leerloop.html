@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% set deel = 'opdrachten' %}
+{% block titel %}Leerloop · {{ o.naam }}{% endblock %}
+{% block inhoud %}
+<p class="bij"><a href="{{ url_for('index') }}">Opdrachten</a> / <a href="{{ url_for('toon', oid=o.id) }}">{{ o.naam }}</a></p>
+<h1>Leerloop, ronde {{ o.leerloop.ronde }}</h1>
+<p class="intro">Oefenen → oefentoets → scannen in de Toetsevaluatie → nieuwe stand → volgende ronde, alleen voor wie
+  nog niet alles beheerst en alleen op die leerdoelen. Zo werk je toe naar foutloos.</p>
+
+<div class="kerncijfers">
+  <div class="kern"><b>{{ st.foutloos }} / {{ st.totaal }}</b>leerlingen beheersen alle leerdoelen van deze opdracht</div>
+  <div class="kern"><b>{{ st.tel.get('beheerst', 0) }}</b>leerdoelen beheerst</div>
+  <div class="kern"><b>{{ st.tel.get('bijna', 0) }}</b>bijna</div>
+  <div class="kern"><b>{{ st.tel.get('nog_niet', 0) }}</b>nog niet</div>
+</div>
+
+<h2>Oefentoetsen</h2>
+{% if ex %}
+<div class="tabelvak"><table>
+  <thead><tr><th>Groep</th><th>Code</th><th>In de Toetsevaluatie</th><th class="r">Gescand</th></tr></thead>
+  <tbody>{% for e in ex %}<tr><td>{{ e.groep }}</td><td><span class="code">{{ e.code }}</span></td>
+    <td>{% if e.gescand %}{{ e.gescand }} <span class="label-oefen">oefen</span>{% else %}<span class="bij">nog niet ingelezen: soort Oefentoets, toetscode {{ e.code }}</span>{% endif %}</td>
+    <td class="r">{{ e.aantal or '-' }}</td></tr>{% endfor %}</tbody>
+</table></div>
+<form method="post" action="{{ url_for('leerloop_resultaten', oid=o.id) }}" style="margin-top: .8rem">
+  <button class="knop" type="submit">Resultaten ophalen voor de itembank (P-waarde en Rit per opgave)</button>
+</form>
+{% else %}<p class="bij">Bij deze opdracht is geen oefentoets gemaakt.</p>{% endif %}
+{% if st.nieuwe_toetsen %}<p class="bij">Meegeteld na deze opdracht: {{ st.nieuwe_toetsen | join(', ') }}.</p>{% endif %}
+
+<h2>Stand per leerling</h2>
+<div class="legenda"><span class="cel"><span class="beheerst">80%</span> beheerst</span><span class="cel"><span class="bijna">60%</span> bijna</span>
+  <span class="cel"><span class="nog_niet">20%</span> nog niet</span><span class="cel"><span class="beheerst oefen">90%</span> laatste meting was een oefentoets</span></div>
+<div class="tabelvak">
+<table class="matrix">
+  <thead><tr><th>Leerling</th>{% for c in st.codes %}<th class="code-kop" title="{{ c }}: {{ reg.get(c, {}).get('omschrijving', '') }}"><small>{{ c.rsplit('-', 2)[0] }}</small>{{ c.split('-')[-2:] | join('-') }}</th>{% endfor %}<th></th></tr></thead>
+  <tbody>
+  {% for r in st.rijen %}
+  <tr><td>{{ r.leerling_id }}</td>
+    {% for c in st.codes %}{% set cel = r.cellen.get(c) %}
+    <td class="cel">{% if cel %}<span class="{{ cel.status }} {{ 'oefen' if cel.soort == 'oefen' }}" title="{% for m in cel.metingen %}{{ m[0] }}: {{ m[1] }}{{ ' (oefen)' if m[2] == 'oefen' }}&#10;{% endfor %}">{{ cel.pct | pct }}</span>{% else %}<span class="bij">·</span>{% endif %}</td>
+    {% endfor %}
+    <td>{% if r.foutloos %}<span class="stempel goed" style="font-size: 1rem">foutloos</span>{% else %}{{ r.open | length }} open{% endif %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<details style="margin-top: .6rem"><summary>Welke leerdoelen zijn dit?</summary>
+  <ul>{% for c in st.codes %}<li><span class="code">{{ c }}</span> {{ reg.get(c, {}).get('omschrijving', '') }}</li>{% endfor %}</ul>
+</details>
+
+<h2 id="zelfcheck">Formatieve check (thuis, zelf nagekeken)</h2>
+<p class="bij">Leerlingen sturen aan het eind van de digitale oefenpagina een resultaatcode via Teams. Plak hieronder één of meer
+  codes (of een heel gekopieerd Teams-gesprek): de oefentool haalt de codes eruit. Dit is zelf nagekeken en telt daarom
+  <b>niet</b> als meting in de Toetsevaluatie; gebruik het om te zien wie de oefentoets aankan en wie eerst nog hulp nodig heeft.</p>
+<form method="post" action="{{ url_for('zelfcheck_verwerk', oid=o.id) }}" class="blok" style="max-width: 50rem">
+  <label for="codes">Resultaatcodes</label>
+  <textarea id="codes" name="codes" rows="4" placeholder="OEF-eyJ2Ijox…-1234"></textarea>
+  <button class="knop" type="submit">Verwerken</button>
+</form>
+{% if zc.rijen %}
+<div class="tabelvak" style="margin-top: 1rem">
+<table class="matrix">
+  <thead><tr><th>Leerling</th>{% for c in zc.codes %}<th class="code-kop" title="{{ c }}: {{ reg.get(c, {}).get('omschrijving', '') }}"><small>{{ c.rsplit('-', 2)[0] }}</small>{{ c.split('-')[-2:] | join('-') }}</th>{% endfor %}<th class="r">Gemaakt</th><th class="r">Hints</th><th>Ingestuurd</th></tr></thead>
+  <tbody>
+  {% for r in zc.rijen %}
+  <tr><td>{{ r.leerling_id }}</td>
+    {% for c in zc.codes %}{% set cel = r.cellen.get(c) %}
+    <td class="cel">{% if cel %}<span class="{{ cel.status }}" title="{{ cel.open }} opgave(n) niet nagekeken">{{ cel.pct | pct }}{{ '*' if cel.open }}</span>{% else %}<span class="bij">·</span>{% endif %}</td>
+    {% endfor %}
+    <td class="r">{{ r.gemaakt }}/{{ r.totaal }}</td><td class="r">{{ r.hints }}</td><td>{{ r.datum }}{% if r.keer > 1 %} <span class="bij">({{ r.keer }}×)</span>{% endif %}</td></tr>
+  {% endfor %}
+  <tr><td><b>Gemiddeld</b></td>{% for c in zc.codes %}{% set g = zc.gemiddeld[c] %}<td class="cel">{% if g[0] is not none %}<b>{{ g[0] | pct }}</b>{% else %}<span class="bij">·</span>{% endif %}</td>{% endfor %}<td colspan="3"></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="bij">* = niet alle opgaven van dit leerdoel nagekeken. {% if zc.ontbreekt %}Nog geen code van: {{ zc.ontbreekt | join(', ') }}.{% endif %}</p>
+{% endif %}
+
+<h2>Volgende ronde</h2>
+{% if vervolg %}<p>Er is al een vervolg: {% for v in vervolg %}<a href="{{ url_for('toon', oid=v.id) }}">{{ v.naam }}</a>{{ ', ' if not loop.last }}{% endfor %}.</p>{% endif %}
+{% if st.foutloos < st.totaal %}
+<form method="post" action="{{ url_for('volgende', oid=o.id) }}">
+  <p>Maakt een nieuwe opdracht (zelfde soort en instellingen) voor de {{ st.totaal - st.foutloos }} leerlingen die nog niet alles beheersen,
+    alleen op hun open leerdoelen. Opgaven die bij leerlingen goed werkten, worden daarbij eerder hergebruikt.</p>
+  <button class="knop hoofd" type="submit" {{ '' if heeft_sleutel else 'disabled' }}>Ronde {{ o.leerloop.ronde + 1 }} starten</button>
+</form>
+{% else %}<p><b>Iedereen beheerst alle leerdoelen van deze opdracht.</b> De leerloop is rond.</p>{% endif %}
+{% endblock %}

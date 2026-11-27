@@ -1,0 +1,1377 @@
+{
+ "meta": {
+  "vak": "Economie",
+  "niveau": "Havo",
+  "klas": "5 havo",
+  "titel": "Schoolexamen economie havo",
+  "onderwerp": "Module economische groei, module risico en verzekeren, keuzemodule actualiteit",
+  "kort": "Economische groei, Risico en verzekeren",
+  "at": "AT5.11",
+  "datum": "22 oktober 2026",
+  "maker": "GRA",
+  "weging": "20%",
+  "minuten": 100,
+  "versie": "A",
+  "bestandsbasis": "AT5.11_SE_havo5_economie_versie_A"
+ },
+ "opgaven": [
+  {
+   "titel": "Opgave 1  De kringloop van Noordland",
+   "items": [
+    {
+     "t": "p",
+     "text": "Noordland is een land met een open economie. Het statistiekbureau van Noordland brengt de geldstromen tussen de gezinnen, de bedrijven, de overheid, de banken en het buitenland in beeld met een kringloopmodel (zie bron 1). In bron 1 ontbreken de investeringen van de bedrijven (I) en de besparingen van de gezinnen (S)."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 1."
+    },
+    {
+     "t": "q",
+     "nr": 1,
+     "p": 2,
+     "text": "Bereken de investeringen (I) en de besparingen (S) in Noordland in 2025 in miljarden euro’s."
+    },
+    {
+     "t": "p",
+     "text": "In bron 1 ontbreken ook de bedragen van geldstroom 1 (tussen de overheid en de banken) en van geldstroom 2 (tussen het buitenland en de banken). Van deze twee geldstromen is de richting niet getekend."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 1."
+    },
+    {
+     "t": "q",
+     "nr": 2,
+     "p": 2,
+     "text": "Bereken het bedrag van geldstroom 1 en het bedrag van geldstroom 2 in miljarden euro’s. Geef bij elke geldstroom ook de richting."
+    },
+    {
+     "t": "p",
+     "text": "Het nationaal inkomen (Y) in bron 1 is gelijk aan het bruto binnenlands product (bbp) van Noordland. Het statistiekbureau geeft een toelichting bij dit cijfer."
+    },
+    {
+     "t": "q",
+     "nr": 3,
+     "p": 2,
+     "text": "Maak van onderstaande tekst een economisch juiste tekst.",
+     "extra": [
+      "Het bbp is de som van alle …(1)… in een land. Als de afschrijvingen van het bbp worden afgetrokken, blijft het …(2)… binnenlands product over. Onbetaald huishoudelijk werk en zwart werk horen bij de …(3)… sector. Deze productie telt …(4)… mee in het bbp.",
+      "Kies uit:",
+      "bij (1) omzetten / toegevoegde waarden",
+      "bij (2) bruto / netto",
+      "bij (3) formele / informele",
+      "bij (4) niet of niet volledig / volledig"
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 2  Groeit de welvaart in Noordland?",
+   "items": [
+    {
+     "t": "p",
+     "text": "Een journalist schrijft: “Het bbp van Noordland is in 2026 met ruim 6% gegroeid. Er is dus ruim 6% meer geproduceerd.” Een econoom vindt dat de journalist de groei van de productie te hoog inschat, omdat ook de prijzen zijn gestegen."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 2."
+    },
+    {
+     "t": "q",
+     "nr": 4,
+     "p": 2,
+     "text": "Bereken de reële groei van het bbp van Noordland in 2026 in procenten."
+    },
+    {
+     "t": "p",
+     "text": "De regering van Noordland wil dat het bbp per hoofd van de bevolking structureel sneller groeit. Economen beschrijven de productie van een land met de productiefunctie Y = A × f(K, L). Hierin is Y de productie, K de hoeveelheid kapitaal, L de hoeveelheid arbeid en A de factorproductiviteit. De regering kiest tussen twee plannen (zie bron 3)."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 3."
+    },
+    {
+     "t": "q",
+     "nr": 5,
+     "p": 2,
+     "text": "Beredeneer met behulp van de productiefunctie welk plan het bbp per hoofd van de bevolking het meest laat groeien.",
+     "extra": [
+      "Doe het als volgt:",
+      "−  Leg uit welke letter uit de productiefunctie door plan 1 verandert en wat het gevolg is voor het bbp per hoofd.",
+      "−  Doe hetzelfde voor plan 2 en trek een conclusie."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Bij de stad Westhaven in Noordland is in 2026 een nieuwe luchthaven geopend. De luchthaven zorgt voor duizenden banen en voor extra omzet bij hotels en taxibedrijven. Omwonenden hebben last van het geluid van de vliegtuigen. Ook is de lucht rond Westhaven vuiler geworden. Een milieuorganisatie zegt: “Door de luchthaven stijgt het bbp, maar de welvaart in brede zin daalt.”"
+    },
+    {
+     "t": "q",
+     "nr": 6,
+     "p": 2,
+     "text": "Maak van onderstaande tekst een economisch juiste tekst.",
+     "extra": [
+      "Het bbp meet alleen de welvaart die in geld wordt uitgedrukt. Dit past bij het …(1)… welvaartsbegrip. De Human Development Index kijkt naast inkomen ook naar …(2)…. De World Happiness Index is gebaseerd op wat mensen zelf over hun leven zeggen. Het is daardoor een …(3)… maatstaf. Als de schade aan het milieu van het bbp wordt afgetrokken, ontstaat het …(4)… bbp.",
+      "Kies uit:",
+      "bij (1) brede / enge",
+      "bij (2) gezondheid en onderwijs / inkomensverdeling en milieu",
+      "bij (3) objectieve / subjectieve",
+      "bij (4) groen / reëel"
+     ]
+    },
+    {
+     "t": "q",
+     "nr": 7,
+     "p": 2,
+     "text": "Leg de uitspraak van de milieuorganisatie uit. Gebruik in je antwoord het begrip externe effecten."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 3  Verdeeld land",
+   "items": [
+    {
+     "t": "p",
+     "text": "In Nederland zijn de inkomens ongelijk verdeeld. De overheid maakt de verschillen kleiner met belastingen, uitkeringen en toeslagen. Een onderzoeker tekent twee Lorenzcurves voor Nederland (zie bron 4). De ene curve geeft de verdeling van het primaire inkomen weer, de andere de verdeling van het besteedbare inkomen."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 4."
+    },
+    {
+     "t": "q",
+     "nr": 8,
+     "p": 1,
+     "text": "Bereken hoeveel procent van het totale inkomen de 20% huishoudens met de hoogste inkomens ontvangt volgens curve 2."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 4."
+    },
+    {
+     "t": "q",
+     "nr": 9,
+     "p": 2,
+     "text": "Maak van onderstaande tekst een economisch juiste tekst.",
+     "extra": [
+      "Curve 2 ligt verder van de diagonaal dan curve 1. Curve 2 geeft daarom de verdeling van het …(1)… inkomen weer. Bij curve 2 hoort een …(2)… Gini-coëfficiënt dan bij curve 1. Het verschil tussen de twee curves laat zien dat de overheid de inkomens …(3)…. Als de overheid de zorgtoeslag voor lage inkomens verhoogt, komt de curve van het besteedbare inkomen …(4)… de diagonaal te liggen.",
+      "Kies uit:",
+      "bij (1) besteedbare / primaire",
+      "bij (2) hogere / lagere",
+      "bij (3) denivelleert / nivelleert",
+      "bij (4) dichter bij / verder van"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Sanne werkt in loondienst en heeft een koopwoning. Zij betaalt inkomstenbelasting in box 1. De hypotheekrente die zij betaalt, is een aftrekpost. In deze opgave zijn de regels voor box 1 vereenvoudigd."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 5 en bron 6."
+    },
+    {
+     "t": "q",
+     "nr": 10,
+     "p": 3,
+     "text": "Bereken hoeveel euro inkomstenbelasting Sanne over 2026 moet betalen.",
+     "extra": [
+      "Doe het als volgt:",
+      "−  Bereken eerst het belastbaar inkomen.",
+      "−  Bereken daarna de belasting per schijf.",
+      "−  Trek ten slotte de heffingskortingen af."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "De algemene heffingskorting is niet voor iedereen even hoog (zie bron 7)."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 7."
+    },
+    {
+     "t": "q",
+     "nr": 11,
+     "p": 2,
+     "text": "Leg uit dat de algemene heffingskorting nivellerend werkt."
+    },
+    {
+     "t": "p",
+     "text": "Mila heeft een belastbaar inkomen van ruim € 100.000 en betaalt ook hypotheekrente. Over het deel van haar inkomen boven € 78.426 betaalt zij 49,50% belasting. Toch krijgt Mila over haar aftrekpost maximaal 37,56% belasting terug. Deze grens geldt voor iedereen met een inkomen boven € 78.426."
+    },
+    {
+     "t": "q",
+     "nr": 12,
+     "p": 2,
+     "text": "Beredeneer dat deze grens van 37,56% nivellerend werkt. Vergelijk in je antwoord het belastingvoordeel van Mila met en zonder deze grens."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 4  Veilig de piste op",
+   "items": [
+    {
+     "t": "p",
+     "text": "Sam (19 jaar) gaat in februari een week skiën in Oostenrijk. Skiën is niet zonder risico. Sam kan zelf vallen, maar hij kan ook worden aangereden door een andere skiër."
+    },
+    {
+     "t": "q",
+     "nr": 13,
+     "p": 1,
+     "text": "Is het risico om te worden aangereden door een andere skiër voor Sam een vrijwillig of een onvrijwillig risico? Motiveer je keuze."
+    },
+    {
+     "t": "p",
+     "text": "Reisverzekeraar Bergzeker biedt een wintersportverzekering aan voor één week. De verzekeraar berekent de premie met de gegevens in bron 8."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 8."
+    },
+    {
+     "t": "q",
+     "nr": 14,
+     "p": 2,
+     "text": "Bereken de premie die Bergzeker per verzekerde vraagt."
+    },
+    {
+     "t": "p",
+     "text": "De premie is hoger dan de verwachte schade per verzekerde. Toch sluit Sam de verzekering af. Sam is risico-avers."
+    },
+    {
+     "t": "q",
+     "nr": 15,
+     "p": 2,
+     "text": "Leg uit dat het afsluiten van de verzekering past bij risico-avers gedrag van Sam."
+    },
+    {
+     "t": "p",
+     "text": "Bergzeker vraagt aan alle klanten dezelfde premie. Ervaren skiërs die voorzichtig skiën, vinden de premie te hoog. Een deel van hen sluit de verzekering niet meer af."
+    },
+    {
+     "t": "q",
+     "nr": 16,
+     "p": 2,
+     "text": "Leg uit dat hierdoor de premie van de wintersportverzekering kan stijgen. Gebruik in je antwoord het begrip averechtse selectie."
+    },
+    {
+     "t": "p",
+     "text": "Uit onderzoek blijkt dat verzekerden vaker buiten de piste skiën dan mensen zonder verzekering. Bergzeker wil dit gedrag verminderen en bekijkt twee maatregelen:"
+    },
+    {
+     "t": "li",
+     "text": "−  maatregel 1: een eigen risico van € 250 per schadegeval;"
+    },
+    {
+     "t": "li",
+     "text": "−  maatregel 2: een vragenlijst over de ski-ervaring van de klant bij het afsluiten van de verzekering."
+    },
+    {
+     "t": "q",
+     "nr": 17,
+     "p": 2,
+     "text": "Beredeneer welke maatregel het meest geschikt is om dit gedrag te verminderen."
+    },
+    {
+     "t": "p",
+     "text": "Noa, een vriendin van Sam, gaat vaker op reis. Zij neemt een doorlopende reisverzekering en kan kiezen uit twee varianten (zie bron 9). Noa schat de kans dat zij in een jaar één schadegeval heeft op 20%. Meer dan één schadegeval per jaar verwacht zij niet."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 9."
+    },
+    {
+     "t": "q",
+     "nr": 18,
+     "p": 2,
+     "text": "Bereken welke variant voor Noa naar verwachting het goedkoopst is."
+    },
+    {
+     "t": "p",
+     "text": "De eigenaar van skiverhuur SneeuwPunt wil nieuwe ski’s kopen en vraagt een lening aan bij een bank. De bank biedt twee leningen aan (zie bron 10)."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 10."
+    },
+    {
+     "t": "q",
+     "nr": 19,
+     "p": 1,
+     "text": "Verklaar het renteverschil tussen lening A en lening B."
+    }
+   ]
+  },
+  {
+   "titel": "Opgave 5  Europa op slot voor China?",
+   "items": [
+    {
+     "t": "p",
+     "text": "De Europese Unie (EU) en China drijven veel handel met elkaar. Frankrijk en Duitsland vinden dat China oneerlijk concurreert. Zij willen dat de EU de eigen bedrijven beter beschermt (zie bron 11)."
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 11."
+    },
+    {
+     "t": "q",
+     "nr": 20,
+     "p": 2,
+     "text": "Leg uit dat importheffingen op Chinese producten de productie van bedrijven in de EU kunnen beschermen."
+    },
+    {
+     "t": "p",
+     "text": "Een econoom waarschuwt: “Als de EU haar markt afsluit voor Chinese bedrijven, kan dat de economische groei in de EU juist afremmen.”"
+    },
+    {
+     "t": "use",
+     "text": "Gebruik bron 11."
+    },
+    {
+     "t": "q",
+     "nr": 21,
+     "p": 2,
+     "text": "Beredeneer dat de waarschuwing van de econoom juist kan zijn. Gebruik in je antwoord de reactie van China uit bron 11."
+    }
+   ]
+  }
+ ],
+ "bijlage": {
+  "intro": "Deze bijlage bevat de bronnen 1 tot en met 11. In bron 1 tot en met 10 zijn alle personen, bedrijven en het land Noordland fictief. De belastingtarieven en heffingskortingen in bron 5 en bron 7 zijn de werkelijke bedragen van 2026. Bron 11 is een bewerking van een krantenartikel.",
+  "bronnen": [
+   {
+    "kop": "Opgave 1  De kringloop van Noordland",
+    "nieuwePagina": false
+   },
+   {
+    "nr": 1,
+    "titel": "Kringloopmodel van Noordland in 2025 (bedragen in miljarden euro’s)",
+    "type": "figure",
+    "file": "kringloop_A.png",
+    "w": 540,
+    "h": 345,
+    "note": "Y = nationaal inkomen (bbp), C = consumptie, I = investeringen, S = besparingen, B = belastingen, O = overheidsbestedingen, E = export, M = import. Een stippellijn is een geldstroom waarvan de richting niet is getekend."
+   },
+   {
+    "kop": "Opgave 2  Groeit de welvaart in Noordland?",
+    "nieuwePagina": false
+   },
+   {
+    "nr": 2,
+    "titel": "Bbp en prijspeil van Noordland",
+    "type": "table",
+    "head": [
+     "",
+     "2025",
+     "2026"
+    ],
+    "align": [
+     "l",
+     "r",
+     "r"
+    ],
+    "widths": [
+     5638,
+     2000,
+     2000
+    ],
+    "rows": [
+     [
+      "Nominaal bbp (in miljarden euro’s)",
+      "1.000",
+      "1.061"
+     ],
+     [
+      "Prijsindexcijfer (2025 = 100)",
+      "100,0",
+      "103,0"
+     ]
+    ]
+   },
+   {
+    "nr": 3,
+    "titel": "Twee plannen van de regering van Noordland",
+    "type": "text",
+    "lines": [
+     "Plan 1: De regering trekt 200.000 arbeidsmigranten aan. Zij gaan werken met dezelfde soort machines en in dezelfde soort bedrijven als de huidige werknemers.",
+     "Plan 2: De regering geeft subsidie op bijscholing van werknemers en op automatisering van het werk in bedrijven."
+    ]
+   },
+   {
+    "kop": "Opgave 3  Verdeeld land",
+    "nieuwePagina": true
+   },
+   {
+    "nr": 4,
+    "titel": "Lorenzcurves van de inkomensverdeling in Nederland",
+    "type": "figure",
+    "file": "lorenz_A.png",
+    "note": "De cijfers in deze bron zijn fictief en benaderen de werkelijkheid.",
+    "w": 440,
+    "h": 381
+   },
+   {
+    "nr": 5,
+    "titel": "Schijventarief box 1 in 2026 (jonger dan de AOW-leeftijd)",
+    "type": "table",
+    "head": [
+     "Schijf",
+     "Belastbaar inkomen",
+     "Tarief"
+    ],
+    "align": [
+     "l",
+     "l",
+     "r"
+    ],
+    "widths": [
+     1800,
+     5838,
+     2000
+    ],
+    "rows": [
+     [
+      "1",
+      "tot en met € 38.883",
+      "35,75%"
+     ],
+     [
+      "2",
+      "meer dan € 38.883 tot en met € 78.426",
+      "37,56%"
+     ],
+     [
+      "3",
+      "meer dan € 78.426",
+      "49,50%"
+     ]
+    ],
+    "note": "Bron: Belastingdienst, https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen"
+   },
+   {
+    "nr": 6,
+    "titel": "Gegevens van Sanne over 2026",
+    "type": "table",
+    "head": [
+     "Gegeven",
+     "Bedrag"
+    ],
+    "align": [
+     "l",
+     "r"
+    ],
+    "widths": [
+     6638,
+     3000
+    ],
+    "rows": [
+     [
+      "Bruto jaarloon",
+      "€ 52.000"
+     ],
+     [
+      "Betaalde hypotheekrente (aftrekpost)",
+      "€ 6.000"
+     ],
+     [
+      "Algemene heffingskorting",
+      "€ 2.074"
+     ],
+     [
+      "Arbeidskorting",
+      "€ 5.268"
+     ]
+    ]
+   },
+   {
+    "nr": 7,
+    "titel": "Algemene heffingskorting in 2026 bij vier inkomens",
+    "type": "table",
+    "head": [
+     "Belastbaar inkomen",
+     "Algemene heffingskorting"
+    ],
+    "align": [
+     "r",
+     "r"
+    ],
+    "widths": [
+     4819,
+     4819
+    ],
+    "rows": [
+     [
+      "€ 25.000",
+      "€ 3.115"
+     ],
+     [
+      "€ 46.000",
+      "€ 2.074"
+     ],
+     [
+      "€ 60.000",
+      "€ 1.179"
+     ],
+     [
+      "€ 90.000",
+      "€ 0"
+     ]
+    ],
+    "note": "Bron: Belastingdienst, https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2026"
+   },
+   {
+    "kop": "Opgave 4  Veilig de piste op",
+    "nieuwePagina": false
+   },
+   {
+    "nr": 8,
+    "titel": "Wintersportverzekering van Bergzeker",
+    "type": "table",
+    "head": [
+     "Gegeven",
+     "Waarde"
+    ],
+    "align": [
+     "l",
+     "r"
+    ],
+    "widths": [
+     6638,
+     3000
+    ],
+    "rows": [
+     [
+      "Aantal verzekerden",
+      "20.000"
+     ],
+     [
+      "Kans op een schadegeval per verzekerde",
+      "2%"
+     ],
+     [
+      "Gemiddeld schadebedrag per schadegeval",
+      "€ 1.500"
+     ],
+     [
+      "Opslag voor kosten en winst (over de verwachte schade)",
+      "25%"
+     ]
+    ]
+   },
+   {
+    "nr": 9,
+    "titel": "Doorlopende reisverzekering: twee varianten",
+    "type": "table",
+    "head": [
+     "",
+     "Premie per jaar",
+     "Eigen risico per schadegeval"
+    ],
+    "align": [
+     "l",
+     "r",
+     "r"
+    ],
+    "widths": [
+     3238,
+     3000,
+     3400
+    ],
+    "rows": [
+     [
+      "Variant A",
+      "€ 96,00",
+      "€ 0"
+     ],
+     [
+      "Variant B",
+      "€ 72,00",
+      "€ 150"
+     ]
+    ]
+   },
+   {
+    "nr": 10,
+    "titel": "Leningen voor SneeuwPunt",
+    "type": "table",
+    "head": [
+     "Lening",
+     "Looptijd",
+     "Onderpand",
+     "Rente per jaar"
+    ],
+    "align": [
+     "l",
+     "r",
+     "l",
+     "r"
+    ],
+    "widths": [
+     1900,
+     2200,
+     3338,
+     2200
+    ],
+    "rows": [
+     [
+      "A",
+      "2 jaar",
+      "bedrijfspand",
+      "4,5%"
+     ],
+     [
+      "B",
+      "2 jaar",
+      "geen",
+      "7,5%"
+     ]
+    ]
+   },
+   {
+    "kop": "Opgave 5  Europa op slot voor China?",
+    "nieuwePagina": false
+   },
+   {
+    "nr": 11,
+    "titel": "Frankrijk en Duitsland willen een hardere aanpak van China",
+    "type": "article",
+    "lines": [
+     "Frankrijk en Duitsland willen dat de Europese Unie (EU) harder optreedt tegen oneerlijke concurrentie uit China. Volgens beide landen verkopen Chinese bedrijven hun producten in Europa tegen dumpprijzen en krijgen zij hoge subsidies van hun overheid. China heeft een handelsoverschot met de EU van ongeveer € 1 miljard per dag.",
+     "De twee landen vinden dat de EU bestaande middelen, zoals importheffingen, beter moet gebruiken. Daarnaast willen zij een nieuw middel: de EU moet de toegang tot de interne markt* kunnen beperken en desnoods helemaal kunnen afsluiten voor landen die oneerlijk concurreren.",
+     "Ook willen zij dat Europese bedrijven belangrijke onderdelen, zoals computerchips en batterijen, uit meerdere landen halen. Zo wordt de EU minder afhankelijk van één land.",
+     "China heeft gedreigd met tegenmaatregelen als de EU de toegang tot haar markt beperkt.",
+     "* interne markt: de gezamenlijke markt van de EU-landen."
+    ],
+    "note": "Vrij naar: Het Financieele Dagblad, 5 oktober 2026, ‘Frankrijk en Duitsland: EU desnoods afsluiten voor Chinese bedrijven’."
+   }
+  ]
+ },
+ "cv": [
+  {
+   "opgave": "Opgave 1  De kringloop van Noordland"
+  },
+  {
+   "nr": 1,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "I = Y − C − O − E + M = 1.000 − 560 − 250 − 620 + 580 = 150 (miljard euro)",
+     1
+    ],
+    [
+     "S = Y − B − C = 1.000 − 230 − 560 = 210 (miljard euro)",
+     1
+    ]
+   ],
+   "opm": "De besparingen mogen ook worden berekend met de geldstromen bij de banken (S = 150 + 20 + 40 = 210), als de leerling de geldstromen 1 en 2 juist heeft berekend.",
+   "fout": "Bij de investeringen de export en de import vergeten (190). Bij de besparingen de belastingen vergeten (440).",
+   "voorbeeld": "Y = C + I + O + E − M, dus 1.000 = 560 + I + 250 + 620 − 580. I = 1.000 − 850 = 150 miljard euro. De gezinnen verdelen hun inkomen over belasting, consumptie en sparen: S = Y − B − C = 1.000 − 230 − 560 = 210 miljard euro.",
+   "uitleg": "Wat de bedrijven aan inkomen uitbetalen (Y), komt ook weer bij hen binnen als bestedingen: C + I + O + E − M. Wat de gezinnen ontvangen (Y), gaat naar belasting, consumptie en besparingen. Met deze twee vergelijkingen vind je elke ontbrekende waarde."
+  },
+  {
+   "nr": 2,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "geldstroom 1 = O − B = 250 − 230 = 20 (miljard euro) en geldstroom 2 = E − M = 620 − 580 = 40 (miljard euro)",
+     1
+    ],
+    [
+     "geldstroom 1 loopt van de banken naar de overheid en geldstroom 2 loopt van de banken naar het buitenland",
+     1
+    ]
+   ],
+   "opm": "Het tweede scorepunt alleen toekennen als beide richtingen juist zijn.",
+   "fout": "De richting omdraaien. De overheid geeft meer uit dan zij ontvangt en leent dus bij de banken. Het geld stroomt dan van de banken naar de overheid.",
+   "voorbeeld": "De overheid ontvangt 230 en geeft 250 uit. Zij komt 20 miljard tekort en leent dat bij de banken: van de banken naar de overheid. Het buitenland betaalt 620 voor de export en ontvangt 580 voor de import. Het buitenland komt 40 miljard tekort en leent dat bij de banken: van de banken naar het buitenland.",
+   "uitleg": "Een sector met een tekort leent bij de banken, een sector met een overschot brengt geld naar de banken. Controleer je antwoord bij de banken: er komt 210 binnen (S) en er gaat 150 + 20 + 40 = 210 uit."
+  },
+  {
+   "nr": 3,
+   "max": 2,
+   "bloom": "Onthouden",
+   "plain": [
+    "(1) toegevoegde waarden",
+    "(2) netto",
+    "(3) informele",
+    "(4) niet of niet volledig"
+   ],
+   "bullets": [
+    [
+     "indien (1) en (2) juist",
+     1
+    ],
+    [
+     "indien (3) en (4) juist",
+     1
+    ]
+   ],
+   "voorbeeld": "(1) toegevoegde waarden, (2) netto, (3) informele, (4) niet of niet volledig.",
+   "uitleg": "Het bbp is de som van alle toegevoegde waarden. Wie de omzetten optelt, telt de ingekochte goederen twee keer mee. Bruto min afschrijvingen is netto. In de informele sector wordt niets geregistreerd, dus het statistiekbureau mist deze productie grotendeels."
+  },
+  {
+   "opgave": "Opgave 2  Groeit de welvaart in Noordland?"
+  },
+  {
+   "nr": 4,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "indexcijfer nominaal bbp = 1.061 : 1.000 × 100 = 106,1",
+     1
+    ],
+    [
+     "indexcijfer reëel bbp = 106,1 : 103,0 × 100 = 103,0, dus de reële groei is 3,0%",
+     1
+    ]
+   ],
+   "opm": "Als de leerling 6,1% − 3,0% = 3,1% berekent, maximaal 1 scorepunt toekennen.",
+   "fout": "De percentages van elkaar aftrekken in plaats van de indexcijfers op elkaar delen.",
+   "voorbeeld": "Nominaal: 1.061 : 1.000 × 100 = 106,1. Ric = Nic : Pic × 100 = 106,1 : 103,0 × 100 = 103,0. De reële groei is 3,0%.",
+   "uitleg": "Je haalt de prijsstijging uit de nominale groei door te delen, niet door af te trekken. Aftrekken geeft 3,1% en dat is net te hoog."
+  },
+  {
+   "nr": 5,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Door plan 1 stijgt L. De productie (Y) stijgt, maar het aantal inwoners stijgt mee en de productie per werkende neemt niet toe, zodat het bbp per hoofd niet of nauwelijks groeit.",
+     1
+    ],
+    [
+     "Door plan 2 stijgt A. Met dezelfde hoeveelheid arbeid en kapitaal wordt meer geproduceerd / de arbeidsproductiviteit stijgt, zodat het bbp per hoofd groeit. Plan 2 laat het bbp per hoofd dus het meest groeien.",
+     1
+    ]
+   ],
+   "opm": "Een antwoord waarin bij plan 1 wordt uitgelegd dat het bbp per hoofd daalt doordat er per werknemer minder kapitaal beschikbaar is, ook goed rekenen.",
+   "fout": "Alleen naar het totale bbp kijken. Door plan 1 groeit het totale bbp wel, maar daar gaat de vraag niet over.",
+   "voorbeeld": "Bij plan 1 gaat L omhoog. Er wordt meer gemaakt, maar er zijn ook meer mensen, dus per persoon blijft het ongeveer gelijk. Bij plan 2 gaat A omhoog. Dezelfde werknemers maken dan meer per persoon. Het bbp per hoofd stijgt dus het meest door plan 2.",
+   "uitleg": "Meer arbeid geeft meer productie, maar niet meer productie per persoon. Alleen slimmer werken (een hogere A) laat de productie per persoon structureel stijgen."
+  },
+  {
+   "nr": 6,
+   "max": 2,
+   "bloom": "Onthouden",
+   "plain": [
+    "(1) enge",
+    "(2) gezondheid en onderwijs",
+    "(3) subjectieve",
+    "(4) groen"
+   ],
+   "bullets": [
+    [
+     "indien (1) en (2) juist",
+     1
+    ],
+    [
+     "indien (3) en (4) juist",
+     1
+    ]
+   ],
+   "voorbeeld": "(1) enge, (2) gezondheid en onderwijs, (3) subjectieve, (4) groen.",
+   "uitleg": "Het enge welvaartsbegrip kijkt alleen naar wat in geld is uit te drukken. De HDI bestaat uit inkomen, levensverwachting en opleiding. Een maatstaf die op meningen is gebaseerd, is subjectief. Het groen bbp is het bbp min de schade aan het milieu. Het reële bbp is het bbp zonder het effect van prijsstijgingen."
+  },
+  {
+   "nr": 7,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De luchthaven zorgt voor extra productie / toegevoegde waarde (vluchten, hotels, taxi’s), waardoor het bbp stijgt.",
+     1
+    ],
+    [
+     "De geluidsoverlast en de luchtvervuiling zijn negatieve externe effecten. Deze schade voor omwonenden telt niet mee in het bbp, maar verlaagt wel de welvaart in brede zin.",
+     1
+    ]
+   ],
+   "fout": "Het begrip externe effecten wel noemen, maar niet uitleggen dat deze schade buiten het bbp blijft.",
+   "voorbeeld": "Door de luchthaven wordt er meer geproduceerd en verdiend, dus het bbp stijgt. Maar de herrie en de vuile lucht zijn negatieve externe effecten. Die schade zit niet in het bbp. De omwonenden gaan er wel op achteruit, dus de welvaart in brede zin kan dalen.",
+   "uitleg": "Een extern effect is een gevolg voor anderen dat niet in de prijs zit. Het bbp telt alleen wat op een markt wordt betaald. Schade aan gezondheid en leefomgeving blijft er dus buiten."
+  },
+  {
+   "opgave": "Opgave 3  Verdeeld land"
+  },
+  {
+   "nr": 8,
+   "max": 1,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "100% − 41% = 59%",
+     1
+    ]
+   ],
+   "fout": "Het cumulatieve percentage bij 80% aflezen (41%) en dat als antwoord geven, of curve 1 gebruiken (39%).",
+   "voorbeeld": "Bij 80% van de huishoudens lees ik op curve 2 af: 41% van het inkomen. De rijkste 20% heeft dus 100% − 41% = 59%.",
+   "uitleg": "De Lorenzcurve is cumulatief. Voor een groep in het midden of aan de top trek je twee afgelezen waarden van elkaar af."
+  },
+  {
+   "nr": 9,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "plain": [
+    "(1) primaire",
+    "(2) hogere",
+    "(3) nivelleert",
+    "(4) dichter bij"
+   ],
+   "bullets": [
+    [
+     "indien (1) en (2) juist",
+     1
+    ],
+    [
+     "indien (3) en (4) juist",
+     1
+    ]
+   ],
+   "voorbeeld": "(1) primaire, (2) hogere, (3) nivelleert, (4) dichter bij.",
+   "uitleg": "Hoe verder de curve van de diagonaal ligt, hoe ongelijker de verdeling en hoe hoger de Gini-coëfficiënt. Het primaire inkomen is het ongelijkst, omdat belastingen, uitkeringen en toeslagen er nog niet in zitten."
+  },
+  {
+   "nr": 10,
+   "max": 3,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "belastbaar inkomen = 52.000 − 6.000 = € 46.000",
+     1
+    ],
+    [
+     "schijf 1: 38.883 × 0,3575 = € 13.900,67 en schijf 2: (46.000 − 38.883) × 0,3756 = € 2.673,15, samen € 16.573,82",
+     1
+    ],
+    [
+     "te betalen = 16.573,82 − 2.074 − 5.268 = € 9.231,82",
+     1
+    ]
+   ],
+   "fout": "De hypotheekrente van de belasting aftrekken in plaats van van het inkomen. De heffingskortingen van het inkomen aftrekken in plaats van van de belasting. Het hele inkomen tegen 37,56% belasten.",
+   "voorbeeld": "Belastbaar inkomen = 52.000 − 6.000 = € 46.000. Schijf 1: 38.883 × 0,3575 = € 13.900,67. Schijf 2: 7.117 × 0,3756 = € 2.673,15. Samen € 16.573,82. Heffingskortingen eraf: 16.573,82 − 2.074 − 5.268 = € 9.231,82.",
+   "uitleg": "Een aftrekpost gaat vóór de belastingberekening van het inkomen af. Een heffingskorting gaat ná de berekening van de belasting af. Alleen het deel van het inkomen boven € 38.883 valt in schijf 2."
+  },
+  {
+   "nr": 11,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De algemene heffingskorting wordt lager naarmate het inkomen hoger is, waardoor lage inkomens (in verhouding tot hun inkomen) meer belastingvoordeel hebben dan hoge inkomens.",
+     1
+    ],
+    [
+     "Hierdoor zijn de verschillen tussen de netto-inkomens kleiner dan de verschillen tussen de bruto-inkomens.",
+     1
+    ]
+   ],
+   "opm": "Een antwoord met een juiste getallenvergelijking uit bron 7 (bijvoorbeeld € 3.115 op € 25.000 is 12,5% en € 0 op € 90.000 is 0%) ook goed rekenen voor het eerste scorepunt.",
+   "fout": "Alleen zeggen dat lage inkomens korting krijgen, zonder het gevolg voor de inkomensverschillen te noemen.",
+   "voorbeeld": "Iemand met € 25.000 krijgt € 3.115 korting en iemand met € 90.000 krijgt niets. Lage inkomens houden daardoor in verhouding meer over. De netto-inkomens liggen dus dichter bij elkaar dan de bruto-inkomens.",
+   "uitleg": "Nivelleren betekent dat de inkomensverschillen kleiner worden. Je moet dus altijd twee groepen met elkaar vergelijken en het effect op het verschil benoemen."
+  },
+  {
+   "nr": 12,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Zonder de grens zou Mila over haar aftrekpost 49,50% (haar marginale tarief) terugkrijgen. Dat is meer dan iemand met een lager inkomen, die 35,75% of 37,56% terugkrijgt.",
+     1
+    ],
+    [
+     "Door de grens krijgt Mila minder belasting terug / betaalt Mila meer belasting, terwijl er voor lagere inkomens niets verandert. Het verschil in netto-inkomen wordt daardoor kleiner.",
+     1
+    ]
+   ],
+   "fout": "De grens uitleggen als een voordeel voor lage inkomens. Voor hen verandert er niets. Alleen het voordeel van hoge inkomens wordt kleiner.",
+   "voorbeeld": "Zonder grens krijgt Mila 49,50% van haar hypotheekrente terug en iemand met een lager inkomen maar ongeveer 37%. Met de grens krijgt Mila ook maar 37,56% terug. Zij betaalt dus meer belasting, terwijl het voor lage inkomens gelijk blijft. Het verschil in netto-inkomen wordt kleiner.",
+   "uitleg": "Een aftrekpost levert het marginale tarief op. Bij een progressief stelsel hebben hoge inkomens daardoor het meeste voordeel van aftrekposten. De grens haalt precies dat extra voordeel weg."
+  },
+  {
+   "opgave": "Opgave 4  Veilig de piste op"
+  },
+  {
+   "nr": 13,
+   "max": 1,
+   "bloom": "Onthouden",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Een onvrijwillig risico, want Sam kan niet zelf bepalen of beïnvloeden dat een ander tegen hem aan skiet.",
+     1
+    ]
+   ],
+   "opm": "Alleen de keuze zonder juiste motivering: geen scorepunt toekennen. De indeling volgt de les: een risico waar je zelf iets aan kunt doen (bijvoorbeeld skiles nemen om niet te vallen) is vrijwillig. Een risico dat door een ander wordt veroorzaakt (aangeskied worden) is onvrijwillig.",
+   "voorbeeld": "Onvrijwillig, want Sam heeft er zelf geen invloed op of iemand anders tegen hem aan skiet.",
+   "uitleg": "Bij een vrijwillig risico kun je er zelf iets aan doen. Als je zonder skiles je knie verdraait, is dat een vrijwillig risico. Een onvrijwillig risico wordt veroorzaakt door iemand anders, zoals wanneer je wordt aangeskied. Daar heb je niet om gevraagd."
+  },
+  {
+   "nr": 14,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "verwachte schade per verzekerde = 0,02 × € 1.500 = € 30,00 (of: totale verwachte schade = 20.000 × 0,02 × € 1.500 = € 600.000)",
+     1
+    ],
+    [
+     "premie = 30,00 × 1,25 = € 37,50 (of: 600.000 × 1,25 : 20.000 = € 37,50)",
+     1
+    ]
+   ],
+   "fout": "De opslag vergeten (€ 30,00) of 25% van de premie nemen in plaats van 25% van de verwachte schade.",
+   "voorbeeld": "Risico = kans × schade = 0,02 × 1.500 = € 30,00 per verzekerde. Daar komt 25% bij: 30,00 × 1,25 = € 37,50.",
+   "uitleg": "De verzekeraar kent alleen de gemiddelde kans van de groep. De premie is de verwachte schade per persoon plus een opslag voor kosten en winst."
+  },
+  {
+   "nr": 15,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Iemand die risico-avers is, heeft liever een zeker klein verlies (de premie) dan een kleine kans op een groot verlies (de schade).",
+     1
+    ],
+    [
+     "Sam is daarom bereid een premie te betalen die hoger is dan de verwachte schade, om de onzekerheid over een hoge schade weg te nemen.",
+     1
+    ]
+   ],
+   "fout": "Zeggen dat verzekeren ‘goedkoper’ is. Gemiddeld is verzekeren juist duurder dan de verwachte schade.",
+   "voorbeeld": "Sam betaalt liever een vast klein bedrag dan dat hij het risico loopt op een grote rekening. Omdat hij een hekel heeft aan die onzekerheid, heeft hij er meer voor over dan de schade die hij gemiddeld kan verwachten.",
+   "uitleg": "Risico-avers betekent dat zekerheid geld waard is. Daarom kan een verzekeraar een premie vragen die boven de verwachte schade ligt."
+  },
+  {
+   "nr": 16,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "De voorzichtige skiërs (goede risico’s) verzekeren zich niet meer, zodat vooral de slechte risico’s overblijven: er is averechtse selectie. De gemiddelde schade per verzekerde stijgt daardoor.",
+     1
+    ],
+    [
+     "Om de hogere gemiddelde schade te kunnen betalen, moet Bergzeker de premie verhogen.",
+     1
+    ]
+   ],
+   "fout": "Averechtse selectie verwarren met moral hazard. Bij averechtse selectie verandert de samenstelling van de groep, niet het gedrag.",
+   "voorbeeld": "De voorzichtige skiërs haken af, dus alleen de mensen met een grote kans op schade blijven verzekerd. Dat is averechtse selectie. De schade per verzekerde wordt hoger en dus moet de premie omhoog.",
+   "uitleg": "De verzekeraar weet minder dan de klant (asymmetrische informatie) en vraagt één premie. Die is te hoog voor goede risico’s en te laag voor slechte risico’s."
+  },
+  {
+   "nr": 17,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "Het gedrag is moral hazard: verzekerden nemen meer risico omdat de verzekeraar de schade betaalt. Door een eigen risico betaalt de verzekerde een deel van de schade zelf, wat een prikkel geeft om voorzichtiger te skiën.",
+     1
+    ],
+    [
+     "Een vragenlijst geeft de verzekeraar alleen informatie vóór het afsluiten en verandert het gedrag na het afsluiten niet. Maatregel 1 is dus het meest geschikt.",
+     1
+    ]
+   ],
+   "opm": "Het begrip moral hazard hoeft niet letterlijk te worden genoemd als de redenering juist is.",
+   "fout": "Alleen maatregel 1 uitleggen en maatregel 2 niet afwijzen. De vraag is een vergelijking.",
+   "voorbeeld": "Mensen skiën roekelozer omdat ze toch verzekerd zijn. Met een eigen risico van € 250 kost een ongeluk hun zelf geld, dus letten ze beter op. Een vragenlijst helpt daar niet tegen, want na het afsluiten kan iemand nog steeds buiten de piste gaan. Maatregel 1 is het best.",
+   "uitleg": "Een vragenlijst verkleint de informatieachterstand bij het afsluiten en helpt dus tegen averechtse selectie. Een eigen risico werkt op het gedrag ná het afsluiten en helpt dus tegen moral hazard."
+  },
+  {
+   "nr": 18,
+   "max": 2,
+   "bloom": "Toepassen",
+   "intro": "Een voorbeeld van een juiste berekening is:",
+   "bullets": [
+    [
+     "verwachte kosten variant B = 72,00 + 0,20 × 150 = € 102,00",
+     1
+    ],
+    [
+     "variant A kost € 96,00. Variant A is dus naar verwachting het goedkoopst.",
+     1
+    ]
+   ],
+   "fout": "Alleen de premies vergelijken (dan lijkt B goedkoper) of het hele eigen risico van € 150 optellen zonder de kans van 20%.",
+   "voorbeeld": "Variant A kost € 96,00. Variant B: premie € 72,00 plus het verwachte eigen risico van 0,20 × 150 = € 30,00, samen € 102,00. Variant A is goedkoper.",
+   "uitleg": "Een lagere premie met eigen risico is alleen voordelig als de premiekorting groter is dan het eigen risico dat je naar verwachting betaalt (kans × eigen risico)."
+  },
+  {
+   "nr": 19,
+   "max": 1,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste verklaring is:",
+   "bullets": [
+    [
+     "Lening B heeft geen onderpand. Als SneeuwPunt niet terugbetaalt, kan de bank niets verkopen om haar geld terug te krijgen. Het risico van wanbetaling is groter en daarom vraagt de bank een hogere rente.",
+     1
+    ]
+   ],
+   "fout": "Het verschil verklaren met ‘de bank verdient dan meer’, zonder het hogere risico van wanbetaling te noemen.",
+   "voorbeeld": "Bij lening B is er geen onderpand, dus de bank is haar geld kwijt als SneeuwPunt niet betaalt. Voor dat extra risico wil de bank een hogere rente.",
+   "uitleg": "Rente bevat een risico-opslag. Hoe groter de kans dat de bank haar geld niet terugkrijgt, hoe hoger de rente. Onderpand verlaagt dat risico."
+  },
+  {
+   "opgave": "Opgave 5  Europa op slot voor China?"
+  },
+  {
+   "nr": 20,
+   "max": 2,
+   "bloom": "Begrijpen",
+   "intro": "Een voorbeeld van een juiste uitleg is:",
+   "bullets": [
+    [
+     "Door een importheffing worden Chinese producten in de EU duurder.",
+     1
+    ],
+    [
+     "Hierdoor kopen afnemers in de EU meer producten van Europese bedrijven, waardoor de afzet / de productie (en de werkgelegenheid) van deze bedrijven behouden blijft of stijgt.",
+     1
+    ]
+   ],
+   "fout": "Zeggen dat de heffing Chinese bedrijven ‘straft’, zonder het prijseffect in de EU en de verschuiving van de vraag te noemen.",
+   "voorbeeld": "Door de heffing worden Chinese producten hier duurder. Mensen en bedrijven in de EU kopen dan eerder een Europees product. Europese bedrijven verkopen daardoor meer en kunnen blijven produceren.",
+   "uitleg": "Een invoerrecht is een belasting op import. Het werkt via de prijs: het buitenlandse product wordt duurder, dus de vraag verschuift naar binnenlandse producten. Dat beschermt de productie en de werkgelegenheid."
+  },
+  {
+   "nr": 21,
+   "max": 2,
+   "bloom": "Analyseren",
+   "intro": "Een voorbeeld van een juist antwoord is:",
+   "bullets": [
+    [
+     "China kan tegenmaatregelen nemen, bijvoorbeeld importheffingen op Europese producten of minder export van grondstoffen en onderdelen naar de EU. Daardoor daalt de export van de EU naar China / worden grondstoffen en onderdelen voor Europese bedrijven schaarser en duurder.",
+     1
+    ],
+    [
+     "Hierdoor daalt de productie van Europese bedrijven, waardoor het bbp van de EU minder groeit.",
+     1
+    ]
+   ],
+   "opm": "Een antwoord waarin de tegenmaatregelen van China niet worden gebruikt (bijvoorbeeld alleen: producten worden duurder voor Europese consumenten), maximaal 1 scorepunt toekennen.",
+   "fout": "Stoppen bij ‘China neemt tegenmaatregelen’, zonder de stap naar export, productie en bbp te maken.",
+   "voorbeeld": "China heeft gedreigd met tegenmaatregelen. Als China bijvoorbeeld ook heffingen invoert op Europese producten, verkopen Europese bedrijven minder in China. Ze produceren dan minder en het bbp van de EU groeit minder hard.",
+   "uitleg": "Protectie lokt vaak tegenmaatregelen uit. Dan krimpt de handel aan twee kanten. De bescherming van de eigen markt kan zo ten koste gaan van de export en dus van de economische groei."
+  }
+ ],
+ "regels": [
+  [
+   "Doorwerkfout",
+   "een fout uit een eerdere vraag wordt bij een latere vraag niet opnieuw aangerekend, als de methode juist is."
+  ],
+  [
+   "Rekenfout bij een juiste methode",
+   "maximaal 1 scorepunt aftrek per vraag."
+  ],
+  [
+   "Afrondingsfout",
+   "maximaal 1 scorepunt aftrek per vraag. Als de leerling met niet-afgeronde tussenantwoorden rekent, kan de maximumscore worden behaald."
+  ],
+  [
+   "Schrijfwijze van berekeningen",
+   "een berekening bestaat uit de formule of het uitgangspunt, de ingevulde berekening en het antwoord met eenheid. Alleen een eindantwoord levert geen scorepunten op."
+  ],
+  [
+   "Gelijke strekking",
+   "een antwoord dat inhoudelijk overeenkomt met het voorbeeldantwoord wordt goed gerekend."
+  ],
+  [
+   "Ander juist antwoord",
+   "een vakinhoudelijk juiste redenering die niet in dit voorschrift staat, wordt beoordeeld naar de geest van het voorschrift."
+  ],
+  [
+   "Te veel antwoorden",
+   "als meer antwoorden worden gegeven dan gevraagd, worden alleen de eerstgenoemde antwoorden beoordeeld."
+  ]
+ ],
+ "matrijs": {
+  "rijen": [
+   {
+    "nr": 1,
+    "leerdoel": "Investeringen en besparingen berekenen in de kringloop (Y = C + I + O + E − M)",
+    "eindterm": "H1.2",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Kringloop (vwo 2026-I vr. 23)",
+    "thema": "Noordland: kringloop",
+    "bron": "Bron 1",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 2,
+    "leerdoel": "Saldo van overheid en buitenland, richting van de geldstroom",
+    "eindterm": "H1.2, H1.4",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Kringloop (vwo 2026-I vr. 23)",
+    "thema": "Noordland: kringloop",
+    "bron": "Bron 1",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 3,
+    "leerdoel": "Bbp als som van toegevoegde waarden, bruto en netto, informele sector",
+    "eindterm": "H1.1, H1.3",
+    "werkwoord": "Maak juiste tekst",
+    "bloom": "Onthouden",
+    "koppeling": "Invulvraag (2025-I vr. 8)",
+    "thema": "Noordland: toelichting",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 4,
+    "leerdoel": "Reële groei berekenen met indexcijfers",
+    "eindterm": "H1.3",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Koopkracht / index (2025-I vr. 5)",
+    "thema": "Noordland: groei",
+    "bron": "Bron 2",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 5,
+    "leerdoel": "Groeistrategieën vergelijken met Y = A × f(K, L)",
+    "eindterm": "H2.1, H2.4",
+    "werkwoord": "Beredeneer",
+    "bloom": "Analyseren",
+    "koppeling": "Structuurzijde (2026-I vr. 11)",
+    "thema": "Noordland: twee plannen",
+    "bron": "Bron 3",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 6,
+    "leerdoel": "Eng en breed welvaartsbegrip, HDI, WHI, groen bbp",
+    "eindterm": "H1.5",
+    "werkwoord": "Maak juiste tekst",
+    "bloom": "Onthouden",
+    "koppeling": "Invulvraag (2025-II vr. 16)",
+    "thema": "Luchthaven Westhaven",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 7,
+    "leerdoel": "Bbp stijgt, welvaart daalt (extern effect)",
+    "eindterm": "H1.3",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Externe effecten (2025-I vr. 20)",
+    "thema": "Luchthaven Westhaven",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 8,
+    "leerdoel": "Inkomensaandeel aflezen uit de Lorenzcurve",
+    "eindterm": "H3.3",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Aflezen verdeling (2026-I vr. 10)",
+    "thema": "Nederland: ongelijkheid",
+    "bron": "Bron 4",
+    "punten": 1,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 9,
+    "leerdoel": "Primair en besteedbaar inkomen, Gini, nivelleren",
+    "eindterm": "H3.3, H3.4",
+    "werkwoord": "Maak juiste tekst",
+    "bloom": "Begrijpen",
+    "koppeling": "Invulvraag (2026-I vr. 7)",
+    "thema": "Nederland: ongelijkheid",
+    "bron": "Bron 4",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 10,
+    "leerdoel": "Inkomstenbelasting box 1 berekenen",
+    "eindterm": "H3.2",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Schijventarief (2026-I vr. 8)",
+    "thema": "Sanne: box 1",
+    "bron": "Bron 5, 6",
+    "punten": 3,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 11,
+    "leerdoel": "Heffingskorting werkt nivellerend",
+    "eindterm": "H3.2, H3.4",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Herverdeling (2026-I vr. 9)",
+    "thema": "Heffingskorting",
+    "bron": "Bron 7",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 12,
+    "leerdoel": "Grens aan aftrektarief werkt nivellerend",
+    "eindterm": "H3.1, H3.2",
+    "werkwoord": "Beredeneer",
+    "bloom": "Analyseren",
+    "koppeling": "Box 1 (2025-I vr. 25)",
+    "thema": "Mila: aftrekpost",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Welvaart (opgave 1 t/m 3)"
+   },
+   {
+    "nr": 13,
+    "leerdoel": "Vrijwillig en onvrijwillig risico",
+    "eindterm": "G1.1",
+    "werkwoord": "Kies en motiveer",
+    "bloom": "Onthouden",
+    "koppeling": "Keuze met motivering (2025-I vr. 21)",
+    "thema": "Sam: wintersport",
+    "bron": "–",
+    "punten": 1,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 14,
+    "leerdoel": "Premie berekenen uit verwachte schade",
+    "eindterm": "G1.1",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Verzekeren (2025-I opg. 5)",
+    "thema": "Bergzeker",
+    "bron": "Bron 8",
+    "punten": 2,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 15,
+    "leerdoel": "Risico-aversie en verzekeren",
+    "eindterm": "G1.2",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Verzekeren (2025-I opg. 5)",
+    "thema": "Sam: wintersport",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 16,
+    "leerdoel": "Averechtse selectie en stijgende premie",
+    "eindterm": "G2.1, G2.2",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Averechtse selectie (2025-I vr. 27)",
+    "thema": "Bergzeker",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 17,
+    "leerdoel": "Maatregel kiezen tegen moral hazard",
+    "eindterm": "G2.3",
+    "werkwoord": "Beredeneer",
+    "bloom": "Analyseren",
+    "koppeling": "Eigen risico (2025-I vr. 14)",
+    "thema": "Bergzeker",
+    "bron": "–",
+    "punten": 2,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 18,
+    "leerdoel": "Eigen risico afwegen tegen premiekorting",
+    "eindterm": "G1.4",
+    "werkwoord": "Bereken",
+    "bloom": "Toepassen",
+    "koppeling": "Eigen risico (2025-I vr. 14)",
+    "thema": "Noa: reisverzekering",
+    "bron": "Bron 9",
+    "punten": 2,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 19,
+    "leerdoel": "Rente, onderpand en wanbetaling",
+    "eindterm": "G3.1, G3.2",
+    "werkwoord": "Verklaar",
+    "bloom": "Begrijpen",
+    "koppeling": "Onderpand en rente (2026-II vr. 19)",
+    "thema": "SneeuwPunt",
+    "bron": "Bron 10",
+    "punten": 1,
+    "onderdeel": "Risico en verzekeren (opgave 4)"
+   },
+   {
+    "nr": 20,
+    "leerdoel": "Werking van een importheffing als protectiemaatregel",
+    "eindterm": "H2.6",
+    "werkwoord": "Leg uit",
+    "bloom": "Begrijpen",
+    "koppeling": "Protectie (2025-I vr. 18)",
+    "thema": "Actualiteit: EU en China",
+    "bron": "Bron 11",
+    "punten": 2,
+    "onderdeel": "Actualiteit (opgave 5)"
+   },
+   {
+    "nr": 21,
+    "leerdoel": "Protectie, tegenmaatregelen en economische groei",
+    "eindterm": "H2.2, H2.5",
+    "werkwoord": "Beredeneer",
+    "bloom": "Analyseren",
+    "koppeling": "Concurrentiepositie (2025-I vr. 2)",
+    "thema": "Actualiteit: EU en China",
+    "bron": "Bron 11",
+    "punten": 2,
+    "onderdeel": "Actualiteit (opgave 5)"
+   }
+  ],
+  "gevraagd": {
+   "onderdelen": {
+    "Welvaart (opgave 1 t/m 3)": 60,
+    "Risico en verzekeren (opgave 4)": 30,
+    "Actualiteit (opgave 5)": 10
+   },
+   "bloom": {
+    "Onthouden": 15,
+    "Begrijpen": 30,
+    "Toepassen": 35,
+    "Analyseren": 20
+   }
+  }
+ }
+}

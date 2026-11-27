@@ -1,0 +1,36 @@
+CHANGELOG
+8 oktober 2026, eerste versie (na schoolexamen AT5.11 bedrijfseconomie)
+* Nieuw bestand. Status: CONCEPT. DEEL 1 is door de docent vastgesteld op 8 oktober 2026. DEEL 2 is overgenomen uit de dia's van de docent en uit Cumulus en is nog niet per begrip nagelopen.
+
+BRONBESTAND: 01_KADER_DEFINITIES_DOCENT_HAVO_BECO_BV
+FUNCTIE: begrippen bij Cumulus hoofdstuk 4 zoals de docent ze in de les gebruikt. Bij een toetsvraag waar een leerling een verdedigbaar ander antwoord kan geven, bepaalt dit bestand het antwoord in het correctievoorschrift.
+INTEGRATIE: staat in de rangorde boven de methode (zie 00_toetsconstructie_richtlijnen, Rangorde bij Conflicten). Gebruik samen met 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_BV.
+
+[DEEL 1: VASTGESTELD DOOR DE DOCENT]
+1. Omspanningsvermogen en spanwijdte: de definities van Cumulus gelden. Omspanningsvermogen = het aantal mensen aan wie een leidinggevende leiding KAN geven. Spanwijdte = het aantal mensen aan wie hij DAADWERKELIJK leidinggeeft.
+2. Spandiepte: de directie telt niet mee. In een toetsvraag staat dit er letterlijk bij.
+3. Niet behandeld en dus geen toetsstof: de kenmerken van de bv uit § 4.1 (notaris, aansprakelijkheid, directeur-grootaandeelhouder) en de dertien leiderschapsstijlen van opgave 4.10.
+4. Wel behandeld uit § 4.3: werving en selectie, de drie wettelijke eisen, de contractvormen, de cao, loonkosten, zzp en loondienst, ontslagroutes, transitievergoeding en ondernemingsraad.
+5. De transitievergoeding berekenen vonden leerlingen in de les moeilijk. De regel staat in een informatiebron en de berekening krijgt een uitwerkbijlage.
+
+[DEEL 2: UIT DE DIA'S VAN DE DOCENT EN UIT CUMULUS]
+1. Spandiepte: het aantal niveaus in de organisatie waaraan leiding wordt gegeven.
+2. Omspanningsvermogen kleiner dan spanwijdte: de leidinggevende raakt de controle kwijt. Omspanningsvermogen groter dan spanwijdte: gevaar van micromanagement.
+3. Lijnorganisatie: iedere werknemer heeft één directe baas. Lijn- en staforganisatie: een lijnorganisatie met specialistische stafafdelingen die advies en hulp geven.
+4. Horizontale taakverdeling: naar functie, doelgroep, product of geografie.
+5. McGregor, theorie X: negatief mensbeeld (lui, geen ambitie, geen verantwoordelijkheid); motiveren met dwang, controle en geld. Theorie Y: positief mensbeeld (gemotiveerd, ambitieus, wil verantwoordelijkheid); motiveren met betrokkenheid, inspraak, samenwerking en waardering.
+6. Situationeel leiderschap:
+   S1 instrueren: de werknemer is onbekwaam maar wel gemotiveerd.
+   S2 overtuigen: de werknemer is onbekwaam en niet gemotiveerd.
+   S3 overleggen: de werknemer is bekwaam maar niet gemotiveerd.
+   S4 delegeren: de werknemer is bekwaam en gemotiveerd.
+7. Loonkosten = brutoloon + premies werknemersverzekeringen + werkgeversdeel pensioenpremie.
+8. De drie wettelijke eisen van een arbeidsovereenkomst: arbeidsverplichting, loon, gezagsverhouding.
+9. De drie vormen van een individuele arbeidsovereenkomst: onbepaalde tijd, bepaalde tijd, oproepcontract.
+10. Een individuele arbeidsovereenkomst mag alleen van de cao afwijken in het voordeel van de werknemer.
+11. Ondernemingsraad: verplicht bij 50 of meer werknemers. Vier rechten: adviesrecht, instemmingsrecht, initiatiefrecht en recht op informatie.
+
+[DEEL 3: OPEN PUNTEN]
+1. Op de dia bij opgave 4.8 heet de optelling 1 + 3 + 2 + 2 = 8 het "omspanningsvermogen" van de marketingdirecteur. Volgens de definitie in DEEL 1 is dit de spanwijdte. Controleer de dia.
+2. Op de dia over de arbeidsovereenkomst staat dat de cao mag afwijken van de individuele arbeidsovereenkomst. Cumulus zegt het omgekeerd (zie DEEL 2, punt 10). Controleer de dia.
+3. De docent loopt DEEL 2 na en past de formuleringen aan waar de les afwijkt.

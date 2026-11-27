@@ -1,0 +1,19 @@
+CHANGELOG
+10 november 2026, eerste versie (na schoolexamen AT5.22 havo 5, versie A en B). Status: CONCEPT.
+
+BRONBESTAND: 02_EXAMENCONTEXT_HAVO_BECO_EXAMENANALYSE_NV
+FUNCTIE: opbouw en vraagvormen van een nv-schoolexamen havo, plus de casussen die al zijn gebruikt.
+BRON VAN DE INHOUD: de opdracht van de docent bij AT5.22 (analyse CE havo 2022 tot en met 2026: in 9 van de 10 examens een nv-opgave van gemiddeld ongeveer 11 punten; kengetallen in alle 10; verdeling rekenen 53%, uitleg 26%, kennis 21%) en de gebouwde toets. Koppelingen met vraagnummers van echte examens zijn niet nagezocht.
+
+[DEEL 1: OPBOUW VAN AT5.22]
+36 punten, 19 vragen, drie opgaven van 12 punten: (1) emissie en beurs, (2) resultaatverdeling, (3) balansen en kengetallen. Acht informatiebronnen in een aparte bijlage, een losse uitwerkbijlage met twee tabellen (balansposten na de emissie; balans na de resultaatverdeling).
+Vraagsoorten in punten: rekenen 20, uitleg 10, kennis 6. Meerkeuze: één vraag. 'Toon aan': twee vragen (current ratio na dividend, solvabiliteit na verdeling), beide tegen een eis van de bank.
+B-versie: zelfde matrijs; richting omgekeerd (eis gehaald in A, niet gehaald in B; liquiditeit verbetert in A, blijft gelijk in B; koers stijgt in A, daalt in B) en een ander begrip bij kennisvragen.
+Onafhankelijkheid: een eerdere uitkomst wordt als 'Ga uit van ...' gegeven. Balansposten die een antwoord verraden worden samengevoegd (bijvoorbeeld 'Belastingen en overige schulden').
+
+[DEEL 2: CASUSSEN, NIET OPNIEUW GEBRUIKEN]
+Versie A: Noordzee Windkracht (windpark, 400.000 aandelen à € 21,50); Kustbrouwerij Velsen nv (resultaat voor belasting € 560.000, 600.000 aandelen, dividend per aandeel € 0,43); Padelcentra Kennemerland nv (REV 10,5%, solvabiliteit na verdeling 1,30).
+Versie B: Duinzon Energie (zonnepark, 350.000 aandelen à € 14,00, directe aflossing); Strandbakkerij Zandvoort nv (resultaat voor belasting € 340.000, 400.000 aandelen, dividend per aandeel € 0,47); Klimhal Haarlem nv (REV 11,2%, solvabiliteit na verdeling 0,90).
+
+[DEEL 3: OPEN PUNTEN]
+1. Koppeling met echte examenvragen (jaar, tijdvak, vraagnummer) ontbreekt. 2. Het syllabus 2027 (concept) is gebruikt voor de eindtermen; controleer 13, 18.2, 19, 20.1, 23.1, 24.1, 25.5, 25.8, 26.3 en 26.5.

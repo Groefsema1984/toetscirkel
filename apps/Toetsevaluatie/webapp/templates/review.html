@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+{% set stap = 3 %}
+{% block titel %}Valideren {{ s.toets_id }} - Toetsevaluatie{% endblock %}
+
+{% macro uitsnede(pagina, y0, y1, bijschrift=true) %}
+  {% if pagina is none %}
+  <div class="uitsnede" style="--w:4;--h:1;--y0:0;--y1:1"><span class="geen">Claude vond dit antwoord niet in de scan</span></div>
+  {% else %}
+  <div class="uitsnede" style="--w:{{ s.maten[pagina][0] }};--h:{{ s.maten[pagina][1] }};--y0:{{ y0 }};--y1:{{ y1 }}"
+       role="button" tabindex="0" title="Klik voor de hele pagina">
+    <img src="{{ url_for('beeld', toets_id=s.toets_id, pagina=pagina) }}" loading="lazy" alt="Scan, pagina {{ pagina + 1 }}">
+  </div>
+  {% if bijschrift %}<div class="bij">Pagina {{ pagina + 1 }} van de scan. Klik om de hele pagina te zien.</div>{% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% block inhoud %}
+<h1>{{ s.toets_id | replace('_', ' ') }}</h1>
+<p class="intro">{{ leerlingen | length }} leerlingen uit {{ s.aantal_paginas }} pagina's
+  ({{ s.lege_paginas or 0 }} lege pagina's weggelaten). Hieronder staat alleen wat jouw oordeel
+  nodig heeft; de rest neemt jouw score over, of die van Claude als jij niets hebt genoteerd.</p>
+{% if s.was_gepubliceerd %}
+<p class="melding">Er zijn pagina's toegevoegd nadat je deze toets definitief had gemaakt. Controleer de
+  gemarkeerde leerlingen en klik daarna opnieuw op 'Definitief maken'; dan worden de database en de stroken bijgewerkt.</p>
+{% endif %}
+{% if s.status == 'gepubliceerd' %}
+<p class="melding">Deze toets is al definitief gemaakt. Pas je hier iets aan, klik dan opnieuw op
+  'Definitief maken' om de database en de feedbackstroken bij te werken.</p>
+{% endif %}
+
+{% with ts=s, terug=request.full_path %}{% include "_toestemming.html" %}{% endwith %}
+{% set niet_nagekeken = leerlingen | selectattr('status', 'in', ['fout', 'wacht']) | list %}
+{% if niet_nagekeken and not s.toestemming_nodig %}
+<form method="post" action="{{ url_for('herkijken') }}" class="melding rij" style="align-items: center">
+  <span style="flex: 3"><b>{{ niet_nagekeken | length }} leerling{{ 'en zijn' if niet_nagekeken | length != 1 else ' is' }} nog niet nagekeken</b>
+    (bijvoorbeeld omdat het tegoed op was): {{ niet_nagekeken | map(attribute='naam') | join(', ') }}.</span>
+  <input type="hidden" name="toets" value="{{ s.toets_id }}">
+  <button class="knop hoofd" type="submit" style="flex: 0 0 auto">Allemaal opnieuw nakijken</button>
+</form>
+{% endif %}
+
+<div class="telbalk" aria-live="polite">
+  {% for sleutel, naam in [('wezen', "Wees-pagina's"), ('koppeling', 'Koppelingen te controleren'),
+                           ('conflict', 'Verschillen docent en Claude'), ('twijfel', 'Twijfelgevallen'),
+                           ('ontbreekt', 'Niet beoordeeld')] %}
+  <div class="tel {{ 'nul' if not open[sleutel] }}" data-telvak="{{ sleutel }}"><b data-tel="{{ sleutel }}">{{ open[sleutel] }}</b>{{ naam }}</div>
+  {% endfor %}
+</div>
+{% if afwezig %}<p class="bij" style="margin-top: 1rem">Geen werk gevonden van: {{ afwezig | join(', ') }}.</p>{% endif %}
+
+{# ---------------------------------------------------------------- wees-pagina's #}
+{% set open_wezen = s.wezen | selectattr('status', 'equalto', 'open') | list %}
+{% if open_wezen %}
+<h2>Van wie zijn deze pagina's?</h2>
+<p class="bij">Claude kon hier geen naam uit de klassenlijst aan koppelen. Je ziet de bovenkant van het eerste blad.</p>
+{% for w in open_wezen %}
+<article class="kaart wees" data-wees="{{ w.id }}">
+  <div>{{ uitsnede(w.paginas[0], 0, 0.3) }}</div>
+  <div>
+    <h4>Pagina {{ w.paginas | reeksen }}</h4>
+    <p>{% if w.naam_gelezen %}Gelezen als “{{ w.naam_gelezen }}”, maar die naam staat niet in de klassenlijst.{% else %}Er staat geen naam op.{% endif %}</p>
+    <label for="w-{{ loop.index }}">Dit is het werk van</label>
+    <select id="w-{{ loop.index }}" class="wees-keuze">
+      <option value="">Kies een leerling</option>
+      <option value="__nieuw__">+ Staat er niet bij: leerling toevoegen</option>
+      {% for lid, naam in klassenlijst %}<option value="{{ lid }}">{{ naam }} ({{ lid }}){{ ', heeft al werk' if lid in s.leerlingen }}</option>{% endfor %}
+    </select>
+    <div class="nieuwe-ll" {{ '' if suggesties.get(w.id) else 'hidden' }}>
+      {% if suggesties.get(w.id) %}<p class="bij" style="margin: .6rem 0 .3rem">Wel gevonden in een andere klassenlijst (klaswissel?):</p>
+      <div class="keuzes" style="margin-top: 0">{% for k in suggesties[w.id] %}
+        <button class="knop klein claude" data-actie="suggestie" data-nummer="{{ k.nummer }}" data-naam="{{ k.naam }}" data-klas="{{ k.klas }}">{{ k.naam }} ({{ k.nummer }}, {{ k.klas or k.groep }})</button>{% endfor %}</div>{% endif %}
+      <div class="velden" {{ 'hidden' if suggesties.get(w.id) }}>
+        <div><label>Leerlingnummer</label><input type="text" name="nummer" inputmode="numeric" placeholder="bijv. 712345"></div>
+        <div><label>Naam</label><input type="text" name="naam" value="{{ w.naam_gelezen }}"></div>
+        <div><label>Klas</label><input type="text" name="klas" list="klassen" value="{{ standaard_klas }}"></div>
+      </div>
+      <p class="bij velden" {{ 'hidden' if suggesties.get(w.id) }}>Het nummer staat in Magister. De leerling wordt ook bewaard in
+        Klassenlijsten/Klassenlijsten extra.xlsx, zodat hij bij volgende toetsen herkend wordt.</p>
+    </div>
+    <div class="keuzes">
+      <button class="knop hoofd" data-actie="wees-koppel">Koppelen en nakijken</button>
+      <button class="knop" data-actie="wees-negeer">Hoort niet bij deze toets</button>
+    </div>
+  </div>
+</article>
+{% endfor %}
+{% endif %}
+
+<datalist id="klassen">{% for k in klassen %}<option value="{{ k }}">{% endfor %}</datalist>
+
+{# ---------------------------------------------------------------- koppeling #}
+<h2>Klopt de naam bij het werk?</h2>
+<details {{ 'open' if open.koppeling }}>
+  <summary>Bovenkant van het eerste blad per leerling ({{ leerlingen | length }})</summary>
+  <div class="koppel">
+    {% for l in leerlingen %}
+    {% set let_op = l.koppeling.vlag and not l.koppeling.ok %}
+    <div class="item {{ 'let-op' if let_op }}" data-koppel="{{ l.leerling_id }}"
+         data-naam="{{ l.naam }}" data-paginas="{{ l.paginas | tojson | forceescape }}">
+      {{ uitsnede(l.paginas[0], 0, 0.2, false) }}
+      <div class="naam">{{ l.naam }} <span class="bij">{{ l.leerling_id }}, pagina {{ l.paginas | reeksen }}</span></div>
+      {% if l.koppeling.vlag %}<div><span class="vlag">Let op</span> {{ l.koppeling.vlag }}</div>{% endif %}
+      <div class="acties">
+        {% if let_op %}<button class="knop klein claude" data-actie="koppeling-ok">Klopt</button>{% endif %}
+        <select aria-label="Andere leerling voor dit werk">
+          <option value="">Is van iemand anders</option>
+          {% for lid, naam in klassenlijst if lid not in s.leerlingen %}<option value="{{ lid }}">{{ naam }}</option>{% endfor %}
+        </select>
+        <button class="knop klein" data-actie="herkoppel">Wijzig</button>
+      </div>
+      {% if l.paginas | length > 1 %}<button class="knop klein verdeel" data-actie="verdeel">Pagina's verdelen</button>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</details>
+<details class="ll-toevoegen">
+  <summary>Staat een leerling niet in de klassenlijst? (bijvoorbeeld na een klaswissel)</summary>
+  <div class="nieuwe-ll">
+    <div class="velden">
+      <div><label for="ll-nummer">Leerlingnummer</label><input type="text" id="ll-nummer" name="nummer" inputmode="numeric" placeholder="bijv. 712345"></div>
+      <div><label for="ll-naam">Naam</label><input type="text" id="ll-naam" name="naam"></div>
+      <div><label for="ll-klas">Klas</label><input type="text" id="ll-klas" name="klas" list="klassen" value="{{ standaard_klas }}"></div>
+      <div style="flex: 0 0 auto"><button class="knop" data-actie="ll-toevoegen">Toevoegen</button></div>
+    </div>
+    <p class="bij">Daarna staat de leerling in alle keuzelijsten op deze pagina. Hij wordt ook bewaard in
+      Klassenlijsten/Klassenlijsten extra.xlsx, zodat hij bij volgende toetsen herkend wordt.</p>
+  </div>
+</details>
+
+{# ---------------------------------------------------------------- pagina's toevoegen #}
+<h2>Pagina's toevoegen</h2>
+<details {{ 'open' if weggelaten and weggelaten | length <= 4 }}>
+  <summary>Weggelaten pagina's ({{ weggelaten | length }})</summary>
+  {% if weggelaten %}
+  <p class="bij">Pagina's die Claude als leeg zag of waarvan jij zei dat ze niet bij deze toets horen. Koppel je
+    er een aan een leerling, dan wordt die leerling opnieuw nagekeken. Je eerdere keuzes blijven staan bij vragen waar de scores
+    niet veranderen; de rest staat weer open.</p>
+  <div class="koppel">
+    {% for w in weggelaten %}
+    <div class="item" data-weg="{{ w.id }}" data-soort="{{ w.soort }}">
+      {{ uitsnede(w.paginas[0], 0, 0.35, false) }}
+      <div class="naam">Pagina {{ w.paginas | reeksen }}
+        <span class="bij">{{ 'door Claude als leeg gezien' if w.soort == 'leeg' else 'door jou weggelaten' }}{% if w.naam_gelezen %}, gelezen als “{{ w.naam_gelezen }}”{% endif %}</span></div>
+      <div class="acties">
+        <select aria-label="Leerling voor deze pagina">
+          <option value="">Kies een leerling</option>
+          {% for lid, naam in klassenlijst %}<option value="{{ lid }}">{{ naam }}</option>{% endfor %}
+        </select>
+        <button class="knop klein" data-actie="terughalen">Toevoegen</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}<p class="bij">Er zijn geen pagina's weggelaten.</p>{% endif %}
+</details>
+<form class="bijscan" method="post" action="{{ url_for('bijscannen') }}" enctype="multipart/form-data">
+  <div>
+    <label for="bijscan">Pagina's bijscannen</label>
+    <p class="bij">Een vergeten blad of het werk van een inhaler: scan alleen die pagina's, met de naam erop.
+      Claude leest de naam, voegt ze toe aan de juiste leerling en kijkt die opnieuw na.</p>
+  </div>
+  <input type="hidden" name="toets" value="{{ s.toets_id }}">
+  <input type="file" id="bijscan" name="scan" accept=".pdf,application/pdf" required>
+  <button class="knop" type="submit">Toevoegen en nakijken</button>
+</form>
+
+{# ---------------------------------------------------------------- scores #}
+<h2>Scores</h2>
+<div class="rij" style="align-items: center; margin-top: .6rem">
+  <button class="knop klein docent" data-actie="bulk" data-soort="conflict" data-keuze="docent">Bij alle open verschillen mijn score houden</button>
+  <button class="knop klein" data-actie="bulk" data-soort="twijfel" data-keuze="akkoord">Alle twijfelgevallen akkoord</button>
+  <span class="bij" style="flex: 3">In bulk wordt er niets geleerd; een reden geef je per vraag.</span>
+</div>
+
+{% for l in leerlingen %}
+<section class="leerling" id="l-{{ l.leerling_id }}" data-leerling="{{ l.leerling_id }}" data-status="{{ l.status }}"
+         data-naam="{{ l.naam }}" data-paginas="{{ l.paginas | tojson | forceescape }}">
+  <header>
+    <h3>{{ l.naam }}</h3>
+    <span class="bij">{{ l.leerling_id }}, {{ l.klas }}, pagina {{ l.paginas | reeksen }}</span>
+    {% if l.paginas | length > 1 and l.status != 'bezig' %}<button class="knop klein" data-actie="verdeel">Pagina's verdelen</button>{% endif %}
+    {% if l.status == 'klaar' %}<span class="cijfers">Voorlopig <b data-totaal>{{ l.totaal | getal }}</b> van {{ l.maximum | getal }} punten</span>{% endif %}
+  </header>
+  {% if l.status in ('bezig', 'wacht') %}
+    <p>{% if l.status == 'bezig' %}Claude kijkt dit werk nu na. De pagina ververst vanzelf.{% else %}Dit werk is nog niet nagekeken.{% endif %}
+      {% if l.status == 'wacht' %}<button class="knop klein" data-actie="leerling" data-wat="opnieuw">Nu nakijken</button>{% endif %}</p>
+  {% elif l.status == 'fout' %}
+    <p class="melding fout">Nakijken is niet gelukt: {{ l.fout }}</p>
+    <div class="keuzes" style="display: flex; gap: .5rem">
+      <button class="knop klein" data-actie="leerling" data-wat="opnieuw">Opnieuw nakijken</button>
+      <button class="knop klein" data-actie="leerling" data-wat="verwijder">Niet meenemen in deze toets</button>
+    </div>
+  {% else %}
+    {% if l.opmerking %}<p><span class="vlag">Claude meldt</span> {{ l.opmerking }}</p>{% endif %}
+    {% for v in l.bespreek %}
+    <article class="kaart {{ '' if v.open else 'klaar' }}" data-kaart data-vraag="{{ v.nr }}" data-max="{{ v.max }}"
+             data-ai="{{ v.ai }}" data-docent="{{ '' if v.docent is none else v.docent }}"
+             data-leergat="{{ v.leergat or '' }}" data-soort="{{ v.soort }}">
+      <div class="kantscore" aria-hidden="true">
+        {% if v.docent is not none %}<span class="d">{{ v.docent | getal }}</span><small>docent</small>{% endif %}
+        {% if not v.ontbreekt %}<span class="c">{{ v.ai | getal }}</span><small>Claude</small>{% endif %}
+      </div>
+      <div>
+        <h4>Vraag {{ v.nr }}
+          <span class="vlag">{{ {'conflict': 'Verschil', 'twijfel': 'Twijfel', 'ontbreekt': 'Niet beoordeeld'}[v.soort] }}</span></h4>
+        {% set mi = matrijs.get(v.nr, {}) %}
+        {% if mi.leerdoel %}<div class="leerdoel">{{ mi.leerdoel }}{% if mi.onderwerp %} <span class="bij">({{ mi.onderwerp }})</span>{% endif %}</div>{% endif %}
+        <div class="bij">Maximaal {{ v.max }} punten, {{ v.bloom or 'Bloom onbekend' }}, eindterm {{ v.domein }}</div>
+        {% if v.antwoord %}<p class="citaat">{{ v.antwoord }}</p>{% endif %}
+        <div class="oordeel">
+          {% if v.ontbreekt %}Claude heeft deze vraag niet beoordeeld. Vul zelf de score in.
+          {% else %}<b>Claude geeft {{ v.ai | getal }}{% if v.docent is not none %}, jij gaf {{ v.docent | getal }}{% endif %}.</b>
+            {{ v.toelichting }}
+            {% if v.omschrijving %}<div>{% if v.leergat %}<span class="code">{{ v.leergat }}</span> {% endif %}{{ v.omschrijving }}</div>{% endif %}
+          {% endif %}
+        </div>
+        <div class="keuzes">
+          {% if v.soort == 'conflict' %}
+          <button class="knop claude" data-actie="besluit" data-keuze="claude">Accepteer Claude ({{ v.ai | getal }})</button>
+          <button class="knop docent" data-actie="besluit" data-keuze="docent">Behoud docentscore ({{ v.docent | getal }})</button>
+          {% elif v.soort == 'twijfel' %}
+          <button class="knop claude" data-actie="besluit" data-keuze="akkoord">Akkoord met {{ v.eind | getal }}</button>
+          {% endif %}
+          <button class="knop" data-actie="besluit" data-keuze="aangepast">{{ 'Score invullen' if v.ontbreekt else 'Aangepaste score' }}</button>
+        </div>
+        <p class="besloten">Definitief <span class="eind" data-eind>{{ v.eind | getal }}</span> van {{ v.max }}
+          <button class="knop klein" data-actie="besluit" data-keuze="open">Herzien</button></p>
+      </div>
+      <div>{{ uitsnede(v.pagina, v.y0, v.y1) }}</div>
+    </article>
+    {% endfor %}
+    <details>
+      <summary>Alle {{ l.vragen | length }} scores van {{ l.naam }}</summary>
+      <div class="tabelvak">
+      <table>
+        <thead><tr><th>Vraag</th><th>Antwoord volgens Claude</th><th class="r">Max</th><th class="r">Docent</th><th class="r">Claude</th><th class="r">Definitief</th><th>Leergat</th><th></th></tr></thead>
+        <tbody>
+        {% for v in l.vragen %}
+        <tr data-kaart data-rij data-vraag="{{ v.nr }}" data-max="{{ v.max }}" data-ai="{{ v.ai }}"
+            data-docent="{{ '' if v.docent is none else v.docent }}" data-leergat="{{ v.leergat or '' }}" data-soort="{{ v.soort }}">
+          <td>{{ v.nr }}</td>
+          <td>{{ v.antwoord }}{% if v.omschrijving %}<div class="bij">{{ v.omschrijving }}</div>{% endif %}</td>
+          <td class="r">{{ v.max }}</td>
+          <td class="r" style="color: var(--docent)">{{ v.docent | getal }}</td>
+          <td class="r" style="color: var(--claude)">{{ '-' if v.ontbreekt else v.ai | getal }}</td>
+          <td class="r"><b data-eind>{{ v.eind | getal }}</b></td>
+          <td><span data-code>{{ v.eind_leergat or '' }}</span></td>
+          <td><button class="knop klein" data-actie="besluit" data-keuze="aangepast">Wijzig</button></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    </details>
+  {% endif %}
+</section>
+{% endfor %}
+{% endblock %}
+
+{% block onder %}
+<form class="vast" method="post" action="{{ url_for('publiceer') }}">
+  <input type="hidden" name="toets" value="{{ s.toets_id }}">
+  <span><b data-tel="totaal">{{ open.totaal }}</b> punten open</span>
+  <span class="bij" id="vasttekst">{% if open.totaal %}Handel alles af; daarna kun je definitief maken.{% else %}Alles is afgehandeld.{% endif %}</span>
+  <span class="ruimte"></span>
+  <button class="knop hoofd" type="submit" id="definitief" {{ 'disabled' if open.totaal }}>Definitief maken</button>
+</form>
+
+<dialog id="venster" aria-labelledby="v-titel">
+  <form method="dialog" id="v-form">
+    <h3 id="v-titel">Waarom wijk je af?</h3>
+    <p class="bij" id="v-uitleg"></p>
+    <div class="veld" id="v-scoreveld"><label for="v-score">Score</label>
+      <input type="number" id="v-score" step="0.5" min="0"></div>
+    <div class="veld" id="v-gatveld"><label for="v-leergat">Leergat bij het puntenverlies</label>
+      <select id="v-leergat"><option value="">Kies een leergat</option>
+        {% for code, uitleg in leergaten.items() %}<option value="{{ code }}">{{ code }} - {{ uitleg }}</option>{% endfor %}
+      </select></div>
+    <div class="veld" id="v-redenveld"><label for="v-reden">Waarom wijk je af van Claude?</label>
+      <textarea id="v-reden" placeholder="Bijvoorbeeld: bij een juiste redenering met een verkeerd begrip geef ik nog 1 punt."></textarea>
+      <div class="bij">Claude krijgt deze reden mee bij volgende toetsen. Leeg laten mag; dan wordt er niets geleerd.</div></div>
+    <p class="melding fout" id="v-fout" hidden></p>
+    <div class="acties">
+      <button class="knop" type="button" id="v-annuleer">Annuleren</button>
+      <button class="knop hoofd" type="submit" id="v-opslaan">Opslaan</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="verdeel" class="breed" aria-labelledby="vd-titel">
+  <form method="dialog" id="vd-form">
+    <h3 id="vd-titel">Pagina's verdelen</h3>
+    <p class="bij">Vink de pagina's aan die niet van deze leerling zijn. Klik op een pagina om hem groot te bekijken.
+      Daarna worden beide leerlingen opnieuw nagekeken.</p>
+    <div class="miniaturen" id="vd-paginas"></div>
+    <div class="rij" style="margin-top: 1rem">
+      <div><label for="vd-naar">Aangevinkte pagina's horen bij</label>
+        <select id="vd-naar">
+          <option value="">Kies een leerling</option>
+          <option value="__weglaten__">Niemand: weglaten uit deze toets</option>
+          {% for lid, naam in klassenlijst %}<option value="{{ lid }}">{{ naam }}{{ ' (heeft al werk)' if lid in s.leerlingen }}</option>{% endfor %}
+        </select></div>
+    </div>
+    <p class="melding fout" id="vd-fout" hidden></p>
+    <div class="acties">
+      <button class="knop" type="button" id="vd-annuleer">Annuleren</button>
+      <button class="knop hoofd" type="submit">Verplaatsen en opnieuw nakijken</button>
+    </div>
+  </form>
+</dialog>
+<script>window.TOETS = {{ s.toets_id | tojson }};</script>
+<script src="{{ url_for('static', filename='js/review.js') }}?v=20261103"></script>
+{% endblock %}

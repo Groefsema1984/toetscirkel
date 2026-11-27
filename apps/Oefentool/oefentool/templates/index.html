@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% set deel = 'opdrachten' %}
+{% block inhoud %}
+<h1>Oefenen tot het zit</h1>
+<p class="intro">Kies toetsen uit de Toetsevaluatie. De oefentool ziet per leerling welke leerdoelen nog niet
+  beheerst zijn, maakt in drie rondes nieuw oefenmateriaal uit je eigen lesstof en examens, en zet per groep een
+  oefentoets klaar die je weer inscant. Zo loopt de cirkel door tot iedereen het beheerst.</p>
+
+<div class="status-rij">
+  <span class="{{ 'ok' if te_ok else 'nee' }}">Toetsevaluatie {{ 'gevonden' if te_ok else 'niet gevonden' }}</span>
+  <span class="{{ 'ok' if abo.ingelogd and motor != 'api' else 'nee' }}"><a href="{{ url_for('kwaliteit_pagina') }}#kosten">{{ ('Abonnement: ingelogd' if abo.ingelogd else ('Abonnement: niet ingelogd' if abo.gevonden else 'Claude Code niet gevonden')) if motor != 'api' else 'Ingesteld op: altijd API-tegoed' }}{{ ' (limiet bereikt)' if abo.limiet and motor != 'api' }}</a></span>
+  <span class="{{ 'ok' if api_sleutel else 'nee' }}">API-tegoed {{ 'alleen na jouw toestemming' if motor != 'api' else 'wordt gebruikt' }}{{ '' if api_sleutel else ' (geen sleutel)' }}</span>
+  <span class="{{ 'ok' if bouw_ok else 'nee' }}" title="{{ bouw_waarom }}">Word-bouwmotor {{ 'klaar' if bouw_ok else 'noodweg (eenvoudige Word)' }}</span>
+  <span class="{{ 'ok' if drive else 'nee' }}">Google Drive {{ 'gevonden' if drive else 'niet gevonden' }}</span>
+  <span class="{{ 'ok' if bibliotheek.get('geindexeerd') else 'nee' }}"><a href="{{ url_for('bibliotheek_pagina') }}">Bibliotheek: {{ bibliotheek.get('geindexeerd', 0) }} bestanden gelezen</a></span>
+</div>
+{% if not te_ok %}<p class="melding fout">{{ te_waarom }}</p>{% endif %}
+
+{% if opdrachten %}
+<h2>Je opdrachten</h2>
+<div class="tabelvak" style="margin-top: .8rem">
+<table>
+  <thead><tr><th>Opdracht</th><th>Soort</th><th>Klas</th><th class="r">Leerlingen</th><th>Leerloop</th><th>Stand</th><th></th></tr></thead>
+  <tbody>
+  {% for o in opdrachten %}
+  <tr>
+    <td><a href="{{ url_for('toon', oid=o.id) }}"><b>{{ o.naam }}</b></a><br><span class="bij">{{ o.gemaakt[:16].replace('T', ' ') }}</span></td>
+    <td>{{ DOELEN[o.doel].split(':')[0] }}</td>
+    <td>{{ o.klas or o.niveau }}</td>
+    <td class="r">{{ o.aantal_leerlingen }}</td>
+    <td>ronde {{ o.leerloop.ronde }}</td>
+    <td>{% if o.bezig %}<span class="draai"></span> bezig
+        {% elif o.status == 'plan_klaar' %}Plan wacht op jou
+        {% elif o.status == 'beoordelen' %}Opgaven wachten op jou
+        {% elif o.status == 'klaar' %}Klaargezet
+        {% elif o.status.endswith('_fout') %}<span class="vlag">Gestopt</span>
+        {% else %}{{ o.status }}{% endif %}</td>
+    <td>{% if o.status == 'klaar' %}<a class="knop klein" href="{{ url_for('leerloop_pagina', oid=o.id) }}">Leerloop</a>{% endif %}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+<h2>Nieuwe opdracht</h2>
+{% if te_ok and toetsen %}
+<form method="post" action="{{ url_for('nieuw') }}" id="nieuw" class="nieuw">
+  <h3>1. Welke toetsen?</h3>
+  <p class="bij">Eén toets voor oefenen direct na een SE; meerdere toetsen of een heel jaar voor examentraining.
+    Per leerdoel telt de laatste meting, ook een oefentoets.</p>
+  <div class="tabelvak">
+  <table>
+    <thead><tr><th></th><th>Toets</th><th>Afgenomen</th><th>Klassen</th><th class="r">Leerlingen</th><th>Leerdoelen</th></tr></thead>
+    <tbody>
+    {% for t in toetsen %}
+    <tr><td><input type="checkbox" name="toets" value="{{ t.toets_id }}" id="t{{ loop.index }}" data-register="{{ t.vak }}|{{ t.sector }}" data-klassen="{{ t.klassen | join(' ') }}"></td>
+      <td><label for="t{{ loop.index }}" style="font-weight: 500; margin: 0">{{ t.toets_id }}</label>
+        {% if t.soort == 'oefen' %}<span class="label-oefen">oefen</span>{% endif %}</td>
+      <td>{{ t.datum }}</td><td>{{ t.klassen | join(', ') }}</td><td class="r">{{ t.aantal }}</td>
+      <td>{% if t.zonder_code %}<span class="vlag">{{ t.zonder_code }} vragen niet gekoppeld</span>{% else %}gekoppeld{% endif %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="melding" id="mix" hidden>Je hebt toetsen uit verschillende registers gekozen (bijvoorbeeld economie en
+    bedrijfseconomie, of mavo en havo). Kies toetsen van één vak en één register.</p>
+
+  <h3>2. Voor wie?</h3>
+  <div class="keuzes-doel">
+    {% for sleutel, tekst in DOELEN.items() %}
+    <label class="kaartkeuze"><input type="radio" name="doel" value="{{ sleutel }}" {{ 'checked' if sleutel == 'groep' }}>
+      <b>{{ tekst.split(':')[0] }}</b><span class="bij">{{ tekst.split(':', 1)[1] }}</span></label>
+    {% endfor %}
+  </div>
+  <div class="rij" style="margin-top: .8rem">
+    <div id="groepenveld"><label for="groepen">Aantal groepen</label>
+      <input type="number" id="groepen" name="groepen" value="3" min="2" max="6"></div>
+    <div><label for="max_leerdoelen">Hoogstens zoveel leerdoelen</label>
+      <input type="number" id="max_leerdoelen" name="max_leerdoelen" value="10" min="1" max="30"></div>
+    <div><label for="minuten">Minuten werk per set</label>
+      <input type="number" id="minuten" name="minuten" value="45" min="10" max="240" step="5"></div>
+  </div>
+  <div id="klassen" class="klaskeuze" hidden><span class="bij">Alleen deze klassen (niets aangevinkt = alle):</span></div>
+  <details class="llkeuze">
+    <summary>Alleen bepaalde leerlingen (optioneel)</summary>
+    <p class="bij">Leerlingnummers; namen staan alleen in de printversie. Niets aangevinkt = iedereen die de toetsen maakte.</p>
+    <div class="llraster">
+      {% for l in leerlingen %}
+      <label class="vink" data-toetsen="{{ l.toetsen | join(' ') }}"><input type="checkbox" name="leerling" value="{{ l.id }}"> {{ l.id }} <span class="bij">{{ l.klas }}</span></label>
+      {% endfor %}
+    </div>
+  </details>
+
+  <h3>3. Wat wil je terugkrijgen?</h3>
+  <div class="rij">
+    {% for sleutel, tekst in VORMEN.items() %}
+    <label class="vink"><input type="checkbox" name="vorm" value="{{ sleutel }}" checked> {{ tekst }}</label>
+    {% endfor %}
+  </div>
+  <div class="rij" style="margin-top: .6rem">
+    <label class="vink"><input type="checkbox" name="oefenexamen" value="1" checked> Oefentoets per groep (om in te scannen in de Toetsevaluatie)</label>
+    <div style="flex: 0 1 12rem"><label for="examenminuten">Minuten oefentoets</label>
+      <input type="number" id="examenminuten" name="examenminuten" value="30" min="10" max="100" step="5"></div>
+  </div>
+  <div class="rij" style="margin-top: .6rem">
+    <div style="flex: 1 1 24rem"><label for="naam">Naam van de opdracht (optioneel)</label>
+      <input type="text" id="naam" name="naam" placeholder="bijv. Herhaling AT5.11 5H"></div>
+  </div>
+  <div class="start" style="margin-top: 1.2rem">
+    <button class="knop hoofd groot" type="submit" {{ '' if heeft_sleutel else 'disabled' }}>Ronde 1: plan maken</button>
+    <span class="bij">Claude krijgt alleen leerdoelen en aantallen, nooit namen of leerlingnummers.</span>
+  </div>
+</form>
+{% elif te_ok %}
+<p>Er staan nog geen definitieve toetsen in de Toetsevaluatie.</p>
+{% endif %}
+{% endblock %}
+{% block onder %}
+<script>
+(function () {
+  const f = document.getElementById('nieuw');
+  if (!f) return;
+  const vakjes = [...f.querySelectorAll('input[name=toets]')];
+  const klasvak = document.getElementById('klassen');
+  function bij() {
+    const gekozen = vakjes.filter((v) => v.checked);
+    const reg = new Set(gekozen.map((v) => v.dataset.register));
+    document.getElementById('mix').hidden = reg.size < 2;
+    const ids = gekozen.map((v) => v.value);
+    for (const l of f.querySelectorAll('.llraster label')) {
+      l.hidden = ids.length > 0 && !l.dataset.toetsen.split(' ').some((t) => ids.includes(t));
+    }
+    const klassen = [...new Set(gekozen.flatMap((v) => v.dataset.klassen.split(' ').filter(Boolean)))].sort();
+    const oud = new Set([...klasvak.querySelectorAll('input:checked')].map((i) => i.value));
+    klasvak.querySelectorAll('label').forEach((l) => l.remove());
+    for (const k of klassen) {
+      const l = document.createElement('label'); l.className = 'vink';
+      l.innerHTML = `<input type="checkbox" name="klas" value="${k}" ${oud.has(k) ? 'checked' : ''}> ${k}`;
+      klasvak.appendChild(l);
+    }
+    klasvak.hidden = klassen.length < 2;
+  }
+  vakjes.forEach((v) => v.addEventListener('change', bij));
+  const groepen = document.getElementById('groepenveld');
+  function doel() { groepen.hidden = f.doel.value !== 'groep'; }
+  f.querySelectorAll('input[name=doel]').forEach((r) => r.addEventListener('change', doel));
+  doel(); bij();
+  f.addEventListener('submit', (e) => {
+    if (!vakjes.some((v) => v.checked)) { e.preventDefault(); alert('Kies minstens één toets.'); return; }
+    const k = f.querySelector('button[type=submit]'); k.disabled = true; k.textContent = 'Doelgroep bepalen…';
+  });
+})();
+</script>
+{% endblock %}

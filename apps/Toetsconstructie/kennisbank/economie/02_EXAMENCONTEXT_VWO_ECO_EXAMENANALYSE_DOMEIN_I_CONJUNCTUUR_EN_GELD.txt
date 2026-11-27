@@ -1,0 +1,53 @@
+CHANGELOG
+11 november 2026, eerste versie (na schoolexamen AT6.22 economie vwo 6, versie A en B)
+* Nieuw bestand. Gelezen: de opgaventeksten van vwo 2018 tot en met 2026 op trefwoord en de omringende vragen (uitwerkbijlagen en figuren niet), plus het overzicht in 02_EXAMENCONTEXT_VWO_ECO_KERNBEGRIPPEN.
+
+BRONBESTAND: 02_EXAMENCONTEXT_VWO_ECO_EXAMENANALYSE_DOMEIN_I_CONJUNCTUUR_EN_GELD
+FUNCTIE: de vwo-examenvragen die als stijlanker dienen voor het Keynesiaanse kruis, IS-MB-GA, geld, wisselkoersen en de muntunie. Elke SE-vraag moet hier een voorbeeld hebben (richtlijnen 9.12).
+INTEGRATIE: gebruik samen met 03_REKENREGELS_VWO_DOMEIN_I_CONJUNCTUUR_EN_GELD.
+
+[DEEL 1: GEVONDEN VRAGEN] (examen, vraag | punten | wat wordt gevraagd)
+2023-I v20 | 2 | Bereken de multiplier van de algemene heffingskorting en leg een bewering over de multiplierwerking uit.
+2023-II v21 | 2 | Leg uit dat het inkomen sterker daalt dan de autonome bestedingen (Keynesiaans kruis).
+2023-II v22, v23, v24 | 2 | GA-curve en productie; tekenvraag IS 1, MB 1 en GA 1 in de uitwerkbijlage; monetaristen tegenover Keynesianen.
+2023-I v22, v24 | 2 | GA-curve verschuift over de tijd; stelling over de helling van de IS-curve.
+2024-I v18, v19, v20 | 2 | Laagconjunctuur en GA; verschuiving van MB als lagere of hogere inflatiedoelstelling; dalend verband IS als ruilen over de tijd.
+2024-I v26 | 2 | Keynesiaans of nieuw-klassiek model herkennen in een figuur.
+2024-I v28, v29 | 2 | Afnemende meeropbrengsten van arbeid in Y = A·f(K, L); R&D verschuift de productiefunctie via A.
+2024-II v7 | 2 | Progressieve belasting en de effectieve vraag in een neergang.
+2024-II v13, v15 | 2 en 3 | Klassiek econoom: welke curve anders; 3p tekenvraag over de tijd met tabel r en π (r daalt stapsgewijs met 1 procentpunt).
+2024-II v27 | 2 | Trilemma.
+2025-I v17, v18 | 2 | Arbeidsinkomensquote berekenen; overheidssaldo berekenen uit een kringloop.
+2025-I v20 | 2 | Ruimer monetair beleid via de valutamarkt en de conjunctuur van het handelsland.
+2025-I v21 | 2 | Ligging en helling van de EV-lijn bij een gedragsverandering (EV 0 = 400 + 0,5Y, EV 1 = 360 + 0,4Y).
+2025-II v24 | 2 | Soepeler ontslagrecht maakt de GA steiler.
+2026-I v12, v13 | 2 en 3 | Dalend verband IS; tekenvraag MB 1 en GA 1 met tabel r en π (de centrale bank brengt de economie met één rentestap naar Y*).
+2026-I v14 | 2 | Hoger belastingtarief: kleinere of grotere multiplier, met uitleg.
+2026-I v22, v23, v24 | 2, 3, 2 | Hogere exportprijzen en de arbeidsinkomensquote; kringloop met vier ontbrekende waarden en twee pijlen; positief saldo via de valutamarkt naar de concurrentiepositie.
+2026-II v11 | 2 | Krap monetair beleid verlaagt op korte termijn de winst van een bank met kortlopende financiering en rentevaste kredieten.
+2026-II v22 | 2 | Procyclische ECB-rente voor één lidstaat in laagconjunctuur.
+2023-II v17, v18 | 2 | Wisselkoers terugrekenen na een depreciatie; rentebeleid van de centrale bank leidt tot depreciatie.
+2018-I v8 en 2019-I v5 | 1 en 2 | Ondergrens van de nominale rente (contant geld).
+2024-I v12 en 2018-I v32 | 2 en 3 | Overheidssaldo en vermogensmarkt.
+
+[DEEL 2: NIET GEVONDEN IN 2018 TOT EN MET 2026]
+1. Het evenwichtsinkomen berekenen uit EV = a + bY.
+2. Geldschepping, bankrun, depositogarantiestelsel, M1 als vraag.
+3. De reële rente berekenen met (1 + i) : (1 + π) − 1 in 2024 tot en met 2026.
+4. De productiefunctie tekenen (alleen uitleg).
+5. Aantonen dat S = I + (O − B) (wel vermogensmarktvragen).
+
+[DEEL 3: WAT OPVALT]
+1. Elk examen heeft IS-MB-GA; de tekenvraag met tabel (r en π invullen) komt in 2023-II, 2024-II en 2026-I voor.
+2. Een belastingstelsel en de multiplier komen steeds terug (2023-I, 2024-II, 2026-I).
+3. Wisselkoers- en muntunievragen zijn bijna altijd uitleg in ketens.
+4. De kringloopvraag vraagt rekenen én de richting van pijlen.
+
+[DEEL 4: CASUSSEN UIT AT6.22] (verzonnen; niet opnieuw gebruiken)
+Versie A: Zeldrien (EV = 300 + 0,6Y, +20 overheidsbestedingen, ΔY = 50), Belmora (Y* 1.000, r 2,0%, π 2,0%, IS 1 40 naar links, periode 0: Y 960 en π 1,2%; periode 1: r 1,6%, π 1,2%), Karvia en hypotheekbank Veldra (geldmarktrente 1,0% naar 3,0%, hypotheken 3,6%; karvo 15% depreciatie, € 0,4250, € 1 = 2,00 karvo), Lorenia (eurozone, inflatie 0,8% tegenover 3,5%), Orvania (Y 800, C 450, B 150, O 170, E 240, M 190, I 130, S 200; arbeidsinkomen 480 en 493 bij nationaal inkomen 800 en 850, AIQ 60,0% en 58,0%; Y = 120L/(L + 20) en 150L/(L + 20)).
+Versie B: Tessaly (EV = 250 + 0,75Y, −15 overheidsbestedingen, ΔY = −60), Murnia (Y* 500, r 2,5%, IS 1 20 naar rechts, periode 0: Y 520 en π 2,8%; periode 1: r 2,9%, π 2,8%), Valdora en bank Orsano (geldmarktrente 3,0% naar 1,0%; valdo 20% appreciatie, € 0,9600, € 1 = 1,25 valdo), Dravia (eurozone, inflatie 3,4% tegenover 0,6%), Hesmark (Y 600, C 340, B 130, O 110, E 150, M 190, I 190, S 130; arbeidsinkomen 330 en 368 bij nationaal inkomen 600 en 640, AIQ 55,0% en 57,5%; Y = 180L/(L + 30) en 216L/(L + 30)).
+
+[DEEL 5: OPEN PUNTEN]
+1. De uitwerkbijlagen en figuren van de examens zijn niet gelezen; de tekenvragen zijn afgeleid uit de opgaventekst.
+2. Eindterm-subcodes (I4, I3.8, I3.9) zijn niet aan de syllabus getoetst.
+3. De stappenplannen in de rekenregels zijn nog niet door de docent vastgesteld.

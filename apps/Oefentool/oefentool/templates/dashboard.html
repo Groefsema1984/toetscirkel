@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% set deel = 'dashboard' %}
+{% block titel %}Dashboard · Oefentool{% endblock %}
+{% macro maak(codes, doel, label, naam) %}
+{% if d.klas %}
+<form method="post" action="{{ url_for('dashboard_opdracht') }}" class="inline">
+  {% for t in d.toets_ids %}<input type="hidden" name="toets" value="{{ t }}">{% endfor %}
+  {% for c in codes %}<input type="hidden" name="code" value="{{ c }}">{% endfor %}
+  <input type="hidden" name="klas" value="{{ d.klas }}"><input type="hidden" name="doel" value="{{ doel }}">
+  <input type="hidden" name="naam" value="{{ naam }}">
+  <button class="knop klein {{ 'hoofd' if doel != 'onderhoud' }}" type="submit">{{ label }}</button>
+</form>
+{% else %}<span class="bij">Kies een klas om hier een opdracht van te maken.</span>{% endif %}
+{% endmacro %}
+{% block inhoud %}
+<h1>Dashboard</h1>
+{% if not d %}
+<p class="intro">Er staan nog geen toetsen met leerdoelen in de Toetsevaluatie.</p>
+{% else %}
+<form method="get" class="rij kiesbalk">
+  <div><label for="scope">Vak</label>
+    <select id="scope" onchange="const [v, s] = this.value.split('|'); this.form.vak.value = v; this.form.sector.value = s; this.form.klas.value = ''; this.form.submit()">
+      {% for k in keuzes %}<option value="{{ k.vak }}|{{ k.sector }}" {{ 'selected' if k.vak == d.vak and k.sector == d.sector }}>{{ k.vak }} {{ k.sector }}</option>{% endfor %}
+    </select></div>
+  <input type="hidden" name="vak" value="{{ d.vak }}"><input type="hidden" name="sector" value="{{ d.sector }}">
+  <div><label for="klas">Klas</label>
+    <select id="klas" name="klas" onchange="this.form.submit()"><option value="">Alle klassen</option>
+      {% for k in keuzes if k.vak == d.vak and k.sector == d.sector %}{% for kl in k.klassen %}<option {{ 'selected' if kl == d.klas }}>{{ kl }}</option>{% endfor %}{% endfor %}
+    </select></div>
+</form>
+
+<div class="kerncijfers">
+  <div class="kern"><b>{{ d.kern.pct | pct }}</b>van alle leerdoelen beheerst
+    {% if d.kern.vorige is not none %}<span class="bij">{% set v = d.kern.pct - d.kern.vorige %}({{ '+' if v >= 0 }}{{ (v * 100) | round | int }} punt t.o.v. de vorige meting)</span>{% endif %}</div>
+  <div class="kern"><b>{{ d.kern.leerlingen }}</b>leerlingen</div>
+  <div class="kern"><b>{{ d.kern.leerdoelen }}</b>leerdoelen getoetst</div>
+  <div class="kern"><b>{{ d.kern.toetsen }}</b>toetsen{% if d.kern.oefentoetsen %}, waarvan {{ d.kern.oefentoetsen }} oefentoets{{ 'en' if d.kern.oefentoetsen != 1 }}{% endif %}</div>
+</div>
+
+<div class="tweeluik">
+  <section class="blok">
+    <h3>Groei van de klas</h3>
+    <p class="bij">Aandeel beheerste leerdoelen na elke toetsdatum (laatste meting telt). Een groter punt is een oefentoets; de stippellijn is 80%.</p>
+    {{ trend_svg | safe }}
+  </section>
+  <section class="blok">
+    <h3>Minst beheerst</h3>
+    <ol class="minst">
+      {% for x in d.minst %}<li><span class="code">{{ x.code }}</span> {{ x.omschrijving }}
+        <span class="bij">· {{ x.pct | pct }} beheerst, {{ x.nog_niet }} nog niet</span></li>{% endfor %}
+    </ol>
+    {{ maak(d.minst | map(attribute='code') | list, 'groep', 'Maak oefenmateriaal voor deze leerdoelen', 'Zwakste leerdoelen ' ~ d.klas) }}
+  </section>
+</div>
+
+<h2>Signalen</h2>
+<div class="signalen">
+  <section class="blok"><h3>Teruggevallen</h3>
+    {% if d.signalen.teruggevallen %}<p class="bij">Eerder beheerst, bij de laatste meting niet meer.</p>
+      <ul>{% for lid, c in d.signalen.teruggevallen[:12] %}<li><a href="{{ url_for('leerling_pagina', lid=lid) }}">{{ lid }}</a> <span class="code">{{ c }}</span></li>{% endfor %}</ul>
+      {% if d.signalen.teruggevallen | length > 12 %}<p class="bij">en nog {{ d.signalen.teruggevallen | length - 12 }}.</p>{% endif %}
+    {% else %}<p class="bij">Niemand: wat beheerst was, is beheerst gebleven.</p>{% endif %}</section>
+  <section class="blok"><h3>Veel nog niet beheerst</h3>
+    {% if d.signalen.zorg %}<p class="bij">Minstens de helft van de leerdoelen nog niet beheerst.</p>
+      <p class="namen">{% for lid in d.signalen.zorg %}<a href="{{ url_for('leerling_pagina', lid=lid) }}">{{ lid }}</a>{% endfor %}</p>
+    {% else %}<p class="bij">Geen leerlingen.</p>{% endif %}</section>
+  <section class="blok"><h3>Oefentoets niet gemaakt</h3>
+    {% if d.signalen.geen_oefentoets %}<p class="bij">Wel ingedeeld, geen resultaat in de ingescande oefentoets.</p>
+      <p class="namen">{% for lid, codes in d.signalen.geen_oefentoets.items() %}<a href="{{ url_for('leerling_pagina', lid=lid) }}" title="{{ codes | join(', ') }}">{{ lid }}</a>{% endfor %}</p>
+    {% else %}<p class="bij">Iedereen heeft de ingescande oefentoetsen gemaakt.</p>{% endif %}</section>
+  <section class="blok"><h3>Geen resultaatcode</h3>
+    {% if d.signalen.geen_resultaatcode %}<p class="bij">Nog geen resultaatcode bij een opdracht waarvoor anderen al wel een code stuurden ({{ d.signalen.geen_resultaatcode | length }}).</p>
+      <p class="namen">{% for lid, namen in d.signalen.geen_resultaatcode.items() %}<a href="{{ url_for('leerling_pagina', lid=lid) }}" title="{{ namen | join(', ') }}">{{ lid }}</a>{% endfor %}</p>
+    {% else %}<p class="bij">Geen openstaande formatieve checks.</p>{% endif %}</section>
+</div>
+
+{% if d.onderhoud %}
+<h2>Onderhoud</h2>
+<p class="bij">Leerdoelen die leerlingen al minstens vier weken beheersen. Een korte herhaalset (twee vragen per leerdoel op examenniveau) voorkomt dat ze wegzakken.</p>
+<div class="tabelvak"><table>
+  <thead><tr><th>Leerdoel</th><th class="r">Leerlingen</th></tr></thead>
+  <tbody>{% for x in d.onderhoud[:8] %}<tr><td><span class="code">{{ x.code }}</span> {{ x.omschrijving }}</td><td class="r">{{ x.leerlingen | length }}</td></tr>{% endfor %}</tbody>
+</table></div>
+<p style="margin-top: .6rem">{{ maak(d.onderhoud[:8] | map(attribute='code') | list, 'onderhoud', 'Maak een herhaalset', 'Onderhoud ' ~ d.klas) }}</p>
+{% endif %}
+
+<h2>Leerlingen en leerdoelen</h2>
+<div class="legenda"><span class="cel"><span class="beheerst">80%</span> beheerst</span><span class="cel"><span class="bijna">60%</span> bijna</span>
+  <span class="cel"><span class="nog_niet">20%</span> nog niet</span><span class="cel"><span class="beheerst oefen">90%</span> laatste meting was een oefentoets</span>
+  <span class="bij">Klik op een leerling voor zijn profiel.</span></div>
+<div class="tabelvak">
+<table class="matrix groot">
+  <thead><tr><th>Leerling</th><th>Klas</th><th class="r">Beheerst</th><th class="r">Groei</th>
+    {% for c in d.codes %}<th class="code-kop" title="{{ c }}: {{ d.reg.get(c, {}).get('omschrijving', '') }}"><small>{{ c.rsplit('-', 2)[0] }}</small>{{ c.split('-')[-2:] | join('-') }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for r in d.rijen %}
+  <tr><td><a href="{{ url_for('leerling_pagina', lid=r.leerling_id) }}">{{ r.leerling_id }}</a></td><td>{{ r.klas }}</td>
+    <td class="r">{{ r.pct | pct }}</td>
+    <td class="r">{% if r.groei is not none %}<span class="{{ 'plus' if r.groei > 0 else ('min' if r.groei < 0 else '') }}">{{ '+' if r.groei > 0 }}{{ (r.groei * 100) | round | int }}</span>{% else %}<span class="bij">·</span>{% endif %}</td>
+    {% for c in d.codes %}{% set cel = r.cellen.get(c) %}
+    <td class="cel">{% if cel %}<span class="{{ cel.status }} {{ 'oefen' if cel.soort == 'oefen' }}" title="{{ cel.n }} meting(en){{ ', teruggevallen' if cel.teruggevallen }}{{ ', wisselend' if cel.wisselend }}">{{ cel.pct | pct }}</span>{% else %}<span class="bij">·</span>{% endif %}</td>
+    {% endfor %}</tr>
+  {% endfor %}
+  <tr class="totaal"><td colspan="4"><b>Beheerst in de klas</b></td>
+    {% for x in d.per_leerdoel %}<td class="cel"><b>{{ x.pct | pct }}</b></td>{% endfor %}</tr>
+  </tbody>
+</table>
+</div>
+<p class="bij">Groei = gemiddeld verschil tussen de eerste en de laatste meting per leerdoel, in procentpunten.</p>
+<details><summary>Welke leerdoelen zijn dit?</summary>
+  <ul>{% for x in d.per_leerdoel %}<li><span class="code">{{ x.code }}</span> {{ x.omschrijving }} <span class="bij">({{ x.thema }})</span></li>{% endfor %}</ul>
+</details>
+
+<h2>Eindtermen</h2>
+<p class="bij">Per hoofdeindterm het aandeel beheerste leerdoelen. Een leerdoel met meer eindtermen telt bij elk ervan mee.</p>
+<div class="tabelvak"><table>
+  <thead><tr><th>Eindterm</th><th>Beheerst</th><th>Getoetste subeindtermen</th><th>Leerdoelen</th></tr></thead>
+  <tbody>{% for e in d.eindtermen.rijen %}<tr><td><b>{{ e.hoofd }}</b></td>
+    <td style="min-width: 11rem"><span class="staafje"><span class="{{ 'goed' if e.pct >= 0.8 else ('half' if e.pct >= 0.5 else 'laag') }}" style="width: {{ (e.pct * 100) | round }}%"></span></span> {{ e.pct | pct }}</td>
+    <td>{{ e.detail | join(', ') or '-' }}</td>
+    <td>{% for c in e.leerdoelen %}<span class="code">{{ c }}</span> {% endfor %}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% if d.eindtermen.niet_getoetst %}
+<p><b>Nog niet getoetst</b> (wel in je bibliotheek): {% for e in d.eindtermen.niet_getoetst %}<span class="code">{{ e }}</span> {% endfor %}</p>
+{% elif not d.eindtermen.bibliotheek_gelezen %}
+<p class="bij">Laat in de <a href="{{ url_for('bibliotheek_pagina') }}">bibliotheek</a> je eindtermenbestanden lezen; dan zie je hier ook welke eindtermen nog niet getoetst zijn.</p>
+{% endif %}
+
+<h2>Werkt het oefenen?</h2>
+{% if d.effect %}
+<p class="bij">Per opdracht met een ingescande oefentoets: de score op dezelfde leerdoelen vóór de opdracht (laatste meting) en in de oefentoets.</p>
+{% for e in d.effect %}
+<section class="blok effect">
+  <h3><a href="{{ url_for('toon', oid=e.id) }}">{{ e.naam }}</a></h3>
+  <p class="groot"><b>{{ e.voor | pct }}</b> → <b>{{ e.na | pct }}</b>
+    <span class="{{ 'plus' if e.na > e.voor else 'min' }}">({{ '+' if e.na >= e.voor }}{{ ((e.na - e.voor) * 100) | round | int }} punt)</span>
+    <span class="bij">· {{ e.n }} metingen</span></p>
+  {% if e.groepen | length > 1 %}<p class="bij">{% for k, g in e.groepen.items() %}{{ k }}: {{ g.voor | pct }} → {{ g.na | pct }} ({{ g.n }}){{ ' · ' if not loop.last }}{% endfor %}</p>{% endif %}
+  <table class="klein"><tbody>{% for c in e.codes %}<tr><td><span class="code">{{ c.code }}</span></td><td class="r">{{ c.voor | pct }}</td><td>→</td><td class="r">{{ c.na | pct }}</td><td class="bij">{{ c.n }}</td></tr>{% endfor %}</tbody></table>
+</section>
+{% endfor %}
+{% else %}
+<p class="bij">Nog geen opdracht met een ingescande oefentoets. Zodra je een oefentoets inscant, zie je hier of het oefenen heeft geholpen.</p>
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% set deel = 'bibliotheek' %}
+{% block titel %}Bibliotheek · Oefentool{% endblock %}
+{% block inhoud %}
+<h1>Bibliotheek</h1>
+<p class="intro">Je lesmateriaal, PowerPoints, mindmaps en oude examens. Claude leest ze één keer, knipt ze in
+  fragmenten en koppelt elk fragment aan een leerdoel uit je leerdoelenregister. Daarna zet de oefentool per vak,
+  thema en leerdoel een overzicht in Google Drive (map <i>Oefentool_Bibliotheek</i>). De originelen blijven staan waar ze staan.</p>
+
+<div class="status-rij">
+  <span>{{ ov.aantal }} bestanden</span>
+  {% for st, n in ov.tel.items() %}<span class="st-{{ st }}">{{ n }} {{ {'geindexeerd': 'gelezen', 'nieuw': 'nieuw', 'gewijzigd': 'gewijzigd', 'overgeslagen': 'overgeslagen', 'fout': 'fout', 'batch': 'in batch'}.get(st, st) }}</span>{% endfor %}
+</div>
+
+<div class="bezigvak" id="job" {{ '' if job.bezig or job.klaar else 'hidden' }}>
+  <p>{% if job.bezig %}<span class="draai"></span> <b>Claude leest</b>{% else %}<b>{{ job.klaar }}</b>{% endif %}
+    <span id="job-tekst" class="bij">{{ job.tekst }}</span></p>
+  <div class="balk"><span id="job-balk" style="width: {{ (100 * job.gedaan / job.totaal) | round if job.totaal else 0 }}%"></span></div>
+  <p class="bij"><span id="job-n">{{ job.gedaan }}</span> van {{ job.totaal }} bestanden.</p>
+  {% if job.fouten %}<details><summary>{{ job.fouten | length }} fout(en)</summary><ul>{% for f in job.fouten %}<li>{{ f }}</li>{% endfor %}</ul></details>{% endif %}
+</div>
+
+<div class="rij" style="gap: .6rem">
+  <form method="post" action="{{ url_for('bibliotheek_scan') }}"><button class="knop" type="submit">Bronnen zoeken</button></form>
+  <form method="post" action="{{ url_for('bibliotheek_drive') }}"><button class="knop" type="submit">Overzicht in Google Drive bijwerken</button></form>
+</div>
+
+<h2>Bestanden laten lezen</h2>
+<p class="bij">Vink een map aan om alle nieuwe en gewijzigde bestanden erin te laten lezen, of klap de map open en kies
+  losse bestanden. Een examen wordt samen met zijn correctievoorschrift gelezen. Dit gaat via je Claude-abonnement (met Haiku, zuinig). Achter elke map staat wat het met API-tegoed zou kosten.</p>
+<form method="post" action="{{ url_for('bibliotheek_indexeer') }}" id="lees">
+  <div class="tabelvak">
+  {% for naam, m in ov.mappen.items() %}
+  <details class="mapblok">
+    <summary class="mapregel">
+      <input type="checkbox" class="mapvink" aria-label="Hele map" {{ 'disabled' if not (m.tel.get('nieuw') or m.tel.get('gewijzigd') or m.tel.get('fout')) }}>
+      <span><b>{{ naam }}</b></span>
+      <span class="tellers">{% for st, n in m.tel.items() %}<span class="st-{{ st }}">{{ n }} {{ {'geindexeerd': 'gelezen'}.get(st, st) }}</span>{{ ' · ' if not loop.last }}{% endfor %}
+        {% if m.tekens %} · API ± ${{ '%.2f' | format((m.tekens / 3.5 * prijs_in + m.tekens / 3.5 * 0.25 * prijs_uit) / 1000000) }}{% endif %}</span>
+    </summary>
+    {% for b in m.bestanden %}
+    <div class="bestandregel">
+      <input type="checkbox" name="bron" value="{{ b.bron_id }}" {{ 'disabled' if b.status in ('overgeslagen',) }} aria-label="{{ b.naam }}"
+        data-open="{{ 1 if b.status in ('nieuw', 'gewijzigd', 'fout') else 0 }}">
+      <span title="{{ b.melding or '' }}">{{ b.naam }}{% if b.partner %} <span class="bij">+ correctievoorschrift</span>{% endif %}
+        {% if b.melding and b.status != 'geindexeerd' %}<br><span class="bij">{{ b.melding }}</span>{% endif %}</span>
+      <span class="st-{{ b.status }}">{{ {'geindexeerd': 'gelezen', 'nieuw': 'nieuw', 'gewijzigd': 'gewijzigd', 'overgeslagen': 'overgeslagen', 'fout': 'fout', 'batch': 'in batch'}.get(b.status, b.status) }}{% if b.fragmenten %} · {{ b.fragmenten }} fr.{% endif %}</span>
+    </div>
+    {% endfor %}
+  </details>
+  {% else %}<p style="padding: 1rem">Nog geen bestanden. Klik op <b>Bronnen zoeken</b>.</p>
+  {% endfor %}
+  </div>
+  <div class="start" style="margin-top: 1rem">
+    <button class="knop hoofd" type="submit" {{ 'disabled' if job.bezig or not heeft_sleutel }}>Laat Claude de aangevinkte bestanden lezen</button>
+    <span class="bij" id="aantal">0 aangevinkt</span>
+  </div>
+  <label class="vink" style="margin-top: .6rem"><input type="checkbox" name="batch" value="1" {{ 'disabled' if not api_sleutel }}> Via batch met <b>API-tegoed</b> (betaald, halve prijs, klaar binnen een uur tot een dag). Alleen aanvinken als je daarvoor wilt betalen.</label>
+  <p class="bij">Zonder vinkje gaat het lezen via je abonnement en kost het geen tegoed. Is de limiet van je abonnement op, dan stopt het lezen
+    netjes; de rest staat dan nog op 'nieuw' en kun je later opnieuw laten lezen. Met API-tegoed leest {{ index_model }}; de bedragen per map zijn zonder batchkorting.</p>
+</form>
+{% if batches %}
+<div class="tabelvak" style="margin-top: 1rem"><table>
+  <thead><tr><th>Batch</th><th>Gestart</th><th class="r">Bestanden</th><th>Stand</th></tr></thead>
+  <tbody>{% for b in batches | reverse %}<tr><td class="bij">{{ b.id[-10:] }}</td><td>{{ b.gemaakt[:16].replace('T', ' ') }}</td><td class="r">{{ b.delen | length }}</td>
+    <td>{% if b.status == 'bezig' %}<span class="draai"></span> wacht op Anthropic (wordt elke minuut gecontroleerd){% else %}klaar: {{ b.goed }} gelezen{% if b.fout %}, {{ b.fout }} fout{% endif %}{% endif %}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endif %}
+
+<h2>Dekking per leerdoel</h2>
+<p class="bij">Hoeveel materiaal er per leerdoel is. Een rode nul betekent: Claude moet dit leerdoel uit de kennisbank halen.</p>
+{% for naam, rijen in dekking.items() %}
+<details {{ 'open' if loop.first }}><summary>{{ naam }} ({{ rijen | length }} leerdoelen)</summary>
+<div class="tabelvak"><table>
+  <thead><tr><th>Leerdoel</th><th>Thema</th><th class="r">Lesfragmenten</th><th class="r">Examenvragen</th><th class="r">Oefenopgaven</th></tr></thead>
+  <tbody>{% for d in rijen %}<tr><td><span class="code">{{ d.code }}</span> {{ d.omschrijving }}</td><td>{{ d.thema }}</td>
+    <td class="r {{ 'nul' if not d.les }}">{{ d.les }}</td><td class="r {{ 'nul' if not d.examen }}">{{ d.examen }}</td>
+    <td class="r"><a href="{{ url_for('itembank', code=d.code) }}">{{ d['items'] }}</a></td></tr>{% endfor %}</tbody>
+</table></div>
+</details>
+{% endfor %}
+
+<h2>Eigen bestanden toevoegen</h2>
+<form method="post" action="{{ url_for('bibliotheek_upload') }}" enctype="multipart/form-data" class="sleepvak">
+  <p class="bij">Bijvoorbeeld paragrafen uit Cumulus (PDF), je PowerPoints of mindmaps. Ze komen in <code>{{ eigen }}</code>
+    in een map per vak en niveau. Google Docs-bestanden eerst downloaden als .docx of PDF.</p>
+  <div class="rij">
+    <div><label for="vak">Vak</label><select id="vak" name="vak"><option>Economie</option><option>Bedrijfseconomie</option></select></div>
+    <div><label for="niveau">Niveau</label><select id="niveau" name="niveau"><option>mavo</option><option selected>havo</option><option>vwo</option></select></div>
+    <div style="flex: 2 1 20rem"><label for="bestanden">Bestanden</label><input type="file" id="bestanden" name="bestanden" multiple accept=".pdf,.docx,.pptx,.txt,.md,.html"></div>
+    <div style="flex: 0 0 auto"><button class="knop" type="submit">Toevoegen</button></div>
+  </div>
+</form>
+
+<h2>Instellingen</h2>
+<form method="post" action="{{ url_for('bibliotheek_instellingen') }}" class="blok">
+  <label for="bronmappen">Bronmappen (één per regel)</label>
+  <textarea id="bronmappen" name="bronmappen" rows="4">{{ inst.bronmappen | reject('equalto', eigen) | join('\n') }}</textarea>
+  <p class="bij">Standaard je map <i>NotebookLM Onderwijs</i> in Google Drive. De map met eigen bestanden wordt altijd meegenomen.</p>
+  <label for="bibliotheek_drive" style="margin-top: .8rem">Geordende bibliotheek in Google Drive</label>
+  <input type="text" id="bibliotheek_drive" name="bibliotheek_drive" value="{{ inst.bibliotheek_drive }}">
+  <button class="knop" type="submit">Bewaren</button>
+</form>
+{% endblock %}
+{% block onder %}
+<script>
+(function () {
+  const f = document.getElementById('lees');
+  const tel = () => { document.getElementById('aantal').textContent = `${f.querySelectorAll('input[name=bron]:checked').length} aangevinkt`; };
+  for (const blok of f.querySelectorAll('.mapblok')) {
+    const map = blok.querySelector('.mapvink');
+    map.addEventListener('click', (e) => e.stopPropagation());
+    map.addEventListener('change', () => {
+      for (const b of blok.querySelectorAll('input[name=bron]')) if (b.dataset.open === '1' && !b.disabled) b.checked = map.checked;
+      tel();
+    });
+  }
+  f.addEventListener('change', tel);
+  const job = document.getElementById('job');
+  if ({{ job.bezig | tojson }}) {
+    const kijk = async () => {
+      try {
+        const d = await (await fetch('/api/bibliotheek/status')).json();
+        if (!d.bezig) { location.reload(); return; }
+        document.getElementById('job-tekst').textContent = d.tekst;
+        document.getElementById('job-n').textContent = d.gedaan;
+        document.getElementById('job-balk').style.width = `${Math.round(100 * d.gedaan / Math.max(1, d.totaal))}%`;
+      } catch (e) { /* opnieuw */ }
+      setTimeout(kijk, 3000);
+    };
+    setTimeout(kijk, 3000);
+  }
+})();
+</script>
+{% endblock %}

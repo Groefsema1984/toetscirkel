@@ -1,0 +1,90 @@
+CHANGELOG
+8 oktober 2026, eerste versie (na de constructie van schoolexamen AT6.11 bedrijfseconomie 6 vwo, versie A en B)
+* Nieuw bestand. Status: CONCEPT. De formules volgen het formuleblad van het examen en Cumulus 3.3, 3.4, 4.4 en 4.5. DEEL 4 punt 1 tot en met 3 volgt de uitleg van de docent van 8 oktober 2026. De stappenplannen zijn een voorstel van de AI.
+
+BRONBESTAND: 03_REKENREGELS_VWO_BECO_DOMEIN_F
+FUNCTIE: de schrijfwijze, formules, stappenplannen en redeneringen voor financiële overzichten, overlopende posten, afschrijvingen, kostencalculatie, break-evenanalyse en verschillenanalyse in 6 vwo.
+INTEGRATIE: gebruik samen met 02_EXAMENCONTEXT_VWO_BECO_EXAMENANALYSE_DOMEIN_F.
+
+[DEEL 1: SCHRIJFWIJZE]
+1. Bedragen in hele euro's, tenzij de vraag anders aangeeft. Voor rekenfouten wordt geen punt afgetrokken.
+2. Bij elk resultaat staat "voordelig" of "nadelig" (bij een verkoop van een actief: "boekwinst" of "boekverlies"). Een bedrag zonder die aanduiding is fout.
+3. Term: resultatenbegroting. De methode zegt exploitatiebegroting; noem die één keer tussen haakjes.
+4. Het verkoopresultaat wordt niet uitgesplitst in een afzet- en een prijsoorzaak (afspraak met de docent: het examen doet dat ook niet).
+5. Het formuleblad bij een schoolexamen bevat alleen: verkoopresultaat, budgetresultaat, efficiencyresultaat, prijsresultaat, begroot en gerealiseerd bezettingsresultaat. De break-evenformules en de kostprijsformule kent de leerling uit het hoofd.
+
+[DEEL 2: FORMULES]
+A. Kosten en uitgaven
+   Uitgave: het moment van betalen (liquiditeitsbegroting). Kosten: de periode van verbruik (resultatenbegroting).
+   Aflossing: wel uitgave, geen kosten. Afschrijving: wel kosten, geen uitgave. Aanschaf van een actief: uitgave, geen kosten.
+B. Overlopende posten
+   Vooruitbetaald (debet) = betaald bedrag × maanden die nog komen : maanden van de betaling.
+   Nog te betalen (credit) = kosten van de verstreken maanden sinds de laatste betaling.
+   Vooruitontvangen (credit) = ontvangen bedrag × maanden die nog komen : maanden van de ontvangst.
+   Nog te ontvangen (debet) = opbrengst van de verstreken maanden die nog niet is ontvangen.
+   Interest bij een lening met aflossing: reken per periode met de schuld van dat moment.
+C. Afschrijvingen
+   Afschrijving per jaar = (aanschafprijs − restwaarde) : levensduur. Per maand: gedeeld door 12.
+   Boekwaarde = aanschafprijs − afschrijving per maand × aantal maanden in gebruik.
+   Boekresultaat = verkoopprijs − boekwaarde.
+D. Kostprijs en verwacht resultaat
+   Kostprijs = V/W + C/N. Bij standaarden: standaardhoeveelheid × standaardprijs per onderdeel, plus C/N.
+   Verwacht bedrijfsresultaat = verwacht verkoopresultaat + verwacht bezettingsresultaat.
+   Verwacht verkoopresultaat = verwachte afzet × (verkoopprijs − kostprijs). Verwacht bezettingsresultaat = (B − N) × C/N.
+E. Verschillenanalyse
+   Standaardhoeveelheid (sh) = werkelijke productie × standaardverbruik per product.
+   Efficiencyresultaat = (sh − wh) × sp. Prijsresultaat = (sp − wp) × wh.
+   Gerealiseerd bezettingsresultaat = (W − N) × C/N. Prijsresultaat constante kosten = begrote − werkelijke constante kosten.
+   Budgetresultaat = som van de deelresultaten = werkelijke productie × kostprijs − werkelijke kosten.
+   Gerealiseerd bedrijfsresultaat = gerealiseerd verkoopresultaat + budgetresultaat.
+F. Dekkingsbijdrage en break-even
+   Dekkingsbijdrage = omzet − variabele kosten. Resultaat = dekkingsbijdrage − constante kosten.
+   Break-evenomzet = constante kosten : dekkingsbijdrage als deel van de omzet.
+   Break-evenafzet = constante kosten : dekkingsbijdrage per product.
+
+[DEEL 3: STAPPENPLANNEN] (voorstel van de AI, nog vast te stellen)
+A. Overlopende post: 1 welk bedrag is betaald of ontvangen en voor welke periode · 2 hoeveel maanden zijn verstreken op de balansdatum · 3 het deel dat bij de volgende periode hoort · 4 debet of credit.
+B. Resultaten- en liquiditeitsbegroting: per post twee vragen: hoort het bij deze periode (kosten of opbrengst) en wordt het in deze periode betaald of ontvangen (uitgave of ontvangst).
+C. Boekresultaat: 1 afschrijving per maand · 2 aantal maanden · 3 boekwaarde · 4 verkoopprijs − boekwaarde.
+D. Verschillenanalyse: 1 sh bij de werkelijke productie · 2 efficiency en prijs per variabele kostensoort · 3 bezetting · 4 prijs constante kosten · 5 optellen · 6 controle met werkelijke productie × kostprijs − werkelijke kosten.
+E. Break-evenomzet met percentages: 1 variabele kosten als percentage van de omzet · 2 dekkingsbijdrage = 100% − dat percentage · 3 constante kosten delen door dat deel.
+
+[DEEL 4: VASTE REDENERINGEN]
+1. Wat zegt een deelresultaat? De inkoper is aanspreekbaar op het prijsresultaat van de grondstof, de productiemanager op het efficiencyresultaat, de personeelsafdeling of directie op het loontarief. (docent)
+2. Deelresultaten hangen samen. Goedkoper inkopen kan een voordelig prijsresultaat en een nadelig efficiencyresultaat geven (lagere kwaliteit, meer afval). Beoordeel de keuze van de manager op het saldo van beide. (docent)
+3. De vraag bij een resultaat is steeds: heeft de manager het goed of slecht gedaan, en waarop spreek je hem aan? (docent)
+4. Bezettingsresultaat zonder berekening: productie boven normaal betekent dat er meer constante kosten zijn doorberekend dan begroot (voordelig); onder normaal omgekeerd.
+5. Een langere levensduur of een hogere restwaarde verlaagt de afschrijvingskosten en verhoogt het resultaat. De liquide middelen veranderen niet.
+6. Break-evenpunt: totale opbrengst = totale kosten, resultaat nul. In de grafiek begint de opbrengstlijn in de oorsprong en de lijn van de totale kosten op de hoogte van de constante kosten.
+
+[DEEL 5: VALKUILEN VOOR DE SABOTEUR]
+1. De aflossing als kosten boeken.
+2. De hele ontvangst als opbrengst van de periode nemen.
+3. De aanschafprijs als kosten nemen in plaats van de afschrijving.
+4. Bij een overlopende post de verstreken maanden nemen in plaats van de komende (of andersom).
+5. Interest berekenen over de schuld vóór de aflossing.
+6. De restwaarde niet aftrekken bij de afschrijving; het aantal maanden verkeerd tellen.
+7. C delen door de verwachte productie in plaats van door de normale.
+8. De standaardhoeveelheid berekenen met de normale of verwachte productie.
+9. Bij het prijsresultaat vermenigvuldigen met sh in plaats van wh.
+10. "Voordelig" of "nadelig" vergeten of omdraaien.
+11. De constante kosten delen door het percentage variabele kosten.
+12. Bij een maatregel de extra constante kosten of de overige variabele kosten vergeten.
+
+[DEEL 6: CASUSSEN UIT AT6.11] (verzonnen; niet opnieuw gebruiken)
+Versie A
+A. Ippon nv (judoscholen), vierde kwartaal 2026: 1.500 leden × € 480 op 1 oktober; huur € 54.000 per halfjaar op 1 december; 6% lening € 400.000, aflossing € 40.000 op 1 november; judomatten € 96.000, 8 jaar. Vooruitbetaalde huur € 45.000, nog te betalen interest € 3.600, interestkosten € 5.600.
+B. Sonnberg Skiliften nv: pistenwals € 420.000, 8 jaar, restwaarde € 60.000, gekocht 1 april 2023, verkocht 1 juli 2027 voor € 240.000. Boekwinst € 11.250.
+C. Velo Kwaremont nv (racefietsen): N 4.000, B 3.800, W 4.200; 3 kg carbon × € 120, 5 uur × € 40, C € 960.000, kostprijs € 800, verkoopprijs € 1.000. Werkelijk 13.020 kg à € 115, 20.580 uur à € 42, C € 990.000. Budgetresultaat € 8.340 voordelig. Inkoopmanager per saldo € 14.700 voordelig.
+D. RoxWear nv (Hyrox-kleding): inkoop 55%, overig 10%, C € 420.000, omzet € 1.500.000. Break-evenomzet € 1.200.000. Maatregel 1 € 127.500, maatregel 2 € 150.000.
+Versie B
+E. Roxbase nv (Hyrox-sportscholen): 2.000 leden × € 600 op 1 november; huur € 72.000 per halfjaar op 1 november; 5% lening € 600.000, aflossing € 60.000 op 1 december; toestellen € 180.000, 5 jaar, restwaarde € 30.000. Vooruitbetaalde huur € 48.000, nog te betalen interest € 2.250, interestkosten € 7.250.
+F. Tatami Events nv: tribune € 330.000, 10 jaar, restwaarde € 30.000, gekocht 1 september 2022, verkocht 1 maart 2027 voor € 180.000. Boekverlies € 15.000.
+G. Firn Ski nv: N 10.000, B 10.400, W 9.600; 4 kg hout × € 15, 2 uur × € 35, C € 500.000, kostprijs € 180, verkoopprijs € 240. Werkelijk 37.440 kg à € 16, 19.680 uur à € 34, C € 488.000. Budgetresultaat € 28.160 nadelig. Inkoopmanager per saldo € 23.040 nadelig.
+H. Koerskleding nv (wielerkleding): inkoop 50%, overig 8%, C € 630.000, omzet € 1.800.000. Break-evenomzet € 1.500.000. Maatregel 1 € 219.400, maatregel 2 € 180.000.
+
+[DEEL 7: OPEN PUNTEN]
+1. De docent stelt de stappenplannen vast of past ze aan.
+2. Niet getoetst in AT6.11 en vrij voor een volgende toets: een volledige liquiditeitsbegroting of eindbalans opstellen, vooruitontvangen en nog te ontvangen bedragen berekenen, break-evenafzet, een deelresultaat terugrekenen (2023-II vraag 29), gerealiseerd bedrijfsresultaat uit verkoop- en budgetresultaat, twee producten.
+3. Nog niet behandeld en dus niet toetsen: niet-financiële informatie, mutatiebalans, voorziening, annuïteitenlening.
+4. De eindtermnummers in de toetsmatrijs (23.x, 25.x) zijn door de AI toegewezen. Afschrijvingen en de verschillenanalyse hebben in de syllabus geen eigen nummer.

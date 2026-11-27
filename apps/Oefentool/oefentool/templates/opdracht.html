@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+{% from "_item.html" import opgave %}
+{% set deel = 'opdrachten' %}
+{% block titel %}{{ o.naam }} · Oefentool{% endblock %}
+{% block inhoud %}
+{% set ronde = 1 if o.status in ('plan', 'plan_klaar', 'plan_fout') else (2 if o.status in ('genereren', 'genereren_fout', 'beoordelen') else 3) %}
+<p class="bij"><a href="{{ url_for('index') }}">Opdrachten</a> / {{ DOELEN[o.doel].split(':')[0] }}</p>
+<h1>{{ o.naam }}</h1>
+<p class="intro" style="margin-bottom: 1rem">{{ o.vak }} {{ o.klas or o.niveau }}{{ ' (tweefasen)' if o.tweefasen }} · {{ o.aantal_leerlingen }} leerlingen ·
+  {{ o.doelen | length }} leerdoelen · {{ o.sets | length }} {{ 'sets' if o.sets | length != 1 else 'set' }} ·
+  leerloop ronde {{ o.leerloop.ronde }}{% if o.leerloop.vorige %} (vervolg op <a href="{{ url_for('toon', oid=o.leerloop.vorige) }}">vorige ronde</a>){% endif %}
+  {% if kosten %} · kosten tot nu toe <b>${{ '%.2f' | format(kosten) }}</b>{% endif %}</p>
+
+<ol class="rondes" aria-label="Rondes">
+  <li class="{{ 'actief' if ronde == 1 }} {{ 'klaar' if ronde > 1 }}"><span class="nr">1</span>Plan</li>
+  <li class="{{ 'actief' if ronde == 2 }} {{ 'klaar' if ronde > 2 }}"><span class="nr">2</span>Opgaven en kwaliteit</li>
+  <li class="{{ 'actief' if ronde == 3 and o.status != 'klaar' }} {{ 'klaar' if o.status == 'klaar' }}"><span class="nr">3</span>Klaarzetten</li>
+  <li>{% if o.status == 'klaar' %}<a href="{{ url_for('leerloop_pagina', oid=o.id) }}"><span class="nr">4</span>Leerloop</a>{% else %}<span class="nr">4</span>Leerloop{% endif %}</li>
+</ol>
+
+{% if o.fout %}<p class="melding fout">{{ o.fout }}</p>{% endif %}
+{% if o.toestemming_nodig and not o.bezig %}
+<div class="blok toestemming">
+  <h3>Verder via het abonnement of met API-tegoed?</h3>
+  <p>De oefentool gebruikt alleen je Claude-abonnement. Dat kan nu niet verder, dus is er gestopt. Wat al klaar was, blijft bewaard.
+    {% if o.toestemming_nodig.stap == '_genereer' %}Er {{ 'moet' if nog == 1 else 'moeten' }} nog {{ nog }} leerdoel{{ 'en' if nog != 1 }} gemaakt worden.{% endif %}</p>
+  <div class="rij" style="align-items: center">
+    <form method="post" action="{{ url_for('via_abonnement', oid=o.id) }}"><button class="knop hoofd" type="submit">Opnieuw via abonnement</button></form>
+    {% if api_sleutel %}
+    <form method="post" action="{{ url_for('api_toestemming', oid=o.id) }}" onsubmit="return confirm('Deze stap gaat verder met betaald API-tegoed (ongeveer ${{ '%.2f' | format(api_schatting) }}). Akkoord?')">
+      <button class="knop docent" type="submit">Nu verder met API-tegoed (± ${{ '%.2f' | format(api_schatting) }})</button></form>
+    {% endif %}
+  </div>
+  <p class="bij">Is de limiet van je abonnement op, kies dan later "Opnieuw via abonnement". API-tegoed wordt alleen gebruikt als jij op de
+    knop klikt, en alleen voor deze ene stap{{ '; daarna klik je opnieuw op de opgave' if o.toestemming_nodig.stap == 'los' }}.
+    {% if not api_sleutel %}Er is geen API-sleutel, dus verder met tegoed kan niet.{% endif %}</p>
+</div>
+{% endif %}
+
+{% if o.bezig %}
+<div class="bezigvak" id="bezig">
+  <p><span class="draai"></span> <b>{{ o.voortgang.tekst or 'Bezig' }}</b></p>
+  {% if o.voortgang.totaal %}<div class="balk"><span style="width: {{ (100 * o.voortgang.gedaan / o.voortgang.totaal) | round }}%"></span></div>
+  <p class="bij">{{ o.voortgang.gedaan }} van {{ o.voortgang.totaal }} leerdoelen klaar. Elke opgave wordt nagerekend en door een tweede Claude-beurt streng beoordeeld; wat niet goed is wordt herzien.</p>{% endif %}
+  <p class="bij">Je kunt dit venster open laten staan of later terugkomen: alles wordt bewaard.</p>
+</div>
+{% endif %}
+
+{# ------------------------------------------------------------------ ronde 1 #}
+{% if o.status in ('plan_fout',) and not o.bezig and not o.toestemming_nodig %}
+<form method="post" action="{{ url_for('plan', oid=o.id) }}"><button class="knop hoofd" type="submit">Plan opnieuw laten maken</button></form>
+{% endif %}
+
+{% if ronde == 1 or o.status == 'plan_klaar' %}
+<h2>Doelgroep</h2>
+<p class="bij">Per leerdoel: hoeveel leerlingen het nog niet, bijna of wisselend beheersen (laatste meting telt).</p>
+<div class="tabelvak">
+<table>
+  <thead><tr><th>Leerdoel</th><th class="r">Nog niet</th><th class="r">Bijna</th><th class="r">Wisselend</th><th class="r">Gem.</th><th>Leergaten</th></tr></thead>
+  <tbody>
+  {% for d in o.doelen %}
+  <tr><td><span class="code">{{ d.code }}</span> {{ d.omschrijving }}</td>
+    <td class="r">{{ d.nog_niet }}</td><td class="r">{{ d.bijna }}</td><td class="r">{{ d.wisselend }}</td><td class="r">{{ d.gem_pct | pct }}</td>
+    <td>{% for k, v in d.leergaten.items() %}<span class="code" title="{{ LEERGATEN[k] }}">{{ k }}</span> {{ v }}× {% endfor %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<details style="margin-top: .6rem"><summary>{{ o.sets | length }} {{ 'sets' if o.sets | length != 1 else 'set' }}: wie krijgt wat</summary>
+  <div class="tabelvak"><table>
+    <thead><tr><th>Set</th><th class="r">Leerlingen</th><th>Leerdoelen (stand)</th></tr></thead>
+    <tbody>{% for s in o.sets %}<tr><td><b>{{ s.naam }}</b></td><td class="r">{{ s.leerlingen | length }}</td>
+      <td>{% for d in s.doelen %}<span class="code stand-{{ d.stand }}" title="{{ d.stand }}">{{ d.code }}</span> {% endfor %}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</details>
+{% endif %}
+
+{% if o.status == 'plan_klaar' and o.plan %}
+<h2>Plan van Claude</h2>
+<p>{{ o.plan.toelichting }}</p>
+{% if o.plan.vragen_aan_docent %}<div class="melding"><b>Claude vraagt:</b><ul>{% for v in o.plan.vragen_aan_docent %}<li>{{ v }}</li>{% endfor %}</ul>
+  Beantwoord dit hieronder bij 'Commentaar'.</div>{% endif %}
+<div class="plan">
+  {% for ond in o.plan.onderdelen %}
+  {% set d = doelen.get(ond.leerdoel_code, {}) %}
+  {% set b = (o.beschikbaar or {}).get(ond.leerdoel_code, {}) %}
+  <section class="plankaart" data-code="{{ ond.leerdoel_code }}">
+    <header><span class="code">{{ ond.leerdoel_code }}</span> <b>{{ d.omschrijving }}</b>
+      <button class="knop klein weg" type="button" data-weg="{{ ond.leerdoel_code }}" title="Dit leerdoel niet oefenen">Weglaten</button></header>
+    <p class="bij">{{ ond.waarom }}</p>
+    <table class="stappen-tabel">
+      {% for s in ond.stappen %}
+      <tr><td><span class="stapje stap-{{ s.stap }}">{{ {1: 'Basis', 2: 'Oefenen', 3: 'Examenniveau'}[s.stap] }}</span></td>
+        <td><input type="number" min="0" max="4" value="{{ s.aantal }}" data-stap="{{ s.stap }}" aria-label="Aantal opgaven"></td>
+        <td>{{ s.soorten | join(', ') }} · {{ s.bloom }}{% if s.leergat_focus %} · <b>{{ s.leergat_focus | join(', ') }}</b>{% endif %}<br><span class="bij">{{ s.aanpak }}</span></td></tr>
+      {% endfor %}
+    </table>
+    <p class="bij">Bibliotheek: {{ b.les or 0 }} lesfragmenten, {{ b.examen or 0 }} examenvragen, {{ b.bewezen or 0 }} goedgekeurde opgaven{% if ond.hergebruik %}; hergebruikt: {{ ond.hergebruik | join(', ') }}{% endif %}.</p>
+  </section>
+  {% endfor %}
+</div>
+{% if o.instellingen.oefenexamen %}<p class="bij">Oefentoets: per leerdoel {{ o.plan.oefenexamen.vragen_per_leerdoel }} extra toetsvraag (stap 4). {{ o.plan.oefenexamen.opbouw }}</p>{% endif %}
+
+<div class="tweeluik">
+  <form method="post" action="{{ url_for('plan', oid=o.id) }}" class="blok">
+    <label for="feedback">Commentaar op het plan</label>
+    <textarea id="feedback" name="feedback" placeholder="bijv. Bij ECO-KRING-02 meer redeneerketens; geen meerkeuze op havo."></textarea>
+    <button class="knop" type="submit">Nieuw plan met dit commentaar</button>
+  </form>
+  <form method="post" action="{{ url_for('genereer', oid=o.id) }}" class="blok">
+    <p><b>Akkoord?</b> Claude maakt dan per leerdoel de opgaven, rekent ze na en beoordeelt ze zelf. Dat duurt
+      ongeveer een halve minuut per leerdoel.</p>
+    {% if motor == 'abonnement' %}
+    <p class="bij">Dit gaat via je Claude-abonnement: geen API-tegoed. {{ te_maken }} leerdoel{{ 'en' if te_maken != 1 }}
+      {%- if hergebruik %}; {{ hergebruik }} opgave{{ 'n' if hergebruik != 1 }} komt uit de itembank{% endif %}.
+      Is je abonnement op, dan stopt de oefentool en vraagt hij of je met API-tegoed (± ${{ '%.2f' | format(schatting) }}) verder wilt.</p>
+    {% else %}
+    <p class="bij">Geschatte kosten (API-tegoed): ongeveer <b>${{ '%.2f' | format(schatting) }}</b> voor {{ te_maken }} leerdoel{{ 'en' if te_maken != 1 }}
+      {%- if hergebruik %}; {{ hergebruik }} opgave{{ 'n' if hergebruik != 1 }} komt gratis uit de itembank{% endif %}.
+      De kosten hangen af van het aantal leerdoelen en opgaven, niet van het aantal leerlingen.</p>
+    {% endif %}
+    <button class="knop hoofd groot" type="submit" {{ '' if heeft_sleutel else 'disabled' }}>Ronde 2: opgaven maken</button>
+  </form>
+</div>
+{% endif %}
+
+{# ------------------------------------------------------------------ ronde 2 #}
+{% if o.status == 'genereren_fout' and not o.bezig and not o.toestemming_nodig %}
+<form method="post" action="{{ url_for('genereer', oid=o.id) }}"><p>Wat al klaar was, blijft bewaard.</p>
+  <button class="knop hoofd" type="submit">Verder met opgaven maken</button></form>
+{% endif %}
+
+{% if o.status in ('beoordelen', 'klaarzetten', 'klaar') and o.pool %}
+{% set alle = items.values() | list %}
+{% set open_ = alle | selectattr('status', 'equalto', 'concept') | list %}
+{% if o.status == 'beoordelen' %}
+<h2>Opgaven beoordelen</h2>
+<p class="intro" style="margin-bottom: .8rem">Elke opgave is nagerekend en door Claude zelf beoordeeld (cijfer in de kantlijn, 1 tot 5). Keur goed, laat aanpassen of keur af.
+  Bij aanpassen en afkeuren schrijf je erbij waarom: daar maakt de oefentool een <a href="{{ url_for('kwaliteit_pagina') }}">kwaliteitsregel</a> van voor de volgende keer.</p>
+{% if o.kritiek_terugkerend %}<div class="melding"><b>Wat de zelfkritiek vaker zag:</b><ul>{% for t in o.kritiek_terugkerend %}<li>{{ t }}</li>{% endfor %}</ul>
+  {% if o.nieuwe_voorstellen %}{{ o.nieuwe_voorstellen }} daarvan staan als voorstel bij <a href="{{ url_for('kwaliteit_pagina') }}">Kwaliteit</a>.{% endif %}</div>{% endif %}
+{% else %}
+<details><summary>Opgaven van deze opdracht ({{ alle | length }})</summary>
+{% endif %}
+{% for ond in o.plan.onderdelen %}
+  {% set code = ond.leerdoel_code %}
+  {% set d = doelen.get(code, {}) %}
+  <section class="leerdoelblok" id="ld-{{ code }}">
+    <header><h3><span class="code">{{ code }}</span> {{ d.omschrijving }}</h3>
+      <span class="bij">{{ d.leerling_zin }}</span></header>
+    {% for uid in o.pool.get(code, []) %}{% if uid in items %}
+      {{ opgave(items[uid], reg, oudere.get(uid), knoppen=o.status == 'beoordelen', bezig=uid in (o.get('in_bewerking') or [])) }}
+    {% endif %}{% endfor %}
+    {% if 'extra:' ~ code in (o.get('in_bewerking') or []) %}<p class="bij"><span class="draai"></span> Extra opgave wordt gemaakt…</p>{% endif %}
+    {% if o.status == 'beoordelen' %}
+    <form method="post" action="{{ url_for('extra', oid=o.id) }}" class="extra-form">
+      <input type="hidden" name="code" value="{{ code }}">
+      <select name="stap" aria-label="Stap"><option value="1">Basis</option><option value="2" selected>Oefenen</option><option value="3">Examenniveau</option></select>
+      <button class="knop klein" type="submit">Nog een opgave bij dit leerdoel</button>
+    </form>
+    {% endif %}
+  </section>
+{% endfor %}
+{% if o.status != 'beoordelen' %}</details>{% endif %}
+
+{% if o.status == 'beoordelen' %}
+<div class="vast">
+  <span><b>{{ alle | selectattr('status', 'equalto', 'goedgekeurd') | list | length }}</b> goedgekeurd ·
+    <b>{{ open_ | length }}</b> nog niet beoordeeld · <b>{{ alle | selectattr('status', 'equalto', 'afgekeurd') | list | length }}</b> afgekeurd</span>
+  <form method="post" action="{{ url_for('klaarzetten', oid=o.id) }}" class="ruimte" onsubmit="return {{ 'true' if not open_ else "confirm('Opgaven die je niet hebt beoordeeld, worden goedgekeurd. Doorgaan?')" }}">
+    <button class="knop hoofd" type="submit" {{ 'disabled' if o.get('in_bewerking') }}>Ronde 3: klaarzetten</button>
+  </form>
+</div>
+{% endif %}
+{% endif %}
+
+{# ------------------------------------------------------------------ ronde 3 #}
+{% if o.status == 'klaar' %}
+{% set u = o.uitvoer %}
+<h2>Klaar om uit te delen</h2>
+{% if u.fouten %}<div class="melding fout">{% for f in u.fouten %}<p>{{ f }}</p>{% endfor %}</div>{% endif %}
+<div class="uitvoer">
+  {% if u.papier %}
+  <section class="blok"><h3>Papier</h3>
+    <p class="bij">Word-bestanden in je toetsstijl: opgaven en uitwerkingen per set.</p>
+    <ul class="bestanden">{% for p in u.papier if 'opgaven' in p %}<li><b>{{ p.split('/')[-2] }}</b>:
+      <a href="{{ url_for('bestand', oid=o.id, pad=p) }}">opgaven</a> ·
+      <a href="{{ url_for('bestand', oid=o.id, pad=p.replace('_opgaven.docx', '_correctievoorschrift.docx')) }}">uitwerkingen</a></li>{% endfor %}</ul>
+    <p><a class="knop klein" href="{{ url_for('printen', oid=o.id) }}" target="_blank">Printversie met namen</a>
+      <a class="knop klein" href="{{ url_for('printen', oid=o.id, uitwerkingen=1) }}" target="_blank">Met uitwerkingen</a>
+      {% if o.doel in ('groep', 'klas', 'toets', 'examentraining') %}<a class="knop klein" href="{{ url_for('printen', oid=o.id, perleerling=1) }}" target="_blank">Eén per leerling, met naam</a>{% endif %}</p>
+  </section>
+  {% endif %}
+  {% if u.digitaal %}
+  <section class="blok"><h3>Digitaal</h3>
+    <p class="bij">Zelfstandige oefenpagina's (één HTML-bestand, werkt zonder internet). Deel ze via Teams of Magister.
+      Er staan geen namen of leerlingnummers in.</p>
+    <ul class="bestanden">{% for p in u.digitaal %}<li><a href="{{ url_for('bestand', oid=o.id, pad=p) }}" target="_blank">{{ p.split('/')[-1] }}</a>
+      · <a href="{{ url_for('bestand', oid=o.id, pad=p) }}" download>downloaden</a></li>{% endfor %}</ul>
+    {% if o.codes_leerling %}<p><a class="knop klein" href="{{ url_for('codes', oid=o.id) }}" target="_blank">Codelijst met namen (printen en uitdelen)</a></p>{% endif %}
+    <p class="bij">Aan het eind krijgt de leerling een <b>resultaatcode</b> die hij je via Teams stuurt. Plak de codes bij
+      <a href="{{ url_for('leerloop_pagina', oid=o.id) }}#zelfcheck">Leerloop &gt; Formatieve check</a>.</p>
+    <form method="post" action="{{ url_for('digitaal_opnieuw', oid=o.id) }}"><button class="knop klein" type="submit">Oefenpagina's opnieuw maken</button></form>
+  </section>
+  {% else %}
+  <section class="blok"><h3>Digitaal</h3>
+    <p class="bij">Bij deze opdracht zijn nog geen digitale oefenpagina's gemaakt.</p>
+    <form method="post" action="{{ url_for('digitaal_opnieuw', oid=o.id) }}"><button class="knop" type="submit">Digitale oefenpagina's maken</button></form>
+  </section>
+  {% endif %}
+  {% if u.oefenexamens %}
+  <section class="blok breed"><h3>Oefentoetsen per groep</h3>
+    <p class="bij">Na het maken scan je het werk per groep en lees je het in bij de Toetsevaluatie met soort <b>Oefentoets</b> en de code hieronder.
+      De leerdoelcodes staan in het correctievoorschrift; de uitslag telt als meting met het label <i>oefen</i>.</p>
+    <div class="tabelvak"><table>
+      <thead><tr><th>Groep</th><th>Toetscode</th><th>Toetsnaam in de Toetsevaluatie</th><th class="r">Leerlingen</th><th class="r">Vragen</th><th class="r">Punten</th><th>Bestanden</th></tr></thead>
+      <tbody>{% for ex in u.oefenexamens %}<tr><td><b>{{ ex.groep }}</b></td><td><span class="code">{{ ex.code }}</span></td><td>{{ ex.toets_id }}</td>
+        <td class="r">{{ ex.leerlingen | length }}</td><td class="r">{{ ex['items'] | length }}</td><td class="r">{{ ex.punten }}</td>
+        <td>{% for p in ex.bestanden %}<a href="{{ url_for('bestand', oid=o.id, pad=p) }}">{{ 'opgaven' if 'opgaven' in p else ('correctievoorschrift' if 'correctie' in p else 'scaninstructie') }}</a>{{ ' · ' if not loop.last }}{% endfor %}</td></tr>{% endfor %}</tbody>
+    </table></div>
+  </section>
+  {% endif %}
+</div>
+<h3 style="margin-top: 1.6rem">Sets</h3>
+<div class="tabelvak"><table>
+  <thead><tr><th>Set</th><th class="r">Leerlingen</th><th class="r">Opgaven</th><th class="r">Minuten</th><th>Leerdoelen</th><th></th></tr></thead>
+  <tbody>{% for s in o.sets %}<tr><td><b>{{ s.naam }}</b></td><td class="r">{{ s.leerlingen | length }}</td><td class="r">{{ (s['items'] or []) | length }}</td><td class="r">{{ s.minuten }}</td>
+    <td>{% for d in s.doelen %}<span class="code stand-{{ d.stand }}">{{ d.code }}</span> {% endfor %}</td>
+    <td><a class="knop klein" href="{{ url_for('printen', oid=o.id, set=s.naam) }}" target="_blank">Print</a></td></tr>{% endfor %}</tbody>
+</table></div>
+<p style="margin-top: 1.2rem"><a class="knop" href="{{ url_for('bestand', oid=o.id, pad='uitvoer.zip') }}">Alles als zip</a>
+  <a class="knop hoofd" href="{{ url_for('leerloop_pagina', oid=o.id) }}">Naar de leerloop</a></p>
+{% endif %}
+
+<form method="post" action="{{ url_for('verwijder', oid=o.id) }}" class="verwijder" onsubmit="return confirm('Deze opdracht verwijderen? De opgaven blijven in de itembank.')">
+  <button class="knop klein" type="submit">Opdracht verwijderen</button>
+</form>
+
+<dialog id="reden">
+  <form method="dialog">
+    <h3 id="reden-kop">Waarom?</h3>
+    <p class="bij" id="reden-uitleg">Schrijf op wat er anders moet. Claude maakt een nieuwe versie en de oefentool onthoudt dit als kwaliteitsregel.</p>
+    <div class="veld"><textarea id="reden-tekst" required></textarea></div>
+    <div class="acties"><button class="knop" value="annuleer" formnovalidate>Annuleren</button><button class="knop hoofd" value="ok" id="reden-ok">Versturen</button></div>
+  </form>
+</dialog>
+<dialog id="zelf" class="breed">
+  <form method="dialog">
+    <h3>Zelf bewerken</h3>
+    <p class="bij">Je aanpassing wordt een nieuwe, goedgekeurde versie. De rekencontrole loopt opnieuw.</p>
+    <div class="veld"><label for="z-titel">Titel</label><input type="text" id="z-titel"></div>
+    <div class="veld"><label for="z-context">Context (lege regel tussen alinea's)</label><textarea id="z-context" rows="6"></textarea></div>
+    <div class="veld"><label for="z-vraag">Vraag</label><textarea id="z-vraag" rows="2"></textarea></div>
+    <div class="veld"><label for="z-voorbeeld">Voorbeeldantwoord</label><textarea id="z-voorbeeld" rows="3"></textarea></div>
+    <div class="veld"><label for="z-uitleg">Uitleg</label><textarea id="z-uitleg" rows="2"></textarea></div>
+    <div class="acties"><button class="knop" value="annuleer" formnovalidate>Annuleren</button><button class="knop hoofd" value="ok">Opslaan</button></div>
+  </form>
+</dialog>
+{% endblock %}
+{% block onder %}
+<script>
+const OID = {{ o.id | tojson }};
+const BEZIG = {{ (o.bezig or ((o.get('in_bewerking') or []) | length > 0)) | tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/opdracht.js') }}?v=1"></script>
+{% endblock %}

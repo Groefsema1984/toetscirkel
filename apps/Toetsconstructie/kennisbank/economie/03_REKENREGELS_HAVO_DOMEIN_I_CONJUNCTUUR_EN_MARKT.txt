@@ -1,0 +1,67 @@
+CHANGELOG
+10 november 2026, eerste versie (na schoolexamen AT5.21 economie havo 5, versie A en B)
+* Nieuw bestand. Status: CONCEPT. De formules volgen de lessen van de docent (conjunctuur en beleid, vraag en aanbod met markt en overheid) en de havo-syllabus 2027 (domeinen D, E, G, H en I). De stappenplannen zijn gebruikt in AT5.21 en door de docent niet afgekeurd, maar niet apart vastgesteld.
+
+BRONBESTAND: 03_REKENREGELS_HAVO_DOMEIN_I_CONJUNCTUUR_EN_MARKT
+FUNCTIE: de vaste schrijfwijze voor berekeningen en redeneringen over conjunctuur, begroting, rente, monopolie, heffing en gedragseconomie op havo.
+INTEGRATIE: gebruik samen met 03_REKENREGELS_HAVO_DOMEIN_G_H (algemene schrijfwijze, schijventarief) en 03_REKENREGELS_HAVO_DOMEIN_D_CONSUMENTENGEDRAG (elasticiteiten).
+
+[DEEL 1: FORMULES]
+1. Inflatie uit een prijsindex = (index nieuw : index oud × 100) − 100.
+2. Reële rente = nominale rente − inflatie (zoals de docent het aanleert). Is de inflatie hoger dan de rente, dan is de reële rente negatief.
+3. Reële groei en koopkracht via de indexmethode: nominaal indexcijfer : prijsindex × 100 − 100. Niet de percentages van elkaar aftrekken.
+4. Werkloosheidspercentage = werklozen : beroepsbevolking × 100%.
+5. Staatsschuld eind = staatsschuld begin − saldo (een tekort is een negatief saldo en verhoogt de schuld, een overschot verlaagt hem).
+6. Staatsschuldquote = staatsschuld : bbp × 100%. Norm: maximaal 60% (Stabiliteits- en Groeipact). Begrotingstekortnorm: maximaal 3% van het bbp.
+7. Belasting in schijven: belasting per schijf optellen, daarna de heffingskorting van de belasting aftrekken. Gemiddeld tarief = te betalen belasting : belastbaar inkomen × 100%.
+8. Prijselasticiteit uit omzet: afzet = omzet : prijs; procentuele verandering met de oude waarde als basis; E = %ΔQ : %ΔP, twee decimalen, met minteken. E kleiner dan −1: elastisch (prijsverhoging verlaagt de omzet, prijsverlaging verhoogt hem).
+9. Inkomenselasticiteit: groter dan 1 luxe, tussen 0 en 1 noodzakelijk, kleiner dan 0 inferieur.
+10. Monopolie: maximale winst bij MO = MK. De hoeveelheid lees je af bij het snijpunt van MO en MK, de prijs op de vraaglijn bij die hoeveelheid (niet bij het snijpunt van MO en MK).
+11. Heffing per eenheid op een monopolist: de MK-lijn schuift met het bedrag van de heffing omhoog. De winstmaximale hoeveelheid daalt en de prijs stijgt.
+12. Maximumprijs onder de monopolieprijs: de aanbieder kan niet meer vragen dan de maximumprijs. De hoeveelheid is die waar de maximumprijs de vraaglijn snijdt (als de MK daar lager ligt dan de maximumprijs). De prijs daalt en de hoeveelheid stijgt.
+
+[DEEL 2: STAPPENPLANNEN] (één stap is één punt)
+A. Reële rente, twee stappen: 1 inflatie uit de index · 2 nominale rente − inflatie.
+B. Staatsschuldquote, twee stappen: 1 staatsschuld eind (begin − saldo) · 2 schuld : bbp × 100% en vergelijken met 60%.
+C. Gemiddeld belastingtarief, twee stappen: 1 belasting per schijf optellen en de heffingskorting aftrekken · 2 delen door het belastbaar inkomen.
+D. Elasticiteit uit omzet, drie stappen: 1 afzet voor en na · 2 E = %ΔQ : %ΔP · 3 conclusie voor de omzet.
+E. MO = MK-figuur: 1 snijpunt MO en MK · 2 omhoog naar de vraaglijn voor de prijs.
+
+[DEEL 3: VASTE REDENERINGEN]
+1. Deflatie en werkloosheid: dalende prijzen → consumenten stellen aankopen uit → bestedingen dalen → bedrijven verkopen en produceren minder → minder werknemers → werkloosheid stijgt.
+2. Inflatie en concurrentiepositie: prijzen stijgen sneller dan in het buitenland → eigen producten relatief duurder → export daalt (import stijgt) → saldo op de lopende rekening daalt. Binnen de eurozone is er geen wisselkoers.
+3. ECB: renteverhoging → lenen duurder en sparen aantrekkelijker → consumptie en investeringen dalen → bestedingen dalen → minder vraag, dus minder prijsstijging. Renteverlaging omgekeerd. De ECB verhoogt de rente als de inflatie in de eurozone boven 2% ligt en verlaagt hem als die eronder ligt.
+4. Anticyclisch begrotingsbeleid: in een laagconjunctuur meer uitgeven of minder belasting heffen → bestedingen stijgen → productie en werkgelegenheid stijgen. In een hoogconjunctuur omgekeerd (minder uitgeven of meer belasting): bestedingen dalen → minder prijsstijging.
+5. Vermogensmarkt: een tekort betekent dat de overheid leent → vraag naar leningen stijgt (vraaglijn naar rechts) → rente stijgt. Een overschot: vraag daalt → rente daalt. De aanbodlijn (spaargeld) verschuift niet.
+6. Extern effect: kosten (of baten) voor anderen dan de aanbieder en afnemer, die niet in de prijs zitten. Noem de schade én dat hij niet in de prijs zit.
+7. Verzonken kosten: al gemaakt en niet terug te krijgen. Een rationeel besluit vergelijkt alleen toekomstige kosten en opbrengsten.
+8. Standaardoptie: mensen blijven bij de standaard omdat veranderen moeite kost (Systeem 1, traagheid). De keuzevrijheid blijft (afmelden kan): een nudge.
+9. Invulredenering monopolie: één aanbieder en hoge toetredingsbarrière is monopolie. Wie reist met het ene of het andere vervoermiddel, kiest het ene óf het andere: substituut. Wie skiet en ski's huurt: complement.
+
+[DEEL 4: VEELGEMAAKTE FOUTEN]
+1. De reële rente via de index berekenen terwijl de les nominaal − inflatie vraagt (of omgekeerd bij reële groei).
+2. Het tekort van de staatsschuld aftrekken in plaats van erbij op te tellen.
+3. Delen door de hele bevolking in plaats van de beroepsbevolking.
+4. De heffingskorting van het inkomen aftrekken in plaats van van de belasting.
+5. Als monopolieprijs het snijpunt van MO en MK nemen.
+6. Bij een maximumprijs de hoeveelheid aflezen bij het snijpunt met MK in plaats van met de vraaglijn.
+7. Bij deflatie alleen 'prijzen dalen, dus werkloosheid stijgt' zeggen, zonder de uitgestelde bestedingen.
+8. De aanbodlijn laten verschuiven op de vermogensmarkt.
+9. Een procyclische maatregel noemen bij anticyclisch beleid.
+
+[DEEL 5: CASUSSEN UIT AT5.21] (verzonnen, tenzij anders vermeld; niet opnieuw gebruiken)
+Versie A
+I. Marenia (eurozone): prijsindex 100,0 naar 104,5 (inflatie 4,5%), rente op spaargeld 2,5% (reële rente −2,0%); werklozen 224.000 van 6.400.000 (3,5%). Maren Machines (exporteur). Econoom die waarschuwt voor deflatie. ECB-renteverhoging.
+II. Marenia 2025: bbp 480, schuld 280, saldo −20, schuld eind 300, quote 62,5%. Fenna: belastbaar inkomen € 50.000, schijven 30% tot € 40.000 en 50% daarboven, heffingskorting € 2.500, belasting € 14.500, gemiddeld 29,0%. Vermogensmarkt: vraag naar rechts.
+III. Veer Maren naar Zandplaat: vraag P = 60 − 0,1Q, MO = 60 − 0,2Q, MK = 12 + 0,1Q, Q = 160, P = € 44. Tarief € 36 naar € 40, omzet € 8.640 naar € 8.000, E = −1,50. Heffing € 6: MK' = 18 + 0,1Q, Q = 140, P = € 46. Inkomenselasticiteit 1,5 (luxe).
+IV. Stichting Kustloop: € 45.000 verzonken kosten, nog € 20.000 kosten tegen € 12.000 opbrengst. Standaardoptie: automatische inschrijving.
+Versie B
+V. Dalmark: prijsindex 100,0 naar 101,2 (1,2%), rente 2,2% (reële rente +1,0%); werklozen 288.000 van 4.800.000 (6,0%). Dal Meubel. Eurozone gemiddeld 1,8% (ECB verlaagt).
+VI. Vaarland 2025 (hoogconjunctuur): bbp 500, schuld 330, saldo +10, schuld eind 320, quote 64,0%. Sven: belastbaar inkomen € 60.000, 20% tot € 30.000 en 45% daarboven, heffingskorting € 1.500, belasting € 18.000, gemiddeld 30,0%. Vermogensmarkt: vraag naar links.
+VII. Kruinbergliften in Kruinberg: vraag P = 50 − 0,1Q, MO = 50 − 0,2Q, MK = 5 + 0,1Q, Q = 150, P = € 35. Prijs € 36 naar € 32, omzet € 5.040 naar € 5.760, E = −2,57. Maximumprijs € 30: Q = 200. Inkomenselasticiteit 0,6 (noodzakelijk).
+VIII. Mila en sportschool Fitwerk: jaarabonnement € 360 (verzonken kosten), automatische verlenging.
+
+[DEEL 6: OPEN PUNTEN]
+1. Koopkracht en reële groei via de index zijn in AT5.21 niet getoetst (reële rente wel). Neem ze in een volgende toets mee.
+2. De 3%-norm die in een recessie procyclisch werkt is niet getoetst. Dit is op het CE een veelvoorkomend onderdeel.
+3. De maximumprijs bij een monopolist (versie B, vraag 15) is voor 2 punten mogelijk zwaar; vraag de docent na de afname of de normering iets moet worden aangepast.

@@ -1,0 +1,82 @@
+OEFENTOOL
+Oefenmateriaal per leerling, groep, klas of toets, gemaakt uit je eigen lesmateriaal en oude examens,
+op de leerdoelen die je leerlingen volgens de Toetsevaluatie nog niet beheersen.
+
+STARTEN
+Dubbelklik op "Start Oefentool.command". De eerste keer installeert hij wat nodig is (een minuut).
+De API-sleutel is dezelfde als die van de Toetsevaluatie (uit je sleutelhanger).
+De app opent op http://127.0.0.1:5056. Laat het Terminal-venster open. Stoppen: Ctrl+C.
+Vraagt macOS of Terminal bij Documenten of Google Drive mag? Kies Sta toe.
+
+EENMALIG: BIBLIOTHEEK
+1. Bibliotheek > Bronnen zoeken. Standaard je map "NotebookLM Onderwijs" in Google Drive, plus de map
+   Bronnen hier (sleep daar bijv. Cumulus-paragrafen en PowerPoints in via de pagina).
+2. Vink mappen aan en laat Claude ze lezen. Een examen wordt samen met zijn correctievoorschrift gelezen;
+   omzettingstabellen, bijlagen en Google Docs-snelkoppelingen worden overgeslagen.
+3. In Google Drive verschijnt de map Oefentool_Bibliotheek: per vak > thema (concept) > leerdoel een overzicht
+   met lesmateriaal, examenvragen en goedgekeurde oefenopgaven, en een INDEX met de eindtermen.
+   Er staan daar nooit leerlingnummers of resultaten in.
+
+EEN OPDRACHT IN DRIE RONDES
+Ronde 1  Plan: kies toetsen, voor wie (leerling, groep, klas, toets of examentraining) en de vorm
+         (papier en/of digitaal, oefentoets per groep). Claude stelt per leerdoel een plan op.
+         Pas aantallen aan, laat leerdoelen weg of geef commentaar voor een nieuw plan.
+Ronde 2  Opgaven: Claude maakt nieuwe opgaven in examenstijl, de app rekent elke berekening na en een
+         tweede Claude-beurt beoordeelt streng (cijfer in de kantlijn). Wat niet goed is, wordt herzien.
+         Jij keurt goed, laat aanpassen, bewerkt zelf of keurt af (met reden).
+Ronde 3  Klaarzetten: Word-bestanden in je toetsstijl (opgaven + uitwerkingen), oefenpagina's (HTML,
+         werken zonder internet, delen via Teams/Magister) en per groep een oefentoets met
+         correctievoorschrift en leerdoelcodes. Namen staan alleen in de printversie in de app.
+
+DE LEERLOOP
+1. Leerlingen maken de oefentoets. Scan per groep.
+2. Toetsevaluatie > Soort: Oefentoets, toetscode zoals OEF1A, upload scan + het correctievoorschrift
+   uit de map oefenexamen. De leerdoelcodes worden direct overgenomen; de uitslag telt als meting 'oefen'.
+3. Oefentool > opdracht > Leerloop: nieuwe stand per leerling. "Resultaten ophalen" zet P en Rit bij
+   de opgaven in de itembank. "Ronde 2 starten" maakt een vervolg voor wie nog niet alles beheerst.
+
+DASHBOARD (bovenaan in het menu)
+- Kies vak en klas: aandeel beheerste leerdoelen, groei van de klas na elke toets, de vijf zwakste leerdoelen
+  (met een knop om er direct oefenmateriaal voor te maken), signalen (teruggevallen, veel nog niet,
+  oefentoets niet gemaakt, geen resultaatcode), totaaltabel leerling x leerdoel, eindtermen en
+  'Werkt het oefenen?' (score voor de opdracht tegenover de oefentoets).
+- Klik op een leerling voor zijn profiel: alle metingen per leerdoel, groei, waar de punten verloren gaan,
+  wat hij geoefend heeft. De printversie (met naam) is handig voor een mentorgesprek.
+- Onderhoud: leerdoelen die al vier weken beheerst zijn krijgen met een klik een korte herhaalset.
+
+FIGUREN IN OPGAVEN
+Claude kan bij een opgave een figuur maken: marktschets (met heffing), break-even, Lorenzcurve, kringloop,
+spelboom of eigen lijnen. Zwart-wit en bij rekenvragen zonder getallen op de assen, net als in je toetsen.
+
+KOSTEN
+- Alles gaat via je Claude-abonnement (Claude Code, dezelfde login als Toetsconstructie): opgaven maken,
+  herzien, plannen, zelfkritiek en de bibliotheek lezen. Geen API-tegoed, wel binnen de limieten van je abonnement.
+- Is de limiet op (of ben je niet ingelogd), dan stopt de oefentool. Wat klaar was, blijft bewaard. Op de
+  opdrachtpagina kies je dan: "Opnieuw via abonnement" (later, als de limiet weer vrij is) of "Nu verder met
+  API-tegoed" met een schatting van de kosten. Zonder die klik wordt er nooit tegoed gebruikt; de toestemming
+  geldt alleen voor die ene stap.
+- De bibliotheek lezen stopt bij een volle limiet ook netjes: de rest blijft 'nieuw' en lees je later.
+- Instellen bij Kwaliteit > Kosten ('Altijd API-tegoed' kan ook, maar staat standaard uit).
+- Goedgekeurde opgaven uit de itembank worden eerst hergebruikt; alleen wat ontbreekt wordt nieuw gemaakt.
+- Kosten hangen af van het aantal leerdoelen, niet van het aantal leerlingen.
+
+BIBLIOTHEEK GOEDKOPER INLEZEN
+Via het abonnement kost lezen niets. Wil je toch met API-tegoed lezen (bijvoorbeeld omdat je limiet op is), vink
+dan 'Via batch met API-tegoed' aan: halve prijs, klaar binnen een uur tot een dag. Laat de oefentool aan staan
+of start hem later opnieuw; de uitkomsten worden vanzelf opgehaald.
+
+ZELFLEREND
+- Kwaliteit: regels uit jouw afkeuringen (meteen actief) en voorstellen uit de zelfkritiek (zet je aan).
+  Actieve regels gaan mee bij elke nieuwe opdracht. De leercurve laat zien of de kwaliteit stijgt.
+- Itembank: goedgekeurde opgaven met goede resultaten worden als voorbeeld meegegeven en hergebruikt.
+- De richtlijnen, rekenregels en leerregels uit Toetsconstructie/kennisbank gaan altijd mee.
+
+MAPPEN
+oefentool/         het programma          Opdrachten/   per opdracht plan, sets en bestanden (lokaal)
+bouw/              Word-bouwmotor         Bronnen/      je eigen toegevoegde bestanden
+oefentool.db       bibliotheek en itembank (zonder leerlingnummers)
+kwaliteitsregels.json   wat de oefentool heeft geleerd
+
+PRIVACY
+Naar Claude gaan alleen leerdoelen, aantallen en anonieme foutomschrijvingen; nooit namen of
+leerlingnummers. Leerlingdata blijven op deze Mac.

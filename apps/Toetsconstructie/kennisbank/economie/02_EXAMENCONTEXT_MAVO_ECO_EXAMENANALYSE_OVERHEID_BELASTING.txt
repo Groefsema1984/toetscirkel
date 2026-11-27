@@ -1,0 +1,25 @@
+CHANGELOG
+26 oktober 2026, eerste versie (na schoolexamen AT4.21 economie 4 mavo)
+
+BRONBESTAND: 02_EXAMENCONTEXT_MAVO_ECO_EXAMENANALYSE_OVERHEID_BELASTING
+FUNCTIE: wat de mavo-examens 2018 tot en met 2026 vragen over overheid en belasting, en welke casussen in eigen toetsen al zijn gebruikt.
+
+[DEEL 1: OMVANG VAN HET CE]
+* Het CE vmbo-gt/tl heeft 54 tot 57 punten en 41 tot 45 vragen in 120 minuten.
+* Leeslast (woorden met letters, opgaven plus bijlage): 2024-I 3.813, 2024-II 3.412, 2025-I 3.485, 2025-II 3.213, 2026-I 2.980, 2026-II 2.831. Dat is 51 tot 67 woorden per punt.
+* Vraagvormen: meerkeuze, invulvragen met drie keuzes (2 punten: drie goed is 2, twee goed is 1), bereken (1 of 2 punten), leg uit, beredeneer.
+
+[DEEL 2: WAAR KOMEN DE ONDERWERPEN VOOR (vraagnummers nagezocht)]
+* Collectieve sector: 2025-II vr. 11. Gemeentelijke belasting: 2025-I vr. 9. Gemeentebegroting: 2026-II vr. 19 tot en met 23 (rijksbijdrage per inwoner vr. 20, tekort vr. 22).
+* CPB: 2025-II vr. 44. Recessie: 2019-II vr. 35. Accijns en gedrag: 2026-II vr. 36 en 37.
+* Volks- en werknemersverzekeringen: 2022-I vr. 19 en 20, 2024-II vr. 22 en 23. Bijstand: 2022-I vr. 20, 2024-II vr. 21. Vergrijzing en actieven: 2022-I vr. 43, 2024-II vr. 26.
+* Loonheffing: 2023-II vr. 12, 2019-II vr. 23. Belastbaar inkomen en aftrekposten: 2026-II vr. 12, 2023-II vr. 14. Progressief tarief: 2022-II vr. 18, 2019-II vr. 22. Box 3: 2021-I vr. 35 en 36. Heffingskorting: 2025-II vr. 16, 2023-II vr. 14.
+* Motorrijtuigenbelasting: 2026-I vr. 11, 2026-II vr. 18. Draagkracht en profijt: 2021-I vr. 37. Nivelleren: 2021-I vr. 37, 2025-I vr. 39.
+* Niet gevonden als vraag: solidariteitsbeginsel, sociaal minimum, ontduiking en ontwijking, bbp-groei in procenten.
+
+[DEEL 3: NIET OPNIEUW GEBRUIKEN (casussen in eigen toetsen)]
+* AT4.21 versie A: gemeente Egmond aan Zee en strandrace; skidorp Dalstein in Hoogland; Lotte (diëtist, Hyrox); Jan en Femke; Noor; Piet; Jans benzineauto; Annelies en Bram.
+* AT4.21 versie B: gemeente Bergvoort en Duinloop; skidorp Sonnental in Zuidermark; Mila; Daan en Sanne; Joost; Hans; Daans dieselauto; Carla en Dirk.
+
+[DEEL 4: OPEN PUNTEN]
+* Het syllabus (EC/V/1) vraagt geen berekeningen met het schijventarief en geen berekeningen bij nivelleren. De docent oefent het wel en toetst het.
