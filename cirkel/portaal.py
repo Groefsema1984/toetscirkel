@@ -47,6 +47,18 @@ def _kernblok(kern: dict) -> str:
         regels.append(f'<div><a href="/itembank">Itembank</a>: {per.get("construeren", 0)} gebouwde vragen, '
                       f'{per.get("evalueren", 0)} afgenomen toetsvragen, {per.get("oefenen", 0)} oefenopgaven; '
                       f'{ib.get("koppelingen", 0)} toetsen gekoppeld aan hun evaluatie.</div>')
+    c = kern.get("codes") or {}
+    if c.get("vragen"):
+        regels.append(f'<div>Leerdoelcodes uit het nakijken overgenomen: {c["vragen"]} vragen in {c["projecten"]} matrijzen.</div>')
+    cc = kern.get("codes_claude") or {}
+    if cc.get("bezig"):
+        regels.append(f'<div>Claude koppelt bestaande matrijzen aan het leerdoelenregister'
+                      f'{": " + escape(cc["nu"]) if cc.get("nu") else ""} … (ververs deze pagina straks)</div>')
+    elif cc.get("fout"):
+        regels.append(f'<div class="status fout">● Codes koppelen met Claude gestopt: {escape(cc["fout"])}</div>')
+    elif cc:
+        regels.append(f'<div>Claude vulde {cc.get("vragen", 0)} leerdoelcodes in; '
+                      f'<a href="/codes">{cc.get("twijfel", 0)} twijfelgevallen</a> om zelf te kiezen.</div>')
     if kern.get("itembank_fout"):
         regels.append(f'<div class="status fout">● Itembank: {escape(kern["itembank_fout"])[:300]}</div>')
     return f'<div class="kern">{"".join(regels)}</div>' if regels else ""
@@ -79,6 +91,25 @@ def maak_portaal(status: dict, kern: dict | None = None) -> Flask:
     @app.get("/api/toetscirkel")
     def toetscirkel_status():
         return jsonify(app="ToetsCirkel", onderdelen=status, kern=kern)
+
+    @app.get("/codes")
+    def codes_pagina():
+        from .kern import codes
+        try:
+            rijen, fout = codes.twijfelgevallen(), ""
+        except Exception as e:  # noqa: BLE001
+            rijen, fout = [], str(e)
+        regels = "".join(
+            f"<tr><td>{escape(str(r['project']))}</td><td>{r['nr']}</td><td>{escape(str(r['leerdoel'] or ''))}</td>"
+            f"<td><b>{escape(str(r['voorstel'] or '–'))}</b></td><td>{escape(str(r['zekerheid'] or ''))}</td>"
+            f"<td>{escape(str(r['toelichting'] or ''))}</td></tr>" for r in rijen)
+        return (f'<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                f'<title>Twijfelgevallen</title><style>{STIJL}{TABEL}</style></head><body>{menubalk("")}<main>'
+                f'<h1>Twijfelgevallen leerdoelcodes</h1><p class="sub">Hier was Claude niet zeker genoeg. Kies de code zelf in '
+                f'Construeren › Toetsmatrijs (kolom Code), of laat hem leeg: bij het nakijken koppelt Evalueren alsnog.</p>'
+                + (f'<pre>{escape(fout)}</pre>' if fout else "")
+                + f'<div class="schuif"><table><tr><th>Toets</th><th>Vraag</th><th>Leerdoel</th><th>Voorstel</th><th>Zekerheid</th>'
+                  f'<th>Toelichting</th></tr>{regels or "<tr><td colspan=6>Geen twijfelgevallen.</td></tr>"}</table></div></main></body></html>')
 
     @app.get("/itembank")
     def itembank_pagina():
