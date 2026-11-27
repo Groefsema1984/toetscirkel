@@ -27,6 +27,11 @@ De losse startbestanden van de drie apps werken nog, maar zijn niet meer nodig.
   las die regel al voor oefentoetsen; nu werkt het ook voor gebouwde toetsen. Codes die niet in het register staan,
   worden genegeerd; die vragen koppelt de evaluatie zoals vroeger.
 - De vragenbank bewaart de code per vraag, dus de itembank kent hem ook vóór de afname.
+- **Bestaande matrijzen** krijgen bij het starten hun codes aangevuld (`cirkel/kern/codes.py`): eerst uit het
+  nakijken (alleen koppelingen die 'bevestigd' of 'auto' zijn), daarna legt Claude (abonnement) de rest naast het
+  register. Alleen zekerheid 'hoog' wordt ingevuld; de twijfelgevallen staan op `/codes`. Een bestaande code blijft
+  staan, elke wijziging krijgt een kopie in `versies/` met `_toetscirkel_` in de naam. Uitzetten:
+  `TOETSCIRKEL_GEEN_CLAUDE=1`.
 
 ## Fase 2a (één database, één itembank)
 
@@ -74,6 +79,7 @@ tests/
   test_fase1.py       de drie apps samen op één adres
   test_fase2.py       één database, itembank, gouden toets blijft gelijk
   test_fase2b.py      leerdoelcode van register via matrijs en correctievoorschrift naar de evaluatie
+  test_codes.py       codes aanvullen in bestaande matrijzen (nakijken en Claude, nep-Claude)
 docs/
   AFSPRAKEN.md        wat wel/niet in Git, privacy, toetscode, werkwijze
 ```

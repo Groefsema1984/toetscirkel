@@ -94,6 +94,46 @@ def _werk_itembank_bij() -> dict:
         return {"itembank": {}, "itembank_fout": str(fout)}
 
 
+def _vul_codes_aan() -> dict:
+    """Leerdoelcodes uit het nakijken overnemen in bestaande matrijzen (zeker, zonder AI)."""
+    from .kern import codes
+    try:
+        uit = codes.vul_aan()
+        if uit["vragen"]:
+            log.info("Leerdoelcodes uit het nakijken overgenomen: %s vragen in %s matrijzen", uit["vragen"], uit["projecten"])
+        return {"codes": uit}
+    except Exception as fout:  # noqa: BLE001
+        log.error("Codes aanvullen uit het nakijken mislukt: %s", fout)
+        return {"codes": {"fout": str(fout)}}
+
+
+def _start_codes_met_claude(kern: dict) -> None:
+    """Op de achtergrond: Claude legt matrijzen zonder codes naast het register (via het abonnement van de
+    Toetsevaluatie; API-tegoed alleen met toestemming, anders stopt het netjes)."""
+    import threading
+
+    from .kern import codes
+    abonnement = sys.modules.get("abonnement")
+    if abonnement is None:
+        return
+    staat = kern["codes_claude"] = {"bezig": True, "nu": "", "fout": ""}
+
+    def werk():
+        try:
+            uit = codes.koppel_met_claude(lambda s, i, sc, m: abonnement.vraag_json(None, s, i, sc, m),
+                                          voortgang=lambda naam: staat.update(nu=naam))
+            staat.update(uit)
+            log.info("Claude koppelde %s vragen in %s matrijzen; %s twijfelgevallen", uit["vragen"], uit["projecten"],
+                     uit["twijfel"])
+        except Exception as fout:  # noqa: BLE001  (bijv. abonnement op en geen toestemming voor API-tegoed)
+            staat["fout"] = str(fout)[:300]
+            log.warning("Codes koppelen met Claude gestopt: %s", fout)
+        finally:
+            staat.update(bezig=False, nu="")
+
+    threading.Thread(target=werk, name="codes-claude", daemon=True).start()
+
+
 def bereid_kern_voor() -> dict:
     """Fase 2: Oefentool-tabellen eenmalig naar de centrale database (met back-up vooraf). Moet vóór het laden van de
     Oefentool gebeuren, want die kiest bij het laden welke database hij gebruikt."""
@@ -126,6 +166,9 @@ def maak_app():
             apps[basis] = app
     if kern.get("itembank") is None:                # pas na het laden van evalueren bestaan alle kolommen
         kern.update(_werk_itembank_bij())
+    kern.update(_vul_codes_aan())
+    if status.get("/evalueren", {}).get("ok") and os.environ.get("TOETSCIRKEL_GEEN_CLAUDE") != "1":
+        _start_codes_met_claude(kern)
     portaal = maak_portaal(status, kern)
     return DispatcherMiddleware(portaal, apps), status
 
