@@ -1,0 +1,34 @@
+CHANGELOG
+10 november 2026, eerste versie (na schoolexamen AT5.21 economie havo 5, versie A en B)
+* Nieuw bestand. Bevat de analyse van het CE economie havo 2024 tot en met 2026 zoals de docent die gaf, de meting van de leeslast van de havo-examens 2023 tot en met 2026 en de casussen van AT5.21.
+
+BRONBESTAND: 02_EXAMENCONTEXT_HAVO_ECO_EXAMENANALYSE_DOMEIN_I_CONJUNCTUUR_EN_MARKT
+FUNCTIE: stijlanker voor havo-schoolexamens over conjunctuur en beleid, vraag en aanbod met markt en overheid, en gedragseconomie.
+ZOEKTERMEN: conjunctuur, inflatie, deflatie, centrale bank, rente, begrotingssaldo, staatsschuld, automatische stabilisator, anticyclisch, vermogensmarkt, gemiddeld tarief, marktvorm, prijselasticiteit, MO = MK, externe effecten, heffing, verzonken kosten.
+
+[DEEL 1: WAT HET CE VRAAGT] (analyse CE economie havo 2024 tot en met 2026, 6 examens, 341 punten; door de docent aangeleverd, niet opnieuw nagelopen)
+1. Conjunctuur en beleid ongeveer 29% van de punten, daarnaast ongeveer 7% belastingen en herverdeling. Vaakst: ECB-rente tegen inflatie (4 van de 6 examens), deflatie die een laagconjunctuur versterkt, reële grootheden berekenen, anticyclisch beleid met de 3%-norm, saldo, schuld en schuldquote, automatische stabilisatoren, hogere staatsschuld met hogere rente (ook als schets), inflatie en concurrentiepositie, tekort als uitgestelde belastingheffing, gemiddeld tarief in schijven.
+2. Vraag en aanbod ongeveer 21%: elk examen een invulredenering (marktvorm, homogeen of heterogeen, substitutie of complementair), prijselasticiteit met omzet, surplus, MO = MK, evenwichtsprijs, inkomenselasticiteit, prijsdiscriminatie, kartel en ACM.
+3. Markt en overheid ongeveer 10%: externe effecten, heffing, minimum- en maximumprijs, collectief goed.
+4. Gedragseconomie: weinig punten (verzonken kosten in 2025 en 2026, sociale normen).
+5. Vraagsoorten: ongeveer de helft uitleg, een kwart rekenen, de rest invulredeneringen en grafiekvragen.
+
+[DEEL 2: LEESLAST VAN HET CE] (gemeten aan de opgaventeksten van havo 2023 tot en met 2026, acht tijdvakken, woorden met minimaal twee letters vanaf Opgave 1, inclusief paginakoppen)
+1. Woorden per punt in de opgaven: gemiddeld 34 (laagste 28, hoogste 41). Bijlage: 141 tot 402 woorden per examen (tekst in tabellen en figuren is slecht uit de pdf te halen).
+2. Met bijlage ongeveer 39 woorden per punt, zwaarste examen (2023) ongeveer 48.
+3. AT5.21: 35 woorden per punt in de opgaven en ongeveer 51 met bijlage. De bijlage is zwaarder dan in het CE omdat de bronnen meer lopende tekst hebben.
+4. Wat de docent wil: leeslast gelijk aan het CE, uitgebreid met inhoud, niet met losse woorden (docent, 10 november 2026).
+
+[DEEL 3: GELEZEN VRAGEN]
+1. 2025 tijdvak 1, opgave 1 en het begin van opgave 2: een CE-opgave begint met een korte context, een bron en vragen van 1 tot 3 punten (minimumloon en koopkracht, twee voorbeelden van anticyclisch beleid, rente van de centrale bank bij te lage inflatie, een invulvraag over marktvorm, homogeen of heterogeen en substitutie of complementair).
+2. De correctievoorschriften zijn niet vraag voor vraag gelezen. Een koppeling met vraagnummers is daarom in de matrijs van AT5.21 een streepje.
+
+[DEEL 4: TOETS AT5.21 ECONOMIE HAVO 5]
+1. Opzet: 32 punten in 17 vragen in vier opgaven (10, 9, 10, 3). Een monopolie met MO = MK en een uitwerkbijlage met twee schetsen zijn vast onderdeel (docent).
+2. Casussen van AT5.21 (niet opnieuw gebruiken): Marenia, Maren Machines, Fenna, Zandplaat, Veer Maren, Stichting Kustloop; Dalmark, Dal Meubel, Vaarland, Sven, Kruinberg, Kruinbergliften, Mila, sportschool Fitwerk. Getallen: zie 03_REKENREGELS_HAVO_DOMEIN_I_CONJUNCTUUR_EN_MARKT, DEEL 5.
+3. Echte gegevens in de bijlage: het inflatiedoel van de ECB van 2% (ECB-persbericht van 8 juli 2021) en de EU-normen van 3% en 60% (Raad van de EU, Excessive deficit procedure). Beide geraadpleegd op 10 november 2026.
+
+[DEEL 5: OPEN PUNTEN]
+1. De opmaak van de Word-bestanden van AT5.21 is niet gerenderd bekeken (omzetting met Word bleef hangen). Controleer de pagina-einden en de uitwerkbijlage in Word.
+2. Lees bij een volgende toets de correctievoorschriften van de CE-vragen over conjunctuur en leg de vraagnummers vast.
+3. Een meting van de bijlage van het CE met figuren en tabellen ontbreekt; de leeslast van de bijlage is een schatting.

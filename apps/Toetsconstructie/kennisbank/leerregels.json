@@ -1,0 +1,292 @@
+[
+ {
+  "datum": "2026-10-11",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Kruislingse elasticiteit is alleen vwo-stof (label V). Prijselasticiteit en inkomenselasticiteit zijn havo en vwo (label H+V).",
+  "aanleiding": "Docent bij de labels van toets T2 (4 vwo, consumentengedrag).",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-11",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Is de lesstof van de docent aangeleverd, dan is die leidend voor de afbakening. Examenvragen zijn alleen inspiratie.",
+  "aanleiding": "Docent bij het aanleveren van lesbestand domein D hoofdstuk 2.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-11",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Een toets in de toetsweek heeft als weging de zin \"Deze toets telt 3 keer mee.\" en geen percentage, tenzij de docent een percentage noemt.",
+  "aanleiding": "Docent bij de weging van toets T2.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Mavo",
+  "regel": "Bij een mavo-schoolexamen is de leeslast gelijk aan die van het centraal examen, ook als dat boven de norm van de richtlijnen ligt. Ook het aantal vragen en de verdeling van de vraagvormen volgen het CE.",
+  "aanleiding": "Docent bij de matrijs van AT4.21 (4 mavo): 'de woordenlast moet net zoveel zijn als in het eindexamen'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Mavo",
+  "regel": "Rekenen met het schijventarief (drie schijven), box 3 en nivelleren blijft in de toets, ook al vraagt het syllabus EC/V/1 dit niet, omdat de docent het heeft geoefend. De getallen blijven eenvoudig.",
+  "aanleiding": "Docent bij de open vraag over het schijventarief in AT4.21.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Mavo",
+  "regel": "Stof die de docent heeft behandeld maar die niet in het syllabus staat (economische stelsels, bbp, recessie) mag in de toets. De eindterm is dan 'lesstof docent'.",
+  "aanleiding": "Docent bij vragen 6, 8 en 9 van AT4.21.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Mavo",
+  "regel": "De belastingstof bij mavo hoort bij EC/K/6 én bij EC/V/1 (verrijkingsstof). Vermeld bij de eindtermen beide.",
+  "aanleiding": "Docent miste de eindtermen van de verrijkingsstof in de matrijs van AT4.21.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Mavo",
+  "regel": "Hoofdstuk 7 uit het 3e klas boek is voor mavo 4 een herhaling met veel overlap met hoofdstuk 5 en krijgt ongeveer 10% van de punten. Thema's van de docent komen terug in de casussen: skiën, wielrennen, Hyrox, strandrace Egmond aan Zee, hardlopen en voeding.",
+  "aanleiding": "Docent bij de intake van AT4.21.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Een invulvraag in CE-vorm mag op havo niet te makkelijk zijn: laat de leerling met gegeven getallen een kleine berekening maken en geef drie keuzes per open plek.",
+  "aanleiding": "Docent bij T2 4 havo: 'de invul bij opgave 1 is wel erg makkelijk'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Een toets mag iets moeilijker zijn dan eerst voorgesteld; de docent kan achteraf de N-term aanpassen. Bij elasticiteitsvragen geeft de bron de omzet in plaats van de afzet.",
+  "aanleiding": "Docent bij T2 4 havo: 'iets moeilijker'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Elasticiteiten krijgen op havo het grootste gewicht in een toets, omdat ze op het eindexamen altijd terugkomen (T2: 8 van 18 punten).",
+  "aanleiding": "Docent bij de intake van T2 4 havo: verdeling 5 / 5 / 8.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Consumentensurplus en inkomenselasticiteit worden op havo rekenkundig getoetst als ze in de les zijn gerekend, ook al noemt het syllabus ze 'niet rekenkundig'. Welvaart betekent bij dit hoofdstuk alleen de welvaart van de consument; producentensurplus komt later.",
+  "aanleiding": "Docent bij de matrijs van T2 4 havo.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Voor inkomenselasticiteit kleiner dan 0 gebruikt de docent altijd de term 'inferieur'.",
+  "aanleiding": "Docent bij de intake van T2 4 havo.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "De weging van een toets in de toetsweek staat als zin op het voorblad: 'Deze toets telt 2 keer mee.'",
+  "aanleiding": "Docent bij de intake van T2 4 havo.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "De weging van een tweefasen-toets in de toetsweek is dezelfde zin als bij havo: 'Deze toets telt 2 keer mee.' Dit vervangt de zin met 3 keer van 11 oktober voor T2 4 vwo.",
+  "aanleiding": "Docent bij de intake van T2 4 vwo (tweede opzet): 'deze toets telt twee keer mee net zoals bij de havo'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Een vwo-toets op hetzelfde hoofdstuk als de havo-toets heeft dezelfde onderdelen en duur, met kruislingse elasticiteit erbij (berekenen en bepalen of het om substituten of complementen gaat). De collectieve vraaglijn en de wet van Engel zijn behandeld maar niet belangrijk genoeg voor de toets.",
+  "aanleiding": "Docent bij de intake van T2 4 vwo.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Een vwo-toets is iets moeilijker dan de havo-versie: meer analyseren, meer casus en bronnen met meer producten.",
+  "aanleiding": "Docent bij de intake van T2 4 vwo: 'iets meer op het analyseren' en 'iets meer casus'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-10-26",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Controleer of een figuur echt in het Word-bestand staat en geef afbeeldingen in de bijlage elk een eigen intern nummer. De docent meldde een ontbrekende vraaglijn (bron 3, versie A) die in het bestand wel aanwezig was.",
+  "aanleiding": "Docent bij de gebouwde toets T2 4 vwo: 'bron 3 mist'. Na aanpassing van de nummering: 'het klopt nu'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Bedrijfseconomie",
+  "niveau": "Havo",
+  "regel": "Bij bedrijfseconomie havo volgen de begrippen de methode (Cumulus) als er geen afwijkende uitleg van de docent is.",
+  "aanleiding": "Docent bij de intake van AT5.22: 'Ga uit van de methode'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Bedrijfseconomie",
+  "niveau": "Havo",
+  "regel": "Een bedrijfseconomie-schoolexamen over de nv (AT5.22) heeft weging 15% en wordt in twee versies (A en B) op dezelfde matrijs gebouwd, elk met een eigen correctievoorschrift.",
+  "aanleiding": "Docent bij de goedgekeurde matrijs van AT5.22: 'ik wil dus twee versies'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Bedrijfseconomie",
+  "niveau": "Havo",
+  "regel": "Is de datum van afname nog niet bekend (bijvoorbeeld 'januari'), dan staat er een zichtbare plaatshouder op het voorblad.",
+  "aanleiding": "Docent bij de intake van AT5.22: 'Datum is januari'.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Bij economie havo is de reële rente gelijk aan de nominale rente min de inflatie, zoals de docent het aanleert. Reële groei en koopkracht lopen via de indexmethode (nominaal : prijzen × 100 − 100).",
+  "aanleiding": "Docent bij de intake van AT5.21 (reële rente: de methode zoals aangeleerd).",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Een schoolexamen vraag en aanbod bevat een monopolie met MO = MK, afgelezen uit een grafiek in een bron. De kans dat dit op het eindexamen komt is het grootst.",
+  "aanleiding": "Docent bij de intake van AT5.21 (opgave 3).",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "De leeslast van een havo-schoolexamen economie is ongeveer gelijk aan die van het centraal examen. Verhoog haar door de context in de opgaven inhoudelijk uit te breiden, niet door woorden toe te voegen, zodat leerlingen worden getraind op de leeslast van het examen.",
+  "aanleiding": "Docent bij het opgeleverde AT5.21 (verzoek om de leeslast te verhogen).",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Fictieve cijfers in een belastingberekening zijn ronde getallen en hoeven niet echt te zijn. Bedrijven en landen zijn verzonnen.",
+  "aanleiding": "Docent bij de intake van AT5.21.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-10",
+  "vak": "Economie",
+  "niveau": "Havo",
+  "regel": "Een schoolexamen met twee versies krijgt per versie een eigen correctievoorschrift. Versie B draait de richting om (deflatie of lage inflatie, overschot, maximumprijs).",
+  "aanleiding": "Docent bij de intake van AT5.21.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-11",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Het evenwichtsinkomen berekenen uit EV = a + bY komt niet voor in het eindexamen; de multiplier bepalen (uit de helling van de effectieve vraag) en daarmee een inkomensverandering berekenen wel (2023-I vraag 20).",
+  "aanleiding": "Docent bij de matrijs van AT6.22: 'Het berekenen van evenwichtsinkomens heb ik nog nooit gezien in de eindexamens. Wel het bepalen van de multiplier.'",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-11",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Elke vraag in een schoolexamen moet in een eindexamen zijn gesteld, in een andere vorm of als onderwerp. Past een gewenst onderdeel daar niet bij, pas dan de vraag aan en behoud de lading. Niet oefenen wat toch niet terugkomt (zo vervielen geldschepping, de reële rente met de vwo-formule en het tekenen van de productiefunctie als vraag).",
+  "aanleiding": "Docent bij de matrijs van AT6.22: 'het heeft geen zin om dingen te oefenen die toch niet terugkomen.'",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ },
+ {
+  "datum": "2026-11-11",
+  "vak": "Economie",
+  "niveau": "Vwo",
+  "regel": "Het voorblad van AT6.22 noemt de weging als: Deze toets telt mee voor 15% van het schoolexamencijfer. De datum 'januari' is een plaatshouder.",
+  "aanleiding": "Docent akkoord op het voorstel in de intake van AT6.22.",
+  "status": "bevestigd",
+  "bron": "docent",
+  "onderwerp": ""
+ }
+]

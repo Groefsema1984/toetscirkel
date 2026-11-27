@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block titel %}{{ titel }} - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<h1>{{ titel }}</h1>
+<p class="intro">{{ tekst }}</p>
+<p><a class="knop hoofd" href="{{ url_for('index') }}">Nieuwe toets uploaden</a></p>
+{% endblock %}

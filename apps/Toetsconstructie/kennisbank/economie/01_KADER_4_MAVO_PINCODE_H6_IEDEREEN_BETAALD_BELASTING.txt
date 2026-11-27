@@ -1,0 +1,72 @@
+### Samenvatting Hoofdstuk 6: Iedereen betaalt belasting
+
+
+**Weet je het nog? (Begrippen)**
+*   **Primaire inkomens:** Inkomen dat je zelf verdient.
+    *   *Uit arbeid:* loon of salaris.
+    *   *Uit bezit:* huuropbrengst, rente, spaargeld en dividend.
+*   **Secundaire inkomens:** Je netto-inkomen en inkomens uit overdrachten. Hieronder vallen uitkeringen en toeslagen.
+*   **Sociaal stelsel & Toeslagen:**
+    *   *Volksverzekeringen:* gelden voor iedereen (bijv. AOW en de Algemene nabestaandenwet (Anw)).
+    *   *Werknemersverzekeringen:* gelden specifiek voor werknemers.
+    *   *Sociale voorzieningen* en toeslagen zoals huurtoeslag en zorgtoeslag.
+*   **Loon en heffingen:** Je brutoloon (voor belastingen), nettoloon (wat je op je rekening krijgt) en de loonheffing.
+
+
+**6.1 Je inkomen wordt belast**
+*   **Loonheffing:** Dit bedrag wordt direct op je loon ingehouden als een soort vooruitbetaling. Het bestaat uit twee onderdelen: *loonbelasting* en *premies volksverzekeringen*.
+*   **Inkomstenbelasting:** Eens per jaar doe je (tegenwoordig online) aangifte bij de Belastingdienst. Als blijkt dat de al betaalde loonheffing hoger is dan de inkomstenbelasting die je daadwerkelijk verschuldigd bent, krijg je geld terug. Heb je te weinig betaald, dan volgt er een naheffing en moet je bijbetalen.
+*   **Het Boxensysteem:** De inkomstenbelasting is verdeeld in drie boxen:
+    *   **Box 1 (Werk en Woning):** Belasting over inkomen uit werk (loon of nettowinst van een vof/eenmanszaak) en inkomsten uit een eigen woning.
+    *   **Box 2:** Voor aandeelhouders in een BV of NV (deze stof hoef je voor nu niet te kennen).
+    *   **Box 3 (Sparen en Beleggen):** Belasting over inkomen uit vermogen (zoals spaargeld of beleggingen).
+*   **Belastbaar inkomen (Box 1) berekenen:** 
+    *   *Formule:* Inkomsten uit werk + Eigen woningforfait – Aftrekposten = Belastbaar inkomen.
+    *   *Aftrekposten:* Kosten die je van je inkomen mag aftrekken waardoor je minder belasting betaalt. Voorbeelden zijn de hypotheekrente, giften aan goede doelen en reiskosten met het openbaar vervoer naar je werk.
+
+
+**6.2 Hoeveel belasting betaal je?**
+*   **Schijventarief (Box 1):** In Nederland bereken je de inkomstenbelasting in Box 1 via een stappenplan met belastingschijven. In het voorbeeld zijn er 3 schijven (met de percentages 35,8%, 37,5% en 49,5%). De "lengte" van een schijf bepaalt over welk deel van je inkomen je welk percentage betaalt.
+*   **Soorten belastingtarieven:**
+    *   *Progressief belastingtarief:* Hoe meer je verdient, hoe hoger het *percentage* belasting dat je betaalt (dit hebben we in Nederland).
+    *   *Degressief belastingtarief:* Het belastingpercentage daalt naarmate het inkomen stijgt.
+    *   *Proportioneel tarief (vlaktaks):* Iedereen betaalt procentueel gezien precies hetzelfde belastingtarief, ongeacht het inkomen.
+*   **Box 3 & Vermogensrendementsheffing:** Dit gaat over de belasting op je vermogen (spaargeld/beleggingen). 
+    *   *Heffingsvrij vermogen:* Over het eerste deel van je vermogen betaal je geen belasting.
+    *   *Fictief rendement:* Over het vermogen bóven de heffingsvrije grens berekent de Belastingdienst een geschatte opbrengst (fictief rendement). Over dat rendement betaal je vervolgens de uiteindelijke belasting.
+*   **Heffingskortingen:** Dit zijn kortingen die je aan het einde mag aftrekken van de totale belasting die je moet betalen (uit Box 1 en 3). 
+    *   Voorbeelden: de *algemene heffingskorting* (afhankelijk van de hoogte van je inkomen) en de *arbeidskorting* (voor werkenden).
+
+
+**6.3 Eerlijk zullen we alles delen**
+*   **Herverdeling van inkomens:** De overheid int geld via belastingen bij *actieven* (mensen met een betaalde baan) en herverdeelt dit naar *inactieven* (mensen zonder werk, zoals gepensioneerden, zieken of werklozen) via uitkeringen en toeslagen.
+*   **Vergrijzing & de AOW:** Omdat de bevolking ouder wordt (vergrijzing), stijgt het aantal inactieven ten opzichte van het aantal actieven. Dit legt druk op de betaalbaarheid van de AOW (Algemene Ouderdomswet), omdat een krimpende groep werkenden moet betalen voor een groeiende groep ouderen.
+*   **Nivellering en Denivellering:** Let op: dit gaat altijd over de verhouding in **procenten**!
+    *   *Nivellering:* De inkomensverschillen in procenten worden in verhouding *kleiner*. (Een progressief belastingsysteem zorgt bijvoorbeeld voor nivellering).
+    *   *Denivellering:* De inkomensverschillen in procenten worden in verhouding *groter*.
+*   **Rekenen met inkomensverschillen:** Je kunt nivellering/denivellering bewijzen door de procentuele inkomensstijging (of -daling) te berekenen, of door de verhouding tussen een hoog en een laag inkomen vóór belasting te vergelijken met de verhouding ná belasting.
+
+
+**6.4 Iedereen betaalt mee**
+*   **Draagkrachtbeginsel:** Mensen met een hoger inkomen of meer vermogen kunnen (en moeten volgens dit beginsel) meer belasting betalen, omdat ze dit beter kunnen dragen. Dit beginsel sluit aan bij de theorie van progressieve, degressieve en proportionele tarieven.
+*   **Profijtbeginsel:** Je betaalt belasting voor het gebruik (profijt) van een specifieke overheidsvoorziening.
+    *   *Voorbeeld:* Motorrijtuigenbelasting (wegenbelasting / houderschapsbelasting). Degene die een auto heeft en dus gebruikmaakt van de wegen, betaalt hiervoor.
+    *   *Aanschaf:* Bij aanschaf betaal je BPM (Belasting van Personenauto's en Motorrijwielen).
+    *   *Berekening:* De hoogte van deze belastingen hangt vaak af van factoren zoals het gewicht van de auto, het type brandstof (bijv. benzine) en de CO2-uitstoot.
+*   **Belastingontduiking (fraude):** Het opzettelijk niet of te weinig betalen van belasting, wat bij de wet verboden is. Dit zorgt voor problemen, omdat er dan minder geld is voor overheidsvoorzieningen.
+
+
+**Begrippenlijst Hoofdstuk 6**
+*   **6.1:** Aftrekposten, belastbaar inkomen, eigenwoningforfait, inkomstenbelasting.
+*   **6.2:** Fictief rendement, heffingskorting, heffingsvrij vermogen, progressief belastingtarief, schijventarief, vermogen, vermogensrendementsheffing.
+*   **6.3:** Actieven, degressief, nivellering, inactieven, denivellering, vergrijzing.
+*   **6.4:** Belastingontduiking, draagkrachtbeginsel, motorrijtuigenbelasting, profijtbeginsel.
+
+
+**Rekenvaardigheden Hoofdstuk 6**
+*   Het belastbaar inkomen in Box 1 berekenen met de formule.
+*   Rekenen met het schijventarief.
+*   Vermogensrendementsheffing (Box 3) berekenen.
+*   De uiteindelijke inkomstenbelasting berekenen.
+*   Nivelleren (en denivelleren) in procenten en verhoudingen berekenen.
+*   De motorrijtuigenbelasting (aan de hand van tabellen) berekenen.

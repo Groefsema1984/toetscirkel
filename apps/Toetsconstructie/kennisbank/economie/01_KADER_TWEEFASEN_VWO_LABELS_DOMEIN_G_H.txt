@@ -1,0 +1,62 @@
+CHANGELOG
+8 oktober 2026, tweede versie
+* De docent is akkoord met de labels voor protectie (H+V) en wisselkoers (V). Secundair inkomen gecorrigeerd: belastingen en premies gaan eraf.
+8 oktober 2026, eerste versie (na schoolexamen AT5.11 economie 5 vwo, tweefasen)
+* Nieuw bestand. DEEL 1 en DEEL 3 zijn door de docent vastgesteld op 8 oktober 2026. DEEL 2 is door de AI opgesteld door de havo-syllabus 2027 en de vwo-syllabus 2026 naast elkaar te leggen. De docent heeft de labels in de toetsmatrijs van AT5.11 goedgekeurd.
+
+BRONBESTAND: 01_KADER_TWEEFASEN_VWO_LABELS_DOMEIN_G_H
+FUNCTIE: per onderwerp van domein G (Risico en informatie) en domein H (Welvaart en groei) het label voor het tweefasen-vwo: telt een vraag mee in het havo-cijfer en het vwo-cijfer (H+V), of alleen in het vwo-cijfer (V)?
+INTEGRATIE: gebruik samen met 00_toetsconstructie_richtlijnen (onderdeel Tweefasen-vwo), de mindmap Economische groei en de mindmap Risico en verzekeren.
+BRON VAN DE INHOUD: syllabus economie havo 2027 (domein G en H), syllabus economie vwo 2026 (domein G en H), uitleg van de docent.
+
+[DEEL 1: HET SYSTEEM] (vastgesteld door de docent)
+1. 5 havo en 5 vwo zitten in één klas. 5 vwo volgt het tweefasen-vwo: alle havo-onderdelen, en op een schoolexamen twee cijfers.
+2. Stof met een eindterm van havo én vwo telt mee in beide cijfers (label H+V). Stof met alleen een vwo-eindterm telt alleen mee in het vwo-cijfer (label V).
+3. Bij economie geldt bijna alle havo-stof ook voor het vwo. De meeste vragen zijn dus H+V.
+4. Alle vragen zijn op vwo-niveau geformuleerd, ook de H+V-vragen.
+5. Het havo-cijfer volgt uit de punten op de H+V-vragen. Het vwo-cijfer volgt uit alle punten.
+6. De labels staan niet in de toets, wel in het correctievoorschrift en in de toetsmatrijs. Op het voorblad staat alleen de formule van het vwo-cijfer.
+7. In de mindmap Risico en verzekeren zijn de blauwe vakken havo en vwo, de groene vakken alleen vwo.
+
+[DEEL 2: LABEL PER ONDERWERP]
+onderwerp | havo-syllabus | vwo-syllabus | label
+Kringloopmodel met geldstromen en saldi (Y = C + I + O + E − M) | H1.2 | H1.2 | H+V
+Saldo lopende rekening = particulier spaarsaldo + overheidssaldo | H1.2 | H1.2 | H+V
+Betalingsbalans, lopende rekening | H1.4 | H1.2 | H+V
+Wisselkoers (effect van een saldo op de koers en de concurrentiepositie) | niet (voetnoot bij H1.4) | buiten domein G en H | V
+Bbp via productie, bestedingen en inkomens | H1.1 | H1.1 | H+V
+Nominaal en reëel bbp, bbp per hoofd | H1.3 | H1.1 | H+V
+Informele sector, externe effecten, groen bbp, HDI | H1.3, H1.5 | H3.5 | H+V
+Productiefunctie Y = A × f(K, L), groeibeleid | H2.1, H2.4 | H2.2, H2.4 | H+V
+Afnemende meeropbrengsten, constante schaalopbrengsten | niet | H2.2 | V
+Arbeidsinkomensquote, categoriale inkomensverdeling | niet | H1.1 | V
+Protectie (importtarief, quota, motieven) | H2.5, H2.6 | buiten domein G en H | H+V
+Lorenzcurve | H3.3 | (H4.1) | H+V
+Gini-coëfficiënt, percentielenratio | niet | H4.1 | V
+Primair en secundair inkomen | H3.3 | H4.2 | H+V
+Gemiddeld en marginaal tarief, progressie, heffingskorting, aftrekpost | H3.2 | H4.6 | H+V
+Vlaktaks (als begrip), belastingwig | niet | H4.6 | V
+Afruil doelmatigheid en rechtvaardigheid | H3.5 (relatie ongelijkheid en ontwikkeling) | H4.5 | V
+Risico, risicoaversie, verzekeren, premie | G1 | G1, G4.1, G4.2 | H+V
+Averechtse selectie en middelen | G2.2 | G4.4 | H+V
+Moral hazard en middelen | G2.3 | G4.5 | H+V
+Rente als vergoeding voor risico, onderpand | G3 | G3.1 | H+V
+Principaal-agentrelatie, contracten en prikkels | niet | G3.2, G3.3 | V
+Transactiekosten | niet | G2.1 | V
+Keuze van de ondernemer bij het verkrijgen van vermogen | niet | G3.1 | V
+Toezichthouders | niet | G3.4 | V
+Beleggen: risico en rendement, aandelen en obligaties | niet | G5 | V
+
+[DEEL 3: WAT IN 5 VWO IS BEHANDELD] (vastgesteld door de docent, oktober 2026)
+1. Welvaart en groei is afgestemd op de havo-inhoud. Het vwo krijgt in 6 vwo een aanvulling.
+2. Wel behandeld: afnemende meeropbrengsten; het kringloopmodel met de opgave uit het vwo-examen 2026-I; de Lorenzcurve en de Gini-coëfficiënt.
+3. Niet behandeld: de arbeidsinkomensquote.
+4. Wisselkoersen zijn niet als onderwerp behandeld. Wel behandeld: het effect van een positief saldo op de handelsbalans op de wisselkoers.
+5. Risico: de groene vakken van de mindmap zijn behandeld en mogen worden getoetst.
+6. Vaste onderdelen van een schoolexamen over deze stof: het kringloopmodel met ontbrekende waarden, het principaal-agentprobleem, averechtse selectie en moral hazard.
+
+[DEEL 4: OPEN PUNTEN]
+1. (Afgehandeld) Protectie krijgt het label H+V en de wisselkoers het label V. De docent is akkoord (8 oktober 2026). Het vwo-domein waarin zij officieel staan, is niet opgezocht.
+2. De Lorenzcurve staat in de vwo-syllabus niet met name genoemd; de Gini-coëfficiënt wel. Het label H+V volgt de havo-eindterm.
+3. (Afgehandeld) Secundair inkomen = primair inkomen + uitkeringen en toeslagen - belastingen en sociale premies. De dia in de presentatie nog aanpassen.
+4. Vul dit bestand aan voor de andere domeinen zodra daar een tweefasen-toets voor wordt gemaakt.

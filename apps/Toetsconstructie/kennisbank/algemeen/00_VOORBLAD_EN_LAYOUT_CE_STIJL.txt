@@ -1,0 +1,87 @@
+CHANGELOG
+10 november 2026, derde versie (na schoolexamen AT5.21 economie havo 5)
+* DEEL 8 toegevoegd: uitwerkbijlage bij economie havo (vier bestanden per versie).
+11 oktober 2026, tweede versie (na toets T2 economie 4 vwo)
+* DEEL 1: bestandsnaam van een toets (geen schoolexamen) en met twee versies.
+* DEEL 3: de weging mag als zin worden opgegeven (Deze toets telt 3 keer mee.).
+8 oktober 2026, eerste versie (opmaak zoals goedgekeurd bij schoolexamen AT5.11)
+
+BRONBESTAND: 00_VOORBLAD_EN_LAYOUT_CE_STIJL
+FUNCTIE: de vaste opmaak van toetsen en schoolexamens in de stijl van het centraal examen. Dit bestand is het "Basisdocument Lay-out" uit 00_toetsconstructie_richtlijnen.
+INTEGRATIE: gebruik samen met 00_PTA_OVERZICHT_ECONOMIE (gegevens voor voorblad en voettekst).
+VOORBEELD: de drie bestanden van AT5.11 zijn het referentievoorbeeld van deze opmaak.
+
+[DEEL 1: BESTANDEN]
+Elke toets bestaat uit drie Word-bestanden:
+1. Opgaven: voorblad en opgaven.
+2. Bijlage: alle bronnen.
+3. Correctievoorschrift: deel A (docent), deel B (nabespreekversie voor de leerling), toetsmatrijs.
+Bestandsnaam: AT[nummer]_SE_[niveau][klas]_[vak]_[onderdeel]. Voorbeeld: AT5.11_SE_havo5_economie_opgaven.
+Bij een toets of proefwerk staat "toets" of "proefwerk" op de plaats van "SE" (voorbeeld: T2_toets_vwo4_economie_versie_A_opgaven). Zijn er twee versies, dan staat "versie_A" of "versie_B" voor het onderdeel.
+
+[DEEL 2: PAGINA]
+Papier: A4, staand. De toetsmatrijs staat liggend.
+Marges: links en rechts 2 cm, boven en onder 2,2 cm.
+Lettertype: Arial 12. Opgavetitels Arial 14 vet. Regelafstand 1,15.
+Koptekst: het schoollogo rechtsboven, ongeveer 2,5 cm breed.
+Voettekst, gecentreerd, Arial 8: Datum | AT-nummer Naam toets | Maker | Vak | Onderwerp | Pagina X van Y.
+Voorbeeld: 22 oktober 2026 | AT5.11 Schoolexamen | GRA | Economie | Economische groei, Risico en verzekeren | Pagina 1 van 6.
+Alleen in het opgavenbestand: rechts boven de voettekst "lees verder ►►►" op elke pagina behalve de laatste.
+
+[DEEL 3: VOORBLAD]
+Titel, gecentreerd, Arial 18 vet: Schoolexamen economie havo (of: Proefwerk, Toets).
+Ondertitel, Arial 14: het onderwerp in korte vorm.
+Tabel met twee kolommen, linkerkolom grijs en vet:
+  Vak | AT Toetsnummer / Proefwerknummer | Klas | Niveau | Onderwerp | Datum | Tijdsduur | Aantal vragen | Maximaal te behalen punten | Weging | Cijferbepaling | Toegestane hulpmiddelen
+Vaste teksten:
+  Tijdsduur: Je hebt voor deze toets ... minuten de tijd.
+  Aantal vragen: Deze toets bestaat uit ... vragen.
+  Weging: Deze toets telt mee voor ...%. (Of de zin die de docent opgeeft, bijvoorbeeld: Deze toets telt 3 keer mee.)
+  Cijferbepaling: Cijfer = 9 x behaalde punten : maximale punten + 1,0
+  Hulpmiddelen: Alleen een gewone rekenmachine is toegestaan, geen grafische rekenmachine.
+Onder de tabel: "Bij dit schoolexamen hoort een bijlage met bronnen."
+Daarna het blok "Let op:" met de vaste instructies uit 00_toetsconstructie_richtlijnen, Fase 3.
+Laatste regel: "Voor elk vraagnummer staat hoeveel punten met een goed antwoord behaald kunnen worden."
+
+[DEEL 4: OPGAVEN]
+Elke opgave begint op een nieuwe pagina. Titel: "Opgave 1  Titel van de opgave", Arial 14 vet.
+Drie kolommen: punten (links in de marge), vraagnummer (vet), tekst. De contexttekst staat in de tekstkolom, ingesprongen op 2 cm.
+Voorbeeld:
+  2p  5   Bereken het groen bbp per hoofd van de bevolking van Noordland in 2026.
+Boven een vraag met een bron staat een eigen regel: "Gebruik bron 4."
+Invulvraag: "Maak van onderstaande tekst een economisch juiste tekst." Daaronder de tekst met ...(1)... en de regels "Kies uit:" en "bij (1) ... / ...".
+Hulpstappen: "Doe het als volgt:" met streepjes.
+Tussen een contexttekst en de volgende vraag staat een witregel. Een vraag wordt niet over twee pagina's gesplitst.
+Einde: "Einde schoolexamen", gecentreerd en vet.
+
+[DEEL 5: BIJLAGE]
+Titel: "Bijlage bij het schoolexamen economie havo". Eén inleidende alinea over wat fictief is en wat echt.
+Bronnen per opgave gegroepeerd, doorlopend genummerd: "Bron 5  Titel van de bron", vet.
+Tabellen: zwarte rasterlijnen, grijze kopregel, getallen en bedragen rechts uitgelijnd, niet gesplitst over pagina's.
+Tekstbron: in een kader. Een sterretje verklaart een begrip onder de tekst.
+Figuur: gecentreerd, zwart-wit afdrukbaar (lijnen verschillen in stijl en markering, niet alleen in kleur), rasterlijnen om af te lezen.
+Bronvermelding onder de bron, Arial 8: "Bron: organisatie, URL" of "Vrij naar: krant, datum, titel".
+
+[DEEL 6: CORRECTIEVOORSCHRIFT]
+Deel A begint met de algemene regels. Elke opgave begint op een nieuwe pagina.
+Per vraag:
+  5   maximumscore 2
+      Een voorbeeld van een juiste berekening is:
+      • deelstap ................................................ 1
+      • deelstap ................................................ 1
+      Opmerking (cursief, alleen als nodig)
+      Veelgemaakte fout: ... (Arial 10)
+      Bloom-niveau: ... (Arial 10)
+Deel B: per vraag "Voorbeeldantwoord:" en "Uitleg:".
+Toetsmatrijs: liggend, elf kolommen, met daaronder de verdeling per onderdeel en per Bloom-niveau naast de gevraagde verdeling.
+
+[DEEL 8: UITWERKBIJLAGE BIJ ECONOMIE HAVO] (AT5.21)
+Is er een vraag waarbij de leerling schetst of arceert, dan komt er een vierde bestand: _uitwerkbijlage. Het voorblad zegt dan "Bij dit schoolexamen hoort een bijlage en een uitwerkbijlage."
+Bovenaan: titel, een tabel met Naam en Klas. Elke vraag krijgt een eigen pagina met "Vraag N", een titel, de figuur (zwart-wit, met assen en bij een afleesvraag met getallen) en daaronder invulregels (bijvoorbeeld "Omcirkel het juiste antwoord" of "Prijs: € ....").
+Onderaan: "VERGEET NIET DEZE UITWERKBIJLAGE IN TE LEVEREN".
+Het correctievoorschrift toont bij zo'n vraag de ingevulde figuur.
+Elke afbeelding krijgt een eigen intern nummer (script unieke_ids.py in de toetsmap).
+
+[DEEL 7: OPEN PUNTEN]
+1. Controleer in Word of "lees verder" op de laatste pagina van het opgavenbestand verdwijnt. In de controleweergave van de AI was dat niet te zien.
+2. Een officieel voorblad van de school, als dat bestaat, vervangt DEEL 3.

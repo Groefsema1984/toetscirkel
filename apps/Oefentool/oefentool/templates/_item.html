@@ -1,0 +1,70 @@
+{% macro opgave(it, reg, ouder=None, knoppen=True, bezig=False) %}
+{% set inh = it.inhoud %}
+{% set kr = it.kritiek or {} %}
+<article class="opgave status-{{ it.status }} {{ 'oordeel-' ~ it.docent_oordeel if it.docent_oordeel }}" id="op-{{ it.uid }}" data-uid="{{ it.uid }}">
+  <div class="kantscore">
+    {% if it.kritiek_score is not none %}<span class="c">{{ '%.1f' | format(it.kritiek_score) }}</span><small>zelfkritiek</small>{% endif %}
+    {% if it.p_waarde is not none %}<span class="d" style="color: var(--balpen)">{{ it.p_waarde | pct }}</span><small style="color: var(--balpen)">P leerlingen</small>{% endif %}
+  </div>
+  <header>
+    <span class="stapje stap-{{ it.stap }}">{{ {1: 'Basis', 2: 'Oefenen', 3: 'Examenniveau', 4: 'Oefentoets'}[it.stap] }}</span>
+    <h4>{{ inh.titel }}</h4>
+    <span class="bij">{{ it.uid }} · {{ inh.soort }} · {{ inh.punten }}p · {{ inh.bloom }}{% if inh.leergat_focus %} · leergat {{ inh.leergat_focus | join(', ') }}{% endif %}{% if it.versie > 1 %} · versie {{ it.versie }}{% endif %}</span>
+    {% if it.status == 'goedgekeurd' %}<span class="stempel goed">goedgekeurd</span>{% elif it.status == 'afgekeurd' %}<span class="stempel af">afgekeurd</span>{% endif %}
+  </header>
+  <div class="opgave-tekst">
+    {% for p in inh.context %}<p>{{ p }}</p>{% endfor %}
+    {% if inh.tabel and inh.tabel.rijen %}
+    <table class="kleintabel"><caption>{{ inh.tabel.titel }}</caption>
+      {% if inh.tabel.kop %}<thead><tr>{% for k in inh.tabel.kop %}<th>{{ k }}</th>{% endfor %}</tr></thead>{% endif %}
+      <tbody>{% for r in inh.tabel.rijen %}<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody></table>
+    {% endif %}
+    {% if inh.figuur and inh.figuur.soort and inh.figuur.soort != 'geen' %}
+    <figure class="fig"><figcaption>{{ inh.figuur.titel or 'Figuur' }}</figcaption>
+      <img src="{{ url_for('figuur_png', uid=it.uid) }}" alt="{{ inh.figuur.titel or 'Figuur' }}" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+    {% endif %}
+    <p class="vraagregel"><b>{{ inh.punten }}p</b> {{ inh.vraag }}</p>
+    {% for e in inh.extra %}<p class="extra">{{ e }}</p>{% endfor %}
+    {% if inh.opties %}<ol class="opties" type="A">{% for o in inh.opties %}<li class="{{ 'juist' if loop.index0 == inh.juist }}">{{ o }}</li>{% endfor %}</ol>{% endif %}
+  </div>
+  <details class="uitwerking">
+    <summary>Correctievoorschrift, voorbeeldantwoord en hints</summary>
+    {% if inh.cv.intro %}<p>{{ inh.cv.intro }}</p>{% endif %}
+    <ul class="cvregels">{% for r in inh.cv.regels %}<li><span>{{ r.tekst }}</span><b>{{ r.punten }}</b></li>{% endfor %}</ul>
+    {% if inh.cv.opm %}<p class="bij"><i>Opmerking:</i> {{ inh.cv.opm }}</p>{% endif %}
+    {% if inh.cv.fout %}<p class="bij"><b>Veelgemaakte fout:</b> {{ inh.cv.fout }}</p>{% endif %}
+    <p><b>Voorbeeldantwoord:</b> {{ inh.voorbeeld }}</p>
+    <p><b>Uitleg:</b> {{ inh.uitleg }}</p>
+    <p><b>Hints:</b> {% for h in inh.hints %}<span class="hint">{{ loop.index }}. {{ h }}</span> {% endfor %}</p>
+    {% if inh.antwoord_kort %}<p class="bij">Automatisch nakijken: {{ inh.antwoord_kort }}{% if inh.tolerantie %} (± {{ inh.tolerantie }}){% endif %}</p>{% endif %}
+  </details>
+  <div class="controle">
+    {% set rc = it.rekencheck or {} %}
+    {% if rc %}
+      {% set fout = rc.controles | selectattr('ok', 'equalto', false) | list %}
+      <span class="{{ 'ok' if rc.ok else 'nee' }}">Rekencontrole: {{ rc.controles | length }} berekening(en){% if fout %}, {{ fout | length }} fout{% endif %}{% for s in rc.structuur %}; {{ s }}{% endfor %}</span>
+    {% endif %}
+    {% if kr %}
+      <span class="{{ 'ok' if kr.oordeel == 'goed' else 'nee' }}">Zelfkritiek: {{ kr.oordeel }}{% if kr.scores %} ({% for k, v in kr.scores.items() %}{{ k[:6] }} {{ v }}{{ ', ' if not loop.last }}{% endfor %}){% endif %}</span>
+      {% if kr.problemen and kr.oordeel != 'goed' %}<span class="bij">{{ kr.problemen | join('; ') }}</span>{% endif %}
+    {% endif %}
+    {% if ouder %}<details class="bij"><summary>Eerdere versie ({{ ouder.uid }}) en waarom die is herzien</summary>
+      <p>{{ ouder.inhoud.vraag }}</p>
+      {% if ouder.docent_opmerking %}<p><b>Docent:</b> {{ ouder.docent_opmerking }}</p>{% endif %}
+      {% if ouder.kritiek and ouder.kritiek.problemen %}<p><b>Zelfkritiek:</b> {{ ouder.kritiek.problemen | join('; ') }}</p>{% endif %}
+    </details>{% endif %}
+  </div>
+  {% if knoppen %}
+  <div class="keuzes">
+    {% if bezig %}<span class="bij"><span class="draai"></span> Claude maakt een nieuwe versie…</span>
+    {% else %}
+    <button class="knop klein claude" type="button" data-actie="goed">Goed</button>
+    <button class="knop klein" type="button" data-actie="aanpassen">Laat aanpassen…</button>
+    <button class="knop klein" type="button" data-actie="zelf">Zelf bewerken…</button>
+    <button class="knop klein docent" type="button" data-actie="afgekeurd">Afkeuren…</button>
+    {% endif %}
+  </div>
+  <script type="application/json" class="itemdata">{{ {'titel': inh.titel, 'context': inh.context | join('\n\n'), 'vraag': inh.vraag, 'voorbeeld': inh.voorbeeld, 'uitleg': inh.uitleg} | tojson }}</script>
+  {% endif %}
+</article>
+{% endmacro %}

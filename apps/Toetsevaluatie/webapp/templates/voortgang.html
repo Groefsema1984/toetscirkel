@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% set stap = 2 %}
+{% block titel %}Analyse {{ s.toets_id }} - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<h1>{{ s.toets_id | replace('_', ' ') }}</h1>
+<p class="intro" id="kop">{% if s.status == 'publiceren' %}De scores staan in de database. De feedbackstroken en het klassenadvies worden nu geschreven.{% else %}Claude is aan het werk. Er wordt nog niets in de database gezet.{% endif %}</p>
+
+<div id="fout" class="melding fout" {{ '' if s.status == 'fout' else 'hidden' }}>
+  <b>De analyse is gestopt.</b> <span id="fouttekst">{{ s.fout }}</span>
+  {% if not s.toestemming_nodig %}
+  <form method="post" action="{{ url_for('hervat') }}" style="margin-top: .6rem">
+    <input type="hidden" name="toets" value="{{ s.toets_id }}">
+    <button class="knop" type="submit">Hervatten vanaf dit punt</button>
+  </form>
+  {% endif %}
+</div>
+{% with ts=s %}{% include "_toestemming.html" %}{% endwith %}
+
+{% set namen = ['Correctievoorschrift lezen en toetsmatrijs opstellen', "Pagina's van de scan voorbereiden",
+                'Namen lezen en de scan per leerling opknippen', 'Leerlingwerk nakijken'] %}
+<ol class="voortgang" id="stappen" {{ 'hidden' if s.status in ('publiceren', 'gepubliceerd') }}>
+  {% for naam in namen %}
+  <li data-stap="{{ loop.index }}"><span class="nr">{{ loop.index }}</span>
+    <div>{{ naam }}<div class="bij tekst"></div><div class="balk" hidden><span style="width:0"></span></div></div></li>
+  {% endfor %}
+</ol>
+<div id="publicatie" {{ '' if s.status in ('publiceren', 'gepubliceerd') else 'hidden' }} style="max-width: 46rem; margin-top: 2rem">
+  <b id="pubtekst">{{ s.voortgang.tekst }}</b>
+  <div class="balk"><span id="pubbalk" style="width:0"></span></div>
+</div>
+{% endblock %}
+{% block onder %}
+<script>
+(function () {
+  const toets = {{ s.toets_id | tojson }};
+  async function peil() {
+    let d;
+    try { d = await (await fetch('/api/status/' + encodeURIComponent(toets))).json(); }
+    catch (e) { return setTimeout(peil, 3000); }
+    const v = d.voortgang;
+    if (d.status === 'review') { location.href = '/review?toets=' + encodeURIComponent(toets); return; }
+    if (d.status === 'gepubliceerd') { location.href = '/klassenrapportage?toets=' + encodeURIComponent(toets); return; }
+    document.getElementById('fout').hidden = d.status !== 'fout';
+    if (d.status === 'fout') { document.getElementById('fouttekst').textContent = d.fout; return; }
+    if (d.status === 'publiceren') {
+      document.getElementById('stappen').hidden = true;
+      document.getElementById('publicatie').hidden = false;
+      document.getElementById('pubtekst').textContent = v.tekst;
+      document.getElementById('pubbalk').style.width = (v.totaal ? 100 * v.gedaan / v.totaal : 5) + '%';
+    } else {
+      for (const li of document.querySelectorAll('#stappen li')) {
+        const nr = Number(li.dataset.stap);
+        li.classList.toggle('klaar', nr < v.stap);
+        li.classList.toggle('nu', nr === v.stap);
+        const balk = li.querySelector('.balk'), tekst = li.querySelector('.tekst');
+        balk.hidden = !(nr === v.stap && v.totaal);
+        tekst.textContent = (nr === v.stap && v.totaal) ? `${v.gedaan} van ${v.totaal}` : '';
+        if (nr === v.stap && v.totaal) balk.firstElementChild.style.width = (100 * v.gedaan / v.totaal) + '%';
+      }
+    }
+    setTimeout(peil, 2000);
+  }
+  peil();
+})();
+</script>
+{% endblock %}

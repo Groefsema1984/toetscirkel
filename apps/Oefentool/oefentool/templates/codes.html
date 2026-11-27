@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codelijst · {{ o.naam }}</title>
+<style>
+  body { font: 11pt/1.4 Arial, Helvetica, sans-serif; color: #16233b; margin: 1.5rem auto; max-width: 180mm; padding: 0 1rem; }
+  h1 { font-size: 16pt; margin: 0 0 .3rem; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  td, th { border-bottom: 1px solid #ccd; padding: .45rem .5rem; text-align: left; }
+  td.code { font: 700 14pt/1 "Courier New", monospace; letter-spacing: .12em; }
+  .strookje td { border-bottom: 1px dashed #889; padding: .7rem .5rem; }
+  button { font: inherit; font-weight: 600; padding: .45rem 1rem; border-radius: 6px; border: 0; background: #1f4fbf; color: #fff; cursor: pointer; }
+  .bij { color: #55627a; font-size: 10pt; }
+  @media print { button, .bij.scherm { display: none; } body { margin: 0; } }
+</style>
+</head>
+<body>
+<button type="button" onclick="window.print()">Afdrukken</button>
+<h1>Persoonlijke codes · {{ o.naam }}</h1>
+<p class="bij">Knip de strookjes los en geef elke leerling zijn code. Met de code opent de leerling op de
+  oefenpagina zijn eigen set. De pagina zelf bevat geen namen of leerlingnummers.</p>
+<table class="strookje">
+  <thead><tr><th>Naam</th><th>Leerlingnummer</th><th>Code</th><th>Oefenpagina</th></tr></thead>
+  <tbody>
+  {% for r in rijen %}<tr><td>{{ r.naam or '-' }}</td><td>{{ r.lid }}</td><td class="code">{{ r.code }}</td>
+    <td class="bij">{{ (o.uitvoer.digitaal or ['-'])[0].split('/')[-1] }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+</body>
+</html>

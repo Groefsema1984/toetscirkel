@@ -1,0 +1,63 @@
+CHANGELOG
+8 oktober 2026, eerste versie (bij de constructie van schoolexamen AT6.11 bedrijfseconomie 6 vwo)
+* Nieuw bestand. De AI heeft de opgaven van de vwo-examens 2023 tot en met 2026 (beide tijdvakken) per opgave op trefwoorden doorzocht en van veertien opgaven de vragen gelezen. Van twee opgaven is de volledige tekst gelezen (2024-I opgave 3, 2025-I opgave 6). De bijlagen met informatiebronnen, de uitwerkbijlagen en de correctievoorschriften zijn niet gelezen. De examens van 2021 en 2022 staan in de map en zijn niet doorzocht.
+
+BRONBESTAND: 02_EXAMENCONTEXT_VWO_BECO_EXAMENANALYSE_DOMEIN_F
+FUNCTIE: de vwo-examenvragen die als stijlanker dienen voor domein F (financiële overzichten, overlopende posten, afschrijvingen, kostencalculatie, break-evenanalyse, verschillenanalyse).
+INTEGRATIE: gebruik samen met 03_REKENREGELS_VWO_BECO_DOMEIN_F, Cumulus 3.1 tot en met 3.4, 4.4 en 4.5, en de syllabus bedrijfseconomie.
+
+[DEEL 1: OPBOUW VAN HET VWO-EXAMEN]
+1. Zes opgaven, 29 tot 32 vragen, ongeveer 60 punten in 180 minuten. Dat is 3 minuten per punt.
+2. Kop: alleen "Opgave 1". De eerste regel zegt wat buiten beschouwing blijft ("In deze opgave blijft de btw buiten beschouwing.").
+3. Twee grote opgaven per examen hebben informatiebronnen in de bijlage ("Bij deze opgave horen de informatiebronnen 1 tot en met 3."). De kleine opgaven hebben de gegevens in de opgave zelf.
+4. Verwijzing aan het eind van de vraag: "(zie informatiebron 1)", "(zie informatiebronnen 2 en 3 en formuleblad)".
+5. Bij invulvragen: "Vul hiervoor de uitwerkbijlage bij deze vraag in."
+6. Het formuleblad geeft onder meer verkoopresultaat, budgetresultaat, efficiency-, prijs- en bezettingsresultaat en de break-evenformules.
+
+[DEEL 2: WAAR STAAT WAT]
+onderwerp | opgaven
+Verschillenanalyse | 2023-II opgave 5, 2024-I opgave 5, 2024-II opgave 2, 2025-I opgave 6, 2026-I opgave 2, 2026-II opgave 2
+Kostprijs | 2023-II vraag 26, 2024-II vraag 7, 2026-I vraag 8, 2026-II vraag 5
+Break-even en dekkingsbijdrage | 2023-I opgave 6, 2024-I opgave 4, 2025-II opgave 5, 2026-II opgave 4
+Liquiditeitsbegroting | 2025-II opgave 2, 2024-II opgave 4
+Balans opstellen met overlopende posten | 2024-I opgave 3
+Afschrijving en verkoop van een actief | 2025-II vraag 7, 2023-II opgave 2
+
+[DEEL 3: GELEZEN VRAGEN]
+examen, vraag | punten | wat er gevraagd wordt
+2024-II, vraag 7 | 2 | Bereken de kostprijs per bezorging. Rond af op eurocenten.
+2024-II, vraag 8 | 2 | Bereken het gerealiseerde bedrijfsresultaat met het verkoopresultaat en het budgetresultaat. Geef telkens aan: voordelig of nadelig.
+2024-II, vraag 9 tot en met 12 | 1, 1, 2, 2 | Bezettingsresultaat, prijsresultaat op constante kosten, prijsresultaat en efficiencyresultaat op benzinekosten, elk als aparte vraag.
+2024-II, vraag 14 | 2 | Leg zonder een berekening uit dat het verwachte verkoopresultaat en het verwachte bezettingsresultaat positief bijdragen.
+2024-I, vraag 26 | 2 | Bereken het verwachte resultaat met het verkoopresultaat en het bezettingsresultaat.
+2024-I, vraag 27 | 5 | Maak de verschillenanalyse af door de uitwerkbijlage volledig in te vullen.
+2025-I, vraag 27 | 3 | Verwacht resultaat met verkoop- en bezettingsresultaat bij twee producten.
+2025-I, vraag 29 | 2 | Welke abonnementsvorm heeft de voorkeur? Leg uit met een berekening van de dekkingsbijdrage.
+2023-II, vraag 28 | 2 | Leg uit dat door het doorberekenen van een kostenstijging het bezettingsresultaat kan dalen.
+2023-II, vraag 29 en 30 | 2, 2 | Werkelijke hoeveelheid terugrekenen uit het efficiencyresultaat; prijsresultaat berekenen.
+2026-I, vraag 8 | 3 | Bereken het gerealiseerde verkoopresultaat. Bereken eerst de kostprijs van twee producten.
+2026-I, vraag 11 | 4 | Bereken het budgetresultaat. Vul de uitwerkbijlage in.
+2026-I, vraag 12 | 3 | Toon met een berekening aan of het resultaat acceptabel is.
+2026-II, vraag 5 | 3 | Bereken de kostprijs per gedetacheerd uur.
+2026-II, vraag 6 | 2 | Geef van elke lijn in de grafiek (A, B en C) aan welk voorcalculatorisch resultaat deze weergeeft.
+2026-II, vraag 7 | 4 | Bereken het gerealiseerde resultaat. Geef bij ieder resultaat aan: voordelig (+) of nadelig (-/-).
+2026-II, vraag 18 | 2 | Bereken de break-evenomzet. Bereken eerst de variabele kosten als percentage van de omzet.
+2025-II, vraag 22 en 23 | 2, 2 | Dekkingsbijdrage als percentage van de verkoopprijs; toon aan dat de break-evenomzet niet wordt gehaald.
+2025-II, vraag 27 | 5 | Bereken of de onderneming door drie maatregelen winstgevend wordt. Uitwerkbijlage.
+2025-II, vraag 6 | 4 | Stel de liquiditeitsbegroting op over twee maanden. Uitwerkbijlage.
+2025-II, vraag 7 | 2 | Bereken het bedrag dat wordt ontvangen bij de verkoop van een oude installatie.
+2024-I, vraag 15 | 4 | Stel de volledige balans samen uit een inventarisatielijst met onder meer vooruitbetaalde bedragen, leveranciers- en afnemerskrediet en rekening-courant.
+2023-I, vraag 30 | 3 | Bereken met de dekkingsbijdrage hoeveel stuks minimaal verkocht moeten worden om break-even te spelen.
+
+[DEEL 4: WAT OPVALT]
+1. De verschillenanalyse zit in zes van de acht examens. De deelresultaten worden apart gevraagd of in één uitwerkbijlage.
+2. Het verkoopresultaat wordt niet uitgesplitst in een afzet- en een prijsoorzaak. Cumulus 4.4 doet dat wel.
+3. Het examen vraagt bijna altijd "Geef aan of het een voordelig of een nadelig resultaat betreft".
+4. Na de berekening volgt vaak een vraag "Leg zonder een berekening uit".
+5. De break-evenomzet wordt gevraagd met variabele kosten als percentage van de omzet.
+6. Een break-evengrafiek om af te lezen is in 2023 tot en met 2026 niet gevonden; wel een grafiek met resultaatlijnen (2026-II vraag 6).
+7. Overlopende posten staan niet als eigen vraag in deze examens. Ze zitten verwerkt in een balans of een liquiditeitsbegroting.
+
+[DEEL 5: OPEN PUNTEN]
+1. Lees voor een volgende toets de bijlagen, uitwerkbijlagen en correctievoorschriften van de genoemde opgaven.
+2. De examens van 2021 en 2022 zijn niet doorzocht.

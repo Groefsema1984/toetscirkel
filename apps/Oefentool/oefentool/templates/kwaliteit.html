@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% set deel = 'kwaliteit' %}
+{% block titel %}Kwaliteit · Oefentool{% endblock %}
+{% block inhoud %}
+<h1>Kwaliteit en leren</h1>
+<p class="intro">De oefentool leert op drie manieren: van zijn eigen zelfkritiek, van jouw oordeel en van de
+  resultaten van leerlingen op oefentoetsen. Actieve kwaliteitsregels gaan mee bij elke nieuwe opdracht.</p>
+
+<div class="kerncijfers">
+  <div class="kern"><b>{{ curve.totaal }}</b>opgaven gemaakt</div>
+  <div class="kern"><b>{{ curve.goedgekeurd }}</b>goedgekeurd in de itembank</div>
+  <div class="kern"><b>{{ curve.met_resultaten }}</b>met resultaten van leerlingen</div>
+  <div class="kern"><b>{{ curve.zwak }}</b>zwak bij leerlingen (<a href="{{ url_for('itembank', zwak=1, status='') }}">bekijken</a>)</div>
+</div>
+
+<h2>Leercurve</h2>
+<p class="bij">Per week: de gemiddelde zelfkritiekscore van eerste versies (1 tot 5) en hoe vaak jij een opgave meteen goedkeurt. Stijgen die, dan wordt de oefentool beter.</p>
+{% if curve.weken %}
+<div class="tabelvak"><table class="curve">
+  <thead><tr><th>Week</th><th class="r">Opgaven</th><th>Zelfkritiek eerste versie</th><th>Meteen goed bij de docent</th><th class="r">Herzien</th></tr></thead>
+  <tbody>{% for w in curve.weken %}<tr><td>{{ w.week }}</td><td class="r">{{ w['items'] }}</td>
+    <td>{% if w.zelfkritiek %}<span class="staaf" style="width: {{ (w.zelfkritiek / 5 * 10) | round(1) }}rem"></span> {{ '%.1f' | format(w.zelfkritiek) }}{% else %}-{% endif %}</td>
+    <td>{% if w.docent_goed is not none %}<span class="staaf blauw" style="width: {{ (w.docent_goed * 10) | round(1) }}rem"></span> {{ w.docent_goed | pct }}{% else %}-{% endif %}</td>
+    <td class="r">{{ w.herzien }}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% else %}<p class="bij">Nog geen opgaven gemaakt.</p>{% endif %}
+
+<h2>Kwaliteitsregels</h2>
+<p class="bij">Regels uit jouw afkeuringen staan meteen aan. Regels uit de zelfkritiek zijn eerst een voorstel: zet ze aan als je het ermee eens bent.</p>
+<div class="tabelvak"><table>
+  <thead><tr><th>Regel</th><th>Geldt voor</th><th>Bron</th><th>Status</th><th></th></tr></thead>
+  <tbody>
+  {% for r in regels %}
+  <tr class="regel {{ r.status }}" data-id="{{ r.id }}"><td><span class="tekst">{{ r.regel }}</span><br><span class="bij">{{ r.datum }} · {{ r.aanleiding }}</span></td>
+    <td>{{ r.vak or 'alle vakken' }} {{ r.niveau }}</td><td>{{ r.bron }}</td><td>{{ r.status }}</td>
+    <td style="white-space: nowrap">{% if r.status == 'voorstel' %}<button class="knop klein claude" data-actie="activeer">Aanzetten</button>{% endif %}
+      {% if r.status != 'verwijderd' %}<button class="knop klein" data-actie="wijzig">Wijzigen</button>
+      <button class="knop klein docent" data-actie="verwijder">Uitzetten</button>{% else %}<button class="knop klein" data-actie="activeer">Weer aan</button>{% endif %}</td></tr>
+  {% else %}<tr><td colspan="5" class="bij">Nog geen regels. Ze ontstaan vanzelf als je opgaven laat aanpassen of afkeurt.</td></tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+<form class="blok" id="nieuweregel" style="margin-top: 1rem; max-width: 50rem">
+  <label for="regeltekst">Zelf een regel toevoegen</label>
+  <textarea id="regeltekst" rows="2" placeholder="bijv. Gebruik bij havo geen kruiselingse elasticiteit."></textarea>
+  <div class="rij"><div><label for="r-vak">Vak</label><select id="r-vak"><option value="">Alle vakken</option><option>Economie</option><option>Bedrijfseconomie</option></select></div>
+    <div><label for="r-niveau">Niveau</label><select id="r-niveau"><option value="">Alle niveaus</option><option>mavo</option><option>havo</option><option>vwo</option></select></div>
+    <div style="flex: 0 0 auto"><button class="knop" type="submit">Toevoegen</button></div></div>
+</form>
+
+<h2 id="kosten">Kosten</h2>
+<p class="bij">In dollar, zoals Anthropic rekent. Totaal tot nu toe: <b>${{ '%.2f' | format(totaal) }}</b>. Oudere regels (van vóór de
+  kostenregistratie) zijn geschat.</p>
+<form method="post" action="{{ url_for('kwaliteit_modellen') }}" class="blok rij" style="max-width: 50rem; margin-bottom: 1rem">
+  <div style="flex: 2 1 20rem"><label for="motor">Waarmee werkt Claude?</label><select id="motor" name="motor">
+    {% for k, v in MOTOREN.items() %}<option value="{{ k }}" {{ 'selected' if (inst.motor if inst.motor in MOTOREN else 'abonnement') == k }}>{{ v }}</option>{% endfor %}</select></div>
+  <div><label for="abonnement_model">Model via abonnement</label><select id="abonnement_model" name="abonnement_model">
+    <option value="sonnet" {{ 'selected' if inst.abonnement_model == 'sonnet' }}>Sonnet (aanbevolen)</option>
+    <option value="opus" {{ 'selected' if inst.abonnement_model == 'opus' }}>Opus (gaat sneller door je limiet)</option></select></div>
+  <p class="bij" style="flex-basis: 100%; margin: 0">Abonnement: {{ abo.tekst }}{% if abo.limiet %} · <b>limiet bereikt</b> (de oefentool wacht op jouw keuze){% endif %}.
+    Alles gaat via je abonnement: opgaven maken, herzien, plannen, zelfkritiek en de bibliotheek lezen. Dat kost geen tegoed, maar telt mee
+    in de limieten van je abonnement (samen met je gesprekken en Toetsconstructie). Kan het abonnement niet verder, dan stopt de oefentool
+    en vraagt hij eerst of je API-tegoed wilt gebruiken, met een schatting van de kosten. Zonder jouw klik wordt er nooit tegoed gebruikt.</p>
+  <div><label for="model_kritiek">Zelfkritiek (Haiku = zuinig, ook via abonnement)</label><select id="model_kritiek" name="model_kritiek">
+    {% for k, v in MODELLEN.items() %}<option value="{{ k }}" {{ 'selected' if inst.model_kritiek == k }}>{{ v }}</option>{% endfor %}</select></div>
+  <div><label for="model_index">Bibliotheek lezen</label><select id="model_index" name="model_index">
+    {% for k, v in MODELLEN.items() %}<option value="{{ k }}" {{ 'selected' if inst.model_index == k }}>{{ v }}</option>{% endfor %}</select></div>
+  <div style="flex: 0 0 auto"><button class="knop" type="submit">Bewaren</button></div>
+  <p class="bij" style="flex-basis: 100%; margin: 0">Opgaven maken en herzien gaat altijd met een sterk model (via je abonnement het model hierboven, met API-tegoed Sonnet): daar zit de kwaliteit.
+    De rekencontrole van de app werkt los van het model. In de tabellen hieronder staan verzoeken via het abonnement met $0,00.</p>
+</form>
+<div class="tweeluik">
+<div class="tabelvak"><table>
+  <thead><tr><th>Soort verzoek</th><th class="r">Aantal</th><th class="r">Invoer</th><th class="r">Uit cache</th><th class="r">Uitvoer</th><th class="r">Kosten</th></tr></thead>
+  <tbody>{% for g in gebruik %}<tr><td>{{ g.soort }}</td><td class="r">{{ g.n }}</td><td class="r">{{ '{:,}'.format(g.invoer or 0).replace(',', '.') }}</td>
+    <td class="r">{{ '{:,}'.format(g.lees or 0).replace(',', '.') }}</td><td class="r">{{ '{:,}'.format(g.uitvoer or 0).replace(',', '.') }}</td>
+    <td class="r">${{ '%.2f' | format(g.kosten or 0) }}</td></tr>
+  {% else %}<tr><td colspan="6" class="bij">Nog niets.</td></tr>{% endfor %}</tbody>
+</table></div>
+<div class="tabelvak"><table>
+  <thead><tr><th>Opdracht</th><th class="r">Verzoeken</th><th class="r">Kosten</th></tr></thead>
+  <tbody>{% for r in per_opdracht %}<tr><td><a href="{{ url_for('toon', oid=r.opdracht) }}">{{ r.naam }}</a></td><td class="r">{{ r.n }}</td><td class="r">${{ '%.2f' | format(r.kosten or 0) }}</td></tr>
+  {% else %}<tr><td colspan="3" class="bij">Nog geen opdrachten met kosten.</td></tr>{% endfor %}</tbody>
+</table></div>
+</div>
+{% endblock %}
+{% block onder %}
+<script>
+async function stuur(d) {
+  const r = await fetch('/api/regel', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
+  if ((await r.json()).ok) location.reload();
+}
+for (const k of document.querySelectorAll('tr.regel [data-actie]')) {
+  k.addEventListener('click', () => {
+    const tr = k.closest('tr'), id = tr.dataset.id, actie = k.dataset.actie;
+    if (actie === 'wijzig') {
+      const nieuw = prompt('Regel', tr.querySelector('.tekst').textContent);
+      if (nieuw) stuur({ id, actie, regel: nieuw });
+    } else stuur({ id, actie });
+  });
+}
+document.getElementById('nieuweregel').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const regel = document.getElementById('regeltekst').value.trim();
+  if (regel) stuur({ actie: 'nieuw', regel, vak: document.getElementById('r-vak').value, niveau: document.getElementById('r-niveau').value });
+});
+</script>
+{% endblock %}

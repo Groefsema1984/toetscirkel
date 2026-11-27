@@ -1,0 +1,75 @@
+/* Feedbackstroken: vaste A4-vellen. Alle maten in mm, pt en em, zodat het scherm precies
+   laat zien wat er geprint wordt. Een vel is 186 x 240 mm. Dat past ruim op één A4-pagina,
+   ook in Safari: die negeert de marges hieronder, gebruikt eigen marges en schaalt ongeveer 6%
+   op. Elk vel begint op een nieuwe pagina (gewone blokken: Safari breekt niet binnen flexbox). */
+.strookbalk { margin-bottom: 1rem; display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; }
+.bronnen { position: absolute; left: -9999px; top: 0; width: 186mm; visibility: hidden; }
+.vellen { display: block; }
+.velkop { font-size: .9rem; color: var(--inkt-2); margin: 1.6rem 0 .4rem; }
+.velkop b { color: var(--inkt); }
+
+.vel {
+  --inkt: #16233b; --inkt-2: #55627a; --lijn-zacht: #e2e7ef;
+  position: relative; box-sizing: border-box; width: 186mm; height: 240mm; overflow: hidden;
+  padding: 1.5mm 2mm 7mm 15mm;        /* onderaan 7 mm reserve: wat daar zou komen, gaat naar een volgend vel */
+  background: #fff; color: #16233b; font-family: var(--tekst); line-height: 1.38;
+  margin-bottom: 6mm; box-shadow: 0 1px 2px rgba(22, 35, 59, .08), 0 6px 18px rgba(22, 35, 59, .08);
+  border-radius: 2px;
+}
+.vel::before { content: ""; position: absolute; top: 0; bottom: 0; left: 10mm; border-left: 1.5px solid #e2606f; opacity: .7; }
+.vel .inhoud { font-size: 10pt; padding-top: 1mm; }
+.vel.leeg { display: grid; place-items: center; color: #8a94a6; font-size: 9pt; }
+.vel h1 { font-family: var(--kop); font-size: 2.05em; font-weight: 600; margin: 0; line-height: 1.1; }
+.vel h2 { font-family: var(--kop); font-size: 1.3em; font-weight: 600; margin: 1.1em 0 .35em; line-height: 1.15; }
+.vel .blok:first-child h2 { margin-top: .2em; }
+.vel p { margin: .3em 0; max-width: none; }
+.vel small { color: var(--inkt-2); font-size: .84em; }
+.vel .wie { display: flex; gap: 1.2em; flex-wrap: wrap; margin-top: .25em; color: var(--inkt-2); }
+.vel .wie b { color: var(--inkt); }
+.vel .sterk { font-size: 1.06em; margin-top: .6em; }
+
+.balkrij { display: grid; grid-template-columns: 40% 1fr 3em; gap: .8em; align-items: center; margin-top: .4em; }
+.meter { display: block; height: .95em; border: 1.5px solid #16233b; border-radius: .5em; overflow: hidden; background: #fff; }
+.meter i { display: block; height: 100%; background: #1f4fbf; }
+.pct { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.legenda { color: var(--inkt-2); font-size: .9em; }
+.legenda .bol { margin-left: .8em; }
+.legenda .bol:first-child { margin-left: 0; }
+.doelrij { display: grid; grid-template-columns: 1.2em 1.7em 1fr 4.4em; gap: .45em; align-items: start;
+  padding: .2em 0; border-bottom: 1px solid var(--lijn-zacht); font-size: .95em; line-height: 1.27; }
+.doelrij .nr { color: var(--inkt-2); text-align: right; font-variant-numeric: tabular-nums; }
+.doelrij .pt { color: var(--inkt-2); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.doelrij .wat { display: block; margin-top: .05em; }
+.doel.ja .doelrij b { font-weight: 500; }
+.bol { display: inline-block; width: .85em; height: .85em; border-radius: 50%; border: 2px solid; box-sizing: border-box; vertical-align: -.1em; }
+.doelrij .bol { margin-top: .2em; }
+.bol.ja { border-color: #0a7a2f; background: #0a7a2f; }
+.bol.bijna { border-color: #b26a00; background: linear-gradient(90deg, #b26a00 50%, transparent 50%); }
+.bol.nee { border-color: #c5162e; background: transparent; }
+
+.gatrij { display: grid; grid-template-columns: 7em 1fr; gap: .8em; padding: .35em 0; border-bottom: 1px solid var(--lijn-zacht); }
+.patroon { margin-top: .2em; }
+
+.plan { list-style: none; padding: 0; margin: .4em 0 0; counter-reset: stap; }
+.plan li { display: grid; grid-template-columns: 1fr 1.2em; gap: .7em; padding: .45em 0; border-bottom: 1px solid var(--lijn-zacht); counter-increment: stap; }
+.plan li::before {                    /* stapnummer in de kantlijn, in rode pen */
+  content: counter(stap); position: absolute; left: 3mm; width: 6mm; text-align: right;
+  font-family: var(--pen); font-size: 1.55em; line-height: 1.05; color: #c5162e;
+}
+.plan .vakje { width: 1.1em; height: 1.1em; border: 1.5px solid #16233b; border-radius: 3px; margin-top: .15em; }
+.reflectie { border: 1.5px solid #16233b; border-radius: 2.5mm; padding: .8em 1em; margin-top: .4em; }
+.reflectie p { font-weight: 600; margin: 0; }
+.reflectie .schrijf { height: 2.1em; border-bottom: 1px solid #b9c3d1; }
+.reflectie .schrijf + p { margin-top: 1em; }
+
+.vel, .vel * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+@media print {
+  @page { size: A4; margin: 12mm; }
+  .velkop { display: none; }
+  .vellen { display: block; }
+  .vel { margin: 0; box-shadow: none; border-radius: 0; break-inside: avoid; page-break-inside: avoid;
+         break-before: page; page-break-before: always; }
+  .vellen > div.vel:first-of-type { break-before: auto; page-break-before: auto; }
+}

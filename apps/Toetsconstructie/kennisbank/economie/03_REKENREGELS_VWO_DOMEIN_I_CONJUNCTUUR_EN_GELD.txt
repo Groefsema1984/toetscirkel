@@ -1,0 +1,35 @@
+CHANGELOG
+11 november 2026, eerste versie (na schoolexamen AT6.22 economie vwo 6, versie A en B)
+* Nieuw bestand. Status: CONCEPT. De formules volgen de opdracht van de docent en de vwo-examens 2023 tot en met 2026; de stappenplannen zijn een voorstel van de AI en nog niet door de docent vastgesteld.
+
+BRONBESTAND: 03_REKENREGELS_VWO_DOMEIN_I_CONJUNCTUUR_EN_GELD
+FUNCTIE: de schrijfwijze, formules en redeneringen bij vwo voor het Keynesiaanse kruis, het IS-MB-GA-model, wisselkoersen en de kringloop met saldi.
+INTEGRATIE: gebruik samen met 03_REKENREGELS_VWO_DOMEIN_G_H (kringloop, productiefunctie) en 02_EXAMENCONTEXT_VWO_ECO_EXAMENANALYSE_DOMEIN_I_CONJUNCTUUR_EN_GELD.
+
+[DEEL 1: FORMULES]
+A. Keynesiaans kruis: EV = C + I + O. Evenwicht bij Y = EV. Bij EV = a + bY: multiplier = 1 : (1 − b). ΔY = multiplier × Δ autonome bestedingen. b is de helling (marginale consumptiequote na lekken), a de ligging (autonome bestedingen). Het evenwichtsinkomen Y = a : (1 − b) is geen examenvraag.
+B. Vermogensmarkt (gesloten): S = I + (O − B). Een tekort (O > B) verhoogt de vraag naar vermogen en de rente, een overschot verlaagt haar.
+C. IS-MB-GA: output gap = Y − Y*. IS daalt, MB horizontaal (omhoog bij hogere inflatie of krappere doelstelling), GA stijgt en gaat bij Y* door de verwachte inflatie. Aanpassing in één rentestap: MB 1 op de r waar IS 1 de lijn Y = Y* snijdt; GA 1 evenwijdig aan GA 0 door (Y*; inflatie van periode 0).
+D. Wisselkoers terugrekenen: koers vóór = koers na : (1 − depreciatie) of koers na : (1 + appreciatie). Noteer de richting (€ 1 = … of 1 munt = € …).
+E. Kringloop: I = Y − C − O − E + M. S = Y − C − B. S = I + (O − B) + (E − M). Geldstroom overheid–banken: bij O > B van banken naar overheid; bij B > O omgekeerd. Geldstroom buitenland–banken: bij E > M van banken naar buitenland; bij M > E omgekeerd. Controle: bij de banken is wat binnenkomt gelijk aan wat uitgaat.
+F. Arbeidsinkomensquote = arbeidsinkomen : nationaal inkomen × 100%. Een verschil tussen twee quotes in procentpunten.
+G. Reële rente (syllabus I1.4): (1 + nominale rente) : (1 + verwachte inflatie) − 1. Niet gevonden als rekenvraag in vwo 2024 tot en met 2026; in de begrippenlijst van de docent staat 'nominale rente − inflatie'. Vraag de docent welke de leerlingen gebruiken voor je een reële-rentevraag opneemt.
+
+[DEEL 2: VASTE REDENERINGEN]
+1. Dalende IS: lagere reële rente, lenen goedkoper en sparen minder aantrekkelijk (ruilen over de tijd), consumptie en investeringen stijgen, productie stijgt.
+2. Steilere GA: lonen en prijzen passen sneller aan (flexibele arbeidsmarkt, kortere cao's), productie reageert minder op inflatie. Langere cao's geven een vlakkere GA. Klassiek: verticale GA, vraagstimulering geeft alleen inflatie.
+3. Ondergrens nominale rente: bij een sterk negatieve rente kiest het publiek voor contant geld (rente 0%).
+4. Krap beleid en bankwinst: de geldmarktrente stijgt, de vaste hypotheekrente niet, het renteverschil wordt kleiner, de winst daalt (korte termijn).
+5. Rente, kapitaal en lopende rekening: hogere rente, kapitaalinvoer, vraag naar de munt stijgt, appreciatie, export duurder en import goedkoper, concurrentiepositie slechter, saldo lopende rekening daalt. Lagere rente omgekeerd.
+6. Procyclische ECB-rente: de ECB richt zich op de eurozone als geheel; een lidstaat met een andere conjunctuur krijgt een rente die zijn conjunctuur versterkt.
+7. Productiefunctie: afnemende meeropbrengsten aflezen als: dezelfde toename van L geeft een kleiner extra Y. R&D en onderwijs verhogen A, de functie verschuift omhoog en Y* stijgt.
+
+[DEEL 3: VALKUILEN VOOR DE SABOTEUR]
+1. De multiplier berekenen als 1 : b of het autonome deel meenemen.
+2. Ligging en helling van de bestedingslijn verwisselen.
+3. GA 1 door Y* en de oorspronkelijke inflatie laten gaan in plaats van door de inflatie van periode 0.
+4. Procentuele wisselkoersverandering terugrekenen door te vermenigvuldigen in plaats van te delen.
+5. I berekenen zonder het buitenland, of de richting van een geldstroom omdraaien.
+6. Een verschil tussen quotes in procent in plaats van procentpunten geven.
+7. Van 'rente stijgt' direct naar 'koers stijgt' gaan zonder de vraag naar de munt.
+8. 'Afnemende meeropbrengsten' lezen als een dalende productie.

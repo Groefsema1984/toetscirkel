@@ -1,0 +1,56 @@
+CHANGELOG
+8 oktober 2026, eerste versie (bij de constructie van schoolexamen AT5.11 economie 5 vwo)
+* Nieuw bestand. De AI heeft de opgaven van de vwo-examens 2024, 2025 en 2026 (beide tijdvakken) op trefwoorden doorzocht en de gevonden vragen gelezen, met het correctievoorschrift van 2026-I vraag 23 en 24. Zij heeft de examens niet van voor tot achter gelezen.
+
+BRONBESTAND: 02_EXAMENCONTEXT_VWO_ECO_EXAMENANALYSE_DOMEIN_G_H
+FUNCTIE: de vwo-examenvragen die als stijlanker dienen voor domein G (Risico en informatie) en domein H (Welvaart en groei).
+INTEGRATIE: gebruik samen met 01_KADER_TWEEFASEN_VWO_LABELS_DOMEIN_G_H en 03_REKENREGELS_VWO_DOMEIN_G_H.
+ZOEKTERMEN: kringloop, principaal, agent, averechtse, moral hazard, wisselkoers, betalingsbalans, lopende rekening, invoerrecht, importheffing, protectie, transactiekosten, obligatie, onderpand, productiefunctie, factorproductiviteit, Gini, Lorenz, groen bbp.
+
+[DEEL 1: OPBOUW VAN HET VWO-EXAMEN]
+1. 2026-I: 29 vragen, 59 punten, 180 minuten. Dat is 3,1 minuut per punt.
+2. Zes opgaven, elk met een korte titel ("Solo", "Geld in de markt", "Australië").
+3. Het vwo-examen heeft geen aparte bijlage. Figuren, tabellen en bronnen staan in de opgaven zelf. Er is wel een uitwerkbijlage.
+4. De punten staan vóór het vraagnummer ("3p 23").
+5. Veel gebruikte vraagvormen: "Leg uit dat / of ...", "Leg de stelling uit", "Geef: − ...; − ...", "Vind jij dat ...? Leg je keuze uit.", "Leidt ... tot een kleinere of grotere ...? Leg je keuze uit."
+
+[DEEL 2: WELKE ONDERWERPEN KOMEN VOOR]
+onderwerp | examens waarin het trefwoord voorkomt
+Averechtse selectie | 2024-I, 2024-II, 2025-I, 2026-I, 2026-II
+Principaal-agent | 2024-II, 2025-I, 2025-II, 2026-II
+Kringloop | 2024-I, 2024-II, 2026-I
+Betalingsbalans of lopende rekening | 2025-II, 2026-I, 2026-II
+Wisselkoers | 2024-I, 2024-II, 2025-II
+Obligatie | 2024-I, 2024-II, 2025-I, 2026-I
+Moral hazard | 2024-I, 2026-I
+Groen bbp | 2025-I, 2026-II
+Productiefunctie | 2024-I
+Transactiekosten | 2026-II
+Onderpand | 2026-I
+Protectie, invoerrecht, importheffing | niet gevonden
+Gini, Lorenz | niet gevonden
+
+[DEEL 3: GELEZEN VRAGEN]
+examen, vraag | punten | wat er gevraagd wordt
+2026-I, vraag 23 (opgave 5, Australië) | 3 | Kringloopmodel met vijf sectoren. Geef de berekening van de vier ontbrekende waarden en de richting van twee pijlen. Scoring: vier waarden juist 2, drie of twee juist 1, minder 0; richting van beide pijlen 1.
+2026-I, vraag 24 | 2 | Leg uit welk effect een positief saldo op de betalingsbalans, via de valutamarkt, heeft op de internationale concurrentiepositie. Twee schakels: saldo naar wisselkoers, wisselkoers naar concurrentiepositie.
+2026-I, vraag 28 | 2 | Leg uit of er averechtse selectie kan optreden bij een woonhuisverzekering voor kopers met een hypotheek.
+2026-I, vraag 29 | 2 | Leg uit of er sprake kan zijn van moral hazard na het afsluiten van een woonhuisverzekering.
+2026-II, vraag 6 | 2 | Leg uit dat de inzet van een kredietbureau de transactiekosten van kredietverleners per saldo kan verminderen.
+2026-II, vraag 26 | 2 | Leg uit dat klimaatbeleid per saldo kan zorgen voor een toename van het groen bbp.
+2026-II, vraag 29 | 3 | Leg het principaal-agentprobleem uit (de VN als principaal) en noem een maatregel die het risico vermindert.
+2025-I, vraag 6 | 2 | Leg uit dat er sprake kan zijn van een principaal-agentprobleem tussen consument (principaal) en vergelijkingssite (agent).
+2025-II, vraag 18 | 2 | Leg uit of er sprake is van een principaal-agentprobleem tussen de inspectie en de scholen.
+2024-I, vraag 28 | 2 | Productiefunctie Y = A × f(K, L) met een figuur. Leg uit dat de marginale opbrengst van extra productie afneemt.
+
+[DEEL 4: WAT OPVALT]
+1. Het principaal-agentprobleem komt bijna elk jaar voor, steeds in een andere relatie: aandeelhouder en directie, consument en tussenpersoon, toezichthouder en instelling, internationale organisatie en land. De vraag benoemt meestal wie de principaal is.
+2. Averechtse selectie en moral hazard worden vaak gevraagd met "Leg uit of". De leerling moet dan zelf beslissen en onderbouwen.
+3. De kringloopvraag van 2026 vraagt rekenen én richting. Het saldo bepaalt de richting van de pijl.
+4. De wisselkoersvraag is gekoppeld aan het kringloopmodel in dezelfde opgave.
+5. Protectie en de Gini-coëfficiënt zijn in 2024 tot en met 2026 niet op trefwoord gevonden.
+
+[DEEL 5: OPEN PUNTEN]
+1. Lees voor een volgende toets de hele opgaven, met de figuren.
+2. De examens van 2018 tot en met 2023 staan in de map, maar zijn niet doorzocht.
+3. Alleen van 2026-I is het voorblad gelezen. De telling van vragen en punten van de andere examens ontbreekt.

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block titel %}Export voor oefenmateriaal - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<h1>Export voor oefenmateriaal</h1>
+<p class="intro">Maak leerprofielen per leerling, met per leerdoel de stand, de geschiedenis en de leergaten,
+  en groepen van leerlingen met hetzelfde leerdoel. Je oefentool leest deze export in. Er staan alleen
+  leerlingnummers in, geen namen.</p>
+
+<form method="post" action="{{ url_for('export_maken') }}" id="exportform">
+  <h2>1. Toetsen</h2>
+  <p class="bij">Eén toets voor oefenen direct na een SE; meerdere toetsen of een heel jaar voor examentraining.
+    Bij meerdere toetsen telt per leerdoel de laatste meting.</p>
+  <div class="rij" style="margin: .6rem 0">
+    <button class="knop klein" type="button" data-kies="alle">Alle toetsen</button>
+    <button class="knop klein" type="button" data-kies="geen">Niets</button>
+    <span class="bij">Of kies hieronder.</span>
+  </div>
+  <div class="tabelvak">
+  <table>
+    <thead><tr><th></th><th>Toets</th><th>Afgenomen</th><th class="r">Leerlingen</th><th>Leerdoelen</th></tr></thead>
+    <tbody>
+    {% for t in toetsen %}
+    <tr><td><input type="checkbox" name="toets" value="{{ t.toets_id }}" id="t{{ loop.index }}" data-sector="{{ t.vak }}|{{ t.sector }}"></td>
+      <td><label for="t{{ loop.index }}" style="font-weight: 500; margin: 0">{{ t.toets_id }}</label>{% if t.soort == 'oefen' %} <span class="label-oefen">oefen</span>{% endif %}</td>
+      <td>{{ t.datum }}</td><td class="r">{{ t.aantal }}</td>
+      <td>{% if t.zonder_code %}<a href="{{ url_for('leerdoelen_pagina') }}">{{ t.zonder_code }} vragen nog niet gekoppeld</a>{% else %}gekoppeld{% endif %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="melding" id="mix" hidden>Je hebt toetsen uit verschillende registers gekozen (bijvoorbeeld economie en
+    bedrijfseconomie, of mavo en havo). Dat mag, maar hun leerdoelen staan dan los van elkaar in de export.</p>
+
+  <h2>2. Leerlingen</h2>
+  <p class="bij">Niets aangevinkt = alle leerlingen die de gekozen toetsen hebben gemaakt.</p>
+  <div class="rij" style="margin: .6rem 0">
+    <div style="flex: 0 1 14rem"><label for="klas">Snel kiezen per klas</label>
+      <select id="klas"><option value="">Kies een klas</option>
+        {% for k in leerlingen | map(attribute='klas') | unique | sort %}<option>{{ k }}</option>{% endfor %}</select></div>
+    <button class="knop klein" type="button" data-ll="geen">Niemand (= iedereen)</button>
+  </div>
+  <div class="llraster">
+    {% for l in leerlingen %}
+    <label class="vink" data-toetsen="{{ l.toetsen | join(' ') }}" data-klas="{{ l.klas }}">
+      <input type="checkbox" name="leerling" value="{{ l.id }}"> {{ l.naam or l.id }} <span class="bij">{{ l.klas }}</span></label>
+    {% endfor %}
+  </div>
+
+  <h2>3. Leerdoelen (optioneel)</h2>
+  <p class="bij">Niets gekozen = alle leerdoelen. Kies er een paar voor gerichte oefening ("wie beheerst dit nog niet?").</p>
+  <select name="code" multiple size="8" style="margin-top: .5rem; max-width: 60rem">
+    {% for c in codes %}<option value="{{ c.code }}" data-sector="{{ c.vak }}|{{ c.sector }}">{{ c.code }}: {{ c.omschrijving }}</option>{% endfor %}
+  </select>
+  <p class="bij">Meerdere kiezen: houd Cmd ingedrukt.</p>
+
+  <h2>4. Maken</h2>
+  <div class="rij" style="align-items: end">
+    <div style="flex: 0 1 22rem"><label for="label">Naam van de export</label>
+      <input type="text" id="label" name="label" placeholder="bijv. 5H examentraining" maxlength="40"></div>
+    <button class="knop hoofd" type="submit">Export maken</button>
+  </div>
+</form>
+
+<h2>Gemaakte exports</h2>
+<p class="bij">Ze staan in <b>{{ map }}</b>: per export een map (voor je oefentool) en een zip.</p>
+{% if exports %}
+<div class="tabelvak" style="margin-top: .6rem">
+<table>
+  <thead><tr><th>Export</th><th>Gemaakt</th><th class="r">Toetsen</th><th class="r">Leerlingen</th><th></th></tr></thead>
+  <tbody>
+  {% for e in exports %}
+  <tr><td><b>{{ e.label or e.naam }}</b><div class="bij">{{ e.naam }}</div></td><td>{{ e.gemaakt[:16] | replace('T', ' ') }}</td>
+    <td class="r">{{ e.toetsen }}</td><td class="r">{{ e.leerlingen }}</td>
+    <td><a class="knop klein" href="{{ url_for('export_download', naam=e.naam) }}">Download zip</a></td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}<p>Nog geen exports.</p>{% endif %}
+{% endblock %}
+{% block onder %}
+<script>
+(function () {
+  const vinkjes = [...document.querySelectorAll('input[name=toets]')];
+  const lln = [...document.querySelectorAll('.llraster label')];
+  function bijwerken() {
+    const gekozen = vinkjes.filter((v) => v.checked).map((v) => v.value);
+    document.getElementById('mix').hidden = new Set(vinkjes.filter((v) => v.checked).map((v) => v.dataset.sector)).size < 2;
+    for (const l of lln) {                       // alleen leerlingen die een gekozen toets maakten
+      const doet = !gekozen.length || l.dataset.toetsen.split(' ').some((t) => gekozen.includes(t));
+      l.hidden = !doet; if (!doet) l.querySelector('input').checked = false;
+    }
+  }
+  vinkjes.forEach((v) => v.addEventListener('change', bijwerken));
+  document.querySelectorAll('[data-kies]').forEach((k) => k.addEventListener('click', () => {
+    vinkjes.forEach((v) => { v.checked = k.dataset.kies === 'alle'; }); bijwerken(); }));
+  document.querySelector('[data-ll=geen]').addEventListener('click', () => lln.forEach((l) => { l.querySelector('input').checked = false; }));
+  document.getElementById('klas').addEventListener('change', (ev) => {
+    for (const l of lln) if (!l.hidden && l.dataset.klas === ev.target.value) l.querySelector('input').checked = true;
+    ev.target.value = '';
+  });
+  bijwerken();
+})();
+</script>
+{% endblock %}

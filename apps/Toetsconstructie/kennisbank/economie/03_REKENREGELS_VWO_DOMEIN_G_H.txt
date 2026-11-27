@@ -1,0 +1,80 @@
+CHANGELOG
+8 oktober 2026, tweede versie
+* De stappenplannen zijn door de docent akkoord bevonden. Omschrijving van het secundaire inkomen toegevoegd.
+8 oktober 2026, eerste versie (na de constructie van schoolexamen AT5.11 economie 5 vwo, versie A en B)
+* Nieuw bestand. Status: CONCEPT. De formules volgen de vwo-syllabus 2026 en het vwo-examen 2026-I. De stappenplannen zijn een voorstel van de AI en zijn nog niet door de docent vastgesteld.
+
+BRONBESTAND: 03_REKENREGELS_VWO_DOMEIN_G_H
+FUNCTIE: de schrijfwijze, formules en redeneringen die bij vwo bovenop de havo-regels komen, voor domein G (Risico en informatie) en domein H (Welvaart en groei).
+INTEGRATIE: 03_REKENREGELS_HAVO_DOMEIN_G_H geldt volledig. Dit bestand bevat alleen de aanvulling voor vwo. Gebruik samen met 01_KADER_TWEEFASEN_VWO_LABELS_DOMEIN_G_H.
+
+[DEEL 1: SCHRIJFWIJZE]
+1. Bij een kringloopvraag schrijf je per ontbrekende waarde de formule, de ingevulde berekening en de uitkomst. De richting van een pijl benoem je met "van ... naar ...".
+2. Een saldo kan negatief zijn. Schrijf het minteken erbij (S − I = −20) of benoem het saldo als tekort.
+3. Een verschil tussen twee percentages druk je uit in procentpunten.
+4. Indexcijfers met één decimaal, tussenuitkomsten met twee decimalen.
+5. Bij "Leg uit of" begint het antwoord met ja of nee. Zonder juiste uitleg levert de keuze geen punten op.
+
+[DEEL 2: FORMULES]
+A. Kringloop (H1.2)
+   Y = C + I + O + E − M. Dus I = Y − C − O − E + M.
+   Y = C + B + S. Dus S = Y − B − C.
+   S = I + (O − B) + (E − M), ofwel (S − I) + (B − O) = (E − M).
+   Particulier spaarsaldo = S − I. Overheidssaldo = B − O. Nationaal spaarsaldo = (S − I) + (B − O) = saldo lopende rekening.
+   Richting van de pijlen: bij B > O stroomt geld van de overheid naar de banken; bij O > B leent de overheid bij de banken. Bij E > M stroomt geld van de banken naar het buitenland; bij M > E van het buitenland naar de banken.
+   Controle bij de banken: wat binnenkomt is gelijk aan wat uitgaat.
+B. Reële groei per hoofd (H1.1)
+   Indexcijfer reëel bbp = indexcijfer nominaal bbp : prijsindexcijfer × 100.
+   Indexcijfer reëel bbp per hoofd = indexcijfer reëel bbp : indexcijfer bevolking × 100.
+   Twee keer delen, nooit aftrekken.
+C. Objectieve methode (H1.1)
+   Bruto toegevoegde waarde = omzet − inkoop van grondstoffen en diensten van derden.
+   Lonen worden niet afgetrokken: zij zijn een deel van de toegevoegde waarde. Afschrijvingen worden alleen afgetrokken voor de netto toegevoegde waarde.
+D. Productiefunctie (H2.2)
+   Y = A × f(K, L). Arbeidsproductiviteit = Y : L.
+   Meeropbrengst = de extra productie van één extra eenheid kapitaal of arbeid, bij gelijkblijvende andere factoren.
+   Positieve maar afnemende meeropbrengsten: de productie stijgt, de toename wordt kleiner.
+E. Verdeling (H4)
+   Gini-coëfficiënt = vlak A : (vlak A + vlak B). Dichter bij de diagonaal betekent een lagere Gini.
+   Primair inkomen: beloning voor productiefactoren, zonder uitkeringen en vóór belasting. Een uitkering verandert alleen het secundaire inkomen.
+   Secundair inkomen = primair inkomen + uitkeringen en toeslagen − belastingen en sociale premies.
+   Gemiddeld tarief = te betalen belasting : belastbaar inkomen × 100%. Progressief: het gemiddelde tarief stijgt met het inkomen.
+   Eén marginaal tarief met een vaste heffingskorting is toch progressief.
+
+[DEEL 3: STAPPENPLANNEN] (akkoord van de docent, 8 oktober 2026)
+A. Kringloop: 1 saldo buitenland (E − M) · 2 investeringen uit Y = C + I + O + E − M · 3 saldo overheid (B − O) · 4 besparingen uit Y = C + B + S · 5 richting van de twee pijlen uit het teken van de saldi · 6 controle bij de banken.
+B. Reëel bbp per hoofd: 1 index nominaal · 2 delen door de prijsindex · 3 index bevolking · 4 delen door de bevolkingsindex · 5 groei = index − 100.
+C. Principaal-agent: 1 wie is de principaal en wie de agent · 2 het tegengestelde belang · 3 de informatieachterstand van de principaal · 4 de maatregel (prikkel, contract, toezicht).
+
+[DEEL 4: VASTE REDENERINGEN]
+1. Saldo en wisselkoers: positief saldo op de lopende rekening; veel vraag naar de eigen munt; de wisselkoers stijgt; exportproducten worden duurder; de concurrentiepositie verslechtert. Bij een negatief saldo omgekeerd.
+2. Principaal-agentprobleem: er zijn twee voorwaarden nodig, tegengestelde belangen én asymmetrische informatie. Maatregelen: belangen gelijk richten (prikkels, beloning op lange termijn), contractvoorwaarden, toezicht, onderpand.
+3. Toezicht en transactiekosten: controle verkleint de informatieachterstand, maar contract- en controlekosten zijn transactiekosten. Het is een afweging.
+4. Averechtse selectie treedt alleen op bij een vrijwillige verzekering met één premie voor ongelijke risico's. Bij een verplichte verzekering kunnen goede risico's niet afhaken.
+5. Moral hazard is gedrag na het afsluiten. Maatregelen: eigen risico, bonus-malus, voorwaarden aan preventie.
+6. Risico en rendement: beleggers eisen voor een hoger risico een hoger verwacht rendement. Het aandeel is eigen vermogen met een onzekere vergoeding en komt bij een faillissement als laatste. De obligatie is vreemd vermogen met een vaste rente.
+7. Protectie: de heffing beschermt producenten en werkgelegenheid, en verlaagt de koopkracht van consumenten. Tegenmaatregelen verlagen de export en daarmee de groei.
+8. Dumping: op korte termijn een lage prijs voor de consument; op lange termijn verdwijnen concurrenten en kan de prijs stijgen.
+
+[DEEL 5: VALKUILEN VOOR DE SABOTEUR]
+1. I berekenen als Y − C − O en het buitenland vergeten.
+2. De richting van de pijl tussen overheid en banken omdraaien.
+3. Het particulier spaarsaldo gelijkstellen aan S.
+4. Een overschot "goed voor de concurrentiepositie" noemen, zonder de wisselkoers.
+5. Groeipercentages van elkaar aftrekken.
+6. De lonen of de afschrijvingen aftrekken bij de bruto toegevoegde waarde.
+7. "Afnemende meeropbrengsten" lezen als een dalende productie.
+8. Zeggen dat een hogere uitkering ook de Gini van het primaire inkomen verlaagt.
+9. Het marginale tarief geven waar het gemiddelde tarief wordt gevraagd.
+10. Bij het principaal-agentprobleem alleen de tegengestelde belangen noemen.
+11. Averechtse selectie en moral hazard verwisselen.
+12. Schrijven dat een aandeel een hoger rendement "heeft" in plaats van een hoger verwacht rendement.
+
+[DEEL 6: CASUSSEN UIT AT5.11 VWO] (verzonnen; niet opnieuw gebruiken)
+Versie A, Lumeria: Y 900, C 480, B 260, O 240, E 510, M 450. S 160, I 120, B − O 20, E − M 60. Groei per hoofd 2,7% (nominaal 107,1, prijs 103,0, bevolking 101,2). Toegevoegde waarde industrie 145. Meeropbrengsten kapitaal 90, 60, 40. Lorenz secundair 6, 17, 33, 56 en primair 2, 9, 23, 46; Gini 0,35 en 0,48. Belasting 30% en 45% met korting 3.000: 20,0% en 33,75%. Rijzeker: 8% × € 2.250 = € 180, premie € 234. Velora nv: aandeelhouders en directie.
+Versie B, Tavonië: Y 1.200, C 760, B 330, O 370, E 420, M 480. S 110, I 130, O − B 40, M − E 60. Groei per hoofd 0,6% (nominaal 105,2, prijs 102,5, bevolking 102,0). Toegevoegde waarde landbouw 185. Meeropbrengsten arbeid 90, 70, 50. Lorenz secundair 8, 20, 36, 58 en primair 3, 11, 25, 47; Gini 0,31 en 0,46. Belasting 35% met korting 4.000: 21,7% en 30,0%. Thuisborg: 3% × € 4.000 = € 120, premie € 156. Versmarkt nv: bank en kredietnemer.
+
+[DEEL 7: OPEN PUNTEN]
+1. (Afgehandeld) De stappenplannen zijn akkoord.
+2. De wisselkoers is alleen behandeld als gevolg van een saldo. Een vraag over een verandering van de wisselkoers als oorzaak valt buiten de behandelde stof.
+3. Constante schaalopbrengsten (vwo H2.2) zijn in AT5.11 niet gevraagd.

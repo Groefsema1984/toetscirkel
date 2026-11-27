@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% set stap = 4 %}
+{% block titel %}Feedbackstroken {{ toets_id }} - Toetsevaluatie{% endblock %}
+{% block inhoud %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/strook.css') }}?v=2">
+<div class="niet-print strookbalk">
+  <button class="knop hoofd" type="button" id="afdrukken" disabled>Stroken worden opgemaakt</button>
+  {% if not alle %}<a class="knop" href="{{ url_for('feedback_alle', toets=toets_id) }}">Alle stroken van deze toets</a>{% endif %}
+  <a class="knop" href="{{ url_for('klassenrapportage', toets=toets_id) }}">Klassenrapportage</a>
+  <span class="bij" id="afdrukinfo">Druk dubbelzijdig af. Elke leerling krijgt een even aantal pagina's, dus elke strook begint op een nieuw vel.</span>
+</div>
+{% if alle %}
+<p class="niet-print bij">Losse strook: {% for f in stroken %}<a href="{{ url_for('feedback', leerling_id=f.leerling_id, toets=toets_id) }}">{{ f.naam or f.leerling_id }}</a>{{ ', ' if not loop.last }}{% endfor %}</p>
+{% endif %}
+
+{# De bron van elke strook. stroken.js verdeelt de blokken over vaste A4-vellen. #}
+<div id="bronnen" class="bronnen">
+{% for f in stroken %}
+<div class="bronstrook" data-naam="{{ f.naam or f.leerling_id }}">
+  <div class="bron voor">
+    <div class="blok strookkop">
+      <h1>Zo ga je verder na {{ f.titel.split(' ')[0] }}</h1>
+      <div class="wie"><b>{{ f.naam or f.leerling_id }}</b><span>{{ f.klas }}</span><span>{{ f.vak }}</span><span>{{ f.datum }}</span></div>
+      {% if f.sterk %}<p class="sterk">{{ f.sterk }}</p>{% endif %}
+    </div>
+
+    <div class="blok">
+      <h2>Hoe ver ben je per onderdeel?</h2>
+      {% for d in (f.eindtermen if f.heeft_leerdoelen else f.domeinen) %}
+      <div class="balkrij"><span>{{ d.naam }}{% if d.vragen %} <small>{{ d.vragen }}</small>{% endif %}</span>
+        <span class="meter" role="img" aria-label="{{ d.pct }} procent"><i style="width: {{ d.pct }}%"></i></span>
+        <span class="pct">{{ d.pct }}%</span></div>
+      {% endfor %}
+    </div>
+    {% if f.tweefasen %}
+    <div class="blok">
+      <h2>Havo- en vwo-stof</h2>
+      {% for d in f.tweefasen %}
+      <div class="balkrij"><span>{{ d.naam }}</span>
+        <span class="meter" role="img" aria-label="{{ d.pct }} procent"><i style="width: {{ d.pct }}%"></i></span>
+        <span class="pct">{{ d.pct }}%</span></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if f.heeft_leerdoelen %}
+      {% for d in f.leerdoelen %}
+      <div class="blok doel {{ d.status }}">
+        {% if loop.first %}
+        <h2>Jouw leerdoelen</h2>
+        <p class="legenda"><span class="bol ja"></span> beheerst <span class="bol bijna"></span> bijna <span class="bol nee"></span> nog niet</p>
+        {% endif %}
+        <div class="doelrij">
+          <span class="bol {{ d.status }}" role="img" aria-label="{{ {'ja': 'beheerst', 'bijna': 'bijna', 'nee': 'nog niet'}[d.status] }}"></span>
+          <span class="nr">{{ d.nr }}</span>
+          <span><b>{{ d.leerdoel }}</b> <small>{{ d.onderwerp }}{{ ', ' if d.onderwerp and d.eindterm }}{% if d.eindterm %}eindterm {{ d.eindterm }}{% endif %}</small>
+            {% if d.wat %}<span class="wat">{% if d.soort %}<i>{{ d.soort }}:</i> {% endif %}{{ d.wat }}</span>{% endif %}</span>
+          <span class="pt">{{ d.punten }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <div class="blok">
+      <h2>Waar liet je punten liggen?</h2>
+      {% if f.leergaten %}
+      {% for g in f.leergaten %}
+      <div class="gatrij"><b>{{ g.titel }}</b><span>{{ g.uitleg }} <small>Vraag {{ g.vragen | join(', ') }}.</small></span></div>
+      {% endfor %}
+      {% else %}<p>Nergens: je haalde bij elke vraag de volle score.</p>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="bron achter">
+    {% if f.heeft_leerdoelen and f.leergaten %}
+    <div class="blok"><p class="patroon"><b>Je verloor de meeste punten door:</b>
+      {% for g in f.leergaten[:3] %}{{ g.titel | lower }}{{ ', ' if not loop.last }}{% endfor %}.
+      {{ f.leergaten[0].uitleg }}</p></div>
+    {% endif %}
+    <div class="blok">
+      <h2>Jouw plan</h2>
+      <ol class="plan">
+        {% for a in f.actieplan %}
+        <li><span><b>{{ a.stap }}</b><br>{{ a.hoe }}</span><span class="vakje" aria-hidden="true"></span></li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="blok">
+      <h2>Kijk zelf terug</h2>
+      <div class="reflectie">
+        {% for vraag in f.reflectie %}
+        <p>{{ vraag }}</p><div class="schrijf"></div><div class="schrijf"></div><div class="schrijf"></div>
+        {% endfor %}
+        <p>Dit doe ik bij de volgende toets anders:</p><div class="schrijf"></div><div class="schrijf"></div><div class="schrijf"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<div id="vellen" class="vellen"></div>
+<script src="{{ url_for('static', filename='js/stroken.js') }}?v=2"></script>
+{% endblock %}

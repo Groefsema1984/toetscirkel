@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toetsconstructie</title>
+<link rel="stylesheet" href="/static/app.css?v=5">
+</head>
+<body>
+<header>
+  <div class="merk"><span class="blok"></span>Toetsconstructie</div>
+  <div class="pillen">
+    <span class="pil" id="pilClaude">Claude Code …</span>
+    <span class="pil" id="pilBouw">Bouwmotor …</span>
+    <span class="pil stil" id="pilVerbruik" hidden></span>
+    <button class="licht" onclick="openInstellingen()">Instellingen</button>
+  </div>
+</header>
+
+<div class="werk">
+  <aside class="links">
+    <button class="vol" onclick="openNieuw()">+ Nieuwe toets</button>
+    <div class="kopje">Toetsen</div>
+    <div id="toetslijst" class="toetslijst"></div>
+    <div class="kopje">Bibliotheek</div>
+    <button class="rij" id="navBieb" onclick="toonBieb()">Bronnen en kennisbank</button>
+    <button class="rij" id="navKwal" onclick="toonKwaliteit()">Kwaliteit en leren</button>
+  </aside>
+
+  <main>
+    <section id="bieb">
+      <h1>Bronnen en kennisbank</h1>
+      <p class="uitleg">Sleep hier eindtermen, methodeparagrafen, examens en mindmaps naartoe. De app zet ze in mappen per vak en niveau. Per toets kiest u daarna welke bronnen meetellen.</p>
+      <div class="drop" id="drop">
+        <div><b>Sleep bestanden hierheen</b> of <label class="link">kies bestanden<input type="file" id="kies" multiple hidden></label></div>
+        <div class="dropopties">
+          Vak <select id="upVak"><option value="auto">automatisch</option><option value="economie">economie</option><option value="bedrijfseconomie">bedrijfseconomie</option><option value="algemeen">algemeen</option></select>
+          Niveau <select id="upNiveau"><option value="auto">automatisch</option><option value="havo">havo</option><option value="vwo">vwo</option><option value="mavo">mavo</option><option value="">geen</option></select>
+          Naar <select id="upDoel"><option value="bronnen">bronnen</option><option value="kennisbank">kennisbank</option></select>
+        </div>
+        <div id="upMeld" class="meld"></div>
+      </div>
+      <div id="biebFilter" class="filter"></div>
+      <div id="biebLijst"></div>
+    </section>
+
+    <section id="kwaliteit" hidden>
+      <h1>Kwaliteit en leren</h1>
+      <p class="uitleg">Hier leert de app van uw toetsen: leerregels uit uw aanpassingen en uit de evaluaties, de vragenbank met p- en rit-waarden per vraag, en de kalibratie van de verwachte moeilijkheid.</p>
+      <div id="kwaliteitInhoud"></div>
+    </section>
+
+    <section id="project" hidden>
+      <div class="projectkop">
+        <div><h1 id="pNaam"></h1><div class="sub" id="pSub"></div></div>
+        <div class="stappen" id="stappen"></div>
+      </div>
+      <nav class="tabs">
+        <button data-tab="selectie">Bronnen kiezen</button>
+        <button data-tab="opdracht">Toetsopdracht</button>
+        <button data-tab="matrijs">Toetsmatrijs</button>
+        <button data-tab="bestanden">Toetsbestanden</button>
+      </nav>
+      <div id="tab-selectie" class="tab">
+        <p class="uitleg">Vink aan wat Claude voor deze toets mag lezen. Minder bronnen betekent sneller werken en minder verbruik.</p>
+        <div id="selFilter" class="filter"></div>
+        <div id="selLijst"></div>
+      </div>
+      <div id="tab-opdracht" class="tab" hidden></div>
+      <div id="tab-matrijs" class="tab" hidden></div>
+      <div id="tab-bestanden" class="tab" hidden></div>
+    </section>
+  </main>
+
+  <aside class="chat" id="chat">
+    <div class="chatkop"><b>Gesprek met Claude</b><span id="chatStatus" class="sub"></span></div>
+    <div id="berichten" class="berichten"><div class="leegchat">Kies of maak links een toets. Vertel daarna hier wat u wilt toetsen.</div></div>
+    <div class="snel" id="snel"></div>
+    <div class="invoer">
+      <textarea id="tekst" rows="3" placeholder="Typ of spreek een bericht in. Enter verstuurt, Shift+Enter is een nieuwe regel." disabled></textarea>
+      <div id="spreekMeld" class="spreekmeld" hidden></div>
+      <div class="knoppen"><button id="spreek" class="licht spreek" onclick="spreek()" disabled title="Spreek uw bericht in. De tekst verschijnt in het vak; u verstuurt zelf.">🎤 Inspreken</button><button id="stop" class="licht" hidden onclick="stop()">Stop</button><button id="stuur" onclick="stuur()" disabled>Verstuur</button></div>
+    </div>
+  </aside>
+</div>
+
+<div id="lezer" class="lezer" hidden>
+  <div class="lezerkop"><b id="lezerNaam"></b><span><a id="lezerDl" class="link">Downloaden</a> <button class="licht" onclick="sluitLezer()">Sluiten</button></span></div>
+  <div id="lezerInhoud" class="lezerinhoud"></div>
+</div>
+
+<div id="modaal" class="modaal" hidden><div class="venster" id="venster"></div></div>
+<script src="/static/app.js?v=5"></script>
+</body>
+</html>

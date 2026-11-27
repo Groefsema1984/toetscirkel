@@ -1,0 +1,57 @@
+CHANGELOG
+8 oktober 2026, tweede versie
+* Secundair inkomen gecorrigeerd (DEEL 3, punt 10 en 11): belastingen en premies gaan eraf. De docent heeft gevraagd de juiste omschrijving te gebruiken; de dia in de presentatie Lorenzcurve kan een fout bevatten.
+* Kringloopmodel toegevoegd (DEEL 3, punt 15). Vast onderdeel van het schoolexamen (docent, 8 oktober 2026).
+8 oktober 2026, eerste versie (na schoolexamen AT5.11)
+* Nieuw bestand. Status: CONCEPT. DEEL 1 is door de docent zo uitgelegd op 8 oktober 2026. DEEL 2 en 3 zijn overgenomen uit de mindmaps en de presentatie van de docent en zijn nog niet per begrip nagelopen.
+
+BRONBESTAND: 01_KADER_DEFINITIES_DOCENT_HAVO_DOMEIN_G_H
+FUNCTIE: begrippen zoals de docent ze in de les uitlegt. Bij een toetsvraag waar een leerling een verdedigbaar ander antwoord kan geven, bepaalt dit bestand het antwoord in het correctievoorschrift.
+INTEGRATIE: staat in de rangorde boven de methode en de syllabus (zie 00_toetsconstructie_richtlijnen, Rangorde bij Conflicten).
+BRON VAN DE INHOUD: uitleg van de docent, mindmap Risico en verzekeren, mindmap Economische groei, presentatie Lorenzcurve en Gini.
+
+[DEEL 1: VASTGESTELD DOOR DE DOCENT]
+1. Vrijwillig risico: een risico waar je zelf iets aan kunt doen. Voorbeeld: je verdraait je knie bij het skiën omdat je geen skiles hebt genomen.
+2. Onvrijwillig risico: een risico dat door iemand anders wordt veroorzaakt. Je hebt er niet om gevraagd. Voorbeeld: je wordt aangeskied door een andere skiër.
+   Gevolg voor de correctie: "aangereden worden door een ander" is onvrijwillig. Het argument "je kiest er zelf voor om te gaan skiën" levert geen punt op.
+3. Kleurcode in de mindmap Risico en verzekeren: blauw = havo en vwo, groen = alleen vwo.
+
+[DEEL 2: UIT DE MINDMAP RISICO EN VERZEKEREN] (blauwe vakken, havo)
+1. Risico = schade x kans. Inschatten is lastig. Mensen zijn risico-avers: zij houden niet van risico.
+2. Vrijwillig eigen risico: je bepaalt zelf hoeveel eigen risico je hebt. Onvrijwillig eigen risico: het eigen risico is bepaald.
+   Hoe hoger het eigen risico, hoe lager de premie, en omgekeerd.
+3. Verzekeren is bedoeld voor het verminderen van onvrijwillige risico's.
+4. Totale risico = de verwachte schade van de groep. Premie = totale risico : aantal mensen in de groep. In de praktijk komen de kosten en de winst van de verzekeraar erbij.
+5. Wie verzekert zich? Dat hangt af van de mate van risicoaversie, de eigen financiële middelen en de eigen inschatting van het risico.
+6. Problemen van de verzekeraar: hij kent alleen de gemiddelde kans en heeft een informatieachterstand (asymmetrische informatie).
+7. Averechtse selectie: alleen slechte risico's verzekeren zich. Mensen met een laag risico verzekeren zich niet.
+8. Moral hazard (moreel wangedrag): mensen gaan zich roekeloos gedragen als ze verzekerd zijn.
+   Gevolg van 7 en 8: de premie stijgt.
+9. Oplossingen: de informatieachterstand verminderen (vragenlijsten, claimhistorie), premiedifferentiatie, bonus-malussysteem, eigen risico.
+10. Verplichte verzekeringen: volksverzekeringen (AOW, ANW), ziektekosten, WA-verzekering voor auto en scooter, opstalverzekering bij een woning met hypotheek. Reden: mensen kunnen het risico slecht inschatten. Verplichte solidariteit.
+11. Risico-opslag in de rente: inflatierisico en wanbetaling. Oplossing bij wanbetaling: onderpand.
+12. Rentetermijnstructuur: meestal geldt hoe langer de looptijd, hoe hoger de rente.
+13. Nominale rente is in euro's. Reële rente is gecorrigeerd voor inflatie.
+Alleen vwo (groene vakken): keuze bedrijfsfinanciering, beleggen, principaal-agentrelatie, transactiekosten.
+
+[DEEL 3: UIT DE MINDMAP ECONOMISCHE GROEI EN DE PRESENTATIE LORENZCURVE]
+1. Economische groei: een toename van de productie van goederen en diensten in een land, gemeten met het bbp.
+2. Nominale groei is inclusief prijsstijging. Reële groei is gecorrigeerd voor inflatie.
+3. Netto binnenlands product = bbp - afschrijvingen. Afschrijvingen zijn geen productie.
+4. Het bbp wordt gemeten via de productie (toegevoegde waarde; de overheid via het loon), via de inkomens en via de bestedingen.
+5. Eng welvaartsbegrip: het bbp. Niet goed gemeten: consumentensurplus, ongelijkheid, informele productie, externe effecten.
+6. Breed welvaartsbegrip: groen bbp, HDI (inkomen, levensverwachting, opleidingsniveau), geluksgevoel volgens de VN (subjectief).
+7. Lorenzcurve: het cumulatieve percentage van de bevolking tegenover het cumulatieve percentage van het inkomen.
+8. Gini-coëfficiënt: 0 = iedereen een gelijk inkomen, 1 = één persoon heeft al het inkomen. Gini = vlak A : (vlak A + vlak B).
+9. Primair inkomen: wat mensen zelf verdienen (loon, winst, rente), zonder uitkeringen en vóór belasting.
+10. Secundair inkomen: primair inkomen plus ontvangen overdrachten (uitkeringen en toeslagen) min betaalde belastingen en sociale premies. Het is het inkomen na herverdeling door de overheid.
+11. Besteedbaar inkomen: het inkomen dat een huishouden kan uitgeven of sparen. In toetsen behandelen we het als hetzelfde als het secundaire inkomen: na belastingen, premies, uitkeringen en toeslagen.
+12. Herverdeling: nivelleren en denivelleren, via progressieve belasting (marginaal tarief), heffingskorting, arbeidskorting, toeslagen en uitkeringen.
+13. Productiefunctie Y = A x f(K, L). Factorproductiviteit verbeteren via innovatie, kwaliteit van arbeid (scholing), kwaliteit van kapitaal, betere instituties en minder corruptie.
+14. Protectie: invoerrechten, contingentering en non-tarifaire belemmeringen. Redenen: werkgelegenheid, voedselzekerheid, minder afhankelijkheid, geopolitieke spanningen, infant industry.
+15. Kringloopmodel: de geldstromen tussen gezinnen, bedrijven, overheid, banken en buitenland. Y = C + I + O + E - M en Y = C + B + S. Een sector met een tekort leent bij de banken, een sector met een overschot brengt geld naar de banken.
+
+[DEEL 4: OPEN PUNTEN]
+1. De docent loopt DEEL 2 en 3 na en past de formuleringen aan waar de les afwijkt.
+2. De dia over het secundaire inkomen in de presentatie Lorenzcurve nalopen: daar staat "primair inkomen plus uitkeringen", zonder de belastingen.
+3. Aanvullen na elke toets: elk begrip waarover in de nabespreking discussie was.

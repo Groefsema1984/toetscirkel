@@ -1,0 +1,22 @@
+{# Abonnement op: de docent kiest. Verwacht 'ts' (de sessie) en optioneel 'terug'. #}
+{% if ts and ts.toestemming_nodig %}
+<div class="toestemming niet-print">
+  <h3>Verder via je abonnement of met API-tegoed?</h3>
+  <p>De Toetsevaluatie werkt via je Claude-abonnement. Dat kan nu niet verder (limiet bereikt of niet ingelogd), dus is er
+    gestopt. Er is geen API-tegoed gebruikt en wat al klaar was, blijft bewaard.</p>
+  <div class="rij" style="align-items: center; gap: .6rem">
+    <form method="post" action="{{ url_for('toestemming') }}">
+      <input type="hidden" name="toets" value="{{ ts.toets_id }}"><input type="hidden" name="keuze" value="abonnement">
+      <input type="hidden" name="terug" value="{{ terug or '' }}">
+      <button class="knop hoofd" type="submit">Opnieuw via abonnement</button></form>
+    {% if api_sleutel %}
+    <form method="post" action="{{ url_for('toestemming') }}" onsubmit="return confirm('Deze stap gaat verder met betaald API-tegoed. Akkoord?')">
+      <input type="hidden" name="toets" value="{{ ts.toets_id }}"><input type="hidden" name="keuze" value="api">
+      <input type="hidden" name="terug" value="{{ terug or '' }}">
+      <button class="knop docent" type="submit">Nu verder met API-tegoed</button></form>
+    {% endif %}
+  </div>
+  <p class="bij">Is de limiet van je abonnement op, kies dan later "Opnieuw via abonnement". API-tegoed wordt alleen gebruikt
+    als jij op die knop klikt, en alleen voor deze ene stap.{% if not api_sleutel %} Er is geen API-sleutel, dus verder met tegoed kan niet.{% endif %}</p>
+</div>
+{% endif %}

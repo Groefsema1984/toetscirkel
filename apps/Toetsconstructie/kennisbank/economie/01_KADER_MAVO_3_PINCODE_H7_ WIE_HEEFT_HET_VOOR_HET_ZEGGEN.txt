@@ -1,0 +1,105 @@
+# Hoofdstuk 7: Wie heeft het voor het zeggen?
+
+**Weet je het nog? (Voorkennis begrippen):**
+Accijns, ambtenaren, belasting, collectieve voorzieningen, gemeente, infrastructuur, miljoenennota, provincie, rijksbegroting, rijksoverheid, sociale zekerheid, subsidie.
+
+---
+
+## Paragraaf 7.1: Wat is de overheid?
+
+**Leerdoelen - Je leert in deze paragraaf:**
+* Welke overheden er zijn en wat hun taken zijn.
+* Hoe de overheid ons gedrag beïnvloedt.
+* Waarom de overheid bepaalde taken liever zelf uitvoert.
+* Wat het verschil is tussen de collectieve en de particuliere sector.
+* Wat privatisering is.
+
+**Inhoud:**
+* **Gedragsbeïnvloeding en Innovatie:** De overheid kan gedrag stimuleren of afremmen door middel van subsidies (bijv. voor innovatie) en belastingen. 
+* **Heffingen en accijnzen:** Voorbeelden hiervan zijn accijnzen op alcohol, tabak en brandstof, evenals milieuheffingen en energiebelasting op stroom.
+* **Collectieve goederen en voorzieningen:** Deze zijn gelijk aan elkaar. De overheid levert collectieve goederen om drie redenen:
+  1. Voor sommige voorzieningen kun je niet iedereen apart laten betalen.
+  2. De overheid wil de kwaliteit ervan in eigen hand houden.
+  3. De overheid wil dat de voorzieningen voor iedereen betaalbaar blijven.
+* **Sectoren:** 
+  * *Collectieve sector:* Bestaat uit de overheid en de instellingen voor de sociale zekerheid (zoals het UWV). Deze hoeven geen winst te behalen.
+  * *Particuliere sector:* Bedrijven die streven naar winst.
+* Verder komen begrippen als marktwerking en privatisering aan bod.
+
+---
+
+## Paragraaf 7.2: Sociale zekerheid
+
+**Leerdoelen - Je leert in deze paragraaf:**
+* Waarom er sociale zekerheid is en waarom we hiervoor verantwoordelijk zijn.
+* Welke soorten verzekeringen en voorzieningen er zijn.
+* Hoe de sociale zekerheid wordt betaald.
+
+**Inhoud:**
+* **Basisbegrippen:** Verzorgingsstaat, het sociaal minimum, huurtoeslag en zorgtoeslag.
+* **Solidariteitsbeginsel:** De actieven (werkenden) en de niet-actieven (mensen met een uitkering). De actieve mensen zorgen dat er geld wordt verdiend, zodat de rest (de uitkeringen) betaald kan worden.
+* **Opbouw Sociale Zekerheid (Nederland):**
+  * *Werknemersverzekeringen:* De belangrijkste zijn de WW en de WIA.
+  * *Volksverzekeringen:* Bijvoorbeeld de AOW en de Algemene nabestaandenwet (Anw).
+  * *Sociale voorzieningen:* Zoals de bijstandsuitkeringen, huurtoeslag en zorgtoeslag.
+* **Toekomst van de sociale zekerheid:** Hoe blijft dit betaalbaar? Door bijvoorbeeld de verhoging van de AOW-leeftijd en de Participatiewet (die mensen stimuleert om meer te werken).
+
+---
+
+## Paragraaf 7.3: Hoe komt de overheid aan geld?
+
+**Leerdoelen - Je leert in deze paragraaf:**
+* Voorbeelden van enkele belangrijke overheidsinkomsten.
+* Het verschil tussen directe en indirecte belasting.
+* Dat sommige belastingen gebaseerd zijn op het draagkrachtbeginsel en andere op het profijtbeginsel.
+
+**Inhoud:**
+* **Inkomen van het Rijk:** Bestaat onder andere uit btw, accijnzen, inkomstenbelasting, vennootschapsbelasting en niet-belastingontvangsten.
+* **Soorten belastingen:**
+  * *Directe belastingen:* Belasting op inkomen, winst en vermogen.
+  * *Indirecte belastingen:* Ook wel kostprijsverhogende belastingen genoemd (zoals btw en accijnzen).
+* **Beginselen:** 
+  * *Draagkrachtbeginsel:* Mensen met een hoger inkomen betalen in verhouding meer.
+  * *Profijtbeginsel:* Je betaalt voor het gebruik van een voorziening (zoals de motorrijtuigenbelasting).
+
+---
+
+## Paragraaf 7.4: Wat geeft de overheid uit?
+
+**Leerdoelen - Je leert in deze paragraaf:**
+* Wat de rijksbegroting en de Miljoenennota met elkaar te maken hebben.
+* Waar de overheid op let bij haar uitgaven.
+* Hoe een begrotingsoverschot ontstaat.
+* Wat de staatsschuld is.
+
+**Inhoud:**
+* **Rijksbegroting en Miljoenennota:** Wat zijn het en wat is het verschil daartussen? Er wordt een schema gegeven van de rijksbegroting (zoals de poster van de Miljoenennota).
+* **Saldo:** Uitleg over het begrotingstekort en begrotingsoverschot.
+* **Staatsschuld:** De staatsschuld is geleend geld (uitgestelde belastingen). Over deze schuld moet uiteindelijk rente betaald worden.
+* **Economische invloed:** Een redenatieketen legt uit dat bij een groeiende economie de overheid haar begroting makkelijker rond kan krijgen.
+
+---
+
+## Begrippenlijst per paragraaf
+
+**7.1:**
+Collectieve goederen, collectieve sector, innovatie, marktwerking, particuliere sector, privatisering.
+
+**7.2:**
+Actieve, sociaal minimum, sociale voorzieningen, solidariteitsbeginsel, volksverzekering, werknemersverzekering.
+
+**7.3:**
+Directe belastingen, draagkrachtbeginsel, indirecte belasting, inkomstenbelasting, motorrijtuigenbelasting, niet-belastingontvangsten, profijtbeginsel, vennootschapsbelasting.
+
+**7.4:**
+Begrotingsoverschot, begrotingstekort, staatsschuld.
+
+---
+
+## Rekenvaardigheden in Hoofdstuk 7
+* Rekenen met subsidies en accijnzen.
+* Werken met tarieven van de sociale zekerheid.
+* Rekenen met de werkloosheidsuitkering (in de eerste twee maanden vs. vanaf de derde maand).
+* Berekeningen rondom de kinderbijslag.
+* De motorrijtuigenbelasting uitrekenen.
+* Het tekort of overschot op de rijksbegroting berekenen.

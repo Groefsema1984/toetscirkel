@@ -1,0 +1,31 @@
+CHANGELOG
+8 oktober 2026, eerste versie (opgezocht voor schoolexamen AT5.11 bedrijfseconomie)
+
+BRONBESTAND: 01_KADER_WETGEVING_PERSONEEL_2026
+FUNCTIE: de wettelijke regels en bedragen bij personeel (Cumulus § 4.3) voor 2026. Deze gegevens worden nooit verzonnen of geschat.
+INTEGRATIE: gebruik samen met 03_REKENREGELS_HAVO_BEDRIJFSECONOMIE_BV (DEEL 2, onderdeel E en F).
+GELDIGHEID: 2026. Maak voor elk nieuw jaar een nieuw bestand en controleer de gegevens bij de bron.
+GERAADPLEEGD OP: 8 oktober 2026.
+
+[DEEL 1: TRANSITIEVERGOEDING, 2026]
+1. De werknemer krijgt 1/3 bruto maandsalaris per heel dienstjaar, vanaf de eerste werkdag.
+2. Over het resterende deel van de arbeidsovereenkomst: (brutosalaris ontvangen over het resterende deel : bruto maandsalaris) × (1/3 bruto maandsalaris : 12).
+3. De vergoeding is per 1 januari 2026 maximaal € 102.000 bruto, of één bruto jaarsalaris als dat hoger is.
+Bron: Rijksoverheid, Hoe hoog is de transitievergoeding als ik word ontslagen?
+https://www.rijksoverheid.nl/vraag-en-antwoord/ontslag/hoe-hoog-is-de-transitievergoeding-als-ik-word-ontslagen
+Tweede bron voor het maximum (zonder jaartal): UWV, Transitievergoeding na ontslag of einde contract
+https://www.uwv.nl/nl/ontslag/transitievergoeding
+De formule is gelijk aan de formule in Cumulus § 4.3.
+
+[DEEL 2: WAT IN TOETSEN FICTIEF IS]
+1. De percentages voor vakantiegeld (meestal 8%), eindejaarsuitkering en het werkgeversdeel sociale lasten staan in de informatiebron en zijn fictief, zoals in Cumulus en in het centraal examen.
+2. Het bruto maandsalaris voor de transitievergoeding wordt in de bron als één bedrag gegeven. In werkelijkheid tellen vakantiegeld en vaste toeslagen mee.
+
+[DEEL 3: NIET OPGEZOCHT]
+1. Het wettelijk minimumloon 2026.
+2. De premies werknemersverzekeringen 2026.
+3. De regels van de ketenregeling en de proeftijd.
+4. De ondergrens van 50 werknemers voor een ondernemingsraad komt uit Cumulus en is niet bij een wettelijke bron nagekeken.
+
+[DEEL 4: OPEN PUNT]
+Op de pagina van de Rijksoverheid stond het bedrag van € 102.000 op één plek bij "per 1 januari 2026" en op een andere plek bij 2025. Controleer het bedrag vóór hergebruik in een volgende toets.

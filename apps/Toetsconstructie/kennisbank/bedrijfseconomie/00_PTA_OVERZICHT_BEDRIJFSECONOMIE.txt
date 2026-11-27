@@ -1,0 +1,91 @@
+CHANGELOG
+10 november 2026, derde versie: AT5.22 (5 havo, De naamloze vennootschap) toegevoegd. Datum nog open.
+8 oktober 2026, tweede versie
+* AT6.11 voor 6 vwo toegevoegd. Examenmap vwo toegevoegd bij de vaste gegevens.
+8 oktober 2026, eerste versie (na schoolexamen AT5.11 bedrijfseconomie)
+* Nieuw bestand. Alleen AT5.11 is ingevuld. De overige regels vult de docent aan uit het PTA.
+
+BRONBESTAND: 00_PTA_OVERZICHT_BEDRIJFSECONOMIE
+FUNCTIE: de administratieve gegevens per toets, zodat de AI het voorblad en de voettekst kan invullen zonder navraag.
+INTEGRATIE: wordt gelezen in Fase 0 (bronnencheck) van 00_toetsconstructie_richtlijnen. Wat hier staat, wordt in de intake alleen bevestigd.
+BRON VAN DE INHOUD: het PTA van de school. Bij verschil is het officiële PTA leidend.
+
+[DEEL 1: VASTE GEGEVENS]
+School: Vellesan College
+Vak: bedrijfseconomie
+Methode: Cumulus
+Maker (docentafkorting): GRA
+Logo: het logobestand van de school, rechtsboven op elke pagina.
+Examens als stijlanker: map 04_COMPLETE_EINDEXAMENS_HAVO van bedrijfseconomie. Niet de map van economie.
+Examens als stijlanker voor vwo: map 02_VWO/04_COMPLETE_EINDEXAMENS_VWO van bedrijfseconomie.
+Oefenmateriaal 6 vwo: de examenbundel, deel 2 "Oefenen op onderwerp" (hoofdstuk 1 tot en met 23).
+
+[DEEL 2: TOETSEN PER KLAS]
+AT-nummer: AT5.11 (het eerste schoolexamen van klas 5; economie gebruikt hetzelfde nummer)
+Klas en niveau: 5 havo
+Onderwerp in het PTA: De besloten vennootschap (Cumulus H4.1 t/m 4.4)
+Type: schoolexamen
+Weging: 15%
+Tijdsduur: 100 minuten
+Datum van afname (schooljaar 2026-2027): 26 oktober 2026
+Verdeling: 25% investeringsselectie, 15% organisatie, 35% personeel, 25% break-evenanalyse
+Bloom: 15% onthouden, 30% begrijpen, 40% toepassen, 15% analyseren
+Omvang: 40 punten, 21 vragen
+Versies: A en B, op dezelfde toetsmatrijs
+Thema's versie A: skigebied, visafslag IJmuiden, sportschoolketen IJmuiden, Hyrox-wedstrijd IJmuiden
+Thema's versie B: klimpark, bloemenveiling Velsen-Zuid, padelketen Velsen, obstakelrun strand IJmuiden
+Bestanden: AT5.11_SE_havo5_bedrijfseconomie_versie_A (en _B) _opgaven, _bijlage, _uitwerkbijlage, _correctievoorschrift
+
+AT-nummer: AT6.11
+Klas en niveau: 6 vwo
+Onderwerp in het PTA: De naamloze vennootschap: kosten en winst, verslaggeving
+Type: schoolexamen
+Weging: 15%
+Tijdsduur: 100 minuten
+Datum van afname (schooljaar 2026-2027): 26 oktober 2026 (aanname van de AI, nog te bevestigen)
+Stof: examenbundel hoofdstuk 15 (financiële overzichten), 16 (overlopende posten), 17 (afschrijvingen), 18 (variabele en integrale kostencalculatie), 19 (break-evenanalyse), 20 (verschillenanalyse); Cumulus 3.1 tot en met 3.4, 4.4 en 4.5
+Niet behandeld: niet-financiële informatie (hoofdstuk 21), mutatiebalans, voorziening, annuïteitenlening
+Verdeling: 10 punten financiële overzichten en overlopende posten, 4 punten afschrijvingen, 12 punten kostprijs en verschillenanalyse, 8 punten dekkingsbijdrage en break-even
+Bloom: 10% onthouden, 25% begrijpen, 45% toepassen, 20% analyseren
+Omvang: 34 punten, 16 vragen, 4 opgaven
+Vaste onderdelen: verschil tussen kosten en uitgaven, overlopende posten (waaronder interest), verschillenanalyse met alle deelresultaten en een interpretatievraag over de manager, break-evenomzet met variabele kosten als percentage van de omzet
+Vorm: CE-vorm bedrijfseconomie, formuleblad met de formules van de verschillenanalyse, term "resultatenbegroting" (eenmalig "exploitatiebegroting" tussen haakjes), verkoopresultaat niet uitsplitsen
+Versies: A en B, op dezelfde toetsmatrijs, thema's doorgeschoven
+Thema's versie A: judoscholen Ippon nv, Sonnberg Skiliften nv, racefietsen Velo Kwaremont nv, Hyrox-kleding RoxWear nv
+Thema's versie B: Hyrox-sportscholen Roxbase nv, judotoernooien Tatami Events nv, ski's Firn Ski nv, wielerkleding Koerskleding nv
+Bestanden: AT6.11_SE_vwo6_bedrijfseconomie_versie_A (en _B) _opgaven, _bijlage, _uitwerkbijlage, _correctievoorschrift
+
+AT-nummer: AT5.22
+Klas en niveau: 5 havo
+Onderwerp in het PTA: De naamloze vennootschap (Cumulus 5.1 t/m 5.3)
+Type: schoolexamen
+Weging: 15%
+Tijdsduur: 100 minuten
+Datum van afname: januari 2027 (exacte datum nog niet bekend; plaatshouder op het voorblad)
+Verdeling: 5 punten rechtsvorm, organen, toezicht en jaarverslag; 8 punten aandelenemissie, beurskoers, aandelen en obligaties; 8 punten resultaatverdeling, belasting en dividend; 6 punten balans, balansmutaties, resultaat en liquiditeit; 9 punten kengetallen (current ratio 3, solvabiliteit 2, REV 3, plus 1 punt obligatierisico)
+Bloom: 15% onthouden, 30% begrijpen, 40% toepassen, 15% analyseren (uitkomst in punten: 6, 10, 15, 5)
+Omvang: 36 punten, 19 vragen, 3 opgaven van 12 punten, tempo 2,8 minuut per punt
+Versies: A en B, op dezelfde toetsmatrijs
+Thema's versie A: Noordzee Windkracht (windpark), Kustbrouwerij Velsen nv, Padelcentra Kennemerland nv
+Thema's versie B: Duinzon Energie (zonnepark), Strandbakkerij Zandvoort nv, Klimhal Haarlem nv
+Bestanden: AT5.22_SE_havo5_bedrijfseconomie_versie_A (en _B) _opgaven, _bijlage, _uitwerkbijlage, _correctievoorschrift
+
+AT-nummer:
+Klas en niveau:
+Onderwerp in het PTA:
+Type:
+Weging:
+Tijdsduur:
+Datum van afname:
+Verdeling:
+Bloom:
+Omvang:
+Versies:
+Thema's:
+Bestanden:
+
+[DEEL 3: OPEN PUNTEN]
+1. De datum 26 oktober 2026 is een voorlopige datum van de docent.
+2. De formulering van de weging op het voorblad: "Deze toets telt mee voor 15%."
+4. De datum van AT5.22 is alleen 'januari 2027'. Vul de exacte datum aan.
+3. De datum van AT6.11 voor 6 vwo (26 oktober 2026) is door de AI ingevuld en nog niet bevestigd.

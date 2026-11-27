@@ -1,0 +1,52 @@
+CHANGELOG
+8 oktober 2026, eerste versie (opgezocht voor schoolexamen AT5.11)
+
+BRONBESTAND: 01_KADER_BELASTINGCIJFERS_2026
+FUNCTIE: de wettelijke cijfers voor de inkomstenbelasting box 1 in 2026, voor gebruik in toetsen en lessen. Deze cijfers worden nooit verzonnen of geschat.
+INTEGRATIE: gebruik samen met 03_REKENREGELS_HAVO_DOMEIN_G_H (DEEL 2E en DEEL 3A).
+GELDIGHEID: belastingjaar 2026, personen jonger dan de AOW-leeftijd. Maak voor elk nieuw jaar een nieuw bestand en controleer de cijfers bij de bron.
+GERAADPLEEGD OP: 8 oktober 2026.
+
+[DEEL 1: SCHIJVENTARIEF BOX 1, 2026]
+Schijf 1: belastbaar inkomen tot en met € 38.883: 35,75%
+Schijf 2: meer dan € 38.883 tot en met € 78.426: 37,56%
+Schijf 3: meer dan € 78.426: 49,50%
+Bron: Belastingdienst, Voorlopige aanslag 2026: gebruikte tarieven en heffingskortingen
+https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen
+
+[DEEL 2: ALGEMENE HEFFINGSKORTING, 2026]
+Inkomen tot € 29.736: € 3.115 (maximum).
+Inkomen van € 29.736 tot € 78.426: € 3.115 - 6,398% x (inkomen - € 29.736).
+Inkomen vanaf € 78.426: € 0.
+Bron: Belastingdienst, Tabel algemene heffingskorting 2026
+https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2026
+
+Uitgerekende bedragen (afgerond op hele euro's):
+€ 25.000: € 3.115
+€ 46.000: € 2.074
+€ 60.000: € 1.179
+€ 90.000: € 0
+
+[DEEL 3: ARBEIDSKORTING, 2026]
+Maximum: € 5.685, bereikt bij een arbeidsinkomen van € 45.592.
+Arbeidsinkomen van € 45.592 tot € 132.920: € 5.685 - 6,510% x (arbeidsinkomen - € 45.592).
+Arbeidsinkomen vanaf € 132.920: € 0.
+De opbouw onder € 45.592 is niet opgezocht. Zoek die op vóór gebruik bij een lager inkomen.
+Bron: zie DEEL 1 (zelfde pagina).
+
+Uitgerekend bedrag: arbeidsinkomen € 52.000: € 5.268.
+
+[DEEL 4: AFTREKPOSTEN BIJ EEN HOOG INKOMEN, 2026]
+Bij een inkomen boven € 78.426 levert een aftrekpost maximaal 37,56% belasting op (2025: 37,48%).
+Bron: Belastingdienst, Tariefsaanpassing aftrekposten als u hoog inkomen hebt
+https://www.belastingdienst.nl/wps/wcm/connect/nl/aftrek-en-kortingen/content/afbouw-tarief-aftrekposten-bij-hoog-inkomen
+
+[DEEL 5: VEREENVOUDIGINGEN IN TOETSEN]
+1. De heffingskortingen staan als bedrag in de bron. De leerling rekent de afbouw niet zelf uit.
+2. Het eigenwoningforfait wordt weggelaten. Alleen de betaalde hypotheekrente is aftrekpost.
+3. Bij de bron staat dat de regels zijn vereenvoudigd.
+
+[DEEL 6: OPEN PUNTEN]
+1. De opbouw van de arbeidskorting bij lage inkomens ontbreekt.
+2. Toeslagen (zorgtoeslag, huurtoeslag) en de bedragen daarvan zijn niet opgenomen.
+3. Box 2 en box 3 zijn niet opgenomen.

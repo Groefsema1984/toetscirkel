@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titel %}Toetsevaluatie{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stijl.css') }}?v=20261103">
+</head>
+<body>
+  <header class="kop">
+    <a class="merk" href="{{ url_for('index') }}">Toetsevaluatie</a>
+    <nav aria-label="Stappen">
+      <ol class="stappen">
+        {% set stappen = [(1, 'Uploaden', url_for('index')), (2, 'Analyse', none), (3, 'Valideren', url_for('review')),
+                          (4, 'Feedbackstroken', url_for('feedback_alle')),
+                          (5, 'Klassenrapportage', url_for('klassenrapportage'))] %}
+        {% for nr, naam, link in stappen %}
+        <li class="{{ 'actief' if stap == nr }}">{% if link %}<a href="{{ link }}"><span class="nr">{{ nr }}</span>{{ naam }}</a>{% else %}<span class="stapnaam"><span class="nr">{{ nr }}</span>{{ naam }}</span>{% endif %}</li>
+        {% endfor %}
+      </ol>
+    </nav>
+    <span class="rechts"><a href="{{ url_for('leerdoelen_pagina') }}">Leerdoelen</a>
+      <a href="{{ url_for('export_pagina') }}">Export</a>
+      <a href="{{ url_for('leerregels') }}">Leerregels</a>
+      <a href="http://127.0.0.1:5056/" title="Opent de oefentool als die draait (Start Oefentool.command)">Oefentool</a></span>
+  </header>
+  <main>
+    {% for tekst in get_flashed_messages() %}<p class="melding" role="status">{{ tekst }}</p>{% endfor %}
+    {% if verouderd %}<p class="melding fout" role="alert"><b>Er staat een nieuwe versie van de Toetsevaluatie klaar, maar de oude draait nog.</b>
+      Sluit het Terminal-venster van de webapp (of druk daarin op Ctrl+C) en dubbelklik opnieuw op "Start Webapp.command".</p>{% endif %}
+    {% if not heeft_sleutel %}
+    <p class="melding fout">Claude Code (je abonnement) is niet gevonden en er is geen API-sleutel. Start één keer
+      Toetsconstructie om Claude Code te installeren, of start de app met <b>Start Webapp.command</b>.</p>
+    {% endif %}
+    {% block inhoud %}{% endblock %}
+  </main>
+  {% block onder %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,66 @@
+CHANGELOG
+26 oktober 2026, derde versie
+* DEEL 5 aangevuld met de tweede opzet van T2 economie 4 vwo. Er zijn geen nieuwe examenvragen gelezen.
+11 oktober 2026, tweede versie
+* DEEL 5 toegevoegd: toets T2 economie 4 vwo (consumentengedrag). Er zijn geen nieuwe examenvragen gelezen.
+8 oktober 2026, eerste versie (bij de constructie van schoolexamen AT6.11 economie 6 vwo)
+* Nieuw bestand. De AI heeft de opgaven van de vwo-examens 2018 tot en met 2026 (alle tijdvakken in de map, 2020 ontbreekt) per opgave op trefwoorden doorzocht. Van tien opgaven is de volledige tekst gelezen, van vier opgaven ook het correctievoorschrift (aangeleverd door de docent). De figuren zijn niet bekeken.
+
+BRONBESTAND: 02_EXAMENCONTEXT_VWO_ECO_EXAMENANALYSE_DOMEIN_D_F
+FUNCTIE: de vwo-examenvragen die als stijlanker dienen voor domein D (Markt) en domein F (Samenwerken en onderhandelen).
+INTEGRATIE: gebruik samen met 03_REKENREGELS_VWO_DOMEIN_D_F en de eindtermen van domein D en F.
+ZOEKTERMEN: monopolie, MO, MK, prijsdiscriminatie, volledige mededinging, surplus, elasticiteit, heffing, accijns, subsidie, spelboom, matrix, pay-off, gevangenendilemma, dominante strategie, Nash, zelfbinding, berovingsprobleem, meeliften.
+
+[DEEL 1: WAAR STAAT WAT]
+onderwerp | opgaven
+Monopolie met MO = MK | IJssalon 2025-I, Safetybell 2025-II, Solo 2026-I, Stikstofheffing 2024-II, Content 2023-I, Strijd om startups 2022-II, Duopolis 2024-II
+Prijsdiscriminatie | Duopolis 2024-II, Safetybell 2025-II, Indiase rijst 2026-II, Sociaal gamen 2022-I, Leasefiets 2022-I
+Volledige mededinging | Vissen naar winst 2024-I, Duurzaamheid stimuleren 2024-I, Kappen met kappen 2026-I, Safetybell 2025-II
+Heffing of subsidie met doorberekening | Duurzaamheid stimuleren 2024-I, Kappen met kappen 2026-I, Indiase rijst 2026-II
+Surplus | Content 2023-I, Solo 2026-I, Stikstofheffing 2024-II, Indiase rijst 2026-II, Strijd om startups 2022-II
+Pay-offmatrix | Vissen naar winst 2024-I, Duopolis 2024-II, Strijd om de leerling 2025-II, Prijsbeleid in de verf gezet 2021-I, Groenten 2025-I
+Spelboom | Duopolis 2024-II, Vissen naar winst 2024-I, Solo 2026-I, Prijsbeleid in de verf gezet 2021-I, Doelbewust depreciëren 2023-II, Wie krijgt de opslag? 2019-I
+Zelfbinding | IJssalon 2025-I
+Berovingsprobleem | Soepeler 2025-II, Valutaverzekering 2024-I, Circulaire economie 2023-I, CO2 ondergronds 2022-II (trefwoord gevonden, opgaven niet gelezen behalve Soepeler vraag 23)
+
+[DEEL 2: GELEZEN VRAGEN]
+examen, vraag | punten | wat er gevraagd wordt
+IJssalon 2025-I, vraag 14 | 4 | Variabele kosten stijgen met € 0,25 per stuk. Nieuwe MK-functie, MO-functie, nieuwe afzet en prijs, percentage van de kostenstijging dat wordt doorberekend. Eén punt per stap.
+IJssalon 2025-I, vraag 15 | 2 | Leg uit dat twee aanbieders in een gevangenendilemma kunnen belanden bij perfecte substituten. Dominante strategie en lagere winst voor beide.
+IJssalon 2025-I, vraag 16 | 2 | Leg uit dat zelfbinding (laagsteprijsgarantie) het risico op een prijzenoorlog beperkt.
+Safetybell 2025-II, vraag 2 | 3 | Bereken de maximale totale winst. GO en GVK gegeven, TCK apart. MO en MK afleiden, MO = MK, winst.
+Safetybell 2025-II, vraag 3 | 2 | Leg uit of door een subsidie voor lage inkomens prijsdiscriminatie ontstaat. Drie elementen: deelmarkten, doorverkoop, conclusie.
+Safetybell 2025-II, vraag 6 | 2 | Leg uit dat het evenwicht bij volledige mededinging Pareto-efficiënt is.
+Duopolis 2024-II, vraag 2 | 2 | Toon met een berekening aan dat de winst in een cel van de matrix een gegeven bedrag is.
+Duopolis 2024-II, vraag 4 | 2 | Beargumenteer of een plan voldoet aan de twee voorwaarden van prijsdiscriminatie.
+Duopolis 2024-II, vraag 5 | 2 | Leg uit welke uitkomst in de spelboom tot stand komt. Noem getallen.
+Vissen naar winst 2024-I, vraag 22 | 3 | Bereken het aantal aanbieders op een markt van volledige mededinging uit de TK-functie van één aanbieder en een figuur.
+Vissen naar winst 2024-I, vraag 24 | 2 | Leg met getallen uit de matrix uit of er sprake is van een gevangenendilemma.
+Duurzaamheid stimuleren 2024-I, vraag 2 | 2 | Bereken hoeveel procent van de heffing wordt doorberekend in de prijs.
+Duurzaamheid stimuleren 2024-I, vraag 4 | 2 | Arceer de heffingsopbrengst en het verlies aan doelmatigheid.
+Content 2023-I, vraag 5 | 2 | Leg het effect op de omvang van het surplus en het effect op de verdeling van het surplus uit.
+Solo 2026-I, vraag 3 | 3 | MK stijgt. Bereken de procentuele prijsstijging.
+Kappen met kappen 2026-I, vraag 16 | 2 | Leg met twee kenmerken uit van welke marktvorm sprake is.
+Strijd om de leerling 2025-II, vraag 20 | 2 | Leg met getallen uit de matrix uit of er sprake is van een Nash-evenwicht.
+Soepeler 2025-II, vraag 23 | 2 | Leg uit dat een maatregel via het berovingsprobleem leidt tot hogere loonkosten per product.
+
+[DEEL 3: WAT OPVALT]
+1. Het examen schrijft "volledige mededinging", niet "volkomen concurrentie". De methode gebruikt het tweede.
+2. Functies staan in een tabel met de eenheden ernaast (Q in duizenden, TK in duizenden euro's). De eenheid is een vaste valkuil.
+3. Een kostenverandering is bijna altijd een verandering van de variabele kosten per stuk of van MK, zelden van de constante kosten.
+4. Een opgave combineert vaak markt en speltheorie: eerst monopolie, daarna een toetreder met een matrix of spelboom.
+5. Bij een matrix laat het examen eerst één cel narekenen ("Toon met een berekening aan dat ...").
+6. Bij "Leg uit of" over prijsdiscriminatie klopt het plan soms maar aan één van de twee voorwaarden.
+7. Spelbomen hebben meestal drie takken bij de eerste speler en twee bij de tweede. Een boom met drie niveaus is niet gevonden; AT6.11 gebruikt die wel (berovingsprobleem).
+
+[DEEL 4: OPEN PUNTEN]
+1. De figuren en spelbomen in de examens zijn niet bekeken. Lees voor een volgende toets de pdf's zelf.
+2. De correctievoorschriften van de niet aangeleverde opgaven zijn niet gelezen.
+3. De opgaven over het berovingsprobleem en over meeliften zijn alleen op trefwoord gevonden.
+
+[DEEL 5: TOETS T2 ECONOMIE 4 VWO, CONSUMENTENGEDRAG]
+1. De lesstof (domein D hoofdstuk 2) was leidend. Examenvragen mochten alleen als inspiratie dienen; de kolom koppeling in de matrijs verwijst naar paragrafen van de lesstof, niet naar examenvragen.
+2. Casussen van T2 (niet opnieuw gebruiken): Streamo, Padelpark Zuiderveld, Koffiehuis De Bonnet, Tonika, Klimhal Rotsvast, Broodjeszaak De Kruimel. Zie 03_REKENREGELS_VWO_DOMEIN_D_F, DEEL 6.
+3. Tweede opzet T2 (niet opnieuw gebruiken): Sportschool Pulsar, Padel- en tennishal Netpunt, Supermarkt Versmarkt, Zwembad Aquarius, Klimpark Boomtop, Bakkerij Korenbloem. Zie 03_REKENREGELS_VWO_DOMEIN_D_F, DEEL 6. Ook de casussen van T2 4 havo (Cinéa, Trapvast, De Gouden Korst, Aurora, Rolwerk, Gelato Noord) blijven uitgesloten.
+4. Vraagvormen van de tweede opzet: invulvraag met berekening, surplusberekening, verschuiving (Leg uit), twee effecten op het surplus (Beredeneer), elasticiteit uit omzet, uitspraak van een bedrijfsleider toetsen (Beredeneer), kruislingse elasticiteit berekenen en afleiden (Leid af), inkomenselasticiteit gebruiken om een uitspraak te weerleggen (Toon aan met een berekening).
+5. Zoekopdracht voor een volgende keer: examenvragen over consumentensurplus, prijselasticiteit en kruislingse of inkomenselasticiteit in de vwo-examens (zie ZOEKTERMEN) lezen en hier toevoegen.

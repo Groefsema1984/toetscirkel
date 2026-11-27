@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% set deel = 'dashboard' %}
+{% block titel %}Leerling {{ p.lid }} · Oefentool{% endblock %}
+{% block inhoud %}
+<div class="{{ 'printblad' if printen }}">
+<p class="bij niet-print"><a href="{{ url_for('dashboard_pagina') }}">Dashboard</a> / leerling</p>
+<h1>{% if printen and naam %}{{ naam }} <span class="bij" style="font-size: 1rem">{{ p.lid }}</span>{% else %}Leerling {{ p.lid }}{% endif %}</h1>
+<p class="intro" style="margin-bottom: 1rem">{{ p.klas }} · {{ p.niveau }} · {{ p.vakken | join(' en ') }} · {{ p.toetsen | length }} {{ 'meting' if p.toetsen | length == 1 else 'metingen' }}</p>
+<p class="niet-print"><a class="knop klein" href="{{ url_for('leerling_pagina', lid=p.lid, print=1) }}" target="_blank">Printversie met naam (voor een gesprek)</a></p>
+{% if printen %}<p class="niet-print"><button class="knop hoofd" onclick="window.print()">Afdrukken</button></p>{% endif %}
+
+<div class="kerncijfers">
+  <div class="kern"><b>{{ p.tel.get('beheerst', 0) }}</b>leerdoelen beheerst</div>
+  <div class="kern"><b>{{ p.tel.get('bijna', 0) }}</b>bijna</div>
+  <div class="kern"><b>{{ p.tel.get('nog_niet', 0) }}</b>nog niet</div>
+  <div class="kern">{% if p.groei %}{% set g = (p.groei | sum) / (p.groei | length) %}<b class="{{ 'plus' if g > 0 else 'min' }}">{{ '+' if g > 0 }}{{ (g * 100) | round | int }}</b>gemiddelde groei per leerdoel (procentpunten){% else %}<b>·</b>nog geen herhaalde metingen{% endif %}</div>
+</div>
+
+<h2>Per leerdoel</h2>
+<p class="bij">Elke kolom is een meting, van oud naar nieuw. De laatste meting telt.</p>
+<div class="tabelvak">
+<table class="matrix">
+  <thead><tr><th>Leerdoel</th>
+    {% for t in p.toetsen %}<th class="code-kop" title="{{ t.toets_id }}"><small>{{ t.datum[8:10] }}-{{ t.datum[5:7] }}</small>{{ t.toets_id.split('_')[0] }}{% if t.soort == 'oefen' %} <span class="label-oefen">oefen</span>{% endif %}</th>{% endfor %}
+    <th>Nu</th><th class="r">Groei</th></tr></thead>
+  <tbody>
+  {% for d in p.doelen %}
+  <tr><td><span class="code">{{ d.code }}</span> {{ d.omschrijving }}{% if d.teruggevallen %} <span class="vlag">teruggevallen</span>{% endif %}</td>
+    {% for t in p.toetsen %}{% set m = d.per_toets.get(t.toets_id) %}
+    <td class="cel">{% if m %}<span class="{{ m.status }} {{ 'oefen' if m.soort == 'oefen' }}" title="{{ m.behaald }} van {{ m.max }} punten, vraag {{ m.vragen | join(', ') }}">{{ m.pct | pct }}</span>{% else %}<span class="bij">·</span>{% endif %}</td>
+    {% endfor %}
+    <td>{{ {'beheerst': 'beheerst', 'bijna': 'bijna', 'nog_niet': 'nog niet'}[d.status] }}</td>
+    <td class="r">{% if d.groei is not none %}<span class="{{ 'plus' if d.groei > 0 else ('min' if d.groei < 0 else '') }}">{{ '+' if d.groei > 0 }}{{ (d.groei * 100) | round | int }}</span>{% else %}<span class="bij">·</span>{% endif %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<div class="tweeluik">
+  <section class="blok">
+    <h3>Waar gaan de punten verloren?</h3>
+    <p class="bij">Verloren punten per soort fout, over alle metingen (tussen haakjes: alleen de laatste meting per leerdoel).</p>
+    {% set max_gat = (p.gaten.values() | max) if p.gaten else 1 %}
+    <table class="klein"><tbody>{% for k, v in p.gaten.items() %}<tr><td><span class="code">{{ k }}</span></td><td>{{ p.leergaten_namen.get(k, k) }}</td>
+      <td style="min-width: 8rem"><span class="staafje"><span class="laag" style="width: {{ (100 * v / max_gat) | round }}%"></span></span></td>
+      <td class="r">{{ v | round(1) }} ({{ p.gaten_laatst.get(k, 0) | round(1) }})</td></tr>{% else %}<tr><td class="bij">Geen punten verloren.</td></tr>{% endfor %}</tbody></table>
+  </section>
+  <section class="blok">
+    <h3>Geoefend</h3>
+    {% if p.oefenen %}
+    <table class="klein"><tbody>{% for x in p.oefenen %}<tr><td>{{ x.datum[8:10] }}-{{ x.datum[5:7] }}</td>
+      <td>{% if not printen %}<a href="{{ url_for('toon', oid=x.id) }}">{{ x.naam }}</a>{% else %}{{ x.naam }}{% endif %}<br>
+        <span class="bij">{{ x.set }}{% if x.opgaven %} · {{ x.opgaven }} opgaven{% endif %}{% if x.oefentoets %} · oefentoets {{ x.oefentoets }}{% endif %}</span></td>
+      <td>{% if x.zelfcheck %}thuis {{ x.zelfcheck.gemaakt }}/{{ x.zelfcheck.totaal }} gemaakt{% if x.keer > 1 %} ({{ x.keer }}×){% endif %}{% elif x.status == 'klaar' %}<span class="bij">geen resultaatcode</span>{% endif %}</td></tr>{% endfor %}</tbody></table>
+    {% else %}<p class="bij">Nog geen oefenmateriaal gekregen.</p>{% endif %}
+  </section>
+</div>
+
+<h2>Wat nu?</h2>
+<ul class="wat-nu">
+  {% for d in p.doelen if d.status != 'beheerst' %}{% if loop.index <= 4 %}<li><b>{{ d.zin or d.omschrijving }}</b> <span class="bij">({{ d.pct | pct }} bij de laatste meting)</span></li>{% endif %}{% else %}
+  <li>Alle leerdoelen zijn beheerst. Houd ze bij met een korte herhaalset.</li>{% endfor %}
+</ul>
+</div>
+{% endblock %}

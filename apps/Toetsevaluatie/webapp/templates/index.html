@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% set stap = 1 %}
+{% block inhoud %}
+<h1>Leg de stapel neer, kijk samen na</h1>
+<p class="intro">Upload de scan van de hele klas en je correctievoorschrift. Claude knipt de scan
+  per leerling op, leest jouw scores in de kantlijn en legt alleen de verschillen aan je voor.
+  Er gaat niets naar de database voordat jij het definitief maakt.</p>
+
+<form id="upload" method="post" action="{{ url_for('start') }}" enctype="multipart/form-data">
+  <div class="rij">
+    <div style="flex: 1 1 8rem"><label for="toetscode">Toetscode</label>
+      <input type="text" id="toetscode" name="toetscode" placeholder="AT5.11" required autocomplete="off"></div>
+    <div><label for="soort">Soort</label>
+      <select id="soort" name="soort">{% for code, naam in soorten %}<option value="{{ code }}">{{ naam }}</option>{% endfor %}</select></div>
+    <div><label for="vak">Vak</label>
+      <select id="vak" name="vak">{% for v in vakken %}<option>{{ v }}</option>{% endfor %}</select></div>
+    <div><label for="klas">Klas</label>
+      <select id="klas" name="klas">{% for code, naam, tf in klassen %}
+        <option value="{{ code }}" data-tweefasen="{{ 1 if tf else 0 }}" {{ 'selected' if code == '5H' }}>{{ naam }}</option>{% endfor %}
+      </select></div>
+    <div><label for="datum">Afnamedatum</label>
+      <input type="date" id="datum" name="datum" value="{{ vandaag }}"></div>
+    <div style="flex: 0 1 8rem"><label for="duur">Duur in minuten</label>
+      <input type="number" id="duur" name="duur" value="100" min="10" max="300"></div>
+  </div>
+  <div class="rij" style="margin-top: .8rem">
+    <label class="vink"><input type="checkbox" id="tweefasen" name="tweefasen" value="1"> Tweefasen-toets (H+V- en V-vragen)</label>
+    <label class="vink"><input type="checkbox" name="overschrijf" value="1"> Opnieuw analyseren als deze toets al bestaat</label>
+  </div>
+  <p class="toetsnaam">Toetsnaam: <output id="toetsnaam">-</output></p>
+  <p class="bij" id="oefenuitleg" hidden>Oefentoets uit de oefentool: gebruik de toetscode van het oefenexamen
+    (bijvoorbeeld OEF1-A) en het correctievoorschrift dat de oefentool heeft gemaakt. De leerdoelcodes worden dan
+    direct overgenomen en de resultaten tellen als meting met het label <i>oefen</i>.</p>
+
+  <div class="vellen">
+    <div class="velletje" data-veld="scan">
+      <h3>Klassenscan</h3>
+      <span class="bij">Eén PDF met het werk van de hele klas, per leerling achter elkaar.</span>
+      <span class="bestand">Kies of sleep de PDF</span>
+      <input type="file" name="scan" accept=".pdf,application/pdf" required aria-label="Klassenscan (PDF)">
+    </div>
+    <div class="velletje" data-veld="correctie">
+      <h3>Correctievoorschrift</h3>
+      <span class="bij">Het .docx-bestand met uitwerkingen, deelscores en toetsmatrijs.</span>
+      <span class="bestand">Kies of sleep het bestand</span>
+      <input type="file" name="correctie" accept=".docx,.pdf" required aria-label="Correctievoorschrift (.docx)">
+    </div>
+    <div class="velletje" data-veld="klassenlijst">
+      <h3>Klassenlijst</h3>
+      <span class="bij" id="lijstinfo">{% if opgeslagen_lijst %}Niet nodig: je opgeslagen klassenlijsten ({{ opgeslagen_lijst }} leerlingen) worden gebruikt.{% else %}Een .csv of .xlsx met leerlingnummer en naam.{% endif %}</span>
+      <span class="bestand">{{ 'Andere lijst kiezen kan hier' if opgeslagen_lijst else 'Kies of sleep het bestand' }}</span>
+      <input type="file" name="klassenlijst" accept=".csv,.xlsx" {{ '' if opgeslagen_lijst else 'required' }} aria-label="Klassenlijst (.csv of .xlsx)">
+    </div>
+  </div>
+
+  <div class="start">
+    <button class="knop hoofd groot" type="submit" {{ '' if heeft_sleutel else 'disabled' }}>Start AI-analyse</button>
+    <span class="bij">Een klas van 25 leerlingen duurt ongeveer een kwartier. Je kunt het venster open laten staan.</span>
+  </div>
+</form>
+
+{% if sessies %}
+<h2>Je analyses</h2>
+<div class="tabelvak" style="margin-top: .8rem">
+<table>
+  <thead><tr><th>Toets</th><th>Afgenomen</th><th class="r">Leerlingen</th><th>Stand</th><th></th></tr></thead>
+  <tbody>
+  {% for k in sessies %}
+  <tr>
+    <td><b>{{ k.toets_id }}</b></td>
+    <td>{{ k.datum }}</td>
+    <td class="r">{{ k.aantal or '-' }}</td>
+    <td>{% if k.toets_id in bezig %}Bezig met analyseren
+        {% elif k.status == 'review' %}Wacht op jouw validatie
+        {% elif k.status == 'gepubliceerd' %}Definitief
+        {% elif k.status == 'publiceren' %}Feedbackstroken worden geschreven
+        {% elif k.status == 'fout' %}<span class="vlag">Gestopt</span> {{ k.fout[:90] }}
+        {% else %}Bezig{% endif %}</td>
+    <td>{% if k.status == 'review' %}<a class="knop klein" href="{{ url_for('review', toets=k.toets_id) }}">Valideren</a>
+        {% elif k.status == 'gepubliceerd' %}<a class="knop klein" href="{{ url_for('klassenrapportage', toets=k.toets_id) }}">Rapportage</a>
+          <a class="knop klein" href="{{ url_for('feedback_alle', toets=k.toets_id) }}">Stroken</a>
+          <a class="knop klein" href="{{ url_for('review', toets=k.toets_id) }}">Scores herzien</a>
+        {% else %}<a class="knop klein" href="{{ url_for('voortgang', toets_id=k.toets_id) }}">Bekijken</a>{% endif %}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+<h2 id="claude">Claude: abonnement of API-tegoed</h2>
+<form method="post" action="{{ url_for('claude_instellingen') }}" class="rij" style="max-width: 50rem">
+  <div style="flex: 2 1 20rem"><label for="motor">Waarmee kijkt Claude na?</label><select id="motor" name="motor">
+    {% for k, v in MOTOREN.items() %}<option value="{{ k }}" {{ 'selected' if claude_inst.motor == k }}>{{ v }}</option>{% endfor %}</select></div>
+  <div><label for="abonnement_model">Model via abonnement</label><select id="abonnement_model" name="abonnement_model">
+    {% for k, v in MODELLEN.items() %}<option value="{{ k }}" {{ 'selected' if claude_inst.abonnement_model == k }}>{{ v }}</option>{% endfor %}</select></div>
+  <div style="flex: 0 0 auto"><button class="knop" type="submit">Bewaren</button></div>
+</form>
+<p class="bij" style="max-width: 50rem">Abonnement: {{ abo.tekst }}{% if abo.limiet %} · <b>limiet bereikt</b>{% endif %}.
+  Nakijken, namen lezen, feedbackstroken en het klassenadvies gaan via je Claude-abonnement: geen API-tegoed, wel binnen de
+  limieten van je abonnement. Kan het abonnement niet verder, dan stopt de app en vraagt hij of je met API-tegoed verder wilt.
+  Zonder jouw klik wordt er nooit tegoed gebruikt.</p>
+{% endblock %}
+{% block onder %}
+<script>
+(function () {
+  const f = document.getElementById('upload');
+  const uit = document.getElementById('toetsnaam');
+  const klas = f.klas, tf = document.getElementById('tweefasen'), info = document.getElementById('lijstinfo');
+  const standaard = info.textContent;
+  let teller = 0;
+  function naam() {
+    const code = f.toetscode.value.trim().replace(/[^A-Za-z0-9.\-]/g, '');
+    return code ? `${code}_${f.soort.value}_${klas.value}_${f.vak.value}${tf.checked ? '_tweefasen' : ''}` : '';
+  }
+  async function bijwerken() {
+    const n = naam();
+    uit.textContent = n || '-';
+    if (!n) return;
+    const mijn = ++teller;
+    try {
+      const r = await fetch('/api/klassenlijst?toets_id=' + encodeURIComponent(n));
+      const d = await r.json();
+      if (mijn !== teller) return;
+      if (d.precies) info.textContent = `Niet nodig: tabblad ${d.groepen.join(', ')} uit je opgeslagen klassenlijst wordt gebruikt (${d.aantal} leerlingen).`;
+      else if (d.aantal) info.textContent = `Geen tabblad voor deze klas gevonden; alle ${d.aantal} leerlingen uit je opgeslagen lijsten worden gebruikt. Een eigen lijst uploaden is nauwkeuriger.`;
+      else info.textContent = standaard;
+    } catch (e) { /* de lijstinfo is alleen een hulp */ }
+  }
+  klas.addEventListener('change', () => { tf.checked = klas.selectedOptions[0].dataset.tweefasen === '1'; bijwerken(); });
+  for (const el of [f.toetscode, f.vak, f.soort, tf]) el.addEventListener('input', bijwerken);
+  tf.checked = klas.selectedOptions[0].dataset.tweefasen === '1';
+  const oefen = document.getElementById('oefenuitleg');
+  f.soort.addEventListener('change', () => { oefen.hidden = f.soort.value !== 'OE'; });
+  bijwerken();
+
+  for (const vel of document.querySelectorAll('.velletje')) {
+    const veld = vel.querySelector('input[type=file]'), tekst = vel.querySelector('.bestand');
+    veld.addEventListener('change', () => {
+      const b = veld.files[0];
+      vel.classList.toggle('gekozen', !!b);
+      if (b) tekst.textContent = `${b.name} (${(b.size / 1048576).toFixed(1).replace('.', ',')} MB)`;
+    });
+    vel.addEventListener('dragenter', () => vel.classList.add('sleep'));
+    for (const ev of ['dragleave', 'drop']) vel.addEventListener(ev, () => vel.classList.remove('sleep'));
+  }
+  f.addEventListener('submit', () => {
+    const k = f.querySelector('button[type=submit]');
+    k.disabled = true; k.textContent = 'Bestanden worden geüpload';
+  });
+})();
+</script>
+{% endblock %}

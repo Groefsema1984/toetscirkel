@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titel %}Oefentool{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stijl.css') }}?v=2">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/oefen.css') }}?v=3">
+</head>
+<body>
+  <header class="kop">
+    <a class="merk" href="{{ url_for('index') }}">Oefentool</a>
+    <nav aria-label="Onderdelen">
+      <ol class="stappen">
+        {% set delen = [('dashboard', 'Dashboard', url_for('dashboard_pagina')), ('opdrachten', 'Opdrachten', url_for('index')), ('bibliotheek', 'Bibliotheek', url_for('bibliotheek_pagina')),
+                        ('itembank', 'Itembank', url_for('itembank')), ('kwaliteit', 'Kwaliteit', url_for('kwaliteit_pagina'))] %}
+        {% for sleutel, naam, link in delen %}
+        <li class="{{ 'actief' if deel == sleutel }}"><a href="{{ link }}">{{ naam }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+    <span class="rechts"><a href="http://127.0.0.1:5055/" title="Opent de Toetsevaluatie als die draait">Toetsevaluatie</a></span>
+  </header>
+  <main>
+    {% if verouderd %}<p class="melding fout" role="alert"><b>Er staat een nieuwe versie van de oefentool klaar, maar de oude draait nog.</b>
+      Sluit het Terminal-venster van de oefentool (of druk daarin op Ctrl+C) en dubbelklik opnieuw op "Start Oefentool.command".</p>{% endif %}
+    {% for tekst in get_flashed_messages() %}<p class="melding" role="status">{{ tekst }}</p>{% endfor %}
+    {% if not heeft_sleutel %}
+    <p class="melding fout">Er is geen API-sleutel gevonden. Sluit dit venster en start de oefentool met
+      <b>Start Oefentool.command</b>; dan wordt de sleutel uit je sleutelhanger gebruikt (dezelfde als de Toetsevaluatie).</p>
+    {% endif %}
+    {% block inhoud %}{% endblock %}
+  </main>
+  {% block onder %}{% endblock %}
+</body>
+</html>

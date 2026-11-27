@@ -1,0 +1,140 @@
+CHANGELOG
+8 oktober 2026, tweede versie (na de aanpassing van AT5.11 havo en de constructie van versie B)
+* Kringloopmodel toegevoegd: formules (DEEL 2, H), stappenplan (DEEL 3, E), valkuilen en casussen.
+* DEEL 6 bijgewerkt: de berekening van het bbp via productie en het groen bbp per hoofd staan niet meer in AT5.11. Casussen van versie B toegevoegd.
+* Secundair inkomen: belastingen en premies gaan eraf (zie 01_KADER_DEFINITIES_DOCENT_HAVO_DOMEIN_G_H).
+8 oktober 2026, eerste versie (na de constructie van schoolexamen AT5.11, havo 5)
+* Nieuw bestand. Status: CONCEPT. De formules volgen de syllabus en de mindmaps van de docent. De stappenplannen in DEEL 3 zijn een voorstel van de AI en zijn nog niet door de docent vastgesteld.
+
+BRONBESTAND: 03_REKENREGELS_HAVO_DOMEIN_G_H
+FUNCTIE: de vaste schrijfwijze voor berekeningen, stappenplannen en redeneringen bij domein G (Risico en informatie) en domein H (Welvaart en groei) voor havo.
+INTEGRATIE: gebruik samen met 03_REKENREGELS_HAVO_VWO_DOMEIN_D (DEEL 1, algemene schrijfwijze, geldt ook hier), 01_KADER_BELASTINGCIJFERS en 01_KADER_DEFINITIES_DOCENT_HAVO_DOMEIN_G_H.
+BRON VAN DE INHOUD: syllabus economie havo, centraal examen 2027, domein G en H; mindmap Economische groei; mindmap Risico en verzekeren; presentatie Lorenzcurve en Gini; schoolexamen AT5.11.
+
+[DEEL 1: ALGEMENE SCHRIJFWIJZE]
+1. DEEL 1 van 03_REKENREGELS_HAVO_VWO_DOMEIN_D geldt volledig: drie regels per berekening (formule of uitgangspunt, berekening, antwoord met eenheid), bedragen met euroteken en twee decimalen, percentages met één decimaal, pas afronden in het eindantwoord.
+2. Grote bedragen: € 1.061 miljard. Bij delen van miljarden door miljoenen schrijf je de eenheden erbij: € 990 miljard : 18,0 miljoen = € 55.000,00.
+3. Indexcijfers: één decimaal (106,1). Het basisjaar is 100.
+4. Belastingbedragen per schijf: twee decimalen (€ 13.900,67). Heffingskortingen staan als heel bedrag in de bron.
+5. Kansen: als percentage in de bron (2%), als decimaal getal in de berekening (0,02).
+
+[DEEL 2: FORMULES]
+A. Bbp meten (H1.1)
+   Toegevoegde waarde = omzet - inkoop bij andere bedrijven (grond- en hulpstoffen, diensten van derden).
+   Bbp via productie = som van alle toegevoegde waarden. De overheid telt mee met de loonsom van de ambtenaren.
+   Bbp via bestedingen: Y = C + I + O + E - M.
+   Bbp via inkomens: loon + rente + pacht en huur + winst.
+   Netto binnenlands product = bbp - afschrijvingen.
+   Bbp per hoofd = bbp : aantal inwoners.
+B. Nominaal en reëel (H1.3)
+   Indexcijfer = nieuw : oud x 100.
+   Ric = Nic : Pic x 100. De reële groei is Ric - 100.
+   Nooit de percentages van elkaar aftrekken.
+C. Groen bbp (H1.5)
+   Groen bbp = bbp - geschatte waarde van de milieuschade + geschatte waarde van de milieuverbetering.
+D. Lorenzcurve (H3.3)
+   De curve is cumulatief. Het aandeel van een groep = de afgelezen waarde aan het eind van de groep - de afgelezen waarde aan het begin.
+   Rijkste 20% = 100% - de waarde bij 80%.
+   Gini-coëfficiënt = oppervlakte A : (oppervlakte A + oppervlakte B). 0 = volledig gelijk, 1 = volledig ongelijk.
+   Havo: de Lorenzcurve alleen aflezen, begrijpen en toepassen. Niet tekenen (docent, 8 oktober 2026).
+E. Inkomstenbelasting box 1 (H3.2)
+   Belastbaar inkomen = bruto-inkomen - aftrekposten.
+   Belasting = de som van de belasting per schijf.
+   Te betalen = belasting - heffingskortingen.
+   Gemiddeld belastingtarief = te betalen belasting : belastbaar inkomen x 100%.
+   Marginaal tarief = het tarief van de hoogste schijf waarin het inkomen valt.
+   Een aftrekpost gaat vóór de belastingberekening van het inkomen af. Een heffingskorting gaat ná de berekening van de belasting af.
+F. Risico en verzekeren (G1)
+   Risico = kans x schade (verwachte schade in euro's).
+   Totale risico = verwachte schade van de hele groep = aantal verzekerden x kans x gemiddelde schade.
+   Premie = totale risico : aantal verzekerden. In de praktijk komt hier een opslag voor kosten en winst bij.
+   Eigen risico: verwachte kosten = premie + kans x eigen risico.
+G. Rente (G3)
+   Reële rente: Ric = Nic : Pic x 100.
+   Rente = vergoeding voor uitstel van consumptie + opslag voor inflatierisico + opslag voor het risico van wanbetaling.
+H. Kringloopmodel (H1.2)
+   Bedrijven: Y = C + I + O + E - M. Dus I = Y - C - O - E + M.
+   Gezinnen: Y = C + B + S. Dus S = Y - B - C.
+   Saldo overheid = B - O. Bij een tekort (O > B) leent de overheid bij de banken: de geldstroom loopt van de banken naar de overheid. Bij een overschot omgekeerd.
+   Saldo buitenland (lopende rekening) = E - M. Bij E > M komt het buitenland geld tekort: de geldstroom loopt van de banken naar het buitenland. Bij M > E omgekeerd.
+   Controle bij de banken: wat binnenkomt is gelijk aan wat uitgaat.
+I. Primair en secundair inkomen (H3.3)
+   Secundair inkomen = primair inkomen + uitkeringen en toeslagen - belastingen en sociale premies.
+
+[DEEL 3: STAPPENPLANNEN] (voorstel van de AI, nog vast te stellen door de docent)
+Elke stap is bij een toetsvraag één punt.
+A. Box 1, drie stappen:
+   1. Belastbaar inkomen = bruto - aftrekposten.
+   2. Belasting per schijf berekenen en optellen.
+   3. Heffingskortingen eraf.
+   Voorbeeld (2026): bruto € 52.000, hypotheekrente € 6.000, heffingskortingen € 2.074 en € 5.268.
+   Stap 1: € 46.000. Stap 2: 38.883 x 0,3575 = € 13.900,67 en 7.117 x 0,3756 = € 2.673,15, samen € 16.573,82. Stap 3: € 9.231,82.
+B. Reële groei, twee stappen:
+   1. Indexcijfer nominaal = nieuw : oud x 100.
+   2. Ric = Nic : Pic x 100, groei = Ric - 100.
+   Voorbeeld: 1.061 : 1.000 x 100 = 106,1. 106,1 : 103,0 x 100 = 103,0. Groei 3,0%.
+C. Premie, twee stappen:
+   1. Verwachte schade per verzekerde = kans x schade.
+   2. Premie = verwachte schade x (1 + opslag).
+   Voorbeeld: 0,02 x 1.500 = € 30,00. 30,00 x 1,25 = € 37,50.
+D. Bbp via productie, twee stappen:
+   1. Toegevoegde waarde per sector = omzet - inkoop.
+   2. Optellen, inclusief de loonsom van de overheid.
+E. Kringloop, vier stappen:
+   1. Investeringen uit Y = C + I + O + E - M.
+   2. Besparingen uit Y = C + B + S.
+   3. Saldo overheid (B - O) en saldo buitenland (E - M).
+   4. Richting van de geldstroom uit het teken van het saldo, en controle bij de banken.
+   Voorbeeld: Y 1.000, C 560, B 230, O 250, E 620, M 580. I = 150, S = 210. Overheid -20: van de banken naar de overheid. Buitenland +40: van de banken naar het buitenland. Banken: 210 in, 150 + 20 + 40 = 210 uit.
+
+[DEEL 4: REDENEREN]
+1. Een uitleg van twee punten heeft drie schakels: oorzaak, tussenstap, gevolg.
+2. Nivelleren: vergelijk altijd twee groepen (laag en hoog inkomen) en noem het effect op het verschil tussen de netto-inkomens.
+3. Extern effect: noem de schade of het voordeel voor anderen én dat dit buiten het bbp of de prijs blijft.
+4. Averechtse selectie: de samenstelling van de groep verandert (goede risico's vertrekken). Moral hazard: het gedrag verandert (roekelozer na het afsluiten).
+5. Maatregelen: vragenlijst en premiedifferentiatie werken vóór het afsluiten. Eigen risico en bonus-malus werken op het gedrag ná het afsluiten.
+6. Protectie: importheffing, prijs van het importproduct stijgt, vraag verschuift naar binnenlandse producten, productie en werkgelegenheid blijven behouden. Tegenmaatregel: export daalt, productie daalt, bbp groeit minder.
+7. Productiefunctie Y = A x f(K, L): meer L of K geeft meer productie, maar niet vanzelf meer productie per persoon. Een hogere A (factorproductiviteit) laat de productie per persoon structureel stijgen.
+
+[DEEL 5: VALKUILENLIJST VOOR DE SABOTEUR]
+* H1 De omzetten optellen in plaats van de toegevoegde waarden (dubbeltelling).
+* H1 De loonsom van de overheid vergeten.
+* H1 Nominale groei - inflatie in plaats van Nic : Pic x 100.
+* H1 Bij het groen bbp de milieuverbetering ook aftrekken.
+* H1 Vergeten te delen door het aantal inwoners bij "per hoofd".
+* H3 Bij de Lorenzcurve de cumulatieve waarde geven in plaats van het verschil.
+* H3 De aftrekpost van de belasting aftrekken in plaats van van het inkomen.
+* H3 De heffingskorting van het inkomen aftrekken in plaats van van de belasting.
+* H3 Het hele inkomen tegen het tarief van de hoogste schijf belasten.
+* H3 Nivelleren uitleggen zonder het verschil tussen twee groepen te noemen.
+* G1 De opslag voor kosten en winst vergeten.
+* G1 Alleen de premies vergelijken en het verwachte eigen risico vergeten.
+* G1 Zeggen dat verzekeren gemiddeld goedkoper is dan de verwachte schade.
+* G2 Averechtse selectie en moral hazard verwisselen.
+* G3 Een renteverschil verklaren met "de bank verdient meer" in plaats van met risico.
+* H1 Bij de investeringen de export en de import vergeten.
+* H1 Bij de besparingen de belastingen vergeten.
+* H1 De richting van de geldstroom tussen overheid of buitenland en de banken omdraaien.
+
+[DEEL 6: CASUSSEN UIT AT5.11] (verzonnen, tenzij anders vermeld; niet opnieuw gebruiken)
+Versie A
+A. Noordland, kringloop 2025: Y 1.000, C 560, B 230, O 250, E 620, M 580. I 150, S 210, tekort overheid 20, saldo buitenland 40. Nominaal bbp 2026 € 1.061 miljard, prijsindex 103,0, reële groei 3,0%. Twee plannen: arbeidsmigranten of scholing en automatisering (bbp per hoofd). Luchthaven Westhaven (extern effect).
+B. Lorenzcurves Nederland (fictief, benadering). Curve 1 besteedbaar: 8, 21, 38, 61 bij 20, 40, 60 en 80%. Curve 2 primair: 1, 5, 17, 41.
+C. Sanne (echte tarieven 2026): bruto € 52.000, hypotheekrente € 6.000, te betalen € 9.231,82. Mila: aftrekgrens 37,56%.
+D. Bergzeker (wintersport): 20.000 verzekerden, kans 2%, schade € 1.500, opslag 25%, premie € 37,50.
+E. Noa: variant A € 96,00 zonder eigen risico, variant B € 72,00 met € 150 eigen risico, kans 20%. A is goedkoper (€ 96,00 tegenover € 102,00).
+F. SneeuwPunt: lening A met onderpand 4,5%, lening B zonder onderpand 7,5%.
+Versie B
+G. Oostland, kringloop 2025: Y 800, C 450, B 210, O 190, E 330, M 360. I 190, S 140, overschot overheid 20, saldo buitenland -30. Nominaal bbp 2026 € 842,4 miljard, prijsindex 102,5, reële groei 2,7%. Twee plannen: hogere pensioenleeftijd of onderzoek en scholing (arbeidsproductiviteit). Distributiecentrum Zandvoorde (extern effect).
+H. Lorenzcurves Nederland. Curve 1 primair: 2, 7, 19, 43. Curve 2 besteedbaar: 9, 22, 40, 62.
+I. Daan: bruto € 58.000, hypotheekrente € 8.000, heffingskortingen € 1.819 en € 4.877, te betalen € 11.380,22. Ruben: giften, aftrekgrens 37,56%.
+J. Zeezeker (watersport): 30.000 verzekerden, kans 3%, schade € 1.200, opslag 20%, premie € 43,20. Maatregel tegen moral hazard: korting bij geen schade.
+K. Milan: variant A € 84,00 zonder eigen risico, variant B € 66,00 met € 100 eigen risico, kans 15%. B is goedkoper (€ 81,00 tegenover € 84,00).
+L. Golfslag: lening A zonder onderpand 8,0%, lening B met het busje als onderpand 5,0%.
+Niet meer in AT5.11 (vrij voor een volgende toets): bbp via productie berekenen (toegevoegde waarde per sector en loonsom overheid) en groen bbp per hoofd berekenen.
+
+[DEEL 7: OPEN PUNTEN]
+1. De docent stelt de stappenplannen in DEEL 3 vast of past ze aan.
+2. Mag havo het gemiddeld belastingtarief berekenen in dezelfde vraag als de box 1-berekening, of is dat een aparte vraag?
+3. (Afgehandeld) Secundair inkomen is na belastingen en premies. De dia in de presentatie Lorenzcurve nog aanpassen.
+4. Gini-coëfficiënt en netto binnenlands product staan in de mindmap, niet in de havo-syllabus. Voor het schoolexamen zijn ze gebruikt.

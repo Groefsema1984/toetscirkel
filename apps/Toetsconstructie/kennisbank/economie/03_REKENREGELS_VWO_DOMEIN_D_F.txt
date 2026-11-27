@@ -1,0 +1,128 @@
+CHANGELOG
+26 oktober 2026, vierde versie (na toets T2 economie 4 vwo, tweede opzet, versie A en B)
+* Casussen van de tweede opzet toegevoegd onder DEEL 6 (niet opnieuw gebruiken).
+* Regel toegevoegd: bij een gegeven omzet en prijs bepaal je eerst de afzet (omzet : prijs). Bij een gegeven elasticiteit: procentuele verandering van de afzet = elasticiteit × procentuele verandering van de oorzaak.
+26 oktober 2026, derde versie
+* Verwijzing toegevoegd naar de casussen van T2 4 havo (zie 03_REKENREGELS_HAVO_DOMEIN_D_CONSUMENTENGEDRAG, DEEL 5): niet opnieuw gebruiken.
+11 oktober 2026, tweede versie (na toets T2 economie 4 vwo, versie A en B)
+* Formules en stappenplannen toegevoegd voor consumentensurplus, kruislingse elasticiteit en inkomenselasticiteit (lesstof domein D hoofdstuk 2).
+* Casussen van T2 toegevoegd onder DEEL 6 (niet opnieuw gebruiken). Inkomens- en kruislingse elasticiteit zijn niet meer vrij.
+8 oktober 2026, eerste versie (na de constructie van schoolexamen AT6.11 economie 6 vwo, versie A en B)
+* Nieuw bestand. Status: CONCEPT. De formules volgen de vwo-syllabus 2026 en de correctievoorschriften van IJssalon (2025-I), Safetybell (2025-II), Stikstofheffing (2024-II) en Strijd om startups (2022-II). De stappenplannen zijn een voorstel van de AI.
+
+BRONBESTAND: 03_REKENREGELS_VWO_DOMEIN_D_F
+FUNCTIE: de schrijfwijze, formules, stappenplannen en redeneringen voor domein D (Markt) en domein F (Samenwerken en onderhandelen) in 6 vwo, en voor consumentengedrag (domein D hoofdstuk 2) in 4 vwo.
+INTEGRATIE: gebruik samen met 02_EXAMENCONTEXT_VWO_ECO_EXAMENANALYSE_DOMEIN_D_F.
+
+[DEEL 1: SCHRIJFWIJZE]
+1. Term: volledige mededinging (syllabus en examen). De methode zegt volkomen concurrentie; beide zijn goed in een antwoord.
+2. Symbolen: GO (= P), TO, MO, TK, TCK, TVK, GTK, GVK, MK, TW, Qv, Qa.
+3. Een afgeleide schrijf je als MO = TO' of in woorden. Elke stap staat op een eigen regel.
+4. Vermeld de eenheid in het eindantwoord: Q = 40 (× 1.000), TW = 600 (× € 1.000) = € 600.000.
+5. Pay-offs noteer je als (speler 1 ; speler 2). Zeg bij een matrix wiens getal eerst staat.
+6. Elasticiteit op twee decimalen, percentages op één decimaal.
+7. Formules worden niet gegeven.
+
+[DEEL 2: FORMULES]
+A. Monopolie
+   Vraagfunctie omschrijven: Qv = −aP + b wordt P = −(1/a)Q + b/a.
+   TO = P × Q. MO = TO'. Bij een lineaire prijsafzetlijn is MO twee keer zo steil.
+   MK = TK'. Bij TK = aQ² + bQ + c is MK = 2aQ + b.
+   Maximale winst: MO = MK. De prijs volgt uit de prijsafzetfunctie, niet uit MO.
+   TW = TO − TK.
+B. Kostenstijging
+   Variabele kosten + € x per stuk: TK krijgt + xQ en MK schuift x omhoog. Constante kosten veranderen MK niet.
+   Doorberekend = prijsstijging : kostenstijging per stuk × 100%.
+C. Volledige mededinging en accijns
+   Evenwicht: Qv = Qa.
+   Accijns van t per stuk, afgedragen door de aanbieders: vervang P in de aanbodfunctie door (P − t).
+   Doorberekend aan de consument = (nieuwe prijs − oude prijs) : t × 100%.
+   Accijnsopbrengst = t × nieuwe hoeveelheid. Welvaartsverlies = ½ × t × (oude − nieuwe hoeveelheid).
+D. Elasticiteit
+   Bij gegeven omzet en prijs: afzet = omzet : prijs, daarna de procentuele verandering van de afzet. Bij een gegeven elasticiteit: procentuele verandering afzet = elasticiteit × procentuele verandering van de oorzaak.
+   Ev = procentuele verandering Qv : procentuele verandering P, met de oude waarden als basis.
+   Tussen 0 en −1: prijsinelastisch. Kleiner dan −1: prijselastisch.
+   Kruislingse elasticiteit Ek = procentuele verandering Qv van product A : procentuele verandering van de prijs van product B. Positief: substituten. Negatief: complementen.
+   Inkomenselasticiteit Ey = procentuele verandering Qv : procentuele verandering van het besteedbare inkomen. Kleiner dan 0: inferieur. Tussen 0 en 1: noodzakelijk (normaal). Groter dan 1: luxe.
+   Omzet = prijs × afzet. Prijselastisch: prijsverhoging verlaagt de omzet. Prijsinelastisch: prijsverhoging verhoogt de omzet.
+   De lesstof noemt de basis van de procentuele verandering niet; de oude waarde is de basis (docent, T2).
+F. Consumentensurplus (lineaire vraaglijn)
+   Vraagvergelijking Qv = a × p + b (a negatief). Maximale prijs (betalingsbereidheid van de eerste koper) = b : −a.
+   Consumentensurplus = ½ × Qv × (maximale prijs − p). Eenheid: Qv in duizenden, dus surplus in duizenden euro's.
+   Verandering van het surplus: reken beide surplussen uit en trek ze af.
+   Twee effecten: het aantal kopers verandert, en de afstand tussen betalingsbereidheid en prijs verandert voor wie blijft kopen.
+E. Pay-offmatrix
+   Elke cel: TW = afzet × (prijs − variabele kosten) − constante kosten, voor die combinatie van keuzes.
+
+[DEEL 3: STAPPENPLANNEN] (voorstel van de AI, nog vast te stellen)
+A. Maximale winst monopolist: 1 P = ... · 2 TO en MO · 3 MK · 4 MO = MK geeft Q · 5 P uit de prijsafzetfunctie · 6 TW = TO − TK.
+B. Doorberekening: 1 nieuwe TK en MK · 2 MO = MK geeft nieuwe Q · 3 nieuwe P · 4 prijsstijging : kostenstijging.
+C. Accijns: 1 nieuwe aanbodfunctie · 2 oud en nieuw evenwicht · 3 prijsstijging : accijns.
+D. Gevangenendilemma: 1 dominante strategie speler 1 met vier getallen · 2 dominante strategie speler 2 · 3 Nash-evenwicht · 4 vergelijk met de uitkomst die voor beide beter is.
+E. Spelboom: 1 begin bij de laatste keuze · 2 schrap per knoop de slechtste tak · 3 werk terug naar de eerste keuze · 4 noem de uitkomst met beide getallen.
+F. Verandering consumentensurplus: 1 Qv bij beide prijzen en de maximale prijs · 2 surplus bij beide prijzen (½ × Qv × (maximale prijs − p)) · 3 het verschil, met eenheid.
+G. Elasticiteit: 1 procentuele verandering van de oorzaak en van het gevolg, met de oude waarde als basis · 2 gevolg : oorzaak, twee decimalen · 3 conclusie (elastisch of inelastisch, substituut of complement, inferieur, noodzakelijk of luxe).
+
+[DEEL 4: VASTE REDENERINGEN]
+1. Prijsdiscriminatie heeft twee voorwaarden: de markt is op te delen in deelmarkten met een verschillende betalingsbereidheid, en doorverkoop tussen de deelmarkten is onmogelijk. Toets beide aan de casus en trek een conclusie.
+2. Consumentensurplus afromen: betalingsbereidheid boven de prijs is surplus; een hogere prijs voor die groep verkleint het verschil; dat deel wordt opbrengst van de aanbieder.
+3. Accijns en surplus: omvang (minder transacties, welvaartsverlies) en verdeling (consumenten- en producentensurplus dalen, een deel gaat naar de overheid).
+4. Simultaan: tegelijk kiezen zonder de keuze van de ander te kennen (matrix). Sequentieel: na elkaar (spelboom).
+5. Berovingsprobleem: specifieke investering, verzonken kosten, afhankelijkheid, de ander eist een groter deel. Wie dit voorziet, investeert niet.
+6. Zelfbinding: een speler maakt een eigen keuze bewust onaantrekkelijk. Daardoor wordt zijn belofte of dreiging geloofwaardig en verandert de keuze van de ander.
+7. Langs of van de vraaglijn: een prijsverandering van het product zelf is een verschuiving langs de vraaglijn. Een verandering van een andere vraagbepalende factor (inkomen, smaak, prijs van een ander product, aantal vragers, verwachtingen) is een verschuiving van de vraaglijn (ceteris paribus).
+8. Gelijktijdig: verschuif eerst de lijn (bij elke prijs een andere hoeveelheid) en beweeg dan langs de nieuwe lijn. Noem beide stappen.
+9. Consumentensurplus bij een prijswijziging: verandert door twee effecten, het aantal kopers en de afstand tussen betalingsbereidheid en prijs.
+
+[DEEL 5: VALKUILEN VOOR DE SABOTEUR]
+1. TO opstellen met de vraagfunctie Qv = ... in plaats van met P = ...
+2. De prijs aflezen uit MO in plaats van uit de prijsafzetfunctie.
+3. De kostenstijging bij de constante kosten zetten.
+4. De hele kostenstijging of de hele accijns doorberekenen.
+5. De accijns verwerken als Qa = 30P − 1 in plaats van 30(P − 1).
+6. De elasticiteit omdraaien of de nieuwe waarde als basis nemen.
+7. De rechthoek van de accijnsopbrengst laten doorlopen tot de oude hoeveelheid.
+8. De dominante strategie voor maar één speler laten zien.
+9. Een spelboom van voren naar achteren oplossen.
+10. De eenheid (duizenden) vergeten.
+11. Bij het consumentensurplus de factor ½ vergeten (rechthoek in plaats van driehoek).
+12. Een verschuiving langs de vraaglijn een verschuiving van de vraaglijn noemen, en omgekeerd.
+13. Het teken van de kruislingse elasticiteit verkeerd lezen (positief is substituut, negatief is complement).
+14. Bij inkomenselasticiteit alleen de absolute afzet vergelijken in plaats van Ey.
+
+[DEEL 6: CASUSSEN UIT AT6.11] (verzonnen; niet opnieuw gebruiken)
+Versie A
+A. Skigebied Hochtal: Qv = −2P + 160, TK = 0,25Q² + 20Q + 600. Q 40, P 60, winst € 600.000. Kosten + € 6: Q 36, P 62, 33,3% doorberekend. Plan met postcode voldoet niet (doorverkoop).
+B. Bier Ronde van Vlaanderen: Qv = −20P + 200, Qa = 30P, accijns € 1,00. P 4,00 naar 4,60, Q 120 naar 108, 60% doorberekend, Ev −0,67.
+C. Hyrox, FitRace en IronHall: € 100 of € 80. Matrix (60 ; 60), (−3 ; 70), (70 ; −3), (30 ; 30).
+D. WK judo, Maasdam en WJB: (0 ; 1), (4 ; 3), (−1 ; 8), (−6 ; 1). Boete 6.
+Versie B
+E. WK judo, Judo Events: Qv = −0,5P + 60, TK = 0,5Q² + 30Q + 400. Q 18, P 84, winst € 410.000. Kosten + € 5: Q 17, P 86, 40% doorberekend. Plan met ledenpas voldoet.
+F. Glühwein Sankt Veit: Qv = −25P + 275, Qa = 75P − 225, accijns € 0,80. P 5,00 naar 5,60, Q 150 naar 135, 75% doorberekend, Ev −0,83.
+G. Fietsverhuur, Kasseirent en Flandria Bikes: € 60 of € 40. Matrix (35 ; 35), (−5 ; 45), (45 ; −5), (15 ; 15).
+H. Hyrox, PowerDock en RaceFit: (0 ; 5), (20 ; 25), (−5 ; 50), (−50 ; 5). Boete 30.
+
+Toets T2 economie 4 vwo (consumentengedrag, verzonnen; niet opnieuw gebruiken)
+Versie A
+I. Streamo: Qv = −40p + 800 (× 1.000). Prijs 10 naar 12: Qv 400 naar 320, surplus 2.000 naar 1.280, daling € 720.000 per maand. Groepen: 160 (€ 16 tot 20), 160 (€ 12 tot 16), 80 (€ 10 tot 12), 400 (onder € 10).
+J. Padelpark Zuiderveld: D1 Qv = −2,5p + 200, D2 Qv = −2,5p + 150 (uren per week). Prijs 40 naar 32: D1 100 naar 120, D2 50 naar 70. Concurrent: vraaglijn naar links, 70 tegenover 100 uur.
+K. Koffiehuis De Bonnet: cappuccino € 3,50 naar € 3,85, afzet 1.000 naar 880, Ev −1,20 (elastisch). Appelgebak 400 naar 370, Ek −0,75 (complement). Inkomen 3.000 naar 3.300: filterkoffie 600 naar 570 (Ey −0,50), taartjes 200 naar 240 (Ey 2,00).
+Versie B
+L. Tonika: Qv = −25p + 600 (× 1.000). Prijs 18 naar 14: Qv 150 naar 250, surplus 450 naar 1.250, stijging € 800.000 per maand. Groepen: 100 (€ 20 tot 24), 50 (€ 18 tot 20), 100 (€ 14 tot 18), 350 (onder € 14).
+M. Klimhal Rotsvast: D1 Qv = −40p + 880, D2 Qv = −40p + 1.000 (bezoeken per week). Prijs 12 naar 14: D1 400 naar 320, D2 520 naar 440. Duurdere boulderhal: vraaglijn naar rechts, 440 tegenover 400. Bedrijf vertrekt: naar links.
+N. Broodjeszaak De Kruimel: broodje gezond € 4,00 naar € 3,60, afzet 500 naar 540, Ev −0,80 (inelastisch). Broodje kaas 300 naar 279, Ek +0,70 (substituut). Inkomen 2.800 naar 2.660: tosti's 400 naar 410 (Ey −0,50), smoothies 160 naar 144 (Ey 2,00).
+
+Tweede opzet T2 economie 4 vwo (consumentengedrag, verzonnen; niet opnieuw gebruiken)
+Versie A
+O. Sportschool Pulsar: Qv = −20p + 1.200 (abonnementen per maand), p = 35, Qv 500, maximale prijs 60, surplus € 6.250. Invulvraag: betalingsbereidheid 48, prijs 35, surplus 13, bij prijs 30 toename 5.
+P. Padel- en tennishal Netpunt: baanuur € 40, concurrent Smash Arena 40 naar 32 (−20%, substituut, vraaglijn naar links); Netpunt verlaagt naar € 34 (beweging langs de lijn, surplus en welvaart stijgen).
+Q. Supermarkt Versmarkt: vers geperst sap 4,00 naar 4,20, omzet 4.000 naar 3.906 (afzet 1.000 naar 930, Ev −1,40). Smoothies Ev −0,60, prijs 3,00 naar 2,70 (omzet daalt, factor 0,954). Appelsap in pak omzet 2.400 naar 2.616 (afzet 1.600 naar 1.744, Ek +1,80). Croissants Ek −0,60, sap −10% geeft afzet +6%. Biologische kaas inkomen 3.000 naar 3.150, omzet 1.600 naar 1.800 (afzet 200 naar 225, Ey 2,50, luxe).
+Versie B
+R. Zwembad Aquarius: Qv = −25p + 1.000 (bezoeken per week), p = 22, Qv 450, maximale prijs 40, surplus € 4.050. Invulvraag: betalingsbereidheid 30, prijs 22, surplus 8, bij prijs 26 afname 4.
+S. Klimpark Boomtop: entree € 24, parkeertarief −25% (complement, vraaglijn naar rechts); entree naar € 27 (beweging langs de lijn, surplus en welvaart dalen).
+T. Bakkerij Korenbloem: speltbrood 3,00 naar 2,70, omzet 1.800 naar 1.944 (afzet 600 naar 720, Ev −2,00). Croissants Ev −1,50, prijs 1,20 naar 1,32 (omzet daalt, factor 0,935). Boerenkaas omzet 1.200 naar 1.296 (afzet 300 naar 324, Ek −0,80). Volkorenbrood Ek +0,50, speltbrood +10% geeft afzet +5%. Afbakbroodjes inkomen 3.000 naar 2.850, omzet 1.000 naar 1.100 (afzet 2.000 naar 2.200, Ey −2,00, inferieur).
+
+[DEEL 7: OPEN PUNTEN]
+1. De docent stelt de stappenplannen vast of past ze aan.
+2. Niet getoetst in AT6.11 en in beide opzetten van T2 en vrij voor een volgende toets: aantal aanbieders via MK = P, Pareto-efficiëntie, minimum- en maximumprijs, subsidie, producentensurplus, drempelinkomen en de wet van Engel (staan wel in de lesstof, niet getoetst in T2), octrooien, herhaald spel, reputatie, sociale normen, meeliften en collectieve goederen.
+3. De basis van de procentuele verandering (oude waarde) en de afronding op twee decimalen staan niet in de lesstof van hoofdstuk 2; de docent bevestigt of dit zo bedoeld is.

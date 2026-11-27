@@ -1,0 +1,48 @@
+CHANGELOG
+26 oktober 2026, eerste versie (na toets T2 economie 4 havo, versie A en B)
+* Nieuw bestand. Rekenregels voor consumentengedrag (domein D hoofdstuk 2) in 4 havo. Bouwt op 03_REKENREGELS_VWO_DOMEIN_D_F (onderdelen D, F en G). Status: de stappenplannen zijn bevestigd door de docent voor T2.
+
+BRONBESTAND: 03_REKENREGELS_HAVO_DOMEIN_D_CONSUMENTENGEDRAG
+FUNCTIE: schrijfwijze, formules en vaste redeneringen voor betalingsbereidheid, consumentensurplus, verschuiven en bewegen en elasticiteiten op havo.
+INTEGRATIE: gebruik met het havo-syllabus domein D6 (consumentengedrag) en de lesstof hoofdstuk 2.
+
+[DEEL 1: FORMULES]
+1. Vraagvergelijking Qv = −a·p + b (a > 0). Maximale prijs (betalingsbereidheid van de eerste koper) = b : a. Qv bij prijs p = −a·p + b.
+2. Consumentensurplus = ½ × Qv × (maximale prijs − p). Eenheid van Qv erbij zetten, het surplus in euro per periode.
+3. Individueel consumentensurplus = betalingsbereidheid − betaalde prijs (alleen als de prijs niet hoger is dan de betalingsbereidheid; anders koopt de consument niet).
+4. Prijselasticiteit Ev = procentuele verandering Qv : procentuele verandering p, oude waarde als basis, twee decimalen, met minteken. Kleiner dan −1: elastisch. Tussen 0 en −1: inelastisch. Gelijk aan −1: proportioneel.
+5. Omzet = prijs × afzet. Afzet = omzet : prijs. Elastisch: prijsverhoging verlaagt de omzet. Inelastisch: prijsverhoging verhoogt de omzet.
+6. Inkomenselasticiteit Ey = procentuele verandering Qv : procentuele verandering inkomen. Kleiner dan 0: inferieur. Tussen 0 en 1: noodzakelijk. Groter dan 1: luxe. Gelijk aan 0: inkomensonafhankelijk.
+7. Substituut: prijs van het andere product omlaag, eigen vraaglijn naar links. Complement: prijs van het andere product omlaag, eigen vraaglijn naar rechts. Alleen verbaal (geen kruislingse elasticiteit op havo).
+
+[DEEL 2: STAPPENPLANNEN]
+A. Consumentensurplus: 1 Qv bij de prijs · 2 maximale prijs (Qv = 0) · 3 ½ × Qv × (maximale prijs − p), met eenheid.
+B. Elasticiteit uit omzet: 1 afzet voor en na (omzet : prijs) · 2 procentuele verandering afzet en prijs · 3 gevolg : oorzaak, twee decimalen · 4 conclusie.
+C. Prijsverandering en welvaart (verbaal): beweging langs de vraaglijn · aantal kopers verandert en het verschil tussen betalingsbereidheid en prijs verandert · consumentensurplus stijgt of daalt · welvaart van de consumenten stijgt of daalt.
+
+[DEEL 3: VASTE REDENERINGEN]
+1. Verschuiving van de vraaglijn komt door een andere oorzaak dan de eigen prijs (inkomen, voorkeur, aantal consumenten, prijs van een ander product). Een eigen prijsverandering geeft een beweging langs de vraaglijn.
+2. Consumentensurplus is hier de maat voor de welvaart van consumenten. Producentensurplus komt in dit hoofdstuk niet voor.
+3. Bij een inferieur product daalt de afzet als het inkomen stijgt; bij een luxeproduct reageert de afzet procentueel sterker dan het inkomen.
+
+[DEEL 4: VEELGEMAAKTE FOUTEN]
+1. De factor ½ bij het consumentensurplus vergeten (rechthoek in plaats van driehoek).
+2. De nieuwe waarde als basis nemen bij de procentuele verandering.
+3. Het minteken van de prijselasticiteit weglaten.
+4. De procentuele verandering van de omzet gebruiken in plaats van die van de afzet.
+5. Bij het soort product de waarde dicht bij 0 als "noodzakelijk" lezen terwijl hij negatief is (inferieur).
+6. Een verschuiving beschrijven als een beweging langs de vraaglijn, of andersom.
+
+[DEEL 5: CASUSSEN UIT T2 4 HAVO] (verzonnen; niet opnieuw gebruiken)
+Versie A
+I. Bioscoop Cinéa: Qv = −20p + 400 (kaartjes per week), prijs € 10, Qv 200, maximale prijs € 20, surplus € 1.000 per week. Invulvraag: betalingsbereidheid € 14, prijs € 10, surplus € 4, bij € 15 geen kaartje.
+II. Fietsenzaak Trapvast: concurrent Wielerhuis Noord verlaagt de prijs van e-bikes met 15% (substituut, vraaglijn naar links). Actie: e-bike van € 2.000 naar € 1.800 (surplus en welvaart stijgen).
+III. Bakkerij De Gouden Korst: volkorenbrood € 3,50 naar € 3,85, omzet € 2.800 naar € 2.618 (afzet 800 naar 680, Ev −1,50). Appelflappen € 1,20 naar € 1,32, Ev −0,60 (omzet stijgt). Gezinsinkomen € 2.500 naar € 2.750: croissants (€ 1,25) omzet € 500 naar € 600 (Ey 2,00); huismerk toastbrood Ey −0,50 (inferieur).
+Versie B
+IV. Theater Aurora: Qv = −10p + 300, prijs € 12, Qv 180, maximale prijs € 30, surplus € 1.620 per week. Invulvraag: betalingsbereidheid € 25, prijs € 12, surplus € 13, bij daling naar € 9 een toename van € 3.
+V. Skateshop Rolwerk: entree skatepark 20% lager (complement, vraaglijn naar rechts). Skateboard van € 90 naar € 99 (surplus en welvaart dalen).
+VI. Ijssalon Gelato Noord: bolletje ijs € 2,00 naar € 1,80, omzet € 1.200 naar € 1.296 (afzet 600 naar 720, Ev −2,00). Softijs € 3,00 naar € 2,70, Ev −0,60 (omzet daalt). Gezinsinkomen € 2.600 naar € 2.340: kinderijsjes (€ 1,50) omzet € 750 naar € 712,50 (Ey 0,50); ijscoupes Ey 2,00 (luxe).
+
+[DEEL 6: OPEN PUNTEN]
+1. Het havo-syllabus (D6.4, D6.5, D6.6) noemt inkomenselasticiteit en consumentensurplus niet rekenkundig. De docent toetst ze toch rekenkundig als lesstof van de docent.
+2. Niet getoetst in T2 4 havo en vrij voor een volgende toets: vraag en aanbod samen (marktmodel), producentensurplus, welvaartsverlies, heffing en subsidie, marktvormen.
