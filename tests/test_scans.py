@@ -131,6 +131,20 @@ class Herkennen(unittest.TestCase):
         self.assertTrue(h.ok, h.reden)
         self.assertEqual((h.toets_id, h.scan.name, h.cv.name), ("AT5.11_SE_5H_Economie", "scan.pdf", "correctievoorschrift AT5.11.docx"))
 
+    def test_voorblad_wint(self):
+        t = next(x for x in self.alle if x.project == "Groei_5h" and x.versie == "B")
+        code = scans.voorblad_code(t, date(2026, 11, 20))
+        self.assertEqual(scans.lees_voorblad("rommel\n" + code.replace(" / ", "/") + "\n")["project"], "Groei_5h")
+        h = scans.herken(self.scan("Scan_0009.pdf"), self.alle, lees_kop=lambda pdf: {"voorblad": code, "at_code": "AT9.99"})
+        self.assertTrue(h.ok, h.reden)
+        self.assertTrue(h.voorblad)
+        self.assertEqual((h.toets_id, h.datum), ("AT5.21_SE_5H_Economie_vB", date(2026, 11, 20)))
+        h = scans.herken(self.scan("Scan_0010.pdf"), self.alle, tekstlaag=code)          # tekstlaag: zonder Claude
+        self.assertTrue(h.ok and h.voorblad)
+        h = scans.herken(self.scan("Scan_0011.pdf"), self.alle, tekstlaag="TC-VOORBLAD: Weg_1234 / A / 5H / 2026-11-20")
+        self.assertFalse(h.ok)
+        self.assertIn("Weg_1234", h.reden)
+
     def test_alleen_scans_die_klaar_zijn(self):
         self.scan("oud.pdf")
         (self.inbox / "nieuw.pdf").write_bytes(b"%PDF")                     # OneDrive is nog bezig
@@ -180,6 +194,20 @@ KETEN = textwrap.dedent(r'''
         s2["leerlingen"]["900001"]["vragen"]["1"].update(besluit="docent", definitief=2.0)
     uit["publiceer_2"] = w.publiceer_klaar()
     from cirkel.kern import scans
+    import fitz
+    t = next(x for x in scans.gebouwde_toetsen(paden.TOETSCONSTRUCTIE / "toetsen") if x.versie == "B")
+    code = scans.voorblad_code(t, __import__("datetime").date(2026, 11, 20))
+    d = fitz.open()
+    for i in range(3):
+        d.new_page().insert_text((72, 72), code if i == 0 else f"werk {i}")
+    d.save(str(paden.SCANS / "Scan_voorblad.pdf"))
+    uit["voorblad"] = w.verwerk(paden.SCANS / "Scan_voorblad.pdf")
+    with fitz.open(str(sessie.map_van("AT5.21_SE_5H_Economie_vB") / "scan.pdf")) as d2:
+        uit["paginas_zonder_voorblad"] = d2.page_count
+    from werkzeug.test import Client
+    c = Client(wsgi)
+    uit["voorblad_keuze"] = c.get("/voorblad").status_code
+    uit["voorblad_print"] = code in c.get("/voorblad?t=Groei_5h|B&datum=2026-11-20").get_data(as_text=True)
     uit["log"] = [(r["bestand"], r["status"]) for r in scans.logboek()]
     print("UITKOMST" + json.dumps(uit))
 ''')
@@ -213,14 +241,16 @@ class Keten(unittest.TestCase):
         self.assertTrue(regel, r.stdout[-2000:] + r.stderr[-4000:])
         uit = json.loads(regel[0][8:])
         self.assertEqual((uit["verwerk"], uit["twijfel"]), ("gestart", "twijfel"))
-        self.assertEqual(uit["gestart"], ["AT5.21_SE_5H_Economie_vA"])
+        self.assertEqual(uit["gestart"], ["AT5.21_SE_5H_Economie_vA", "AT5.21_SE_5H_Economie_vB"])
         self.assertEqual(uit["sessie"], {"automatisch": True, "cv_bestand": "correctievoorschrift.docx", "duur": 100,
                                          "klas": "5H", "vak": "Economie", "project": "Groei_5h"})
         self.assertEqual(uit["mappen"], ["AT5.21 5H versie A.pdf", "Scan_kaal.pdf", "Scan_kaal.txt"])
         self.assertEqual(uit["wacht"], ["AT5.21_SE_5H_Economie_vA"])
         self.assertEqual(uit["publiceer_1"], [])                       # verschil docent/AI: eerst de docent
         self.assertEqual(uit["publiceer_2"], ["AT5.21_SE_5H_Economie_vA"])
-        self.assertEqual([s for _, s in uit["log"]], ["definitief", "twijfel", "gestart"])
+        self.assertEqual((uit["voorblad"], uit["paginas_zonder_voorblad"]), ("gestart", 2))
+        self.assertEqual((uit["voorblad_keuze"], uit["voorblad_print"]), (200, True))
+        self.assertEqual([s for _, s in uit["log"]], ["gestart", "definitief", "twijfel", "gestart"])
 
 
 if __name__ == "__main__":
