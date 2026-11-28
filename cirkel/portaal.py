@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from html import escape
+from pathlib import Path
 from urllib.parse import urlsplit
 
 from flask import Flask, jsonify, redirect, request
@@ -64,6 +65,33 @@ def _kernblok(kern: dict) -> str:
     return f'<div class="kern">{"".join(regels)}</div>' if regels else ""
 
 
+def _scanblok(kern: dict) -> str:
+    st = kern.get("scans")
+    if not st:
+        return ""
+    regels = []
+    if st.get("actief"):
+        regels.append(f'<div>Scans: ToetsCirkel bewaakt <b>{escape(Path(st["inbox"]).name)}</b> in OneDrive'
+                      f'{" (laatste ronde " + escape(st["laatste"]) + ")" if st.get("laatste") else ""}'
+                      f'{" · nu bezig met " + escape(st["bezig"]) if st.get("bezig") else ""}. <a href="/scans">Logboek</a></div>')
+    if st.get("fout"):
+        regels.append(f'<div class="status fout">● Scans: {escape(st["fout"])}</div>')
+    wacht = kern.get("_scanwacht")
+    try:
+        open_ = wacht.wacht_op_docent() if wacht else []
+    except Exception:  # noqa: BLE001
+        open_ = []
+    for w in open_:
+        tid = escape(w["toets_id"])
+        if w["status"] == "fout":
+            regels.append(f'<div class="status fout">● {tid}: vastgelopen. <a href="/evalueren/voortgang/{tid}">Bekijk en hervat</a></div>')
+        else:
+            n = w["open"].get("totaal", 0)
+            regels.append(f'<div><b>Wacht op jou:</b> {tid}, {n} punt{"en" if n != 1 else ""} om te beslissen. '
+                          f'<a href="/evalueren/review?toets={tid}">Naar valideren</a></div>')
+    return f'<div class="kern">{"".join(regels)}</div>' if regels else ""
+
+
 def maak_portaal(status: dict, kern: dict | None = None) -> Flask:
     """status: voorvoegsel -> {'ok': bool, 'fout': str} per app; kern: uitkomst van database en itembank."""
     kern = kern or {}
@@ -85,12 +113,12 @@ def maak_portaal(status: dict, kern: dict | None = None) -> Flask:
                 f'<h1>ToetsCirkel</h1><p class="sub">Construeren, evalueren en oefenen in één app.</p>'
                 f'<div class="tegels">{"".join(tegels)}</div>'
                 f'<p class="cirkel">De cirkel: toets maken → nakijken en analyseren → gericht oefenen → opnieuw toetsen of bijstellen.</p>'
-                f'{_kernblok(kern)}'
+                f'{_scanblok(kern)}{_kernblok(kern)}'
                 f'</main></body></html>')
 
     @app.get("/api/toetscirkel")
     def toetscirkel_status():
-        return jsonify(app="ToetsCirkel", onderdelen=status, kern=kern)
+        return jsonify(app="ToetsCirkel", onderdelen=status, kern={k: v for k, v in kern.items() if not k.startswith("_")})
 
     @app.get("/codes")
     def codes_pagina():
@@ -110,6 +138,26 @@ def maak_portaal(status: dict, kern: dict | None = None) -> Flask:
                 + (f'<pre>{escape(fout)}</pre>' if fout else "")
                 + f'<div class="schuif"><table><tr><th>Toets</th><th>Vraag</th><th>Leerdoel</th><th>Voorstel</th><th>Zekerheid</th>'
                   f'<th>Toelichting</th></tr>{regels or "<tr><td colspan=6>Geen twijfelgevallen.</td></tr>"}</table></div></main></body></html>')
+
+    @app.get("/scans")
+    def scans_pagina():
+        from .kern import scans
+        try:
+            rijen, fout = scans.logboek(100), ""
+        except Exception as e:  # noqa: BLE001
+            rijen, fout = [], str(e)
+        regels = "".join(
+            f"<tr><td>{escape(r['moment'].replace('T', ' '))}</td><td>{escape(r['bestand'])}</td><td><b>{escape(r['status'])}</b></td>"
+            f"<td>{escape(r['toets_id'] or '')}</td><td>{escape(r['reden'] or '')}</td></tr>" for r in rijen)
+        st = kern.get("scans") or {}
+        return (f'<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                f'<title>Scans</title><style>{STIJL}{TABEL}</style></head><body>{menubalk("")}<main>'
+                f'<h1>Scans</h1><p class="sub">Zet een klassenscan in <b>{escape(st.get("inbox", "ToetsCirkel Scans"))}</b>. '
+                f'Herkend: de analyse start vanzelf en de scan gaat naar Verwerkt. Niet zeker: de scan gaat naar Twijfel, met een '
+                f'.txt waarin staat waarom. Pas de bestandsnaam aan (bijv. <i>AT5.21 5H versie A.pdf</i>) en zet hem terug.</p>'
+                + (f'<pre>{escape(fout)}</pre>' if fout else "")
+                + f'<div class="schuif"><table><tr><th>Moment</th><th>Scan</th><th>Status</th><th>Toets</th><th>Toelichting</th></tr>'
+                  f'{regels or "<tr><td colspan=5>Nog geen scans verwerkt.</td></tr>"}</table></div></main></body></html>')
 
     @app.get("/itembank")
     def itembank_pagina():

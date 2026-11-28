@@ -18,7 +18,25 @@ Dubbelklik `scripts/Start ToetsCirkel.command`. De browser opent op http://127.0
 
 De losse startbestanden van de drie apps werken nog, maar zijn niet meer nodig.
 
-## Stand: fase 2b (leerdoelcodes bij constructie)
+## Stand: fase 3 (automatisch vanaf een scan)
+
+- ToetsCirkel bewaakt de OneDrive-map **ToetsCirkel Scans** (`cirkel/scanwacht.py`, herkennen in `cirkel/kern/scans.py`).
+  Een scan die een minuut niet verandert, wordt herkend aan:
+  1. een map met zelf een correctievoorschrift erin (de mapnaam is de toetsnaam, zoals vroeger);
+  2. het AT-nummer, de klas en de versie in de bestandsnaam of de tekstlaag, bijv. `AT5.21 5H versie A.pdf`;
+  3. anders leest Claude de eerste pagina's (AT-nummer, versie, leerlingnummers; geen namen). De klas volgt uit de
+     klassenlijsten, de toets uit de gebouwde toetsen van Construeren en de afnamedatum.
+- Herkend: de analyse van Evalueren start met het correctievoorschrift van de gebouwde toets; de scan gaat naar
+  `Verwerkt/`. Bestaat de analyse al (tweede klas, vergeten blad), dan worden de pagina's bijgescand.
+  Niet zeker: de scan gaat naar `Twijfel/` met een `.txt` met de reden. Er wordt nooit geraden.
+- Staat er na het nakijken niets open (wiens werk, verschil docent en AI, onleesbaar), dan wordt de toets vanzelf
+  definitief gemaakt. Anders staat op de startpagina "Wacht op jou" met een link naar Valideren; na je laatste besluit
+  gaat de keten vanzelf verder. Handmatig uploaden blijft werken (en publiceert niet vanzelf).
+- Toetsen met versie A en B: scan de versies apart, met de versie in de bestandsnaam. Ze krijgen elk een eigen
+  analyse (`_vA`, `_vB` in de toetsnaam).
+- Logboek: `/scans`. Uitzetten: `TOETSCIRKEL_GEEN_SCANS=1`; andere map: `TOETSCIRKEL_SCANS`.
+
+## Fase 2b (leerdoelcodes bij constructie)
 
 - In het matrijsscherm van Construeren staat een kolom **Code** met de vaste leerdoelcodes uit het register
   (havo en vwo delen één register, mavo heeft een eigen). Claude vult die codes zelf in als er een precies past
@@ -80,6 +98,7 @@ tests/
   test_fase2.py       één database, itembank, gouden toets blijft gelijk
   test_fase2b.py      leerdoelcode van register via matrijs en correctievoorschrift naar de evaluatie
   test_codes.py       codes aanvullen in bestaande matrijzen (nakijken en Claude, nep-Claude)
+  test_scans.py       scan herkennen, analyse starten, Twijfel/, automatisch definitief
 docs/
   AFSPRAKEN.md        wat wel/niet in Git, privacy, toetscode, werkwijze
 ```

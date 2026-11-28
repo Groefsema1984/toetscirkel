@@ -134,6 +134,19 @@ def _start_codes_met_claude(kern: dict) -> None:
     threading.Thread(target=werk, name="codes-claude", daemon=True).start()
 
 
+def _start_scanwacht(kern: dict) -> None:
+    """Fase 3: de OneDrive-map 'ToetsCirkel Scans' bewaken (zie scanwacht.py)."""
+    from .scanwacht import Scanwacht
+    try:
+        wacht = Scanwacht(paden.SCANS, paden.TOETSCONSTRUCTIE / "toetsen")
+        kern["_scanwacht"] = wacht
+        kern["scans"] = wacht.staat
+        wacht.start()
+    except Exception as fout:  # noqa: BLE001
+        log.error("Scanwacht kon niet starten: %s", fout)
+        kern["scans"] = {"actief": False, "fout": str(fout)[:300]}
+
+
 def bereid_kern_voor() -> dict:
     """Fase 2: Oefentool-tabellen eenmalig naar de centrale database (met back-up vooraf). Moet vóór het laden van de
     Oefentool gebeuren, want die kiest bij het laden welke database hij gebruikt."""
@@ -169,6 +182,8 @@ def maak_app():
     kern.update(_vul_codes_aan())
     if status.get("/evalueren", {}).get("ok") and os.environ.get("TOETSCIRKEL_GEEN_CLAUDE") != "1":
         _start_codes_met_claude(kern)
+    if status.get("/evalueren", {}).get("ok") and os.environ.get("TOETSCIRKEL_GEEN_SCANS") != "1":
+        _start_scanwacht(kern)
     portaal = maak_portaal(status, kern)
     return DispatcherMiddleware(portaal, apps), status
 

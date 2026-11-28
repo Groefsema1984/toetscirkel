@@ -36,3 +36,6 @@ LEERBESTANDEN = {
     "Toetsevaluatie/docent_leerregels.json": TOETSEVALUATIE / "docent_leerregels.json",
     "Oefentool/kwaliteitsregels.json": OEFENTOOL / "kwaliteitsregels.json",
 }
+
+# Fase 3: de map waar de scanner (via OneDrive) de klassenscans neerzet.
+SCANS = _map("TOETSCIRKEL_SCANS", HOME / "Library" / "CloudStorage" / "OneDrive-DunamareOnderwijsgroep" / "ToetsCirkel Scans")
