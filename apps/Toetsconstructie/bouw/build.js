@@ -36,6 +36,11 @@ const para = (children, o = {}) => new Paragraph({ ...o, children: Array.isArray
 const img = (f, w, h) => new ImageRun({ type: "png", data: beeld(f), transformation: { width: w, height: h } });
 
 function header() { return new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [img(M.logo || "logo.png", 96, 50)] })] }); }
+// Kop op elke pagina van de uitwerkbijlage: zo herkent ToetsCirkel een scan (toets, versie) en elke los blad (leerlingnummer).
+function scanKop() {
+  return new Header({ children: [para([run(`${M.at || ""}  ·  versie ${M.versie}`, { bold: true, size: 22 }),
+    run("\tLeerlingnummer: ____________", { size: 22 })], { tabStops: [{ type: TabStopType.RIGHT, position: 9638 }], spacing: { after: 120 } })] });
+}
 function footer(naam, leesVerder) {
   const kids = [para([run(`${M.datum} | ${M.at} ${naam} | ${M.maker} | ${M.vak} | ${M.kort} | Pagina `, { size: 14 }),
     new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 14 }), run(" van ", { size: 14 }), new TextRun({ children: [PageNumber.TOTAL_PAGES], font: FONT, size: 14 })], { alignment: AlignmentType.CENTER })];
@@ -271,7 +276,7 @@ async function schrijf(naam, sections) {
   const A4 = { properties: { page: PAGE }, headers: { default: header() } }, uit = [];
   uit.push(await schrijf(basis + "_opgaven", [{ ...A4, footers: { default: footer("versie " + M.versie, true) }, children: opgavenDoc() }]));
   if (C.bijlage) uit.push(await schrijf(basis + "_bijlage", [{ ...A4, footers: { default: footer("bijlage " + M.versie, false) }, children: bijlageDoc() }]));
-  if (C.uitwerkbijlage) uit.push(await schrijf(basis + "_uitwerkbijlage", [{ ...A4, footers: { default: footer("uitwerkbijlage " + M.versie, false) }, children: uitwerkDoc() }]));
+  if (C.uitwerkbijlage) uit.push(await schrijf(basis + "_uitwerkbijlage", [{ ...A4, headers: { default: scanKop() }, footers: { default: footer("uitwerkbijlage " + M.versie, false) }, children: uitwerkDoc() }]));
   const m = matrijsSectie();
   uit.push(await schrijf(basis + "_correctievoorschrift", [{ ...A4, footers: { default: footer("correctievoorschrift " + M.versie, false) }, children: cvDoc() },
     { properties: { page: { size: { width: 11906, height: 16838, orientation: PageOrientation.LANDSCAPE }, margin: { top: 1000, bottom: 900, left: 1134, right: 1134, header: 340, footer: 500 } } },
