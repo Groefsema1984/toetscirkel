@@ -30,10 +30,12 @@ INTERVAL = 30
 PAUZE_NA_FOUT = 600
 
 SCHEMA_KOP = {
-    "type": "object", "required": ["at_code", "versie", "titel", "leerlingnummers"],
-    "properties": {"at_code": {"type": "string"}, "versie": {"type": "string"}, "titel": {"type": "string"},
+    "type": "object", "required": ["voorblad", "at_code", "versie", "titel", "leerlingnummers"],
+    "properties": {"voorblad": {"type": "string"}, "at_code": {"type": "string"}, "versie": {"type": "string"},
+                   "titel": {"type": "string"},
                    "leerlingnummers": {"type": "array", "items": {"type": "string"}}}}
-SYSTEEM_KOP = ("Je ziet de eerste pagina's van een stapel gescand toetswerk. Lees alleen wat gedrukt of geschreven staat "
+SYSTEEM_KOP = ("Je ziet de eerste pagina van een stapel gescand toetswerk. Staat er een regel die begint met 'TC-VOORBLAD:', "
+               "geef die hele regel dan letterlijk in 'voorblad' (anders leeg). Lees verder alleen wat gedrukt of geschreven staat "
                "over de toets en de leerlingnummers: AT-nummer of toetsnummer (bijv. AT5.21), versie (A of B), de titel van "
                "de toets, en de leerlingnummers (alleen cijfers) die je ziet. Geef geen namen. Laat een veld leeg als het er "
                "niet staat; verzin niets.")
@@ -56,7 +58,7 @@ class Scanwacht:
     def _lees_kop(self, pdf: Path) -> dict:
         sessie, pipeline, _, abonnement, kern = _te()
         with pipeline.PDF_SLOT, kern.fitz.open(str(pdf)) as d:
-            beelden = [kern._render(d, i, 1500, 70) for i in range(min(2, d.page_count))]
+            beelden = [kern._render(d, 0, 1500, 70)] if d.page_count else []     # één pagina: zuinig
         inhoud = [kern._beeldblok(b) for b in beelden] + [{"type": "text", "text": "Wat staat er over de toets en welke leerlingnummers zie je?"}]
         return abonnement.vraag_json(None, [{"type": "text", "text": SYSTEEM_KOP}], inhoud, SCHEMA_KOP, 2000)
 
@@ -72,6 +74,18 @@ class Scanwacht:
                 return d.load_page(0).get_text()[:3000] if d.page_count else ""
         except Exception:  # noqa: BLE001
             return ""
+
+    def _kopieer(self, h, doel: Path) -> None:
+        """Kopieer de scan; het voorblad (pagina 1) gaat er niet mee in, want dat is geen leerlingwerk."""
+        if not h.voorblad:
+            shutil.copy2(h.scan, doel)
+            return
+        _, pipeline, _, _, kern = _te()
+        with pipeline.PDF_SLOT, kern.fitz.open(str(h.scan)) as d:
+            if d.page_count < 2:
+                raise ValueError("De scan bevat alleen het voorblad.")
+            d.delete_page(0)
+            d.save(str(doel))
 
     # ---------------------------------------------------------------- één scan
     def verwerk(self, pad: Path) -> str:
@@ -100,7 +114,7 @@ class Scanwacht:
                     return "twijfel"
                 return "later"                       # er loopt nog iets: volgende ronde opnieuw
             doel = sessie.map_van(toets_id) / f"bijscan_{time.strftime('%Y%m%d_%H%M%S')}.pdf"
-            shutil.copy2(h.scan, doel)
+            self._kopieer(h, doel)
             with sessie.bewerk(toets_id) as s2:
                 s2["automatisch"] = True
             aantal = pipeline.start_aanvulling(toets_id, doel)
@@ -111,7 +125,7 @@ class Scanwacht:
 
         smap = sessie.map_van(toets_id)
         smap.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(h.scan, smap / "scan.pdf")
+        self._kopieer(h, smap / "scan.pdf")
         cv_naam = "correctievoorschrift" + h.cv.suffix.lower()
         shutil.copy2(h.cv, smap / cv_naam)
         if h.klassenlijst:
@@ -123,7 +137,7 @@ class Scanwacht:
         pipeline.start_analyse(toets_id)
         scans.verplaats(pad, self.inbox, scans.VERWERKT)
         scans.log_scan(pad.name, "gestart", toets_id, project,
-                       f"herkend als {h.toets.naam}, versie {h.toets.versie or '-'}" if h.toets else "map met correctievoorschrift")
+                       f"herkend{' aan het voorblad' if h.voorblad else ''} als {h.toets.naam}, versie {h.toets.versie or '-'}" if h.toets else "map met correctievoorschrift")
         log.info("Scan %s: analyse gestart als %s", pad.name, toets_id)
         return "gestart"
 

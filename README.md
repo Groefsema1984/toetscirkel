@@ -22,6 +22,8 @@ De losse startbestanden van de drie apps werken nog, maar zijn niet meer nodig.
 
 - ToetsCirkel bewaakt de OneDrive-map **ToetsCirkel Scans** (`cirkel/scanwacht.py`, herkennen in `cirkel/kern/scans.py`).
   Een scan die een minuut niet verandert, wordt herkend aan:
+  0. het **scanvoorblad** (`/voorblad`, per klas en versie printen, bovenop de stapel): de regel
+     `TC-VOORBLAD: project / versie / klas / datum` is zeker. Het voorblad wordt niet nagekeken en bevat geen leerlinggegevens;
   1. een map met zelf een correctievoorschrift erin (de mapnaam is de toetsnaam, zoals vroeger);
   2. het AT-nummer, de klas en de versie in de bestandsnaam of de tekstlaag, bijv. `AT5.21 5H versie A.pdf`;
   3. anders leest Claude de eerste pagina's (AT-nummer, versie, leerlingnummers; geen namen). De klas volgt uit de

@@ -73,7 +73,7 @@ def _scanblok(kern: dict) -> str:
     if st.get("actief"):
         regels.append(f'<div>Scans: ToetsCirkel bewaakt <b>{escape(Path(st["inbox"]).name)}</b> in OneDrive'
                       f'{" (laatste ronde " + escape(st["laatste"]) + ")" if st.get("laatste") else ""}'
-                      f'{" · nu bezig met " + escape(st["bezig"]) if st.get("bezig") else ""}. <a href="/scans">Logboek</a></div>')
+                      f'{" · nu bezig met " + escape(st["bezig"]) if st.get("bezig") else ""}. <a href="/voorblad">Scanvoorblad printen</a> · <a href="/scans">Logboek</a></div>')
     if st.get("fout"):
         regels.append(f'<div class="status fout">● Scans: {escape(st["fout"])}</div>')
     wacht = kern.get("_scanwacht")
@@ -139,6 +139,70 @@ def maak_portaal(status: dict, kern: dict | None = None) -> Flask:
                 + f'<div class="schuif"><table><tr><th>Toets</th><th>Vraag</th><th>Leerdoel</th><th>Voorstel</th><th>Zekerheid</th>'
                   f'<th>Toelichting</th></tr>{regels or "<tr><td colspan=6>Geen twijfelgevallen.</td></tr>"}</table></div></main></body></html>')
 
+    @app.get("/voorblad")
+    def voorblad_pagina():
+        """Scanvoorblad om bovenop de stapel uitwerkbijlagen te leggen: daarmee herkent ToetsCirkel de scan zeker."""
+        import sys as _sys
+        from datetime import date as _date
+
+        from .kern import scans
+        _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import paden
+        toetsen = scans.gebouwde_toetsen(paden.TOETSCONSTRUCTIE / "toetsen")
+        sleutel = lambda t: f"{t.project}|{t.versie}"  # noqa: E731
+        keuze = request.args.get("t", "")
+        try:
+            datum = _date.fromisoformat(request.args.get("datum") or _date.today().isoformat())
+        except ValueError:
+            datum = _date.today()
+        t = next((x for x in toetsen if sleutel(x) == keuze), None)
+        klas = scans.klascode(request.args.get("klas", "")) or (t.klas if t else "")
+        if t is None or not klas:
+            opties = "".join(f'<option value="{escape(sleutel(x))}"{" selected" if sleutel(x) == keuze else ""}>'
+                             f'{escape(x.naam)} · {escape(x.at or "geen AT")} · {escape(x.klas or "?")} · versie {escape(x.versie or "-")}</option>'
+                             for x in sorted(toetsen, key=lambda x: (x.naam.lower(), x.versie)))
+            return (f'<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                    f'<title>Scanvoorblad</title><style>{STIJL}{TABEL}</style></head><body>{menubalk("")}<main>'
+                    f'<h1>Scanvoorblad</h1><p class="sub">Print per klas en per versie één voorblad en leg het bovenop de stapel. '
+                    f'ToetsCirkel leest het als eerste pagina en weet dan zeker welke toets het is; het voorblad zelf wordt niet nagekeken.</p>'
+                    f'<form class="filter"><select name="t">{opties}</select>'
+                    f'<input name="klas" placeholder="klas, bijv. 5H" value="{escape(request.args.get("klas", ""))}">'
+                    f'<input type="date" name="datum" value="{datum.isoformat()}"><button>Maak voorblad</button></form>'
+                    + ("" if t is None or klas else "<p>Van deze toets is de klas onbekend: vul hem in (bijv. 5H, 4V, mavo3).</p>")
+                    + '</main></body></html>')
+        t.klas = klas
+        code = scans.voorblad_code(t, datum)
+        rij = lambda k, v: f"<tr><th>{k}</th><td>{v}</td></tr>"  # noqa: E731
+        return f"""<!doctype html><html lang="nl"><head><meta charset="utf-8"><title>Scanvoorblad {escape(t.at or t.naam)}</title>
+<style>
+body{{font:15px/1.45 -apple-system,'Segoe UI',Arial,sans-serif;color:#000;background:#fff;margin:0}}
+.blad{{max-width:180mm;margin:0 auto;padding:14mm 0}}h1{{font-size:24px;margin:0 0 4px}}.sub{{margin:0 0 18px;color:#333}}
+.code{{border:3px solid #000;padding:14px 16px;font:bold 22px/1.3 'Courier New',monospace;margin:0 0 18px;word-break:break-all}}
+table{{border-collapse:collapse;width:100%;margin:0 0 16px}}th,td{{border:1px solid #000;padding:7px 9px;text-align:left;vertical-align:top}}
+th{{width:38%;background:#f0f0f0}}.leeg{{height:28px}}ul{{margin:6px 0 0 18px;padding:0}}.knop{{margin:12px 0}}
+@media print{{.knop{{display:none}}.blad{{padding:0}}@page{{size:A4;margin:15mm}}}}
+</style></head><body><div class="blad">
+<div class="knop"><button onclick="print()">Printen</button> <a href="/voorblad">ander voorblad</a></div>
+<h1>ToetsCirkel · scanvoorblad</h1>
+<p class="sub">Leg dit blad bovenop de stapel van deze klas en scan alles in één keer naar de map <b>ToetsCirkel Scans</b>.</p>
+<div class="code">{escape(code)}</div>
+<table>
+{rij("Toets", escape(t.naam))}{rij("AT-nummer", escape(t.at or "–"))}{rij("Vak", escape(t.vak))}
+{rij("Klas (niveau en leerjaar)", escape(t.klas))}{rij("Versie", escape(t.versie or "–"))}
+{rij("Afnamedatum", datum.strftime("%d-%m-%Y"))}{rij("Toetsduur", f"{t.minuten} minuten" if t.minuten else "–")}
+{rij("Correctievoorschrift", escape(t.cv.name))}
+{rij("Lesgroep (bijv. 5H2)", '<div class="leeg"></div>')}
+{rij("Aantal leerlingen in deze stapel", '<div class="leeg"></div>')}
+{rij("Afwezig (leerlingnummers)", '<div class="leeg"></div><div class="leeg"></div>')}
+{rij("Bijzonderheden (extra tijd, inhaal, fraude)", '<div class="leeg"></div><div class="leeg"></div>')}
+</table>
+<p><b>Voor het scannen</b></p>
+<ul><li>Alleen versie {escape(t.versie or "–")} van deze klas in deze stapel; een andere versie of klas krijgt een eigen voorblad.</li>
+<li>Het werk van één leerling bij elkaar, met het leerlingnummer op elk blad.</li>
+<li>Eerst zelf nakijken op papier; daarna kijkt de AI opnieuw. Bij twijfel beslis jij in Evalueren › Valideren.</li></ul>
+<p style="margin-top:18px;font-size:12px;color:#333">Op dit voorblad staan geen leerlinggegevens; het gaat niet mee in het nakijken.</p>
+</div></body></html>"""
+
     @app.get("/scans")
     def scans_pagina():
         from .kern import scans
@@ -154,7 +218,7 @@ def maak_portaal(status: dict, kern: dict | None = None) -> Flask:
                 f'<title>Scans</title><style>{STIJL}{TABEL}</style></head><body>{menubalk("")}<main>'
                 f'<h1>Scans</h1><p class="sub">Zet een klassenscan in <b>{escape(st.get("inbox", "ToetsCirkel Scans"))}</b>. '
                 f'Herkend: de analyse start vanzelf en de scan gaat naar Verwerkt. Niet zeker: de scan gaat naar Twijfel, met een '
-                f'.txt waarin staat waarom. Pas de bestandsnaam aan (bijv. <i>AT5.21 5H versie A.pdf</i>) en zet hem terug.</p>'
+                f'.txt waarin staat waarom. Het zekerst: leg een <a href="/voorblad">scanvoorblad</a> bovenop de stapel. Anders: pas de bestandsnaam aan (bijv. <i>AT5.21 5H versie A.pdf</i>) en zet hem terug.</p>'
                 + (f'<pre>{escape(fout)}</pre>' if fout else "")
                 + f'<div class="schuif"><table><tr><th>Moment</th><th>Scan</th><th>Status</th><th>Toets</th><th>Toelichting</th></tr>'
                   f'{regels or "<tr><td colspan=5>Nog geen scans verwerkt.</td></tr>"}</table></div></main></body></html>')

@@ -8,6 +8,7 @@ Hier staat alleen de logica die zonder app en zonder Claude te testen is:
 - het logboek van verwerkte scans (tabel scans in de centrale database).
 
 Herkennen gaat in deze volgorde, de eerste die zeker is wint:
+0. het scanvoorblad bovenop de stapel (portaal /voorblad): de regel 'TC-VOORBLAD: project / versie / klas / datum';
 1. een map in de inbox met zelf een correctievoorschrift erin (zoals de oude Toetsevaluatie): de mapnaam is de toets;
 2. de bestandsnaam of de tekstlaag van de scan noemt het AT-nummer (en zo nodig de versie);
 3. wat Claude op de eerste pagina leest (AT-nummer, versie, leerlingnummers -> klas via de klassenlijsten),
@@ -125,6 +126,26 @@ def hints(tekst: str) -> dict:
             "oe": bool(re.search(r"(^|_)OE(_|$)", tekst or ""))}
 
 
+VOORBLAD_RE = re.compile(r"TC[\s-]*VOORBLAD\s*[:\-]?\s*([A-Za-z0-9_.\-]+)\s*/\s*([A-D-])\s*/\s*([A-Za-z0-9]+)\s*/\s*(\d{4}-\d{2}-\d{2})", re.I)
+
+
+def voorblad_code(t: "Toets", datum: date) -> str:
+    """De regel die op het scanvoorblad staat en die ToetsCirkel terugleest."""
+    return f"TC-VOORBLAD: {t.project} / {t.versie or '-'} / {t.klas} / {datum.isoformat()}"
+
+
+def lees_voorblad(tekst: str) -> dict | None:
+    m = VOORBLAD_RE.search(tekst or "")
+    if not m:
+        return None
+    try:
+        datum = date.fromisoformat(m.group(4))
+    except ValueError:
+        return None
+    return {"project": m.group(1), "versie": m.group(2).upper().replace("-", ""), "klas": klascode(m.group(3)) or m.group(3),
+            "datum": datum}
+
+
 def lees_datum(tekst: str) -> date | None:
     """'22 oktober 2026' of '2026-10-22' -> date."""
     t = (tekst or "").strip().lower()
@@ -215,6 +236,7 @@ class Herkenning:
     cv: Path | None = None
     klassenlijst: Path | None = None
     kandidaten: list[str] = field(default_factory=list)
+    voorblad: bool = False             # pagina 1 is het scanvoorblad: niet nakijken
 
 
 def _kies(kandidaten: list[Toets], h: dict, scandatum: date) -> tuple[list[Toets], str]:
@@ -247,7 +269,7 @@ def _kies(kandidaten: list[Toets], h: dict, scandatum: date) -> tuple[list[Toets
 def herken(pad: Path, toetsen: list[Toets], *, tekstlaag: str = "", lees_kop=None, klas_van=None,
            lees_toetsmap=None) -> Herkenning:
     """pad: een PDF of map in de inbox.
-    lees_kop(pdf) -> {'at_code', 'versie', 'titel', 'leerlingnummers'} (Claude leest de eerste pagina), optioneel.
+    lees_kop(pdf) -> {'voorblad', 'at_code', 'versie', 'titel', 'leerlingnummers'} (Claude leest de eerste pagina), optioneel.
     klas_van(leerlingnummer) -> klasnaam uit de klassenlijsten, optioneel.
     lees_toetsmap(naam) -> geldig of ValueError (de regels van de Toetsevaluatie voor een toetsnaam), optioneel."""
     scandatum = date.fromtimestamp(max(f.stat().st_mtime for f in _bestanden(pad)))
@@ -270,6 +292,23 @@ def herken(pad: Path, toetsen: list[Toets], *, tekstlaag: str = "", lees_kop=Non
     else:
         scan, naam, lijst = pad, pad.name, None
 
+    # Het scanvoorblad (bovenop de stapel) is zeker: dat wint van alles.
+    kop = None
+    vb = lees_voorblad(tekstlaag)
+    if vb is None and lees_kop is not None:
+        kop = lees_kop(scan) or {}
+        vb = lees_voorblad(str(kop.get("voorblad") or ""))
+    if vb is not None:
+        passend = [t for t in toetsen if t.project == vb["project"] and (t.versie or "") == vb["versie"]]
+        if len(passend) != 1:
+            return Herkenning(False, f"Het scanvoorblad noemt toets {vb['project']} versie {vb['versie'] or '-'}, maar die staat "
+                              "niet (meer) bij de gebouwde toetsen in Construeren. Bouw de toets opnieuw of print een nieuw voorblad.",
+                              datum=vb["datum"], scan=scan)
+        t = passend[0]
+        t.klas = vb["klas"] or t.klas
+        return Herkenning(True, toets=t, toets_id=t.toets_id(), datum=vb["datum"], scan=scan, cv=t.cv,
+                          klassenlijst=lijst, voorblad=True)
+
     h = hints(naam)
     for sleutel, waarde in hints(tekstlaag).items():
         if not h.get(sleutel) and waarde:
@@ -278,7 +317,7 @@ def herken(pad: Path, toetsen: list[Toets], *, tekstlaag: str = "", lees_kop=Non
     bewijs = lambda: any(h.get(k) for k in ("at", "klas", "vak"))  # noqa: E731  (zonder enig bewijs nooit kiezen)
     kandidaten, reden = _kies(list(toetsen), h, scandatum)
     if (reden or not kandidaten or not bewijs()) and lees_kop is not None:
-        kop = lees_kop(scan) or {}
+        kop = kop if kop is not None else (lees_kop(scan) or {})
         gelezen = hints(" ".join(str(kop.get(k) or "") for k in ("at_code", "titel")) + " versie " + str(kop.get("versie") or ""))
         for sleutel in ("at", "versie", "vak", "klas"):
             if not h.get(sleutel) and gelezen.get(sleutel):
